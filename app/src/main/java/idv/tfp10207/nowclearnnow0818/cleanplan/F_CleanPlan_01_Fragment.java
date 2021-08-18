@@ -1,4 +1,4 @@
-package idv.tfp10207.clearnhomepage.clearnplan;
+package idv.tfp10207.nowclearnnow0818.cleanplan;
 
 import android.app.Activity;
 import android.os.Bundle;
