@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import idv.tfp10207.nowclearnnow0818.R;
-
+e33333333333
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link a01_BlankFragment#newInstance} factory method to
