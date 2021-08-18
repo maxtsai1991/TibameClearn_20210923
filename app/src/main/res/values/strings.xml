@@ -1,0 +1,86 @@
+<resources>
+    <string name="textViewShoppingMall">商場</string>
+    <string name="textViewDetergent">清潔用品</string>
+    <!--<string name="textViewCleantool">清潔用具</string> -->
+    <string name="textViewSellwell">最熱銷</string>
+    <string name="textViewMerchDes">商品詳情</string>
+    <string name="bottonRemove">移除</string>
+    <string name="checkbottonSelectAll">全選</string>
+    <string name="bottonBuy">結帳</string>
+    <string name="textViewOrdetdet">訂單詳情</string>
+    <string name="textViewAddress">地址</string>
+    <string name="textViewHomeDelivery">宅配出貨</string>
+    <string name="textViewPayDet">付款詳情</string>
+    <string name="textViewPayWay">付款方式</string>
+    <string name="textViewOrderTotalMoney">訂單總金額</string>
+    <string name="textViewTransAddress">運送地址</string>
+    <string name="bottonConfirm">確認</string>
+    <string name="TextViesReceiveAddress">收件地址</string>
+    <string name="textViewCardPay">信用卡支付</string>
+    <string name="textViewCardInfo">信用卡資訊</string>
+    <string name="textViewEnterCardNumber">請輸入信用卡卡號</string>
+    <string name="textViewValidMon">有效月</string>
+    <string name="textViewValidYear">有效年</string>
+    <string name="textViewEnterLastNumber">輸入未三碼</string>
+    <string name="checkboxIagree">我同意記錄本次付款資訊，並設定為快速付款</string>
+    <string name="TextViewAddCard">新增信用卡</string>
+    <string name="textViewOrderNumber">訂單編碼</string>
+    <string name="textViewOrderTime">訂單時間</string>
+    <string name="textViewPayTime">付款時間</string>
+    <string name="textViewOrderComp">訂單完成</string>
+    <string name="testViewPayDet">付款詳情</string>
+    <string name="textViewPrice">價格</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nextNext">下一步</string>
+    <string name="textCPpay">收費方式</string>
+    <string name="textDescription">服務說明</string>
+    <string name="textCPservicecontent">清潔計畫內容說明</string>
+    <string name="textServiceArea">服務地區</string>
+    <string name="textCPservicearea">台北</string>
+    <string name="textPrecautions">注意事項</string>
+    <string name="textPrecautionscontent">注意事項內容</string>
+    <string name="textCommonproblem">常見問題</string>
+    <string name="textRefund">退費須知</string>
+    <string name="textCPcommonproblem">常見問題內容</string>
+    <string name="textCPrefund">退費須知</string>
+    <string name="textCPfrequency1">一週一次共12小時</string>
+    <string name="textCPfrequency2">兩週一次共24小時</string>
+    <string name="textCPfrequency3">一月一次共48小時</string>
+    <string name="textCPscale">預估清潔規模</string>
+    <string name="textCPpeople">人數</string>
+    <string name="textCPping">坪數</string>
+    <string name="textCPtime">選擇清潔時間</string>
+    <string name="textCPtimenotice">可打掃時段</string>
+    <string name="textCPnoticecontent">注意：實際派遣人數會依清潔量做調整</string>
+    <string name="textCPtime_am">早上</string>
+    <string name="textCPtime_pm">下午</string>
+    <string name="textCPtime_all">皆可</string>
+    <string name="textCPremark">備註</string>
+    <string name="textCPremarkcontext">有特殊需求請事先標明，不然一切以服務說明為標準</string>
+    <string name="textServiceperson">服務對象資料</string>
+    <string name="textBT_same">同會員資料</string>
+    <string name="textName">姓名</string>
+    <string name="textPhone">手機</string>
+    <string name="textEmail">E-mail</string>
+    <string name="textAddress">地址</string>
+    <string name="textPayway">選擇付款方式</string>
+    <string name="textCPendout">送出清潔計劃需求</string>
+    <string name="textPayinfo">付款資訊</string>
+    <string name="textNumber1">1</string>
+    <string name="textData">單次預定</string>
+    <string name="textNumber2">2</string>
+    <string name="textGender">指定人員</string>
+    <string name="textGenderMale">男</string>
+    <string name="textGenderFemale">女</string>
+    <string name="textGenderAll">皆可</string>
+    <string name="textNumber3">3</string>
+    <string name="textMap">選擇家事者</string>
+
+
+    <string-array name="arrayVersion">
+        <item>信用卡</item>
+        <item>電子錢包</item>
+    </string-array>
+
+</resources>
