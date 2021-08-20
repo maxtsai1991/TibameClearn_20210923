@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="5dp"
+
+
+    tools:context=".cleanplan.F_CleanplanFragment">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar_cp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="475dp"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/iv_CP00_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/iv_cp_01"
+                    app:srcCompat="@drawable/iv_cleanplan00_11" />
+
+                <RatingBar
+                    android:id="@+id/rb_CP00star_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:numStars="5"
+                    android:scrollbarSize="2dp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00pay_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/textCPpay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00servicedescription_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/textDescription"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00servicecontent_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/textCPservicecontent"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00servicearea_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/textServiceArea"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00servicerareacontent_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/textCPservicearea"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00precautions_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/textPrecautions"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00precautionscontent_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/textPrecautionscontent"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00commonproblem_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:text="@string/textCommonproblem"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00problemcontent_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/textCPcommonproblem"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP_refund"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/textRefund"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP_refundcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/textCPrefund"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_cp0_next"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/gree_button_frame_shape"
+        android:text="@string/nextNext"
+        android:textSize="30sp"
+        app:backgroundTint="#91C75C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_cleanplan_home" />
     <fragment
         android:id="@+id/marketHomeFragment"
-        android:name="idv.tfp10207.nowclearnnow0818.market.MarketHomeFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.MarketHomeFragment"
         android:label="fragment_market_home"
         tools:layout="@layout/fragment_market_home" />
     <fragment
