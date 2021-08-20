@@ -1,4 +1,4 @@
-package idv.tfp10207.nowclearnnow0818.home;
+package idv.tfp10207.nowclearnnow0818.reserve;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link delet_BlankFragment#newInstance} factory method to
+ * Use the {@link CleanplanHomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class delet_BlankFragment extends Fragment {
+public class CleanplanHomeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class delet_BlankFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public delet_BlankFragment() {
+    public CleanplanHomeFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class delet_BlankFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment delet_BlankFragment.
+     * @return A new instance of fragment CleanplanHomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static delet_BlankFragment newInstance(String param1, String param2) {
-        delet_BlankFragment fragment = new delet_BlankFragment();
+    public static CleanplanHomeFragment newInstance(String param1, String param2) {
+        CleanplanHomeFragment fragment = new CleanplanHomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class delet_BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_delet__blank, container, false);
+        return inflater.inflate(R.layout.fragment_cleanplan_home, container, false);
     }
 }
