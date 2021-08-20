@@ -1,4 +1,4 @@
-package idv.tfp10207.nowclearnnow0818.cleanplan;
+package idv.tfp10207.nowclearnnow0818.member;
 
 import android.os.Bundle;
 
@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import idv.tfp10207.nowclearnnow0818.R;
-e33333333333
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link a01_BlankFragment#newInstance} factory method to
+ * Use the {@link MemberHomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class a01_BlankFragment extends Fragment {
+public class MemberHomeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class a01_BlankFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public a01_BlankFragment() {
+    public MemberHomeFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class a01_BlankFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment a01_BlankFragment.
+     * @return A new instance of fragment MemberHomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static a01_BlankFragment newInstance(String param1, String param2) {
-        a01_BlankFragment fragment = new a01_BlankFragment();
+    public static MemberHomeFragment newInstance(String param1, String param2) {
+        MemberHomeFragment fragment = new MemberHomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class a01_BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_a01__blank, container, false);
+        return inflater.inflate(R.layout.fragment_member_home, container, false);
     }
 }

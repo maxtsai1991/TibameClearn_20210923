@@ -1,4 +1,4 @@
-package idv.tfp10207.nowclearnnow0818;
+package idv.tfp10207.nowclearnnow0818.market;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import idv.tfp10207.nowclearnnow0818.R;
+e33333333333
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link TestFragment#newInstance} factory method to
+ * Use the {@link MarketHomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TestFragment extends Fragment {
+public class MarketHomeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class TestFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public TestFragment() {
+    public MarketHomeFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class TestFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TestFragment.
+     * @return A new instance of fragment MarketHomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TestFragment newInstance(String param1, String param2) {
-        TestFragment fragment = new TestFragment();
+    public static MarketHomeFragment newInstance(String param1, String param2) {
+        MarketHomeFragment fragment = new MarketHomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class TestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test, container, false);
+        return inflater.inflate(R.layout.fragment_market_home, container, false);
     }
 }

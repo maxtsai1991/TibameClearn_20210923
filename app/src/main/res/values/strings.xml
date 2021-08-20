@@ -77,10 +77,24 @@
     <string name="textNumber3">3</string>
     <string name="textMap">選擇家事者</string>
 
+    <string name="addcommodity07">新增商品</string>
+    <string name="selectneedservice07">選取服務</string>
+    <string name="offtheshelf">下架商品</string>
+    <string name="mycommodity07">我的商品</string>
+
 
     <string-array name="arrayVersion">
         <item>信用卡</item>
         <item>電子錢包</item>
     </string-array>
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>
