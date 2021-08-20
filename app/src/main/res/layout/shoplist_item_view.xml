@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_shoplist_05"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_shoplist_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/cb_shoplistSeller_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="賣家姓名" />
+
+        <TextView
+            android:id="@+id/tv_shoplistMerch_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="17dp"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/iv_shoplistMerch_05"
+            app:layout_constraintTop_toBottomOf="@+id/cb_shoplistSeller_05"
+            tools:text="商品名稱" />
+
+        <TextView
+            android:id="@+id/tv_shoplistMerchPrice_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+            android:text="TextView"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_shoplistMerch_05"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shoplistMerch_05"
+            tools:text="100" />
+
+        <CheckBox
+            android:id="@+id/cb_shoplistMerch_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb_shoplistSeller_05" />
+
+        <ImageView
+            android:id="@+id/iv_shoplistMerch_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+
+            app:layout_constraintStart_toEndOf="@+id/cb_shoplistMerch_05"
+            app:layout_constraintTop_toBottomOf="@+id/cb_shoplistSeller_05"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/bt_shoplistRemove_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="97dp"
+            android:layout_marginLeft="97dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/bottonRemove"
+            android:textSize="16sp"
+            app:backgroundTint="@color/maincolor"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_shoplistMerch_05" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

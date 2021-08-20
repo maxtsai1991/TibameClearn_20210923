@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_ordercompinfo_05"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_ordercompinfo_05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_ordercompinfoAdr_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_location_05" />
+
+        <ImageView
+            android:id="@+id/iv_ordercompinfoPay_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="90dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_ordercompinfoAdr_05"
+            app:srcCompat="@drawable/icon_money_05" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoAdr_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="@string/TextViesReceiveAddress"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_ordercompinfoAdr_05"
+            app:layout_constraintStart_toEndOf="@+id/iv_ordercompinfoAdr_05"
+            app:layout_constraintTop_toTopOf="@+id/iv_ordercompinfoAdr_05"
+            tools:text="收件地址" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoPay_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="@string/textViewPayWay"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_ordercompinfoPay_05"
+            app:layout_constraintStart_toEndOf="@+id/iv_ordercompinfoPay_05"
+            app:layout_constraintTop_toTopOf="@+id/iv_ordercompinfoPay_05"
+            tools:text="付款方式" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoCardPay_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/textViewCardPay"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_ordercompinfoPay_05"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ordercompinfoPay_05"
+            tools:text="信用卡支付" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoNum_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/textViewOrderNumber"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_ordercompinfoCardPay_05"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ordercompinfoCardPay_05"
+            tools:text="訂單編碼" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoOrderTime_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/textViewOrderTime"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_ordercompinfoNum_05"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ordercompinfoNum_05"
+            tools:text="訂單時間" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoPayTime_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/textViewPayTime"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_ordercompinfoNum_05"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ordercompinfoOrderTime_05"
+            tools:text="付款時間" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoAddr_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_ordercompinfoAdr_05"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ordercompinfoAdr_05"
+            tools:text="新北市三重區xx路xx巷xx樓" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoNumStr_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ordercompinfoNum_05"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_ordercompinfoNum_05"
+            tools:text="123456" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoOrdetTimeStr_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textViewCardPay"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ordercompinfoOrderTime_05"
+            app:layout_constraintEnd_toEndOf="@+id/tv_ordercompinfoNumStr_05"
+            app:layout_constraintTop_toTopOf="@+id/tv_ordercompinfoOrderTime_05"
+            tools:text="2021-07-26 14:20" />
+
+        <TextView
+            android:id="@+id/tv_ordercompinfoPayTimeStr_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textViewCardPay"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ordercompinfoPayTime_05"
+            app:layout_constraintEnd_toEndOf="@+id/tv_ordercompinfoOrdetTimeStr_05"
+            app:layout_constraintTop_toTopOf="@+id/tv_ordercompinfoPayTime_05"
+            tools:text="2021-07-26 14:20" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

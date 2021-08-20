@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_addcardinfoFm_05"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="market.NewCardInfoFragment">
+
+    <Button
+        android:id="@+id/bt_newcardinfoFm_05"
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bottonConfirm"
+        android:textSize="25sp"
+        app:backgroundTint="@color/maincolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="確認" />
+
+    <EditText
+        android:id="@+id/et_newcardinfoValidM_05"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_newcardinfoMust2Fm_05"
+        app:layout_constraintStart_toEndOf="@+id/iv_newcardinfoMust2Fm_05"
+        app:layout_constraintTop_toTopOf="@+id/iv_newcardinfoMust2Fm_05" />
+
+    <TextView
+        android:id="@+id/tv_inputcardnumberNciFm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/textViewEnterCardNumber"
+        android:textColor="#4E4F4C"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_newcardinfoEnterCn_05"
+        app:layout_constraintStart_toStartOf="@+id/et_newcardinfoEnterCn_05"
+        app:layout_constraintTop_toTopOf="@+id/et_newcardinfoEnterCn_05"
+        tools:text="請輸入信用卡卡號" />
+
+    <TextView
+        android:id="@+id/tv_validmonNciFm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/textViewValidMon"
+        android:textColor="#4E4F4C"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_newcardinfoValidM_05"
+        app:layout_constraintStart_toStartOf="@+id/et_newcardinfoValidM_05"
+        app:layout_constraintTop_toTopOf="@+id/et_newcardinfoValidM_05"
+        tools:text="有效月" />
+
+    <TextView
+        android:id="@+id/tv_validyearNciFm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/textViewValidYear"
+        android:textColor="#4E4F4C"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_newcardinfoValidY_05"
+        app:layout_constraintStart_toStartOf="@+id/et_newcardinfoValidY_05"
+        app:layout_constraintTop_toTopOf="@+id/et_newcardinfoValidY_05"
+        tools:text="有效年" />
+
+    <TextView
+        android:id="@+id/tv_lastnumberNciFm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/textViewEnterLastNumber"
+        android:textColor="#4E4F4C"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_newcardinfoValidLast_05"
+        app:layout_constraintStart_toStartOf="@+id/et_newcardinfoValidLast_05"
+        app:layout_constraintTop_toTopOf="@+id/et_newcardinfoValidLast_05"
+        tools:text="輸入未三碼" />
+
+    <ImageView
+        android:id="@+id/iv_newcardinfoMust3Fm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/icon_asset_05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_newcardinfoMust2Fm_05" />
+
+    <ImageView
+        android:id="@+id/iv_newcardinfoMust2Fm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/icon_asset_05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_newcardinfoMust1Fm_05" />
+
+    <ImageView
+        android:id="@+id/iv_newcardinfoMust1Fm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/icon_asset_05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_newcardinfoFm_05" />
+
+    <EditText
+        android:id="@+id/et_newcardinfoEnterCn_05"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_newcardinfoMust1Fm_05"
+        app:layout_constraintStart_toEndOf="@+id/iv_newcardinfoMust1Fm_05"
+        app:layout_constraintTop_toTopOf="@+id/iv_newcardinfoMust1Fm_05" />
+
+    <EditText
+        android:id="@+id/et_newcardinfoValidY_05"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/et_newcardinfoValidM_05"
+        app:layout_constraintTop_toTopOf="@+id/et_newcardinfoValidM_05"
+        tools:layout_editor_absoluteX="210dp" />
+
+    <EditText
+        android:id="@+id/et_newcardinfoValidLast_05"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_newcardinfoMust3Fm_05"
+        app:layout_constraintStart_toEndOf="@+id/iv_newcardinfoMust3Fm_05"
+        app:layout_constraintTop_toTopOf="@+id/iv_newcardinfoMust3Fm_05" />
+
+    <TextView
+        android:id="@+id/tv_newcardinfoFm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/textViewCardInfo"
+        android:textColor="@color/textcolor"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_addnewcardinfoFm_05"
+        tools:text="信用卡資訊" />
+
+    <TextView
+        android:id="@+id/tv_addnewcardinfoFm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/TextViewAddCard"
+        android:textColor="@color/textcolor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="新增信用卡" />
+</androidx.constraintlayout.widget.ConstraintLayout>
