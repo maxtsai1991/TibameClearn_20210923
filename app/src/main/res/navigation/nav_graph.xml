@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -25,4 +25,18 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.home.LoginFragment"
+        android:label="fragment_login07"
+        tools:layout="@layout/fragment_login07" >
+        <action
+            android:id="@+id/action_loginF_to_homepageF"
+            app:destination="@id/homePageFragment073" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePageFragment073"
+        android:name="idv.tfp10207.nowclearnnow0818.home.HomePageFragment07"
+        android:label="fragment_home_page07"
+        tools:layout="@layout/fragment_home_page07" />
 </navigation>

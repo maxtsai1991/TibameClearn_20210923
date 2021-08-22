@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
-}
+} // for googlelogin
 
 android {
     compileSdkVersion 30
@@ -43,6 +43,7 @@ dependencies {
     // 使⽤Firebase BOM則無須指定Firebase單⼀函式庫的版次 (但BOM仍需指定版次)
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

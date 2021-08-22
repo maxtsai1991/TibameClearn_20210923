@@ -6,11 +6,6 @@
     app:startDestination="@id/homePageFragment07">
 
     <fragment
-        android:id="@+id/homePageFragment07"
-        android:name="idv.tfp10207.nowclearnnow0818.home.HomePageFragment07"
-        android:label="fragment_home_page07"
-        tools:layout="@layout/fragment_home_page07" />
-    <fragment
         android:id="@+id/CleanplanHomeFragment"
         android:name="idv.tfp10207.nowclearnnow0818.reserve.CleanplanHomeFragment"
         android:label="fragment_cleanplan_home"
@@ -25,4 +20,9 @@
         android:name="idv.tfp10207.nowclearnnow0818.member.MemberHomeFragment"
         android:label="fragment_member_home"
         tools:layout="@layout/fragment_member_home" />
+    <fragment
+        android:id="@+id/homePageFragment07"
+        android:name="idv.tfp10207.nowclearnnow0818.home.HomePageFragment07"
+        android:label="fragment_home_page07"
+        tools:layout="@layout/fragment_home_page07" />
 </navigation>
