@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,8 +35,9 @@ public class LoginFragment extends Fragment {
     private Activity activity;
     private FirebaseAuth auth;
     private EditText etAccount, etPassword;
-    private Button btlogin, btRegisterHouseworker;
+    private Button btlogin, btRegisterHouseworker, btRegisterMember;
     private TextView tvLoginMessage;
+    private ImageView ivDebugLogin;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,8 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view); //註冊元件
         handleLogin(); //登入處理
-        handleRegisterHouseworker();
+        handleRegisterHouseworker(); // 跳轉家事者畫面
+        handleRegisterMember();// 跳轉註冊畫面
 
     }
 
@@ -66,7 +69,9 @@ public class LoginFragment extends Fragment {
         etPassword = view.findViewById(R.id.et_login_Password); // 密碼
         btlogin = view.findViewById(R.id.bt_login);// (登入)
         btRegisterHouseworker = view.findViewById(R.id.bt_houseworker);// (註冊家事者)
-        tvLoginMessage = view.findViewById(R.id.tv_Message); //登入資訊
+        tvLoginMessage = view.findViewById(R.id.tv_Message); //檢查帳號密碼資訊
+        ivDebugLogin = view.findViewById(R.id.iv_login_pic); // debug
+        btRegisterMember = view.findViewById(R.id.bt_register);// 註冊
     }
 
     private void handleLogin() {//取得帳號密碼轉成字串
@@ -74,6 +79,10 @@ public class LoginFragment extends Fragment {
             String email = etAccount.getText().toString();
             String password = etPassword.getText().toString();
             signIn(email, password);
+        });
+        ivDebugLogin.setOnClickListener(v -> {
+            etAccount.setText("abi@gmail.com");
+            etPassword.setText("123456");
         });
 
     }
@@ -121,6 +130,15 @@ public class LoginFragment extends Fragment {
         } else {
             return false;
         }
+    }
+
+    private void handleRegisterMember() {
+        btRegisterMember.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.registerMemberFragment);
+            Toast.makeText(activity, "請填寫會員資料欄位", Toast.LENGTH_SHORT).show();
+        });
+
     }
 
     private void handleRegisterHouseworker() {
