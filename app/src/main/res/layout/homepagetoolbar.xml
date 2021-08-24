@@ -18,13 +18,13 @@
             app:srcCompat="@drawable/ic_bell" />
 
         <TextView
-            android:id="@+id/tv_clearn_placard"
+            android:id="@+id/tv_homepage_toolbarname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="潔識"
             android:textColor="@color/white"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/imageView8"

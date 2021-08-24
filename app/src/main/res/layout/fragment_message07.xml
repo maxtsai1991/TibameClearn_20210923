@@ -37,7 +37,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="333sp"
-        android:layout_height="582sp"
+        android:layout_height="500sp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/frame07">
 

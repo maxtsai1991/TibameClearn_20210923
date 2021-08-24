@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,7 +26,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 /**
  * 1. email 登入
  * 2. 帳號密碼不能為空值
- * 3. 測試帳號密碼: "abc@gmail.com" & "12345678"
+ * 3. 測試帳號密碼: "abc@gmail.com" & "12345678" & "abi@gmail.com" & "123456" & "abl@gmail.com" & "654321"
  * 4.
  */
 public class LoginFragment extends Fragment {
@@ -33,7 +34,7 @@ public class LoginFragment extends Fragment {
     private Activity activity;
     private FirebaseAuth auth;
     private EditText etAccount, etPassword;
-    private Button btlogin;
+    private Button btlogin, btRegisterHouseworker;
     private TextView tvLoginMessage;
 
     @Override
@@ -54,19 +55,21 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        findViews(view);
-        handleLogin();
+        findViews(view); //註冊元件
+        handleLogin(); //登入處理
+        handleRegisterHouseworker();
 
     }
 
     private void findViews(View view) {
-        etAccount = view.findViewById(R.id.et_login_Account);
-        etPassword = view.findViewById(R.id.et_login_Password);
-        btlogin = view.findViewById(R.id.bt_login);
-        tvLoginMessage = view.findViewById(R.id.tv_Message);
+        etAccount = view.findViewById(R.id.et_login_Account); //帳號(email)
+        etPassword = view.findViewById(R.id.et_login_Password); // 密碼
+        btlogin = view.findViewById(R.id.bt_login);// (登入)
+        btRegisterHouseworker = view.findViewById(R.id.bt_houseworker);// (註冊家事者)
+        tvLoginMessage = view.findViewById(R.id.tv_Message); //登入資訊
     }
 
-    private void handleLogin() {
+    private void handleLogin() {//取得帳號密碼轉成字串
         btlogin.setOnClickListener(v -> {
             String email = etAccount.getText().toString();
             String password = etPassword.getText().toString();
@@ -109,16 +112,23 @@ public class LoginFragment extends Fragment {
                         tvLoginMessage.setText(message);
                     }
                 });
-
     }
 
-    private boolean isEmailOrPasswordEmpty(String email, String password) {
+    private boolean isEmailOrPasswordEmpty(String email, String password) {//帳號密碼是否正確(去掉空格)
         if (email.trim().isEmpty() || password.trim().isEmpty()) {
             tvLoginMessage.setText("帳號或密碼不可為空值");
             return true;
         } else {
             return false;
         }
+    }
+
+    private void handleRegisterHouseworker() {
+        btRegisterHouseworker.setOnClickListener(v -> {//不用action方式 跳轉到註冊家事者頁面
+            Navigation.findNavController(v)
+                    .navigate(R.id.registerHouseworkInfoFragment);
+            Toast.makeText(activity, "請填寫家事者資料欄位", Toast.LENGTH_SHORT).show();
+        });
     }
 
 

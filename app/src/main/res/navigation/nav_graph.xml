@@ -39,4 +39,9 @@
         android:name="idv.tfp10207.nowclearnnow0818.home.HomePageFragment07"
         android:label="fragment_home_page07"
         tools:layout="@layout/fragment_home_page07" />
+    <fragment
+        android:id="@+id/registerHouseworkInfoFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.home.RegisterHouseworkInfoFragment"
+        android:label="fragment_register_housework_info07"
+        tools:layout="@layout/fragment_register_housework_info07" />
 </navigation>
