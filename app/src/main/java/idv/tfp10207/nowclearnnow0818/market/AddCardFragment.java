@@ -12,7 +12,7 @@ import idv.tfp10207.nowclearnnow0818.R;
  * A simple {@link Fragment} subclass.
  * Use the {@link AddCardFragment#newInstance} factory method to
  * create an instance of this fragment.
- */
+ */ //
 public class AddCardFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
