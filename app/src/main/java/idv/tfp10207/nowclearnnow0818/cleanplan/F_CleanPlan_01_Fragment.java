@@ -1,5 +1,6 @@
 package idv.tfp10207.nowclearnnow0818.cleanplan;
 
+//
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
