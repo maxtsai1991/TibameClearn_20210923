@@ -23,6 +23,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 //  5.訂單資訊回傳給資料庫
 //  6.推撥給家事者
 
+//
 
 public class F_CleanPlan_03_Fragment extends Fragment {
     private static final String TAG = "TAG_F_CleanPlan_03_Fragment";
