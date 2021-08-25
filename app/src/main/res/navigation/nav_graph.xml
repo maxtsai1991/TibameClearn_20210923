@@ -6,39 +6,46 @@
     app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="idv.tfp10207.nowclearnnow0818.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="idv.tfp10207.nowclearnnow0818.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/loginFragment"
         android:name="idv.tfp10207.nowclearnnow0818.home.LoginFragment"
         android:label="fragment_login07"
-        tools:layout="@layout/fragment_login07" >
-        <action
-            android:id="@+id/action_loginF_to_homepageF"
-            app:destination="@id/homePageFragment07" />
-    </fragment>
+        tools:layout="@layout/fragment_login07" />
     <fragment
-        android:id="@+id/homePageFragment07"
+        android:id="@+id/homePageFragment072"
         android:name="idv.tfp10207.nowclearnnow0818.home.HomePageFragment07"
         android:label="fragment_home_page07"
-        tools:layout="@layout/fragment_home_page07" />
+        tools:layout="@layout/fragment_home_page07" >
+        <action
+            android:id="@+id/action_homePageFragment072_to_market_homeFragment2"
+            app:destination="@id/market_homeFragment2" />
+        <action
+            android:id="@+id/action_homePageFragment072_to_reserve_01_Fragment"
+            app:destination="@id/reserve_01_Fragment" />
+        <action
+            android:id="@+id/action_homePageFragment072_to_memberCentreFragment"
+            app:destination="@id/memberCentreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reserve_01_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.reserve_01_Fragment"
+        android:label="fragment_reserve_01_"
+        tools:layout="@layout/fragment_reserve_01_" />
+    <fragment
+        android:id="@+id/market_homeFragment2"
+        android:name="idv.tfp10207.nowclearnnow0818.market.Market_homeFragment"
+        android:label="Market_homeFragment" >
+        <action
+            android:id="@+id/action_market_homeFragment2_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_market_homeFragment2_to_merch_DesFragment"
+            app:destination="@id/merch_DesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberCentreFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.MemberCentreFragment"
+        android:label="fragment_member_centre"
+        tools:layout="@layout/fragment_member_centre" />
     <fragment
         android:id="@+id/registerHouseworkInfoFragment"
         android:name="idv.tfp10207.nowclearnnow0818.home.RegisterHouseworkInfoFragment"
@@ -49,4 +56,134 @@
         android:name="idv.tfp10207.nowclearnnow0818.home.RegisterMemberFragment"
         android:label="fragment_register_member"
         tools:layout="@layout/fragment_register_member" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.market.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_merch_DesFragment"
+            app:destination="@id/merch_DesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/merch_DesFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.market.Merch_DesFragment"
+        android:label="Merch_DesFragment" >
+        <action
+            android:id="@+id/action_merch_DesFragment_to_shoppingListFragment"
+            app:destination="@id/shoppingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppingListFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.market.ShoppingListFragment"
+        android:label="ShoppingListFragment" />
+    <fragment
+        android:id="@+id/addDelCommodityFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.home.AddDelCommodityFragment"
+        android:label="fragment_add_del_commodity"
+        tools:layout="@layout/fragment_add_del_commodity" />
+    <fragment
+        android:id="@+id/f_Premiumselection_Fragment07"
+        android:name="idv.tfp10207.nowclearnnow0818.home.F_Premiumselection_Fragment07"
+        android:label="fragment_f__premiumselection_"
+        tools:layout="@layout/fragment_f__premiumselection_" />
+    <fragment
+        android:id="@+id/messageFragment07"
+        android:name="idv.tfp10207.nowclearnnow0818.home.MessageFragment07"
+        android:label="fragment_message07"
+        tools:layout="@layout/fragment_message07" />
+    <fragment
+        android:id="@+id/messageListFragment07"
+        android:name="idv.tfp10207.nowclearnnow0818.home.MessageListFragment07"
+        android:label="fragment_message_list07"
+        tools:layout="@layout/fragment_message_list07" />
+    <fragment
+        android:id="@+id/placardFragment07"
+        android:name="idv.tfp10207.nowclearnnow0818.home.PlacardFragment07"
+        android:label="fragment_placard07"
+        tools:layout="@layout/fragment_placard07" />
+    <fragment
+        android:id="@+id/premiumselectionlistFragment07"
+        android:name="idv.tfp10207.nowclearnnow0818.home.PremiumselectionlistFragment07"
+        android:label="fragment_premiumselectionlist07"
+        tools:layout="@layout/fragment_premiumselectionlist07" />
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.home.ResetPasswordFragment"
+        android:label="fragment_reset_password07"
+        tools:layout="@layout/fragment_reset_password07" />
+    <fragment
+        android:id="@+id/f_CleanPlan_01_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.F_CleanPlan_01_Fragment"
+        android:label="fragment_f__clean_plan_01_"
+        tools:layout="@layout/fragment_f__clean_plan_01_" />
+    <fragment
+        android:id="@+id/f_CleanPlan_02_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.F_CleanPlan_02_Fragment"
+        android:label="fragment_f__clean_plan_02_"
+        tools:layout="@layout/fragment_f__clean_plan_02_" />
+    <fragment
+        android:id="@+id/f_CleanPlan_03_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.F_CleanPlan_03_Fragment"
+        android:label="fragment_f__clean_plan_03_"
+        tools:layout="@layout/fragment_f__clean_plan_03_" />
+    <fragment
+        android:id="@+id/f_CleanPlan_04_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.F_CleanPlan_04_Fragment"
+        android:label="fragment_f__clean_plan_04_"
+        tools:layout="@layout/fragment_f__clean_plan_04_" />
+    <fragment
+        android:id="@+id/f_CleanPlan_05_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.F_CleanPlan_05_Fragment"
+        android:label="fragment_f__clean_plan_05_"
+        tools:layout="@layout/fragment_f__clean_plan_05_" />
+    <fragment
+        android:id="@+id/f_CleanplanFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.F_CleanplanFragment"
+        android:label="fragment_f__cleanplan"
+        tools:layout="@layout/fragment_f__cleanplan" />
+    <fragment
+        android:id="@+id/reserve_02_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.reserve_02_Fragment"
+        android:label="fragment_reserve_02_"
+        tools:layout="@layout/fragment_reserve_02_" />
+    <fragment
+        android:id="@+id/personalFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.PersonalFragment"
+        android:label="fragment_personal"
+        tools:layout="@layout/fragment_personal" />
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.PasswordFragment"
+        android:label="fragment_password"
+        tools:layout="@layout/fragment_password" />
+    <fragment
+        android:id="@+id/introductionFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.IntroductionFragment"
+        android:label="fragment_introduction"
+        tools:layout="@layout/fragment_introduction" />
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/memberFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.MemberFragment"
+        android:label="fragment_condition"
+        tools:layout="@layout/fragment_condition" />
+    <fragment
+        android:id="@+id/evaluationFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.EvaluationFragment"
+        android:label="fragment_evaluation"
+        tools:layout="@layout/fragment_evaluation" />
+    <fragment
+        android:id="@+id/QAFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.QAFragment"
+        android:label="fragment_q_a"
+        tools:layout="@layout/fragment_q_a" />
+    <fragment
+        android:id="@+id/goodatFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.GoodatFragment"
+        android:label="fragment_goodat"
+        tools:layout="@layout/fragment_goodat" />
 </navigation>

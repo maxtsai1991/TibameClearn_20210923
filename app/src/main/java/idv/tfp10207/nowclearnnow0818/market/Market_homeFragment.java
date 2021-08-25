@@ -119,7 +119,7 @@ public class Market_homeFragment extends Fragment {
                 bundle.putString("searchMerchName", searchText);
 
                 NavController navController = Navigation.findNavController(rv_Detergent_05);
-                navController.navigate(R.id.action_market_homeFragment_to_searchFragment, bundle);
+                navController.navigate(R.id.action_market_homeFragment2_to_searchFragment, bundle);
 
 
 

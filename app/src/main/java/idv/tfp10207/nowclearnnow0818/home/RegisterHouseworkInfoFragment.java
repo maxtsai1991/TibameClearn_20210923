@@ -73,11 +73,11 @@ public class RegisterHouseworkInfoFragment extends Fragment {
             etother.setText("可接受寵物");
             etselfintroduction.setText("您好! 希望能為您服務~ ");
         });
-
-        btregisterhouseworker.setOnClickListener(v -> {
-            Navigation.findNavController(v)
-                    .navigate(R.id.homePageFragment07);
-        });
+//導覽要改
+//        btregisterhouseworker.setOnClickListener(v -> {
+//            Navigation.findNavController(v)
+//                    .navigate(R.id.homePageFragment07);
+//        });
     }
 
 

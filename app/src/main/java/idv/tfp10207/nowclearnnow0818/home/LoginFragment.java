@@ -97,7 +97,7 @@ public class LoginFragment extends Fragment {
                     // 登入成功轉至下頁；失敗則顯示錯誤訊息
                     if (task.isSuccessful()) { //結果成功 下一頁
                         Navigation.findNavController(etAccount)
-                                .navigate(R.id.action_loginF_to_homepageF);
+                                .navigate(R.id.homePageFragment072);
                     } else {
                         String message;
                         Exception exception = task.getException();
