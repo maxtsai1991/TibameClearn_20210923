@@ -18,7 +18,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 public class HomePageFragment07 extends Fragment {
     private Activity activity;
-
+// test0527
 
     private ImageView iv_reservepage;
     private ImageView iv_marketpage;
