@@ -11,14 +11,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import idv.tfp10207.nowclearnnow0818.R;
+
+//  0.前面訂單的資料  >>>bundle
+//  1.選擇付款方式
+//  2.信用卡資訊
+//  3.付款人資訊  與 同會員資料
+//  4.彈跳視窗: 確認媒合>>>訂單送出
+//  5.訂單資訊回傳給資料庫
+//  6.推撥給家事者
+
 
 public class F_CleanPlan_03_Fragment extends Fragment {
     private static final String TAG = "TAG_F_CleanPlan_03_Fragment";
     private Activity activity;
-
-
 
     //next button
     private Button bt_cp03_next;
@@ -46,8 +54,10 @@ public class F_CleanPlan_03_Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         findview(view);
-//        handlebutton();
-//        handletoolbar(view);
+        handlenext(view);
+        handletoolbar(view);
+
+//        handlebutton(view);
     }
 
     private void findview(View view) {
@@ -55,42 +65,39 @@ public class F_CleanPlan_03_Fragment extends Fragment {
     }
 
 
-//next button
-//    private void handlebutton() {
-//        tv_cp00_next.setOnClickListener(v -> {
-//           NavController navController = Navigation.findNavController(v);
-//           navController.navigate(R.id.action_ch2_10Fragment2_to_hwchapter_Fragment);
-//
-//        });
-//    }
+    //  next button
+    private void handlenext(View view) {
+        bt_cp03_next.setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(R.id.f_CleanPlan_04_Fragment);
+
+        });
+    }
 
 
-//    //    客製Toolbar
-//    private void handletoolbar(View view) {
-////    抓按鍵
-//        leftarrowicon = view.findViewById(R.id.iv_arrow_back);
-//        righthomeicon = view.findViewById(R.id.iv_home);
-////    改標題
-//        tvprojectname = view.findViewById(R.id.tv_project_name)
-//
-//
-//
-////    按鍵(需更改導覽路線的ID)
-//        leftarrowicon.setOnClickListener(v -> {
-//            Toast.makeText(activity, "返回", Toast.LENGTH_SHORT).show();
-//            NavController navController = Navigation.findNavController(v);
-//            navController.navigate(R.id.action_ch2_10Fragment2_to_hwchapter_Fragment);
-//        });
-//
-//        righthomeicon.setOnClickListener(v -> {
-//            Toast.makeText(activity, "回首頁", Toast.LENGTH_SHORT).show();
-//            NavController navController = Navigation.findNavController(v);
-//            navController.navigate(R.id.action_ch2_10Fragment2_to_hwchapter_Fragment);
-//        });
-//
-////    標題
-//        tvprojectname.setText("CH02_10");
-//
-//}
+
+    //    客製Toolbar
+    private void handletoolbar(View view) {
+//    抓按鍵
+        leftarrowicon = view.findViewById(R.id.iv_arrow_back);
+        righthomeicon = view.findViewById(R.id.iv_home);
+//    改標題
+        tvprojectname = view.findViewById(R.id.tv_project_name);
+
+
+//    按鍵(需更改導覽路線的ID)
+
+        leftarrowicon.setOnClickListener(v -> {
+            Navigation.findNavController(view).popBackStack(R.id.f_CleanPlan_03_Fragment, true);
+        });
+
+
+        righthomeicon.setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(R.id.homePageFragment072);
+        });
+
+//    標題
+        tvprojectname.setText("清潔計畫");
+
+    }
 
 }

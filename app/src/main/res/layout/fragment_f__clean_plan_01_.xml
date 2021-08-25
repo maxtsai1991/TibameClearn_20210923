@@ -17,9 +17,8 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="match_parent"
-        android:layout_height="545dp"
-        android:layout_marginTop="55dp"
+        android:layout_width="405dp"
+        android:layout_height="523dp"
         app:layout_constraintBottom_toTopOf="@+id/bt_CP01next_11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include5">
@@ -154,7 +153,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/textGender"
+                android:text="指定性別"
                 android:textSize="25sp"
                 app:layout_constraintStart_toEndOf="@+id/cv_CP01item2_11"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydata3_11" />
@@ -237,14 +236,24 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_CP01data_3"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP01data_3" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="188dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="58dp"
-                android:layout_marginLeft="58dp"
+            <SearchView
+                android:layout_width="213dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="39dp"
+                android:layout_marginLeft="39dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/auttv_CP01_choiseservice_11"
                 app:layout_constraintTop_toTopOf="@+id/auttv_CP01_choiseservice_11" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="391dp"
+                android:layout_height="147dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/auttv_CP01_choiseservice_11" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

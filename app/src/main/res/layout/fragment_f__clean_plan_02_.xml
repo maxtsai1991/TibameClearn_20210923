@@ -12,14 +12,16 @@
         layout="@layout/toolbar_cp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="410dp"
-        android:layout_height="445dp"
+        android:layout_width="403dp"
+        android:layout_height="508dp"
         android:layout_margin="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include6">
@@ -136,7 +138,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout5"
                 android:layout_width="wrap_content"
-                android:layout_height="240dp"
+                android:layout_height="220dp"
                 app:layout_constraintStart_toStartOf="@+id/cb_memberinit_11"
                 app:layout_constraintTop_toBottomOf="@+id/cb_memberinit_11">
 
@@ -254,7 +256,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
                 <RadioGroup
-                    android:id="@+id/rg_CPtime1_11"
+                    android:id="@+id/rg_CP02time1_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
@@ -379,7 +381,7 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/iv_CP02_takepicture_11"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="40dp"
@@ -397,8 +399,8 @@
                 android:layout_marginEnd="152dp"
                 android:layout_marginRight="152dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/iv_CP02_takepicture_11"
+                app:layout_constraintTop_toTopOf="@+id/iv_CP02_takepicture_11"
                 app:srcCompat="@drawable/c3_icon_magnify_" />
 
             <LinearLayout
@@ -408,7 +410,7 @@
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2">
+                app:layout_constraintTop_toBottomOf="@+id/iv_CP02_takepicture_11">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_CP02item3_11"
@@ -444,7 +446,7 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/editTextTextMultiLine"
+                android:id="@+id/et_CP02_remark_11"
                 android:layout_width="333dp"
                 android:layout_height="88dp"
                 android:layout_marginStart="32dp"

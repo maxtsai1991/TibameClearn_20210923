@@ -14,7 +14,7 @@
         android:layout_height="wrap_content" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_CP02_takepicture_11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"

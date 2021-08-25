@@ -30,7 +30,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="475dp"
+            android:layout_height="523dp"
             android:layout_marginTop="8dp">
 
             <LinearLayout
@@ -58,16 +58,24 @@
                     android:id="@+id/tv_CP00pay_11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:text="@string/textCPpay"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP00_paycontent_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:paddingTop="15dp"
+                    android:text="一次預約為3小時\n主要依據服務人員基本費用(服務者自訂，費用/小時)\n與整理坪數區間費用\n \n坪數區間費用:1~30坪(含)：\n250元/坪、30~60坪(含)：350元/坪、60坪以上：500元/坪\n \n舉例:預約一次(3小時)基本費用400元的服務人員\n打掃15坪的租屋處\n則本次服務費用為(400*3)+(15*250)=4950元   " />
 
                 <TextView
                     android:id="@+id/tv_CP00servicedescription_11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:text="@string/textDescription"
                     android:textSize="25sp" />
 
@@ -76,8 +84,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:gravity="center"
-                    android:text="@string/textCPservicecontent"
+                    android:gravity="start"
+                    android:text="主要以打掃垃圾、清潔髒污或灰塵為主(不含收納整理)，可以將自己的清潔需求反應於訂單上，並預估服務的範圍，確認清潔人員後再討論狀況做些調整，收費方式請參考上述規則，如因訂單額外討論產生的費用則以兩方約定為準。"
                     android:textSize="18sp" />
 
                 <TextView
@@ -85,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:text="@string/textServiceArea"
                     android:textSize="25sp" />
 
@@ -94,8 +102,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:gravity="center"
-                    android:text="@string/textCPservicearea"
+                    android:gravity="start"
+                    android:text="台北、新北"
                     android:textSize="18sp" />
 
                 <TextView
@@ -103,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:text="@string/textPrecautions"
                     android:textSize="25sp" />
 
@@ -112,8 +120,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:gravity="center"
-                    android:text="@string/textPrecautionscontent"
+                    android:gravity="start"
+                    android:text="1.以下為未服務內容: \n．移動或抬起超過10公斤之重物或家具\n．天花板、高處窗戶即可觸及範圍外的表面清潔\n．危險性工作（如外窗清潔、化學物質清潔等） \n．除蟲害 "
                     android:textSize="18sp" />
 
                 <TextView
@@ -122,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:layout_weight="0"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:text="@string/textCommonproblem"
                     android:textSize="25sp" />
 
@@ -131,8 +139,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:gravity="center"
-                    android:text="@string/textCPcommonproblem"
+                    android:gravity="start"
+                    android:text="１.服務人員會自行攜帶清潔用品嗎？\n會，無須額外支付費用。\n\n２.清潔做不完可以加時嗎？\n如果當天服務有需要加時的狀況，可與在場的服務人員協調當天並不保證一定能夠加時\n\n３.服務過程我一定要在家嗎?本平台無代管鑰匙的服務，到府清潔屬於安全與財產較敏感之服務型態，因此建議您起碼在清潔開始與結束時至少在場開、關門。"
                     android:textSize="18sp" />
 
                 <TextView
@@ -141,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:text="@string/textRefund"
                     android:textSize="25sp" />
 
@@ -150,8 +158,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:gravity="center"
-                    android:text="@string/textCPrefund"
+                    android:gravity="start"
+                    android:text="．若於服務日前一天下午六點前改期並不會收取額外費用 \n．若於服務日前一天下午六點後改期或取消服務會酌收整筆訂單金額30% 的手續費喔 \n．若於服務日當天改期或取消服務會酌收整筆訂單金額50%的手續費喔"
                     android:textSize="18sp" />
 
             </LinearLayout>

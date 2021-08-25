@@ -159,8 +159,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginTop="20dp"
                     android:text="-"
+                    android:textSize="24sp"
                     app:layout_constraintStart_toEndOf="@+id/editTextNumber2"
                     app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
 
@@ -182,8 +182,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginTop="20dp"
                     android:text="-"
+                    android:textSize="24sp"
                     app:layout_constraintStart_toEndOf="@+id/editTextNumber3"
                     app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
 
