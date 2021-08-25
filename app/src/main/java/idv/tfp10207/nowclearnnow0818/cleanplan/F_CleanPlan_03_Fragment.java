@@ -35,6 +35,7 @@ public class F_CleanPlan_03_Fragment extends Fragment {
     private Button leftarrowicon;
     private TextView tvprojectname;
 
+//  4.彈跳視窗: 確認媒合>>>訂單送出
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
