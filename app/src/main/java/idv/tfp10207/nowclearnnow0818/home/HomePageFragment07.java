@@ -53,7 +53,7 @@ public class HomePageFragment07 extends Fragment {
     }
 
 
-
+ // test
     private void handleButtons(View view) {
 
         iv_marketpage.setOnClickListener(v -> {
