@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".member.MemberCentreFragment">
+    tools:context="member.MemberCentreFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
@@ -13,25 +13,11 @@
         android:orientation="horizontal">
 
         <include
-            android:id="@+id/include4"
+            android:id="@+id/member_toolbar01"
             layout="@layout/toolbar3_01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_clear0_01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="會員中心"
-            android:textColor="#FFFFFF"
-            android:textSize="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,13 +25,12 @@
             android:id="@+id/linearLayout2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
             android:background="#FFFFFF"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_clear0_01">
+            app:layout_constraintTop_toBottomOf="@+id/member_toolbar01">
 
             <TextView
                 android:id="@+id/tv_clear1_01"
@@ -408,110 +393,6 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/tob1_"
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:background="#91C75C"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_clear9_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
-                android:layout_marginLeft="36dp"
-                android:text="首頁"
-                android:textColor="#FFFFFF"
-                android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/tob1_"
-                app:layout_constraintStart_toStartOf="@+id/tob1_" />
-
-            <TextView
-                android:id="@+id/tv_clear10_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="132dp"
-                android:layout_marginLeft="132dp"
-                android:text="預約"
-                android:textColor="#FFFFFF"
-                android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tob1_" />
-
-            <TextView
-                android:id="@+id/tv_clear11_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="244dp"
-                android:layout_marginLeft="244dp"
-                android:text="商城"
-                android:textColor="#FFFFFF"
-                android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tob1_" />
-
-            <TextView
-                android:id="@+id/tv_clear12_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="336dp"
-                android:layout_marginLeft="336dp"
-                android:text="會員"
-                android:textColor="#FFFFFF"
-                android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tob1_" />
-
-            <ImageView
-                android:id="@+id/iv_home_01"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/tob1_"
-                app:layout_constraintTop_toTopOf="@+id/tob1_"
-                app:srcCompat="@drawable/clean13" />
-
-            <ImageView
-                android:id="@+id/iv_reserve_01"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="132dp"
-                android:layout_marginLeft="132dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/tob1_"
-                app:layout_constraintTop_toTopOf="@+id/tob1_"
-                app:srcCompat="@drawable/clean10" />
-
-            <ImageView
-                android:id="@+id/iv_mall_01"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="240dp"
-                android:layout_marginLeft="240dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/tob1_"
-                app:layout_constraintTop_toTopOf="@+id/tob1_"
-                app:srcCompat="@drawable/clean7" />
-
-            <ImageView
-                android:id="@+id/iv_member_01"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="332dp"
-                android:layout_marginLeft="332dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/tob1_"
-                app:layout_constraintTop_toTopOf="@+id/tob1_"
-                app:srcCompat="@drawable/clean8" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

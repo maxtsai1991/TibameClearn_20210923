@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".member.PersonalFragment">
+    tools:context="member.PersonalFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout3"
@@ -18,11 +18,12 @@
 
         <include
             android:id="@+id/include2"
-            layout="@layout/toolbar2_01"
+            layout="@layout/toolbar_01"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edt_name_01"
@@ -84,6 +85,17 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginTop="416dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/clean17" />
+
+        <ImageView
+            android:id="@+id/iv_clear15_01"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="548dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -193,7 +205,7 @@
             android:id="@+id/edt_phone_01"
             android:layout_width="172dp"
             android:layout_height="66dp"
-            android:layout_marginTop="344dp"
+            android:layout_marginTop="343dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
@@ -204,16 +216,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/sp_boygirl_01"
+            android:id="@+id/sp_gender_01"
             android:layout_width="80dp"
             android:layout_height="50dp"
-            android:layout_marginTop="185dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
+            android:entries="@array/array_gender"
             app:layout_constraintBottom_toTopOf="@+id/view9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include2" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/tv_clear50_01"
@@ -256,6 +267,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tv_clear55_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="544dp"
+            android:text="修改簡介"
+            android:textColor="#121111"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <View
             android:id="@+id/view12"
             android:layout_width="0dp"
@@ -263,6 +287,21 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="524dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#0B0A0A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view27"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="596dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="#0B0A0A"
@@ -318,19 +357,20 @@
             android:textColor="@color/white"
             android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="@+id/include2"
-            app:layout_constraintEnd_toEndOf="@+id/include2"
-            app:layout_constraintStart_toStartOf="@+id/include2"
-            app:layout_constraintTop_toTopOf="@+id/include2" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_store_01"
             android:layout_width="60dp"
             android:layout_height="0dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="儲存"
             android:textColor="#FFFFFF"
-            android:textSize="30dp"
+            android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="@+id/include2"
             app:layout_constraintEnd_toEndOf="@+id/include2"
             app:layout_constraintTop_toTopOf="@+id/tv_clear47_01" />
