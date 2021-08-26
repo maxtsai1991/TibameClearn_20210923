@@ -1,5 +1,5 @@
 package idv.tfp10207.nowclearnnow0818.home;
-
+// test1
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
