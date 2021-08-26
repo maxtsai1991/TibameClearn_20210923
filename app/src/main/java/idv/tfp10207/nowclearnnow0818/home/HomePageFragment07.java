@@ -18,11 +18,13 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 public class HomePageFragment07 extends Fragment {
     private Activity activity;
-// test0527
+
 
     private ImageView iv_reservepage;
     private ImageView iv_marketpage;
     private ImageView iv_memberpage;
+    private ImageView iv_homepage_announcement,iv_message07,iv_homepage_clear_service07;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,9 @@ public class HomePageFragment07 extends Fragment {
         iv_reservepage = view.findViewById(R.id.iv_reservepage);
         iv_marketpage = view.findViewById(R.id.iv_marketpage);
         iv_memberpage = view.findViewById(R.id.iv_memberpage);
+        iv_homepage_announcement = view.findViewById(R.id.iv_homepage_announcement);
+        iv_message07 = view.findViewById(R.id.iv_message07);
+        iv_homepage_clear_service07 = view.findViewById(R.id.iv_homepage_clear_service07);
     }
 
 
@@ -66,11 +71,27 @@ public class HomePageFragment07 extends Fragment {
             navController.navigate(R.id.action_homePageFragment072_to_reserve_01_Fragment);
         });
 
-
         iv_memberpage.setOnClickListener(v -> {
             NavController navController = Navigation.findNavController(v);
             navController.navigate(R.id.action_homePageFragment072_to_memberCentreFragment);
         });
+
+        iv_homepage_announcement.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.placardFragment07);
+        });
+
+        iv_message07.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.messageListFragment07);
+        });
+
+        iv_homepage_clear_service07.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.f_CleanplanFragment);
+        });
+
+
     }
 
 }

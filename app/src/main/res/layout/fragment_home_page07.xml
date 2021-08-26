@@ -13,10 +13,21 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/iv_homepage_announcement"
-        android:layout_width="match_parent"
+        android:id="@+id/iv_message07"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/png_placard07"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_homepage_announcement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image_placard1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
@@ -31,10 +42,10 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_homepage_announcement">
 
         <ImageView
-            android:id="@+id/iv_homepage_clearnserver07"
+            android:id="@+id/iv_homepage_clear_service07"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/png_clearn_service07" />
+            android:src="@drawable/image_clear_service" />
 
         <TextView
             android:id="@+id/textView"
