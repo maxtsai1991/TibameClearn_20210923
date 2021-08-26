@@ -1,4 +1,4 @@
-package idv.tfp10207.nowclearnnow0818.home;
+package idv.tfp10207.nowclearnnow0818.mycommodity;
 
 import android.os.Bundle;
 

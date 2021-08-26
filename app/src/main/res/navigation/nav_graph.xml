@@ -78,7 +78,7 @@
         android:label="ShoppingListFragment" />
     <fragment
         android:id="@+id/addDelCommodityFragment"
-        android:name="idv.tfp10207.nowclearnnow0818.home.AddDelCommodityFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.mycommodity.AddDelCommodityFragment"
         android:label="fragment_add_del_commodity"
         tools:layout="@layout/fragment_add_del_commodity" />
     <fragment

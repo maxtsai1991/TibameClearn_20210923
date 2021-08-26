@@ -40,7 +40,7 @@ public class RegisterMemberFragment extends Fragment {
     public void onViewCreated(@NonNull  View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews(view); //註冊元件
-//        handleRegisterMember();
+        handleRegisterMember();
     }
 
     private void findViews(View view) {
@@ -52,22 +52,22 @@ public class RegisterMemberFragment extends Fragment {
         btmemberregister = view.findViewById(R.id.bt_member_login);
         tvdebug = view.findViewById(R.id.tvdebug);
     }
-//導覽要改
-//    private void handleRegisterMember() {
-//        btmemberregister.setOnClickListener(v -> {
-//            Navigation.findNavController(v)
-//                    .navigate(R.id.homePageFragment07);
-//        });
-//
-//        tvdebug.setOnClickListener(v -> {
-//            etmembername.setText("陳嘉");
-//            etmembergender.setText("女");
-//            etmemberemail.setText("abi@gmail.com");
-//            etmemberphone.setText("0952123456");
-//            etmemberaddress.setText("台北市大安區忠孝東路四段285號");
-//        });
-//
-//    }
+
+    private void handleRegisterMember() {
+        btmemberregister.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.homePageFragment072);
+        });
+
+        tvdebug.setOnClickListener(v -> {
+            etmembername.setText("陳嘉");
+            etmembergender.setText("女");
+            etmemberemail.setText("abi@gmail.com");
+            etmemberphone.setText("0952123456");
+            etmemberaddress.setText("台北市大安區忠孝東路四段285號");
+        });
+
+    }
 
 
 }
