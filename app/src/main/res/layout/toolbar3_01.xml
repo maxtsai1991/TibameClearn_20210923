@@ -3,49 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="#91C75C">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="56dp">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#91C75C"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_conversion_absoluteHeight="56dp"
-            tools:layout_conversion_absoluteWidth="411dp" />
+        <TextView
+            android:id="@+id/tv_clear0_"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="8dp"
+            android:text="會員中心"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/iv_question_01"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:background="@drawable/ic_baseline_help"
-            app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/toolbar3"
             tools:layout_conversion_absoluteHeight="150dp"
             tools:layout_conversion_absoluteWidth="150dp" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/iv_home_01"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/ic_baseline_power_settings_new"
-            app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar3"
-            app:layout_constraintTop_toTopOf="@+id/toolbar3" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/ic_baseline_home" />
+    </RelativeLayout>
 
 </RelativeLayout>

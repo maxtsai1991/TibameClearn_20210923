@@ -186,4 +186,8 @@
         android:name="idv.tfp10207.nowclearnnow0818.member.GoodatFragment"
         android:label="fragment_goodat"
         tools:layout="@layout/fragment_goodat" />
+    <fragment
+        android:id="@+id/success_get_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.success_get_Fragment"
+        android:label="success_get_Fragment" />
 </navigation>

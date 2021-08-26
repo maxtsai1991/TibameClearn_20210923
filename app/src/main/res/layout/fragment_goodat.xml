@@ -5,11 +5,11 @@
     android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".member.GoodatFragment" >
+    tools:context="member.GoodatFragment" >
 
     <include
         android:id="@+id/include6"
-        layout="@layout/toolbar2_01"
+        layout="@layout/toolbar_01"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
