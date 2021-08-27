@@ -18,10 +18,11 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="403dp"
-        android:layout_height="508dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="0dp"
         android:layout_marginTop="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_CP02next_11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include6">
@@ -139,6 +140,9 @@
                 android:id="@+id/constraintLayout5"
                 android:layout_width="wrap_content"
                 android:layout_height="220dp"
+                android:layout_marginEnd="58dp"
+                android:layout_marginRight="58dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/cb_memberinit_11"
                 app:layout_constraintTop_toBottomOf="@+id/cb_memberinit_11">
 
@@ -464,8 +468,11 @@
                 android:id="@+id/linearLayout5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="24dp"
                 android:orientation="horizontal"
-                tools:layout_editor_absoluteY="636dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_CP02_remark_11">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_CP02item4_11"

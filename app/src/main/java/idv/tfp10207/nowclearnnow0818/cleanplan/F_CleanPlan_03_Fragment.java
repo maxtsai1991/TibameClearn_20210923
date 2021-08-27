@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,8 +33,8 @@ public class F_CleanPlan_03_Fragment extends Fragment {
     //next button
     private Button bt_cp03_next;
     //Toolbar
-    private Button righthomeicon;
-    private Button leftarrowicon;
+    private ImageView righthomeicon;
+    private ImageView leftarrowicon;
     private TextView tvprojectname;
 
 //  4.彈跳視窗: 確認媒合>>>訂單送出
@@ -76,14 +77,13 @@ public class F_CleanPlan_03_Fragment extends Fragment {
     }
 
 
-
     //    客製Toolbar
     private void handletoolbar(View view) {
 //    抓按鍵
-        leftarrowicon = view.findViewById(R.id.iv_arrow_back);
-        righthomeicon = view.findViewById(R.id.iv_home);
+        leftarrowicon = view.findViewById(R.id.iv_arrow_back_11);
+        righthomeicon = view.findViewById(R.id.iv_home_11);
 //    改標題
-        tvprojectname = view.findViewById(R.id.tv_project_name);
+        tvprojectname = view.findViewById(R.id.tv_project_name_11);
 
 
 //    按鍵(需更改導覽路線的ID)
@@ -94,12 +94,15 @@ public class F_CleanPlan_03_Fragment extends Fragment {
 
 
         righthomeicon.setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.homePageFragment072);
+            Navigation.findNavController(v).popBackStack(R.id.homePageFragment072, false);
         });
 
 //    標題
         tvprojectname.setText("清潔計畫");
 
     }
+
+
+
 
 }

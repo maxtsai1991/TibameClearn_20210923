@@ -44,7 +44,7 @@
 
         <ScrollView
             android:layout_width="412dp"
-            android:layout_height="431dp"
+            android:layout_height="550dp"
             android:layout_marginTop="16dp"
             android:paddingLeft="8dp"
             app:layout_constraintEnd_toEndOf="parent"

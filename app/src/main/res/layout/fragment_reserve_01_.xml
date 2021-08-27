@@ -19,54 +19,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include6">
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <Button
+            <RadioButton
                 android:id="@+id/bt_reserve_01_11"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                android:text="媒合中"
-                android:textSize="25sp"
-                app:backgroundTint="#C1D6AB" />
+                android:layout_width="97dp"
+                android:layout_height="match_parent"
 
-            <Button
+                android:layout_weight="0.5"
+                android:background="@drawable/gree_button_frame_shape"
+                android:gravity="center"
+                android:text="媒合中"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <RadioButton
                 android:id="@+id/bt_reserve_02_11"
                 android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                android:text="已媒合"
-                android:textSize="25sp"
-                app:backgroundTint="#FFC1D6AB" />
+                android:layout_height="58dp"
 
-            <Button
+                android:layout_weight="0.5"
+                android:background="@drawable/gree_button_frame_shape"
+                android:gravity="center"
+                android:text="已媒合"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <RadioButton
                 android:id="@+id/bt_reserve_03_11"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="已完成"
-                android:textSize="25sp"
-                app:backgroundTint="#FFC1D6AB" />
+                android:layout_height="58dp"
+                android:layout_weight="0.5"
 
-        </LinearLayout>
+                android:background="@drawable/gree_button_frame_shape"
+                android:gravity="center"
+                android:text="已完成"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                 />
+        </RadioGroup>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_reserve"
             android:layout_width="362dp"
             android:layout_height="456dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="6dp"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

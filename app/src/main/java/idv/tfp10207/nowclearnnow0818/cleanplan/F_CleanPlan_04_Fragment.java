@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,8 +28,8 @@ public class F_CleanPlan_04_Fragment extends Fragment {
     //next button
     private Button bt_cp04_next;
     //Toolbar
-    private Button righthomeicon;
-    private Button leftarrowicon;
+    private ImageView righthomeicon;
+    private ImageView leftarrowicon;
     private TextView tvprojectname;
 
 
@@ -63,36 +64,36 @@ public class F_CleanPlan_04_Fragment extends Fragment {
     //  next button
     private void handlenext(View view) {
         bt_cp04_next.setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.f_CleanPlan_04_Fragment);
+            Navigation.findNavController(view).navigate(R.id.reserve_01_Fragment);
 
         });
     }
 
 
-
     //    客製Toolbar
     private void handletoolbar(View view) {
 //    抓按鍵
-        leftarrowicon = view.findViewById(R.id.iv_arrow_back);
-        righthomeicon = view.findViewById(R.id.iv_home);
+        leftarrowicon = view.findViewById(R.id.iv_arrow_back_11);
+        righthomeicon = view.findViewById(R.id.iv_home_11);
 //    改標題
-        tvprojectname = view.findViewById(R.id.tv_project_name);
+        tvprojectname = view.findViewById(R.id.tv_project_name_11);
 
 
 //    按鍵(需更改導覽路線的ID)
 
         leftarrowicon.setOnClickListener(v -> {
-            Navigation.findNavController(view).popBackStack(R.id.reserve_01_Fragment, true);
+            Navigation.findNavController(view).popBackStack(R.id.f_CleanPlan_01_Fragment, true);
         });
 
 
         righthomeicon.setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.homePageFragment072);
+            Navigation.findNavController(v).popBackStack(R.id.homePageFragment072, false);
         });
 
 //    標題
         tvprojectname.setText("清潔計畫");
 
     }
+
 }
 

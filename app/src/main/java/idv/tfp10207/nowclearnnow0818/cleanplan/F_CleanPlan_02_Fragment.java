@@ -56,8 +56,8 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     //next button
     private Button bt_cp02_next;
     //Toolbar
-    private Button righthomeicon;
-    private Button leftarrowicon;
+    private ImageView righthomeicon;
+    private ImageView leftarrowicon;
     private TextView tvprojectname;
 
     @Override
@@ -78,9 +78,10 @@ public class F_CleanPlan_02_Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         findview(view);
-        handlenext(view);
+//        handlenext(view);
         handletoolbar(view);
 
+        handleBtAlert(view);
 //        handlebutton(view);
         handleleRadioButton(view);
         handleCheckBoxes(view);
@@ -127,12 +128,14 @@ public class F_CleanPlan_02_Fragment extends Fragment {
 //                    用基本費用與規模去做計算
 //                    .setMessage(R.string.textSubmitMessage)             // 設定訊息文字
 
-//                    有點不懂這段後面的參數在fragment該怎麼設置            // 設定確定按鈕-顯示文字及監聽器
+// 有點不懂這段後面的參數在fragment該怎麼設置
+// 設定確定按鈕-顯示文字及監聽器
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
+                            Navigation.findNavController(view).navigate(R.id.f_CleanPlan_03_Fragment);
                             dialog.dismiss();
                         }
-                    })
+                        })
                     // 設定否定按鈕-顯示文字及監聽器
 //                    .setNegativeButton("No", this)
 
@@ -150,22 +153,13 @@ public class F_CleanPlan_02_Fragment extends Fragment {
 
 
 
-
-    //next button
-    private void handlenext(View view) {
-        bt_cp02_next.setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.f_CleanPlan_03_Fragment);
-
-        });
-    }
-
-    //    客製Toolbar
+//    客製Toolbar
     private void handletoolbar(View view) {
 //    抓按鍵
-        leftarrowicon = view.findViewById(R.id.iv_arrow_back);
-        righthomeicon = view.findViewById(R.id.iv_home);
+        leftarrowicon = view.findViewById(R.id.iv_arrow_back_11);
+        righthomeicon = view.findViewById(R.id.iv_home_11);
 //    改標題
-        tvprojectname = view.findViewById(R.id.tv_project_name);
+        tvprojectname = view.findViewById(R.id.tv_project_name_11);
 
 
 //    按鍵(需更改導覽路線的ID)
@@ -176,12 +170,14 @@ public class F_CleanPlan_02_Fragment extends Fragment {
 
 
         righthomeicon.setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.homePageFragment072);
+            Navigation.findNavController(v).popBackStack(R.id.homePageFragment072, false);
         });
 
 //    標題
         tvprojectname.setText("清潔計畫");
 
     }
+
+
 
 }
