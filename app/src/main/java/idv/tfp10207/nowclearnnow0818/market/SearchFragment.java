@@ -1,6 +1,7 @@
 package idv.tfp10207.nowclearnnow0818.market;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,11 +33,11 @@ public class SearchFragment extends Fragment {
     private static final int PRICE_STATE_UP = 1;
 
 
-    private AppCompatActivity activity;
+    private Activity activity;
     private RecyclerView rv_searchMerchFm_05;
     private SearchView  sv_Search_05;
     private TextView tv_Sellwell_05,tv_price_05;
-    private ImageView iv_up_05, iv_down_05, iv_SearchToolbarBack_05, iv_SearchToolbarShop_05;
+    private ImageView iv_up_05, iv_down_05, iv_SearchMerchToolbarToolbarBack_05, iv_SearchToolbarShop_05;
     private List<MerchInfo> searchMerchInfoList = new ArrayList<>();
     private List<MerchInfo> searchedMerchInfoList = new ArrayList<>();
     private int priceState = 0;
@@ -52,7 +53,7 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        activity = (AppCompatActivity) getActivity(); //取得Activity參考
+        activity = getActivity(); //取得Activity參考
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_search, container, false);
@@ -76,8 +77,8 @@ public class SearchFragment extends Fragment {
         tv_price_05 = view.findViewById(R.id.tv_price_05);
         iv_up_05 = view.findViewById(R.id.iv_up_05);
         iv_down_05 = view.findViewById(R.id.iv_down_05);
-        iv_SearchToolbarBack_05 = view.findViewById(R.id.iv_SearchToolbarBack_05);
-        iv_SearchToolbarShop_05 = view.findViewById(R.id.iv_SearchToolbarShop_05);
+        iv_SearchMerchToolbarToolbarBack_05 = view.findViewById(R.id.iv_SearchMerchToolbarToolbarBack_05);
+        iv_SearchToolbarShop_05 = view.findViewById(R.id.iv_SearchMerchToolbarToolbarShop_05);
     }
 
     private void handleSearchMerchRecyclerView() {
@@ -98,13 +99,17 @@ public class SearchFragment extends Fragment {
                 }
             }
 
-            rv_searchMerchFm_05.setAdapter(new MarketHomeAdapter(activity, searchMerchInfoList));
+            rv_searchMerchFm_05.setAdapter(new MarketHomeAdapter(activity, searchMerchInfoList, 2));
             rv_searchMerchFm_05.setLayoutManager(new LinearLayoutManager(activity));
 
             MarketHomeAdapter adapter = (MarketHomeAdapter) rv_searchMerchFm_05.getAdapter();
             adapter.list = searchMerchInfoList;
 
             adapter.notifyDataSetChanged();
+
+
+
+
         }
     }
 
@@ -167,7 +172,7 @@ public class SearchFragment extends Fragment {
                 Collections.sort(searchedMerchInfoList, new Comparator<MerchInfo>() {
                     @Override
                     public int compare(MerchInfo o1, MerchInfo o2) {
-                        return o2.getMerchPrice().compareTo(o1.getMerchPrice());
+                        return o2.getMerchPrice() - o1.getMerchPrice();
                     }
                 });
 
@@ -179,7 +184,7 @@ public class SearchFragment extends Fragment {
                 Collections.sort(searchedMerchInfoList, new Comparator<MerchInfo>() {
                     @Override
                     public int compare(MerchInfo o1, MerchInfo o2) {
-                        return o1.getMerchPrice().compareTo(o2.getMerchPrice());
+                        return o1.getMerchPrice() - o2.getMerchPrice();
                     }
                 });
 
@@ -198,7 +203,7 @@ public class SearchFragment extends Fragment {
 
     private void hdndleToolBarImageView() {
 
-        iv_SearchToolbarBack_05.setOnClickListener(view -> {
+        iv_SearchMerchToolbarToolbarBack_05.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(view);//返回
             navController.popBackStack();
         });

@@ -10,20 +10,21 @@
     <FrameLayout
         android:id="@+id/fl_merchDesBg_05"
         android:layout_width="match_parent"
-        android:layout_height="186dp"
-        android:background="@color/searchbackground"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="230dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/merchDesToolBar_05">
 
         <ImageView
             android:id="@+id/iv_MerchDes1_05"
-            android:layout_width="379dp"
-            android:layout_height="170dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
 
-            android:topLeftRadius="10dp"
-            android:topRightRadius="10dp"
             android:bottomLeftRadius="10dp"
             android:bottomRightRadius="10dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
 
             tools:src="@tools:sample/avatars" />
     </FrameLayout>
@@ -34,9 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="45dp"
         android:textColor="@color/textcolor"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fl_merchDesBg_05"
         tools:text="商品名稱" />
@@ -47,39 +48,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/textcolor"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_MerchName_05"
         tools:text="商品金額" />
-
-    <TextView
-        android:id="@+id/tv_MerchSoldNum_05"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/textcolor"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_MerchPrice_05"
-        tools:text="已售出10" />
-
-    <TextView
-        android:id="@+id/tv_MerchDes_05"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/textViewMerchDes"
-        android:textColor="@color/textcolor"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_MerchSoldNum_05"
-        tools:text="商品詳情" />
 
     <TextView
         android:id="@+id/tv_MerchNum_05"
@@ -87,11 +61,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/textcolor"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_MerchDes_05"
+        app:layout_constraintTop_toBottomOf="@+id/tv_MerchPrice_05"
         tools:text="商品數量" />
 
     <TextView
@@ -100,9 +74,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/textcolor"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_MerchBrand_05"
         tools:text="商品內容" />
@@ -113,9 +87,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/textcolor"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_MerchNum_05"
         tools:text="商品品牌" />
@@ -137,5 +111,11 @@
         android:src="@drawable/icon_creditcard_05"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/merchDesToolBar_05"
+        layout="@layout/merchdesinfo_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

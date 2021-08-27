@@ -2,19 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rl_SearchToolbar_05"
+    android:id="@+id/rl_SearchMerchToolbar_05"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/maincolor">
 
     <RelativeLayout
-        android:id="@+id/rl_Search_Toolbar_05"
+        android:id="@+id/rl_SearchMerchToolbar_Toolbar_05"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
         <ImageView
-            android:id="@+id/iv_SearchToolbarBack_05"
+            android:id="@+id/iv_SearchMerchToolbarToolbarBack_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -23,7 +23,7 @@
             app:srcCompat="@drawable/icon_return_05" />
 
         <TextView
-            android:id="@+id/tv_SearchToolBar_05"
+            android:id="@+id/tv_SearchMerchToolbarToolBar_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -33,7 +33,7 @@
             tools:text="商城" />
 
         <ImageView
-            android:id="@+id/iv_SearchToolbarShop_05"
+            android:id="@+id/iv_SearchMerchToolbarToolbarShop_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

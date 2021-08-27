@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_popWindowsBuy_05"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_popWindowBuy_05"
+        android:layout_width="fill_parent"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/bt_popWindowsBuy_05"
+            android:layout_width="415dp"
+            android:layout_height="wrap_content"
+            android:text="@string/TextViewBuy"
+            android:textSize="25sp"
+            app:backgroundTint="@color/maincolor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="直接購買" />
+
+        <TextView
+            android:id="@+id/tv_popWindowsBuyPrice_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/textcolor"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_popWindowsBuyMerNum_05"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="$ 100" />
+
+        <TextView
+            android:id="@+id/tv_popWindowsBuyNum_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/textcolor"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_popWindowsBuy_05"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="數量" />
+
+        <TextView
+            android:id="@+id/tv_popWindowsBuyMerNum_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/textcolor"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_popWindowsBuyNum_05"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="商品數量 : 10" />
+
+        <ImageView
+            android:id="@+id/iv_popWindowsBuy_05"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_popWindowsBuyPrice_05"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/iv_popWindowsBuyCancel_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_popWindowsBuy_05"
+            app:srcCompat="@drawable/icon_close_05" />
+
+        <EditText
+            android:id="@+id/etn_popWindowsBuy_05"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@+id/tv_popWindowsBuyNum_05"
+            app:layout_constraintTop_toTopOf="@+id/tv_popWindowsBuyNum_05" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

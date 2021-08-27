@@ -78,7 +78,8 @@ public class Market_homeFragment extends Fragment {
         );*/
 
 
-        rv_Detergent_05.setAdapter(new MarketHomeAdapter(activity, listDetergent));
+        rv_Detergent_05.setAdapter(new MarketHomeAdapter(activity, listDetergent, 1));
+
         //LinearLayoutManager linearLayoutManagerDetergent = new LinearLayoutManager(activity);
         //linearLayoutManagerDetergent.setOrientation(LinearLayoutManager.HORIZONTAL);
         rv_Detergent_05.setLayoutManager(new LinearLayoutManager(activity));//(linearLayoutManagerDetergent);
@@ -179,18 +180,18 @@ public class Market_homeFragment extends Fragment {
 
     public List<MerchInfo> getListMarketHome(){
         return Arrays.asList(   //list 商品照片與資訊
-                new MerchInfo(R.drawable.test_images1,"拖把1","$100"),
-                new MerchInfo(R.drawable.test_images2, "家具清潔劑1", "$200"),
-                new MerchInfo(R.drawable.test_images3, "拖把2", "$300"),
-                new MerchInfo(R.drawable.test_images4, "多功能清潔劑", "$400"),
-                new MerchInfo(R.drawable.test_images1,"拖把3","$100"),
-                new MerchInfo(R.drawable.test_images2, "拖把4", "$200"),
-                new MerchInfo(R.drawable.test_images3, "拖把5", "$300"),
-                new MerchInfo(R.drawable.test_images4, "掃把", "$400"),
-                new MerchInfo(R.drawable.test_images1,"家具清潔劑2","$600"),
-                new MerchInfo(R.drawable.test_images2, "家具清潔劑3", "$300"),
-                new MerchInfo(R.drawable.test_images3, "吸水抹布", "$300"),
-                new MerchInfo(R.drawable.test_images4, "家具清潔劑4", "$500")
+                new MerchInfo(R.drawable.test_images1,"拖把1",100, 10,"好用牌", "超強力拖把，真好用", "王小明", "m111"),
+                new MerchInfo(R.drawable.test_images2, "家具清潔劑1", 200, 20,"XXX-1牌", "真的很好用哦1", "張三豐", "m222"),
+                new MerchInfo(R.drawable.test_images3, "拖把2", 300, 30,"XXX-2牌", "真的很好用哦2", "王小明", "m111"),
+                new MerchInfo(R.drawable.test_images4, "多功能清潔劑", 400, 40,"XXX-3牌", "真的很好用哦3", "張無忌","m333"),
+                new MerchInfo(R.drawable.test_images1,"拖把3",100, 50, "XXX-4牌", "真的很好用哦4", "五月天","m444"),
+                new MerchInfo(R.drawable.test_images2, "拖把4", 200, 60,"XXX-5牌", "真的很好用哦5", "周傑倫","m666"),
+                new MerchInfo(R.drawable.test_images3, "拖把5", 300, 70,"XXX-6牌", "真的很好用哦6", "張三豐","m222"),
+                new MerchInfo(R.drawable.test_images4, "掃把", 400, 80,"XXX-7牌", "真的很好用哦7", "蕭敬騰","m555"),
+                new MerchInfo(R.drawable.test_images1,"家具清潔劑2",600, 90,"XXX-8牌", "真的很好用哦8", "五月天","m444"),
+                new MerchInfo(R.drawable.test_images2, "家具清潔劑3", 300, 100,"XXX-9牌", "真的很好用哦9", "陳阿姨","m777"),
+                new MerchInfo(R.drawable.test_images3, "吸水抹布", 300, 110,"XXX-10牌", "真的很好用哦10", "鄭先生","m888"),
+                new MerchInfo(R.drawable.test_images4, "家具清潔劑4", 500, 120,"XXX-11牌", "真的很好用哦11", "周傑倫","m666")
         );
     }
 

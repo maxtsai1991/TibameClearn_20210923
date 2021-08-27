@@ -1,6 +1,7 @@
 package idv.tfp10207.nowclearnnow0818.market.MarketHomeAdapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -22,10 +25,14 @@ public class MarketHomeAdapter extends RecyclerView.Adapter<MarketHomeAdapter.Ma
     private Context context;
     public List<MerchInfo> list;
 
+    //區分頁面
+    public int pageState;
+
     //建構子 : 2個參數(Context型態、選項資料的型態)，用來初始化2欄位
-    public MarketHomeAdapter(Context context, List<MerchInfo> list) {
+    public MarketHomeAdapter(Context context, List<MerchInfo> list, int  pageState) {
         this.context = context;
         this.list = list;
+        this.pageState = pageState;
     }
 
     @Override
@@ -43,11 +50,11 @@ public class MarketHomeAdapter extends RecyclerView.Adapter<MarketHomeAdapter.Ma
 
 
     @Override
-    public void onBindViewHolder(@NonNull MarketHomeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MarketHomeAdapter.MarketHomeViewHolder holder, int position) {
 
         MerchInfo merchInfo = list.get(position);
         holder.tv_DetergentName_05.setText(merchInfo.getMerchName());
-        holder.tv_DetergentPrice_05.setText(merchInfo.getMerchPrice());
+        holder.tv_DetergentPrice_05.setText("$ " + merchInfo.getMerchPrice());
         holder.iv_Detergent_05.setImageResource(merchInfo.getDrawableID());
 
         //holder.tv_CleantoolName_05.setText(merchInfo.getMerchName());
@@ -55,10 +62,32 @@ public class MarketHomeAdapter extends RecyclerView.Adapter<MarketHomeAdapter.Ma
 
 
 
-        //執行點擊圖片進入商品頁面
-        //holder.iv_Detergent_05.setOnClickListener(view ->{
-           //TODO
-        //});
+        //執行點擊圖片進入商品頁面  //nick navigation_graph_05有修改  Merch_DesFragment有修改
+        holder.iv_Detergent_05.setOnClickListener(view ->{
+
+            Bundle bundle = new Bundle();
+            bundle.putInt("merchPoto", merchInfo.getDrawableID());
+            bundle.putString("merchName", merchInfo.getMerchName());
+            bundle.putInt("merchPrice", merchInfo.getMerchPrice());
+            bundle.putInt("merchNumber", merchInfo.getMerchNumber());
+            bundle.putString("merchBrand", merchInfo.getMerchBrand());
+            bundle.putString("merchContent", merchInfo.getMerchContent());
+            bundle.putString("sellerName", merchInfo.getSeller());
+            bundle.putString("memberID", merchInfo.getMemberId());
+
+            NavController navController = Navigation.findNavController(view);
+
+
+            //區分是從shoppingMall或是search 頁面過來
+            if(pageState == 1){
+                navController.navigate(R.id.action_market_homeFragment2_to_merch_DesFragment, bundle);
+            }
+            else{
+                navController.navigate(R.id.action_searchFragment_to_merch_DesFragment, bundle);
+            }
+
+
+        });
     }
 
 

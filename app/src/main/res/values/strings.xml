@@ -31,6 +31,8 @@
     <string name="testViewPayDet">付款詳情</string>
     <string name="textViewPrice">價格</string>
     <string name="textViewShoppintMall">商城</string>
+    <string name="TextViewAddShopcar">加入購物車</string>
+    <string name="TextViewBuy">直接購買</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nextNext">下一步</string>

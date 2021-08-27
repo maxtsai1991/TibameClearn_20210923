@@ -4,15 +4,25 @@ public class MerchInfo {//implements Serializable {
 
     private int drawableID;
     private String merchName;
-    private String merchPrice;
+    private int merchPrice;
+    private int merchNumber;
+    private String merchBrand;
+    private String merchContent;
+    private String seller;
+    private String memberId;
 
     public MerchInfo(){
     }
 
-    public MerchInfo(int drawableID, String merchName, String merchPrice) {
+    public MerchInfo(int drawableID, String merchName, int merchPrice, int merchNumber, String merchBrand, String merchContent, String seller, String memberId) {
         this.drawableID = drawableID;
         this.merchName = merchName;
         this.merchPrice = merchPrice;
+        this.merchNumber = merchNumber;
+        this.merchBrand = merchBrand;
+        this.merchContent = merchContent;
+        this.seller = seller;
+        this.memberId = memberId;
     }
 
     public int getDrawableID() {
@@ -31,11 +41,51 @@ public class MerchInfo {//implements Serializable {
         this.merchName = merchName;
     }
 
-    public String getMerchPrice() {
+    public int getMerchPrice() {
         return merchPrice;
     }
 
-    public void setMerchPrice(String merchPrice) {
+    public void setMerchPrice(int merchPrice) {
         this.merchPrice = merchPrice;
+    }
+
+    public int getMerchNumber() {
+        return merchNumber;
+    }
+
+    public void setMerchNumber(int merchNumber) {
+        this.merchNumber = merchNumber;
+    }
+
+    public String getMerchBrand() {
+        return merchBrand;
+    }
+
+    public void setMerchBrand(String merchBrand) {
+        this.merchBrand = merchBrand;
+    }
+
+    public String getMerchContent() {
+        return merchContent;
+    }
+
+    public void setMerchContent(String merchContent) {
+        this.merchContent = merchContent;
+    }
+
+    public String getSeller() {
+        return seller;
+    }
+
+    public void setSeller(String seller) {
+        this.seller = seller;
+    }
+
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 }

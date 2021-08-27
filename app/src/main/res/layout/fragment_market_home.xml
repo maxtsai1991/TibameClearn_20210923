@@ -13,7 +13,7 @@
         android:layout_height="56dp"
         android:background="@color/searchcolor"
         android:foregroundGravity="center"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/markHomeToolBar_05">
 
         <SearchView
             android:id="@+id/sv_Search_05"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/textViewDetergent"
         android:textColor="@color/textcolor"
         android:textSize="25sp"
@@ -41,11 +41,17 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_Detergent_05"
         android:layout_width="0dp"
-        android:layout_height="512dp"
-        android:layout_marginTop="25dp"
+        android:layout_height="455dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_Detergent_05" />
+
+    <include
+        android:id="@+id/markHomeToolBar_05"
+        layout="@layout/shoppingmallhome_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

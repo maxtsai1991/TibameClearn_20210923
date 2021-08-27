@@ -10,11 +10,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_shoplistFm_05"
         android:layout_width="0dp"
-        android:layout_height="500dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="520dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <CheckBox
         android:id="@+id/cb_shoplistSelectAllFm_05"
@@ -51,4 +51,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="結帳" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/shoppingcarlist_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>
