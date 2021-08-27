@@ -12,7 +12,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 
 public class AddDelCommodityFragment extends Fragment {
-
+//test 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
