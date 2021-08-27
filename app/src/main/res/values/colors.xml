@@ -14,4 +14,9 @@
     <color name="searchcolor">#D1CCCC</color>
     <color name="searchbackground">#F2F2F2</color>
     <color name="paycolor">#FF6565</color>
+
+
+    <color name="light">#FFFFFF</color>
+    <color name="dark">#FFFFFF</color>
+    
 </resources>
