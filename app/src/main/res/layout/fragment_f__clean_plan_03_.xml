@@ -17,7 +17,7 @@
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="600dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bt_CP03next_11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,8 +125,8 @@
                 android:id="@+id/constraintLayout5"
                 android:layout_width="wrap_content"
                 android:layout_height="220dp"
-                app:layout_constraintStart_toStartOf="@+id/checkBox2"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox2">
+                app:layout_constraintStart_toStartOf="@+id/cb_CP03_paypereson_member_11"
+                app:layout_constraintTop_toBottomOf="@+id/cb_CP03_paypereson_member_11">
 
                 <TextView
                     android:id="@+id/tv_payperson_name"
@@ -134,6 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/textName"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -145,11 +146,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
-                    android:layout_marginTop="12dp"
                     android:text="@string/textPhone"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_CP03_payperson_Phone_11"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_payperson_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP03_payperson_name_11" />
 
                 <TextView
                     android:id="@+id/tv_payperson_email"
@@ -157,11 +158,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
-                    android:layout_marginTop="12dp"
                     android:text="@string/textEmail"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_CP03_payperson_Email_11"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_payerson_phone" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP03_payperson_Phone_11" />
 
                 <TextView
                     android:id="@+id/tv_payperson_address"
@@ -169,62 +170,62 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
-                    android:layout_marginTop="12dp"
                     android:text="@string/textAddress"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_CP03_payperson_Address_11"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_payperson_email" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP03_payperson_Email_11" />
 
                 <EditText
-                    android:id="@+id/et_payperson_name"
+                    android:id="@+id/et_CP03_payperson_name_11"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/tv_payperson_name"
-                    app:layout_constraintTop_toTopOf="@+id/tv_payperson_name" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/et_payperson_Phone"
+                    android:id="@+id/et_CP03_payperson_Phone_11"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:ems="10"
                     android:inputType="phone"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/tv_payerson_phone"
-                    app:layout_constraintTop_toTopOf="@+id/tv_payerson_phone" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP03_payperson_name_11" />
 
                 <EditText
-                    android:id="@+id/et_payperson_Email"
+                    android:id="@+id/et_CP03_payperson_Email_11"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="45dp"
                     android:ems="10"
                     android:inputType="textEmailAddress"
                     android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/et_payperson_name"
-                    app:layout_constraintTop_toTopOf="@+id/tv_payperson_email" />
+                    app:layout_constraintStart_toStartOf="@+id/et_CP03_payperson_name_11"
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP03_payperson_Phone_11" />
 
                 <EditText
-                    android:id="@+id/et_payperson_Address"
+                    android:id="@+id/et_CP03_payperson_Address_11"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:ems="10"
                     android:inputType="textPostalAddress"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/tv_payperson_address"
-                    app:layout_constraintTop_toTopOf="@+id/tv_payperson_address" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP03_payperson_Email_11" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/cb_CP03_paypereson_member_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="38dp"

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +18,21 @@ public class F_CleanPlan_05_Fragment extends Fragment {
     private static final String TAG = "TAG_F_CleanPlan_05_Fragment";
     private Activity activity;
 
+    //  1.訂單詳情
+    private TextView tv_CP04_order_number2_11;
+
+    private TextView tv_CP05_orderpay1_11;
+    private TextView tv_CP05_orderpay2_11;
+    private TextView tv_CP05_orderpay3_11;
+    private TextView tv_CP05_orderpay4_11;
+
+    private TextView tv_CP05_orderpayway1_11;
+    private TextView tv_CP05_orderpayway2_11;
+
+    private TextView tv_CP05_orderclient1_11;
+    private TextView tv_CP05_orderclient2_11;
+    private TextView tv_CP05_orderclient3_11;
+    private TextView tv_CP05_orderclient4_11;
 
 
     //Toolbar
@@ -43,21 +57,27 @@ public class F_CleanPlan_05_Fragment extends Fragment {
     public void onViewCreated(@NonNull View view,Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        findview(view);
+        findview(view);
 //        handlebutton();
         handletoolbar(view);
 
     }
 
+    private void findview(View view) {
 
-//next button
-//    private void handlebutton() {
-//        tv_cp00_next.setOnClickListener(v -> {
-//           NavController navController = Navigation.findNavController(v);
-//           navController.navigate(R.id.action_ch2_10Fragment2_to_hwchapter_Fragment);
-//
-//        });
-//    }
+        tv_CP05_orderpay1_11 = view.findViewById(R.id.tv_CP04_orderpay1_11);
+        tv_CP05_orderpay2_11 = view.findViewById(R.id.tv_CP04_orderpay2_11);
+        tv_CP05_orderpay3_11 = view.findViewById(R.id.tv_CP04_orderpay3_11);
+        tv_CP05_orderpay4_11 = view.findViewById(R.id.tv_CP04_orderpay4_11);
+
+        tv_CP05_orderpayway1_11 = view.findViewById(R.id.tv_CP04_orderpayway1_11);
+        tv_CP05_orderpayway2_11 = view.findViewById(R.id.tv_CP04_orderpayway2_11);
+
+        tv_CP05_orderclient1_11 = view.findViewById(R.id.tv_CP05_orderclient1_11);
+        tv_CP05_orderclient2_11 = view.findViewById(R.id.tv_CP04_orderclient2_11);
+        tv_CP05_orderclient3_11 = view.findViewById(R.id.tv_CP04_orderclient3_11);
+        tv_CP05_orderclient4_11 = view.findViewById(R.id.tv_CP04_orderclient4_11);
+    }
 
 
     //    客製Toolbar

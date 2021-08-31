@@ -7,74 +7,79 @@
     tools:context=".cleanplan.reserve_01_Fragment" >
 
     <include
+        android:id="@+id/include9"
         layout="@layout/toolbar_cp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <RadioGroup
+        android:id="@+id/rg_reserve_00_11"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include9">
+
+        <RadioButton
+            android:id="@+id/rb_reserve_01_11"
+            android:layout_width="97dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/gree_reserve_radiobutton_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:text="媒合中"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:id="@+id/rb_reserve_02_11"
+            android:layout_width="130dp"
+            android:layout_height="58dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/gree_reserve_radiobutton_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:text="已媒合"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/rb_reserve_03_11"
+            android:layout_width="120dp"
+            android:layout_height="58dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/gree_reserve_radiobutton_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:text="已完成"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </RadioGroup>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="122dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include6">
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="0dp"
-            android:layout_height="58dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <RadioButton
-                android:id="@+id/bt_reserve_01_11"
-                android:layout_width="97dp"
-                android:layout_height="match_parent"
-
-                android:layout_weight="0.5"
-                android:background="@drawable/gree_button_frame_shape"
-                android:gravity="center"
-                android:text="媒合中"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-
-            <RadioButton
-                android:id="@+id/bt_reserve_02_11"
-                android:layout_width="130dp"
-                android:layout_height="58dp"
-
-                android:layout_weight="0.5"
-                android:background="@drawable/gree_button_frame_shape"
-                android:gravity="center"
-                android:text="已媒合"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-
-            <RadioButton
-                android:id="@+id/bt_reserve_03_11"
-                android:layout_width="120dp"
-                android:layout_height="58dp"
-                android:layout_weight="0.5"
-
-                android:background="@drawable/gree_button_frame_shape"
-                android:gravity="center"
-                android:text="已完成"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                 />
-        </RadioGroup>
+        >
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcv_reserve"
-            android:layout_width="362dp"
-            android:layout_height="456dp"
-            android:layout_marginTop="6dp"
+            android:id="@+id/rcv_reserve1_11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

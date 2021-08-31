@@ -18,5 +18,9 @@
 
     <color name="light">#FFFFFF</color>
     <color name="dark">#FFFFFF</color>
-    
+
+    <!--    commit 刪-->
+    <color name="lightclearn">#C0E1A0</color>
+    <color name="notselect">#4C4C4C</color>
+
 </resources>

@@ -60,17 +60,37 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order2_11" />
 
             <TextView
-                android:id="@+id/tv_CP04_orderpay1_11"
+                android:id="@+id/tv_CP04_order_number_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="付款人"
-                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:text="訂單編號："
+                android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order3_11" />
 
             <TextView
-                android:id="@+id/tv_CP04_orderpay2_11"
+                android:id="@+id/tv_CP04_order_number2_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="CP000001"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/tv_CP04_order_number_11"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order3_11" />
+
+            <TextView
+                android:id="@+id/tv_CP04_orderpay_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="付款人"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order_number_11" />
+
+            <TextView
+                android:id="@+id/tv_CP04_orderpay1_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -79,14 +99,24 @@
                 android:text="付款人姓名:"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpay1_11" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpay_11" />
 
             <TextView
-                android:id="@+id/tv_CP05_orderpay3_11"
+                android:id="@+id/tv_CP04_orderpay2_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="付款人手機:"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay1_11"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpay1_11" />
+
+            <TextView
+                android:id="@+id/tv_CP04_orderpay3_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="付款人email:"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay2_11"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpay2_11" />
@@ -96,20 +126,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="付款人email:"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP05_orderpay3_11"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderpay3_11" />
-
-            <TextView
-                android:id="@+id/tv_CP04_orderpay5_11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:text="付款人地址:"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay4_11"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpay4_11" />
+                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay3_11"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpay3_11" />
 
             <TextView
                 android:id="@+id/tv_CP04_orderpayway_11"
@@ -118,8 +138,8 @@
                 android:layout_marginTop="20dp"
                 android:text="付款資訊"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay1_11"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpay5_11" />
+                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay_11"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpay4_11" />
 
             <TextView
                 android:id="@+id/tv_CP04_orderpayway1_11"
@@ -128,7 +148,7 @@
                 android:layout_marginTop="15dp"
                 android:text="繳費方式:"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay4_11"
+                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay3_11"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpayway_11" />
 
             <TextView
@@ -138,7 +158,7 @@
                 android:layout_marginTop="15dp"
                 android:text="付款人金額:"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay2_11"
+                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay1_11"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpayway1_11" />
 
             <TextView
@@ -148,7 +168,7 @@
                 android:layout_marginTop="20dp"
                 android:text="服務對象資訊"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay1_11"
+                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay_11"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpayway2_11" />
 
             <TextView
@@ -197,7 +217,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200dp"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay1_11"
+                app:layout_constraintStart_toStartOf="@+id/tv_CP04_orderpay_11"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderpayway2_11" />
 
             <TextView

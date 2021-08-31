@@ -24,14 +24,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/iv_CP01service_11"
+                android:id="@+id/iv_CP0_1service_11"
                 android:layout_width="117dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <RatingBar
-                android:id="@+id/rb_CP01service_11"
+                android:id="@+id/rat_CP01_ratingservice_11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -46,7 +46,7 @@
             app:layout_constraintStart_toEndOf="@+id/linearLayout6">
 
             <TextView
-                android:id="@+id/tv_CP01servicename_11"
+                android:id="@+id/tv_CP01_servicename_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -57,7 +57,7 @@
                 tools:text="家事者: 快手清潔" />
 
             <TextView
-                android:id="@+id/tv_CP01good_project_11"
+                android:id="@+id/tv_CP01_good_project_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -69,7 +69,7 @@
                 tools:text="擅長項目: 收納整理、打掃" />
 
             <TextView
-                android:id="@+id/tv_CP01toll_standard_11"
+                android:id="@+id/tv_CP01_toll_standard_11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -81,7 +81,7 @@
                 tools:text="收費標準:  600/件" />
 
             <TextView
-                android:id="@+id/tv_CP01finsh_11"
+                android:id="@+id/tv_CP01_finsh_11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

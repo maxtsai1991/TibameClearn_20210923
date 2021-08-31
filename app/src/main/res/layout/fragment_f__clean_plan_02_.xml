@@ -86,53 +86,79 @@
                     android:layout_marginLeft="80dp"
                     android:text="@string/textCPpeople"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_people_11"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_clearscale1_1_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="人"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_people_11"
+                    app:layout_constraintStart_toEndOf="@+id/et_people_11"
+                    app:layout_constraintTop_toTopOf="@+id/et_people_11" />
 
                 <TextView
                     android:id="@+id/tv_clearscale2_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
                     android:text="@string/textCPping"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_ping_11"
                     app:layout_constraintStart_toStartOf="@+id/tv_clearscale1_11"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_clearscale1_11" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_people_11" />
+
+                <TextView
+                    android:id="@+id/tv_clearscale2_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="坪"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_ping_11"
+                    app:layout_constraintStart_toEndOf="@+id/et_ping_11"
+                    app:layout_constraintTop_toBottomOf="@+id/et_people_11" />
 
                 <TextView
                     android:id="@+id/tv_clearscale3_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/textCPnoticecontent"
+                    android:text="注意：人數僅供參考，實際派遣人數會依清潔量做調整"
+                    android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="@+id/tv_clearscale2_11"
                     app:layout_constraintTop_toBottomOf="@+id/et_ping_11" />
 
                 <EditText
                     android:id="@+id/et_people_11"
                     android:layout_width="50dp"
-                    android:layout_height="22dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:ems="10"
-                    android:hint="人"
+                    android:hint="1"
                     android:inputType="number"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/tv_clearscale1_11"
-                    app:layout_constraintTop_toTopOf="@+id/tv_clearscale1_11" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/et_ping_11"
                     android:layout_width="50dp"
-                    android:layout_height="22dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:ems="10"
-                    android:hint="坪數"
+                    android:hint="30"
                     android:inputType="number"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/tv_clearscale2_11"
-                    app:layout_constraintTop_toTopOf="@+id/tv_clearscale2_11" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_people_11" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -147,97 +173,101 @@
                 app:layout_constraintTop_toBottomOf="@+id/cb_memberinit_11">
 
                 <TextView
-                    android:id="@+id/tv_person_name"
+                    android:id="@+id/tv_CP02_person_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="36dp"
                     android:text="@string/textName"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_CP02_person_phone"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_person_phone"
+                    android:id="@+id/tv_CP02_person_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="11dp"
                     android:text="@string/textPhone"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_CP02_serviceperson_phone_11"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_person_name" />
+                    app:layout_constraintTop_toTopOf="@+id/et_CP02_serviceperson_phone_11" />
 
                 <TextView
-                    android:id="@+id/tv_person_email"
+                    android:id="@+id/tv_CP02_person_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
-                    android:layout_marginTop="12dp"
                     android:text="@string/textEmail"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_CP02_serviceperson_email_11"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_person_phone" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP02_serviceperson_phone_11" />
 
                 <TextView
-                    android:id="@+id/tv_person_address"
+                    android:id="@+id/tv_CP02_person_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
-                    android:layout_marginTop="12dp"
                     android:text="@string/textAddress"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_CP02_serviceperson_address_11"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_person_email" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP02_serviceperson_email_11" />
 
                 <EditText
-                    android:id="@+id/et_person_name"
+                    android:id="@+id/et_CP02_serviceperson_name_11"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:ems="10"
-                    android:inputType="textPassword"
+                    android:inputType="textPersonName"
                     android:textSize="18sp"
-                    app:layout_constraintStart_toEndOf="@+id/tv_person_name"
-                    app:layout_constraintTop_toTopOf="@+id/tv_person_name" />
+                    app:layout_constraintStart_toEndOf="@+id/tv_CP02_person_name"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/et_person_Phone"
+                    android:id="@+id/et_CP02_serviceperson_phone_11"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:ems="10"
                     android:inputType="phone"
                     android:textSize="18sp"
-                    app:layout_constraintStart_toEndOf="@+id/tv_person_phone"
-                    app:layout_constraintTop_toTopOf="@+id/tv_person_phone" />
+                    app:layout_constraintStart_toEndOf="@+id/tv_CP02_person_phone"
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP02_serviceperson_name_11" />
 
                 <EditText
-                    android:id="@+id/et_person_Email"
+                    android:id="@+id/et_CP02_serviceperson_email_11"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="45dp"
                     android:ems="10"
                     android:inputType="textEmailAddress"
                     android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/et_person_name"
-                    app:layout_constraintTop_toTopOf="@+id/tv_person_email" />
+                    app:layout_constraintStart_toStartOf="@+id/et_CP02_serviceperson_phone_11"
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP02_serviceperson_phone_11" />
 
                 <EditText
-                    android:id="@+id/et_payperson_Address"
+                    android:id="@+id/et_CP02_serviceperson_address_11"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:ems="10"
                     android:inputType="textPostalAddress"
                     android:textSize="18sp"
-                    app:layout_constraintStart_toEndOf="@+id/tv_person_address"
-                    app:layout_constraintTop_toTopOf="@+id/tv_person_address" />
+                    app:layout_constraintStart_toEndOf="@+id/tv_CP02_person_address"
+                    app:layout_constraintTop_toBottomOf="@+id/et_CP02_serviceperson_email_11" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -245,8 +275,8 @@
                 android:id="@+id/cb_memberinit_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
                 android:text="@string/textBT_same"
                 app:layout_constraintStart_toStartOf="@+id/linearLayout5"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
@@ -388,24 +418,24 @@
                 android:id="@+id/iv_CP02_takepicture_11"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
                 android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bt_CP02_tackpicture_11"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <ImageView
-                android:id="@+id/iv_CP02_takepicture"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="152dp"
-                android:layout_marginRight="152dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_CP02_takepicture_11"
-                app:layout_constraintTop_toTopOf="@+id/iv_CP02_takepicture_11"
-                app:srcCompat="@drawable/c3_icon_magnify_" />
+            <Button
+                android:id="@+id/bt_CP02_tackpicture_11"
+                android:layout_width="82dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:layout_marginTop="16dp"
+                android:text="拍照"
+                app:backgroundTint="@color/clearn"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <LinearLayout
                 android:id="@+id/linearLayout4"
@@ -453,8 +483,8 @@
                 android:id="@+id/et_CP02_remark_11"
                 android:layout_width="333dp"
                 android:layout_height="88dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginLeft="32dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
                 android:ems="10"

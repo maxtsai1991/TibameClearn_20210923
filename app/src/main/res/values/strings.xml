@@ -87,7 +87,7 @@
 
 
     <string-array name="arrayVersion">
-        <item>信用卡</item>
+        <item>GooglePay</item>
         <item>電子錢包</item>
     </string-array>
     <string name="title_activity_login">LoginActivity</string>
@@ -117,4 +117,24 @@
         <item>$800</item>
     </string-array>
 
+<!--commit 刪  信用卡改成GooglePay-->
+    <string-array name="array_servicearea1">
+        <item>台北市</item>
+        <item>新北市</item>
+    </string-array>
+
+    <string-array name="array_servicearea2">
+        <item>中正區</item>
+        <item>大同區</item>
+        <item>中山區</item>
+        <item>松山區</item>
+        <item>大安區</item>
+        <item>萬華區</item>
+        <item>信義區</item>
+        <item>士林區</item>
+        <item>北投區</item>
+        <item>內湖區</item>
+        <item>南港區</item>
+        <item>文山區</item>
+    </string-array>
 </resources>

@@ -17,8 +17,8 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="417dp"
+        android:layout_height="611dp"
         app:layout_constraintBottom_toTopOf="@+id/bt_CP01next_11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:text="@string/textData"
+                android:text="預訂服務日期"
                 android:textSize="25sp"
                 app:layout_constraintStart_toEndOf="@+id/cv_CP01item1_11"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -85,7 +85,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/bt_CP01date_11" />
 
             <TextView
-                android:id="@+id/tv_CP01onedata_11"
+                android:id="@+id/tv_CP01onedate_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -97,7 +97,7 @@
                 app:layout_constraintTop_toTopOf="@+id/bt_CP01date_11" />
 
             <TextView
-                android:id="@+id/tv_CP01manydata_11"
+                android:id="@+id/tv_CP01manydate_11"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginStart="24dp"
@@ -109,22 +109,22 @@
                 app:layout_constraintTop_toTopOf="@+id/bt_CP01date2_11" />
 
             <TextView
-                android:id="@+id/tv_CP01manydata2_11"
+                android:id="@+id/tv_CP01manydate2_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textSize="25dp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP01manydata_11"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydata_11" />
+                app:layout_constraintStart_toStartOf="@+id/tv_CP01manydate_11"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydate_11" />
 
             <TextView
-                android:id="@+id/tv_CP01manydata3_11"
+                android:id="@+id/tv_CP01manydate3_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textSize="25dp"
-                app:layout_constraintStart_toStartOf="@+id/tv_CP01manydata_11"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydata2_11" />
+                app:layout_constraintStart_toStartOf="@+id/tv_CP01manydate_11"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydate2_11" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_CP01item2_11"
@@ -135,7 +135,7 @@
                 app:cardBackgroundColor="#91C75C"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydata3_11">
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydate3_11">
 
                 <TextView
                     android:id="@+id/tv_CP01item2_11"
@@ -157,7 +157,7 @@
                 android:text="指定性別"
                 android:textSize="25sp"
                 app:layout_constraintStart_toEndOf="@+id/cv_CP01item2_11"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydata3_11" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP01manydate3_11" />
 
             <RadioGroup
                 android:id="@+id/rg_CP01gender_11"
@@ -237,21 +237,30 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_CP01data_3"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP01data_3" />
 
-            <SearchView
-                android:layout_width="213dp"
-                android:layout_height="37dp"
-                android:layout_marginStart="39dp"
-                android:layout_marginLeft="39dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginRight="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
+            <Spinner
+                android:id="@+id/sp_cp01_areaservice_11"
+                android:layout_width="125dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:entries="@array/array_servicearea1"
                 app:layout_constraintStart_toEndOf="@+id/auttv_CP01_choiseservice_11"
                 app:layout_constraintTop_toTopOf="@+id/auttv_CP01_choiseservice_11" />
 
+            <Spinner
+                android:id="@+id/sp_cp01_areaservice2_11"
+                android:layout_width="141dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:entries="@array/array_servicearea2"
+                app:layout_constraintStart_toEndOf="@+id/sp_cp01_areaservice_11"
+                app:layout_constraintTop_toTopOf="@+id/sp_cp01_areaservice_11" />
+
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="391dp"
-                android:layout_height="147dp"
-                android:layout_marginTop="32dp"
+                android:id="@+id/rc_CP01_servicearea_11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/auttv_CP01_choiseservice_11" />
