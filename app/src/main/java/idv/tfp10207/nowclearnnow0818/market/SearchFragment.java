@@ -3,6 +3,7 @@ package idv.tfp10207.nowclearnnow0818.market;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,9 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -31,13 +35,14 @@ import idv.tfp10207.nowclearnnow0818.R;
 public class SearchFragment extends Fragment {
 
     private static final int PRICE_STATE_UP = 1;
-
+    private static final String SHOPPINGCARLIST = "shoppingCarList";
+    private static final String TAG = "TAG_Search";
 
     private Activity activity;
     private RecyclerView rv_searchMerchFm_05;
     private SearchView  sv_Search_05;
     private TextView tv_Sellwell_05,tv_price_05;
-    private ImageView iv_up_05, iv_down_05, iv_SearchMerchToolbarToolbarBack_05, iv_SearchToolbarShop_05;
+    private ImageView iv_up_05, iv_down_05, iv_SearchMerchToolbarToolbarBack_05, iv_SearchToolbarShop_05, iv_SearchMerchToolbarToolbarShop_05;
     private List<MerchInfo> searchMerchInfoList = new ArrayList<>();
     private List<MerchInfo> searchedMerchInfoList = new ArrayList<>();
     private int priceState = 0;
@@ -78,7 +83,8 @@ public class SearchFragment extends Fragment {
         iv_up_05 = view.findViewById(R.id.iv_up_05);
         iv_down_05 = view.findViewById(R.id.iv_down_05);
         iv_SearchMerchToolbarToolbarBack_05 = view.findViewById(R.id.iv_SearchMerchToolbarToolbarBack_05);
-        iv_SearchToolbarShop_05 = view.findViewById(R.id.iv_SearchMerchToolbarToolbarShop_05);
+        //iv_SearchToolbarShop_05 = view.findViewById(R.id.iv_SearchMerchToolbarToolbarShop_05);
+        //iv_SearchMerchToolbarToolbarShop_05 = view.findViewById(R.id.iv_SearchMerchToolbarToolbarShop_05);
     }
 
     private void handleSearchMerchRecyclerView() {
@@ -92,12 +98,38 @@ public class SearchFragment extends Fragment {
             List<MerchInfo> list = market_homeFragment.getListMarketHome();
 
             for(MerchInfo merchInfo : list){
+
                 String name = merchInfo.getMerchName();
+                int drawAbleId = merchInfo.getDrawableID();
+
                 if(name.contains(bundle.getString("searchMerchName"))){
-                    searchMerchInfoList.add(merchInfo);
-                    searchedMerchInfoList.add(merchInfo);
+                        searchMerchInfoList.add(merchInfo);
+                        searchedMerchInfoList.add(merchInfo);
                 }
             }
+
+
+            for ( int i = 0 ; i < searchMerchInfoList.size() ; i++){
+
+                for(int k = i + 1 ; k < searchMerchInfoList.size() ; k++){
+
+                    if(searchMerchInfoList.get(i).getDrawableID() == searchMerchInfoList.get(k).getDrawableID()){
+                        searchMerchInfoList.remove(k);
+                    }
+                }
+            }
+
+            for ( int i = 0 ; i < searchedMerchInfoList.size() ; i++){
+
+                for(int k = i + 1 ; k < searchedMerchInfoList.size() ; k++){
+
+                    if(searchedMerchInfoList.get(i).getDrawableID() == searchedMerchInfoList.get(k).getDrawableID()){
+                        searchedMerchInfoList.remove(k);
+                    }
+                }
+            }
+
+
 
             rv_searchMerchFm_05.setAdapter(new MarketHomeAdapter(activity, searchMerchInfoList, 2));
             rv_searchMerchFm_05.setLayoutManager(new LinearLayoutManager(activity));
@@ -208,7 +240,38 @@ public class SearchFragment extends Fragment {
             navController.popBackStack();
         });
 
-
-
+//        iv_SearchMerchToolbarToolbarShop_05.setOnClickListener(view -> {
+//
+//            //讀入
+//            List<ShoppingCarMerch> shoppingCarMerchLoad = searchLoadShoppingCarMerchAllFile();
+//
+//            Bundle bundleShoppingList = new Bundle();
+//            bundleShoppingList.putSerializable("shoppingCarMerch", (Serializable)shoppingCarMerchLoad);
+//
+//            NavController navController = Navigation.findNavController(view);
+//            navController.navigate(R.id.action_searchFragment_to_shoppingListFragment);
+//
+//        });
     }
+
+    /**
+     * 讀檔
+     */
+
+    public List<ShoppingCarMerch> searchLoadShoppingCarMerchAllFile() {
+        try (
+                // 取得FileInputStream物件
+                FileInputStream fis = activity.openFileInput(SHOPPINGCARLIST);
+                // Java I/O相關程式
+                ObjectInputStream ois = new ObjectInputStream(fis)
+        ) {
+            return (List<ShoppingCarMerch>) ois.readObject();
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+        return null;
+    }
+
+
+
 }

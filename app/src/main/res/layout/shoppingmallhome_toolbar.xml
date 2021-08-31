@@ -8,13 +8,13 @@ android:layout_height="wrap_content"
 android:background="@color/maincolor">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_ShoppingCarListToolbar_05"
+        android:id="@+id/cl_OrderDetToolbar_05"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tv_ShoppingMallHomeToolbarToolBar_05"
+            android:id="@+id/tv_OrderDetToolBar_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -40,7 +40,7 @@ android:background="@color/maincolor">
             app:srcCompat="@drawable/icon_shopping_cart_05" />
 
         <ImageView
-            android:id="@+id/iv_ShoppingMallHomeToolbarBack_2"
+            android:id="@+id/iv_ShoppingMallHomeToolbarBack_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

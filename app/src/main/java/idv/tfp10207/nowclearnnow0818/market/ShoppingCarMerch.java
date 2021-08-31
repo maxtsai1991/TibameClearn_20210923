@@ -9,17 +9,26 @@ public class ShoppingCarMerch implements Serializable {
     private String merchName;
     private int merchPrice;
     private int merchNumber;
+    private boolean firstMerchItem;
+    //private boolean merchCheckStateAll;
+
+    private boolean sellerCheckBox;
+    private boolean merchCheckBox;
 
     public ShoppingCarMerch() {
     }
 
-    public ShoppingCarMerch(String memberId, String seller, int drawableID, String merchName, int merchPrice, int merchNumber) {
+    public ShoppingCarMerch(String memberId, String seller, int drawableID, String merchName, int merchPrice, int merchNumber, boolean firstMerchItem, /*boolean merchCheckStateAll,*/ boolean sellerCheckBox, boolean merchCheckBox) {
         this.memberId = memberId;
         this.seller = seller;
         this.drawableID = drawableID;
         this.merchName = merchName;
         this.merchPrice = merchPrice;
         this.merchNumber = merchNumber;
+        this.firstMerchItem = firstMerchItem;
+        //this.merchCheckStateAll = merchCheckStateAll;
+        this.sellerCheckBox = sellerCheckBox;
+        this.merchCheckBox = merchCheckBox;
     }
 
     public String getMemberId() {
@@ -68,5 +77,37 @@ public class ShoppingCarMerch implements Serializable {
 
     public void setMerchNumber(int merchNumber) {
         this.merchNumber = merchNumber;
+    }
+
+    public boolean getFirstMerchItem() {
+        return firstMerchItem;
+    }
+
+    public void setFirstMerchItem(boolean firstMerchItem) {
+        this.firstMerchItem = firstMerchItem;
+    }
+
+    /*public boolean getMerchCheckStateAll() {
+        return merchCheckStateAll;
+    }
+
+    public void setMerchCheckStateAll(boolean merchCheckState) {
+        this.merchCheckStateAll = merchCheckState;
+    }*/
+
+    public boolean getSellerCheckBox() {
+        return sellerCheckBox;
+    }
+
+    public void setSellerCheckBox(boolean sellerCheckBos) {
+        this.sellerCheckBox = sellerCheckBos;
+    }
+
+    public boolean getMerchCheckBox() {
+        return merchCheckBox;
+    }
+
+    public void setMerchCheckBox(boolean merchCheckBox) {
+        this.merchCheckBox = merchCheckBox;
     }
 }

@@ -2,13 +2,21 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cl_ordercomplete_05"
+    android:id="@+id/cl_OrderDetItview_05"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="market.OrderDetFragment">
 
+    <include
+        android:id="@+id/include9"
+        layout="@layout/orderdet_toolbar_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
     <Button
-        android:id="@+id/bt_shoplistBuyFm_"
+        android:id="@+id/bt_OrderDetBuyFm_05"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:text="@string/bottonBuy"
@@ -19,23 +27,78 @@
         tools:text="結帳" />
 
     <TextView
-        android:id="@+id/tv_orderdetFm_05"
+        android:id="@+id/tv_OrderDetFm_05"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:text="@string/textViewOrdetdet"
         android:textColor="@color/textcolor"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include9"
         tools:text="訂單詳情" />
 
+    <TextView
+        android:id="@+id/tv_OrderDetMoneyFm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/textViewOrderTotalMoney"
+        android:textColor="@color/textcolor"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_OrderDetFm_05"
+        tools:text="訂單總金額" />
+
+    <TextView
+        android:id="@+id/tv_OrderDetPayWayFm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/textViewPayWay"
+        android:textColor="@color/textcolor"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_OrderDetMoneyFm_05"
+        tools:text="付款方式" />
+
+    <TextView
+        android:id="@+id/tv_OrderDetPayWay1Fm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/textcolor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_OrderDetMoney1Fm_05"
+        tools:text="GooglePay" />
+
+    <TextView
+        android:id="@+id/tv_OrderDetMoney1Fm_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/textcolor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_OrderDetFm_05"
+        tools:text="總金額" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_orderdetFm_05"
+        android:id="@+id/rv_OrderDetFm_05"
         android:layout_width="match_parent"
-        android:layout_height="475dp"
+        android:layout_height="350dp"
         android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_orderdetFm_05"
+        app:layout_constraintTop_toBottomOf="@+id/tv_OrderDetFm_05"
         tools:layout_editor_absoluteX="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

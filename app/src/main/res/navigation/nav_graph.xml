@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_market_homeFragment2_to_merch_DesFragment"
             app:destination="@id/merch_DesFragment" />
+        <action
+            android:id="@+id/action_market_homeFragment_to_shoppingListFragment"
+            app:destination="@id/shoppingListFragment" />
     </fragment>
     <fragment
         android:id="@+id/memberCentreFragment"
@@ -63,6 +66,9 @@
         <action
             android:id="@+id/action_searchFragment_to_merch_DesFragment"
             app:destination="@id/merch_DesFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_shoppingListFragment"
+            app:destination="@id/shoppingListFragment" />
     </fragment>
     <fragment
         android:id="@+id/merch_DesFragment"
@@ -75,7 +81,11 @@
     <fragment
         android:id="@+id/shoppingListFragment"
         android:name="idv.tfp10207.nowclearnnow0818.market.ShoppingListFragment"
-        android:label="ShoppingListFragment" />
+        android:label="ShoppingListFragment" >
+        <action
+            android:id="@+id/action_shoppingListFragment_to_orderDetFragment"
+            app:destination="@id/orderDetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addDelCommodityFragment"
         android:name="idv.tfp10207.nowclearnnow0818.mycommodity.AddDelCommodityFragment"
@@ -190,4 +200,12 @@
         android:id="@+id/success_get_Fragment"
         android:name="idv.tfp10207.nowclearnnow0818.member.success_get_Fragment"
         android:label="success_get_Fragment" />
+    <fragment
+        android:id="@+id/orderDetFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.market.OrderDetFragment"
+        android:label="OrderDetFragment" >
+        <action
+            android:id="@+id/action_orderDetFragment_to_market_homeFragment2"
+            app:destination="@id/market_homeFragment2" />
+    </fragment>
 </navigation>
