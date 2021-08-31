@@ -23,7 +23,7 @@ public class HomePageFragment07 extends Fragment {
     private ImageView iv_reservepage;
     private ImageView iv_marketpage;
     private ImageView iv_memberpage;
-    private ImageView iv_homepage_announcement,iv_message07,iv_homepage_clear_service07;
+    private ImageView iv_homepage_announcement,iv_message07,iv_homepage_clear_service07,iv_premiumselectionlist07;
 
 
     @Override
@@ -55,6 +55,7 @@ public class HomePageFragment07 extends Fragment {
         iv_homepage_announcement = view.findViewById(R.id.iv_homepage_announcement);
         iv_message07 = view.findViewById(R.id.iv_message07);
         iv_homepage_clear_service07 = view.findViewById(R.id.iv_homepage_clear_service07);
+        iv_premiumselectionlist07 = view.findViewById(R.id.iv_premiumselectionlist07);
     }
 
 

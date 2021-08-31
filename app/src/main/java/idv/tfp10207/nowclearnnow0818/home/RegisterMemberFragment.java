@@ -1,5 +1,6 @@
 package idv.tfp10207.nowclearnnow0818.home;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,12 +14,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import idv.tfp10207.nowclearnnow0818.R;
 
 
 public class RegisterMemberFragment extends Fragment {
-    private EditText etmembername,etmembergender,etmemberemail,etmemberphone,etmemberaddress;
+    private final static String TAG = "TAG_MainFragment";
+    private Activity activity;
+    private EditText etmembername,etmembergender,etmemberemail,etmemberphone,etmemberaddress,et_register_account07,et_register_password07;
     private Button btmemberregister;
     private TextView tvdebug; //debug
 
@@ -27,7 +31,7 @@ public class RegisterMemberFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        activity = getActivity();
     }
 
     @Override
@@ -44,6 +48,8 @@ public class RegisterMemberFragment extends Fragment {
     }
 
     private void findViews(View view) {
+        et_register_account07 = view.findViewById(R.id.et_register_account07);
+        et_register_password07 = view.findViewById(R.id.et_register_password07);
         etmembername = view.findViewById(R.id.et_register_member_name07);
         etmembergender = view.findViewById(R.id.et_register_member_gender07);
         etmemberemail = view.findViewById(R.id.et_register_email07);
@@ -57,14 +63,17 @@ public class RegisterMemberFragment extends Fragment {
         btmemberregister.setOnClickListener(v -> {
             Navigation.findNavController(v)
                     .navigate(R.id.homePageFragment072);
+            Toast.makeText(activity, "註冊完成", Toast.LENGTH_SHORT).show();
         });
 
         tvdebug.setOnClickListener(v -> {
-            etmembername.setText("陳嘉");
-            etmembergender.setText("女");
-            etmemberemail.setText("abi@gmail.com");
-            etmemberphone.setText("0952123456");
-            etmemberaddress.setText("台北市大安區忠孝東路四段285號");
+            et_register_account07.setText("aaa@gmail.com");
+            et_register_password07.setText("98745612");
+            etmembername.setText("王大明");
+            etmembergender.setText("男");
+            etmemberemail.setText("aaa@gmail.com");
+            etmemberphone.setText("0922222222");
+            etmemberaddress.setText("台北市中山區吉林路");
         });
 
     }

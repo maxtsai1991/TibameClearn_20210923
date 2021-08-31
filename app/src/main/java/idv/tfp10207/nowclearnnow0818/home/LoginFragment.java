@@ -28,7 +28,8 @@ import idv.tfp10207.nowclearnnow0818.R;
  * 1. email 登入
  * 2. 帳號密碼不能為空值
  * 3. 測試帳號密碼: "abc@gmail.com" & "12345678" & "abi@gmail.com" & "123456" & "abl@gmail.com" & "654321"
- * 4.
+ * 4. 王大明(需求者): "aaa@gmail.com" & "98745612" & 李心潔(家事者):  "le55@gmail.com" & "85209888"
+ *
  */
 public class LoginFragment extends Fragment {
     private final static String TAG = "TAG_MainFragment";
@@ -80,9 +81,9 @@ public class LoginFragment extends Fragment {
             String password = etPassword.getText().toString();
             signIn(email, password);
         });
-        ivDebugLogin.setOnClickListener(v -> {
-            etAccount.setText("abi@gmail.com");
-            etPassword.setText("123456");
+        ivDebugLogin.setOnClickListener(v -> { // 快速貼上假資料帳號密碼
+            etAccount.setText("aaa@gmail.com");
+            etPassword.setText("98745612");
         });
 
     }
@@ -128,6 +129,7 @@ public class LoginFragment extends Fragment {
             tvLoginMessage.setText("帳號或密碼不可為空值");
             return true;
         } else {
+            tvLoginMessage.setText("歡迎回來!");
             return false;
         }
     }

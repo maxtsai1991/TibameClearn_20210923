@@ -1,5 +1,6 @@
 package idv.tfp10207.nowclearnnow0818.home;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,8 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 
 public class RegisterHouseworkInfoFragment extends Fragment {
+    private final static String TAG = "TAG_MainFragment";
+    private Activity activity;
     private EditText etaccount,etpassword,etaddress,etphone,etemail,etexpertise,etcharge,etother,etselfintroduction;
     private Button btregisterhouseworker;
     private TextView tvhousedebug;
@@ -28,7 +31,7 @@ public class RegisterHouseworkInfoFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        activity = getActivity();
     }
 
     @Override
@@ -63,15 +66,15 @@ public class RegisterHouseworkInfoFragment extends Fragment {
 
     private void handleRegisterHouseWorker() {
         tvhousedebug.setOnClickListener(v -> {
-            etaccount.setText("abi@gmail.com");
-            etpassword.setText("12345678");
-            etaddress.setText("台北市大安區忠孝東路四段");
-            etphone.setText("0952123456");
-            etemail.setText("abi@gmail.com");
-            etexpertise.setText("拖地&掃地");
-            etcharge.setText("$400");
-            etother.setText("可接受寵物");
-            etselfintroduction.setText("您好! 希望能為您服務~ ");
+            etaccount.setText("le55@gmail.com");
+            etpassword.setText("85209888");
+            etaddress.setText("台北市大同區重慶北路一段");
+            etphone.setText("0985472666");
+            etemail.setText("le55@gmail.com");
+            etexpertise.setText("廁所清潔");
+            etcharge.setText("$300");
+            etother.setText("不喜寵物");
+            etselfintroduction.setText("樂於學習新事物，\n我相信知識與經驗,是在不同環境中學到");
         });
 
         btregisterhouseworker.setOnClickListener(v -> {
