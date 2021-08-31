@@ -37,7 +37,7 @@
         android:layout_marginRight="8dp"
         android:text="儲存"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/include5"
         app:layout_constraintEnd_toEndOf="@+id/include5"
         app:layout_constraintTop_toTopOf="@+id/include5" />
@@ -45,11 +45,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout5"
         android:layout_width="409dp"
-        android:layout_height="601dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include5">
 
         <ImageView
             android:id="@+id/iv_clear12_01"
@@ -119,7 +120,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="244dp"
-            android:text="服務條件"
+            android:text="擅長"
             android:textColor="#151414"
             android:textSize="25dp"
             app:layout_constraintStart_toStartOf="parent"

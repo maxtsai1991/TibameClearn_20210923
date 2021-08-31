@@ -21,7 +21,7 @@
         android:id="@+id/tv_clear39_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="服務條件"
+        android:text="擅長"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/include7"
@@ -67,9 +67,8 @@
                 android:id="@+id/tv_clear40_01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="完成刑事紀錄證明檢查                    領有中華民國家事認證協會結業證書"
+                android:text="廁所清潔"
                 android:textSize="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

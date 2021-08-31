@@ -208,4 +208,24 @@
             android:id="@+id/action_orderDetFragment_to_market_homeFragment2"
             app:destination="@id/market_homeFragment2" />
     </fragment>
+    <fragment
+        android:id="@+id/cancelFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.CancelFragment"
+        android:label="fragment_cancel"
+        tools:layout="@layout/fragment_cancel" />
+    <fragment
+        android:id="@+id/cleanPlanFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.CleanPlanFragment"
+        android:label="fragment_clean_plan"
+        tools:layout="@layout/fragment_clean_plan" />
+    <fragment
+        android:id="@+id/join_memberFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.Join_memberFragment"
+        android:label="fragment_join_member"
+        tools:layout="@layout/fragment_join_member" />
+    <fragment
+        android:id="@+id/marketRelatedFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.MarketRelatedFragment"
+        android:label="fragment_market_related"
+        tools:layout="@layout/fragment_market_related" />
 </navigation>

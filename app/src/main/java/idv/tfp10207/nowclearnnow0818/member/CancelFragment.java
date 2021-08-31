@@ -1,7 +1,9 @@
 package idv.tfp10207.nowclearnnow0818.member;
 
 import android.app.Activity;
+import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,23 +17,33 @@ import androidx.navigation.Navigation;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import idv.tfp10207.nowclearnnow0818.R;
 
-public class QAFragment extends Fragment {
+
+public class CancelFragment extends Fragment {
+    private static final String TAG = "CancelFragment";
     private Activity activity;
-    private TextView tv_join_01, tv_Store_01, tv_Cancel_01, tv_Plan_01;
     private ImageView iv_back_01;
+    private TextView tv_cancel_01;
+    private AssetManager assetManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         activity = getActivity();
+        assetManager = activity.getAssets();
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_q_a, container, false);
+        return inflater.inflate(R.layout.fragment_cancel, container, false);
     }
 
     @Override
@@ -43,32 +55,33 @@ public class QAFragment extends Fragment {
     }
 
     private void findView(View view) {
+        tv_cancel_01 = view.findViewById(R.id.tv_cancel_01);
         iv_back_01 = view.findViewById(R.id.iv_back_01);
-        tv_join_01 = view.findViewById(R.id.tv_join_01);
-        tv_Plan_01 = view.findViewById(R.id.tv_Plan_01);
-        tv_Store_01 = view.findViewById(R.id.tv_Store_01);
-        tv_Cancel_01 = view.findViewById(R.id.tv_Cancel_01);
     }
 
     private void handleTextView() {
-        tv_join_01.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(R.id.join_memberFragment);
-        });
-        tv_Plan_01.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(R.id.cleanPlanFragment);
-        });
-        tv_Store_01.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(R.id.marketRelatedFragment);
-        });
-        tv_Cancel_01.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(R.id.cancelFragment);
-        });
+        try (
+                // 開啟檔案，並取得InputStream物件
+                InputStream is = assetManager.open("Cancel");
+                // Java I/O相關程式
+                InputStreamReader isr = new InputStreamReader(is);
+                BufferedReader br = new BufferedReader(isr)
+        ) {
+            StringBuilder text = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                text.append(line)
+                        .append("\n");
+            }
+            tv_cancel_01.setText(text);
+        } catch (IOException e) {
+            Log.e(TAG, e.toString());
+        }
     }
-
 
     private void handleButton(View view) {
         iv_back_01.setOnClickListener(v -> {
-            Navigation.findNavController(view).popBackStack(R.id.QAFragment,true);
+            Navigation.findNavController(view).popBackStack(R.id.cancelFragment,true);
         });
     }
 }
