@@ -155,6 +155,8 @@ public class F_CleanPlan_02_Fragment extends Fragment {
 
 //  1.預估清潔規模
     private void handleCpPersonScale(View view) {
+
+
         // 7-1取得資料
         final String peoplenumber = String.valueOf(et_people_11.getText());
         final String ping = String.valueOf(et_ping_11.getText());
@@ -162,6 +164,7 @@ public class F_CleanPlan_02_Fragment extends Fragment {
         bundle02.putString(PEOPLENUMBER, peoplenumber);
         bundle02.putString(PING, ping);
 
+        //直接帶入資料
         tv_clearscale1_1_11.setOnClickListener(v -> {
             et_people_11.setText("1");
             et_ping_11.setText("22");
@@ -209,11 +212,12 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     //5.同會員資料
     private void handleMemberCheckBoxes(View view) {
         final CompoundButton.OnCheckedChangeListener listener = (checkBox, isChecked) -> {
-            //            帶入會員資料
+            //帶入會員資料 寫死
             et_CP02_serviceperson_name_11.setText("王大明");
             et_CP02_serviceperson_phone_11.setText("0922222222");
             et_CP02_serviceperson_email_11.setText("aaa@gmail.com");
             et_CP02_serviceperson_address_11.setText("台北市中山區吉林路");
+
             // 7-1取得資料
             final String servicename = String.valueOf(et_CP02_serviceperson_name_11.getText());
             final String servicephone = String.valueOf(et_CP02_serviceperson_phone_11.getText());
@@ -241,6 +245,40 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     private void handleNextBtAlert(View view) {
         bt_CP02next_11.setOnClickListener(v -> {
             activity = getActivity();
+
+            //判斷不可為空值
+            if (et_people_11.getText().toString().trim().isEmpty()) {
+                et_people_11.setError("不可為空");
+                return;
+            }
+
+            if (et_ping_11.getText().toString().trim().isEmpty()) {
+                et_ping_11.setError("不可為空");
+                return;
+            }
+
+            if (et_CP02_serviceperson_name_11.getText().toString().trim().isEmpty()) {
+                et_CP02_serviceperson_name_11.setError("不可為空");
+                return;
+            }
+
+            if (et_CP02_serviceperson_phone_11.getText().toString().trim().isEmpty()) {
+                et_CP02_serviceperson_phone_11.setError("不可為空");
+                return;
+            }
+
+            if (et_CP02_serviceperson_email_11.getText().toString().trim().isEmpty()) {
+                et_CP02_serviceperson_email_11.setError("不可為空");
+                return;
+            }
+
+            if (et_CP02_serviceperson_address_11.getText().toString().trim().isEmpty()) {
+                et_CP02_serviceperson_address_11.setError("不可為空");
+                return;
+            }
+
+
+
             new AlertDialog.Builder(getActivity())                    // 實例化AlertDialog.Builder物件
                     .setTitle("訂單金額")                                 // 設定標題文字
                     //               用基本費用與規模去做計算
