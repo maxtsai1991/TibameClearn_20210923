@@ -111,11 +111,7 @@
         android:name="idv.tfp10207.nowclearnnow0818.home.PlacardFragment07"
         android:label="fragment_placard07"
         tools:layout="@layout/fragment_placard07" />
-    <fragment
-        android:id="@+id/premiumselectionlistFragment07"
-        android:name="idv.tfp10207.nowclearnnow0818.home.PremiumselectionlistFragment07"
-        android:label="fragment_premiumselectionlist07"
-        tools:layout="@layout/fragment_premiumselectionlist07" />
+
     <fragment
         android:id="@+id/resetPasswordFragment"
         android:name="idv.tfp10207.nowclearnnow0818.home.ResetPasswordFragment"
@@ -209,6 +205,7 @@
             app:destination="@id/market_homeFragment2" />
     </fragment>
     <fragment
+
         android:id="@+id/cancelFragment"
         android:name="idv.tfp10207.nowclearnnow0818.member.CancelFragment"
         android:label="fragment_cancel"
@@ -228,4 +225,15 @@
         android:name="idv.tfp10207.nowclearnnow0818.member.MarketRelatedFragment"
         android:label="fragment_market_related"
         tools:layout="@layout/fragment_market_related" />
+    <fragment
+        android:id="@+id/f_Premiumselection_List_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.home.F_Premiumselection_List_Fragment"
+        android:label="fragment_f__premiumselection__list_"
+        tools:layout="@layout/fragment_f__premiumselection__list_" />
+    =======
+        android:id="@+id/f_Premiumselection_List_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.home.F_Premiumselection_List_Fragment"
+        android:label="fragment_f__premiumselection__list_"
+        tools:layout="@layout/fragment_f__premiumselection__list_" />
+>>>>>>> Stashed changes
 </navigation>
