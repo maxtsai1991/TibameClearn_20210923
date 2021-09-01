@@ -117,7 +117,7 @@
         <item>$800</item>
     </string-array>
 
-<!--commit 刪  信用卡改成GooglePay-->
+    <!--commit 刪  信用卡改成GooglePay-->
     <string-array name="array_servicearea1">
         <item>台北市</item>
         <item>新北市</item>

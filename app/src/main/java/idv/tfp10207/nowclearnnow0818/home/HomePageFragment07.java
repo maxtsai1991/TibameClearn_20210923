@@ -23,7 +23,7 @@ public class HomePageFragment07 extends Fragment {
     private ImageView iv_reservepage;
     private ImageView iv_marketpage;
     private ImageView iv_memberpage;
-    private ImageView iv_homepage_announcement,iv_message07,iv_homepage_clear_service07,iv_premiumselectionlist07;
+    private ImageView iv_homepage_announcement0701,iv_message07,iv_homepage_clear_service0701,iv_premiumselectionlist0701;
 
 
     @Override
@@ -52,10 +52,10 @@ public class HomePageFragment07 extends Fragment {
         iv_reservepage = view.findViewById(R.id.iv_reservepage);
         iv_marketpage = view.findViewById(R.id.iv_marketpage);
         iv_memberpage = view.findViewById(R.id.iv_memberpage);
-        iv_homepage_announcement = view.findViewById(R.id.iv_homepage_announcement);
+        iv_homepage_announcement0701 = view.findViewById(R.id.iv_homepage_announcement0701);
         iv_message07 = view.findViewById(R.id.iv_message07);
-        iv_homepage_clear_service07 = view.findViewById(R.id.iv_homepage_clear_service07);
-        iv_premiumselectionlist07 = view.findViewById(R.id.iv_premiumselectionlist07);
+        iv_homepage_clear_service0701 = view.findViewById(R.id.iv_homepage_clear_service0701);
+        iv_premiumselectionlist0701 = view.findViewById(R.id.iv_premiumselectionlist0701);
     }
 
 
@@ -77,7 +77,7 @@ public class HomePageFragment07 extends Fragment {
             navController.navigate(R.id.action_homePageFragment072_to_memberCentreFragment);
         });
 
-        iv_homepage_announcement.setOnClickListener(v -> {
+        iv_homepage_announcement0701.setOnClickListener(v -> {
             Navigation.findNavController(v)
                     .navigate(R.id.placardFragment07);
         });
@@ -87,11 +87,15 @@ public class HomePageFragment07 extends Fragment {
                     .navigate(R.id.messageListFragment07);
         });
 
-        iv_homepage_clear_service07.setOnClickListener(v -> {
+        iv_homepage_clear_service0701.setOnClickListener(v -> {
             Navigation.findNavController(v)
                     .navigate(R.id.f_CleanplanFragment);
         });
 
+        iv_premiumselectionlist0701.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.f_Premiumselection_List_Fragment);
+        });
 
     }
 
