@@ -40,7 +40,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
-            android:text="CP000001"
+            android:text="CP000013"
             app:layout_constraintStart_toEndOf="@+id/tv_CP05_order2_11"
             app:layout_constraintTop_toBottomOf="@+id/tv_CP05_order_11" />
 
@@ -54,8 +54,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
-            android:layout_width="412dp"
-            android:layout_height="wrap_content"
+            android:layout_width="384dp"
+            android:layout_height="564dp"
             android:layout_marginTop="16dp"
             android:paddingLeft="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +78,76 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/tv_CP05_orderscale_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="媒合詳情"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_order1_11" />
+
+                <TextView
+                    android:id="@+id/tv_CP05_orderscale1_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="清潔規模_人"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderscale_11" />
+
+                <TextView
+                    android:id="@+id/tv_CP05_orderscale2_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="清潔規模_坪"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderscale1_11" />
+
+                <TextView
+                    android:id="@+id/tv_CP05_orderscale3_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="清潔時間_皆可"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderscale2_11" />
+
+                <TextView
+                    android:id="@+id/tv_CP05_orderscale4_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="備註"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderscale3_11" />
+
+                <TextView
+                    android:id="@+id/tv_CP05_orderscale5_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="選擇家事者"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderscale4_11" />
+
+                <TextView
                     android:id="@+id/tv_CP05_orderpay_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -85,7 +155,7 @@
                     android:text="付款人"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_order1_11" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderscale5_11" />
 
                 <TextView
                     android:id="@+id/tv_CP05_orderpay1_11"
@@ -160,7 +230,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderpayway1_11" />
 
                 <TextView
-                    android:id="@+id/tv_CP04_orderclient_11"
+                    android:id="@+id/tv_CP05_orderclient_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -177,7 +247,7 @@
                     android:text="服務對象名稱:"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/tv_CP05_orderpayway2_11"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderclient_11" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderclient_11" />
 
                 <TextView
                     android:id="@+id/tv_CP05_orderclient2_11"
@@ -210,7 +280,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderclient3_11" />
 
                 <TextView
-                    android:id="@+id/tv_CP04_orderclient4_2"
+                    android:id="@+id/tv_CP05_orderclient4_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
