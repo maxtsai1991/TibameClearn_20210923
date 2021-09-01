@@ -113,7 +113,15 @@ public class F_CleanPlan_03_Fragment extends Fragment {
             new AlertDialog.Builder(getActivity())                    // 實例化AlertDialog.Builder物件
                     .setTitle("確認媒合")                                 // 設定標題文字
     //簡單的訂單明細與訂單付款金額
-                    .setMessage("本次媒合詳情:"+"")             // 設定訊息文字
+                    .setMessage("本次媒合詳情:"+"\n"+"預估清潔規模："+"1"+"人"
+                            +"\n"+"預估清潔規模："+"22"+"坪"
+                            +"\n"+"清潔時間："+"早上"
+                            +"\n"+"備註："+"家中有養狗，清理時請注意，謝謝!"
+                            +"\n"+"家事者："+"黃永珠"
+                            +"\n"+"付款人姓名："+"王大明"
+                            +"\n"+"服務對象姓名："+"王大明"
+                            +"\n"+"\n"+"訂單金額："+"7450"+"元"
+                    )             // 設定訊息文字
     // 設定確定按鈕-顯示文字及監聽器
                     .setPositiveButton("確認", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {

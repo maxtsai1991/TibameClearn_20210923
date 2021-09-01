@@ -21,6 +21,12 @@ public class F_CleanPlan_05_Fragment extends Fragment {
     //  1.訂單詳情
     private TextView tv_CP04_order_number2_11;
 
+    private  TextView tv_CP05_orderscale1_11;
+    private  TextView tv_CP05_orderscale2_11;
+    private  TextView tv_CP05_orderscale3_11;
+    private  TextView tv_CP05_orderscale4_11;
+    private  TextView tv_CP05_orderscale5_11;
+
     private TextView tv_CP05_orderpay1_11;
     private TextView tv_CP05_orderpay2_11;
     private TextView tv_CP05_orderpay3_11;
@@ -59,25 +65,57 @@ public class F_CleanPlan_05_Fragment extends Fragment {
 
         findview(view);
 //        handlebutton();
+        handleOrder(view);
         handletoolbar(view);
 
     }
 
     private void findview(View view) {
 
-        tv_CP05_orderpay1_11 = view.findViewById(R.id.tv_CP04_orderpay1_11);
-        tv_CP05_orderpay2_11 = view.findViewById(R.id.tv_CP04_orderpay2_11);
-        tv_CP05_orderpay3_11 = view.findViewById(R.id.tv_CP04_orderpay3_11);
-        tv_CP05_orderpay4_11 = view.findViewById(R.id.tv_CP04_orderpay4_11);
+        tv_CP05_orderscale1_11 = view.findViewById(R.id.tv_CP05_orderscale1_11);
+        tv_CP05_orderscale2_11 = view.findViewById(R.id.tv_CP05_orderscale2_11);
+        tv_CP05_orderscale3_11 = view.findViewById(R.id.tv_CP05_orderscale3_11);
+        tv_CP05_orderscale4_11 = view.findViewById(R.id.tv_CP05_orderscale4_11);
+        tv_CP05_orderscale5_11 = view.findViewById(R.id.tv_CP05_orderscale5_11);
 
-        tv_CP05_orderpayway1_11 = view.findViewById(R.id.tv_CP04_orderpayway1_11);
-        tv_CP05_orderpayway2_11 = view.findViewById(R.id.tv_CP04_orderpayway2_11);
+        tv_CP05_orderpay1_11 = view.findViewById(R.id.tv_CP05_orderpay1_11);
+        tv_CP05_orderpay2_11 = view.findViewById(R.id.tv_CP05_orderpay2_11);
+        tv_CP05_orderpay3_11 = view.findViewById(R.id.tv_CP05_orderpay3_11);
+        tv_CP05_orderpay4_11 = view.findViewById(R.id.tv_CP05_orderpay4_11);
+
+        tv_CP05_orderpayway1_11 = view.findViewById(R.id.tv_CP05_orderpayway1_11);
+        tv_CP05_orderpayway2_11 = view.findViewById(R.id.tv_CP05_orderpayway2_11);
 
         tv_CP05_orderclient1_11 = view.findViewById(R.id.tv_CP05_orderclient1_11);
-        tv_CP05_orderclient2_11 = view.findViewById(R.id.tv_CP04_orderclient2_11);
-        tv_CP05_orderclient3_11 = view.findViewById(R.id.tv_CP04_orderclient3_11);
-        tv_CP05_orderclient4_11 = view.findViewById(R.id.tv_CP04_orderclient4_11);
+        tv_CP05_orderclient2_11 = view.findViewById(R.id.tv_CP05_orderclient2_11);
+        tv_CP05_orderclient3_11 = view.findViewById(R.id.tv_CP05_orderclient3_11);
+        tv_CP05_orderclient4_11 = view.findViewById(R.id.tv_CP05_orderclient4_11);
     }
+
+
+//顯示訂單
+    private void handleOrder(View view) {
+        //寫死 媒合詳情
+        tv_CP05_orderscale1_11.setText("預估清潔規模："+"1"+"人");
+        tv_CP05_orderscale2_11.setText("預估清潔規模："+"22"+"坪");
+        tv_CP05_orderscale3_11.setText("清潔時間："+"早上");
+        tv_CP05_orderscale4_11.setText("備註："+"家中有養狗，清理時請注意，謝謝!");
+        tv_CP05_orderscale5_11.setText("家事者："+"黃永珠");
+        //寫死 付款人 帶入會員資料
+        tv_CP05_orderpay1_11.setText("付款人姓名："+"王大明");
+        tv_CP05_orderpay2_11.setText("付款人手機："+"0922222222");
+        tv_CP05_orderpay3_11.setText("付款人信箱："+"aaa@gmail.com");
+        tv_CP05_orderpay4_11.setText("付款人地址："+"台北市中山區吉林路");
+        //寫死 付款資訊 帶入會員資料
+        tv_CP05_orderpayway1_11.setText("繳費方式："+"Googlepay");
+        tv_CP05_orderpayway2_11.setText("繳費金額："+"7450元");
+        //寫死 服務對象 帶入會員資料
+        tv_CP05_orderclient1_11.setText("服務對象姓名："+"王大明");
+        tv_CP05_orderclient2_11.setText("服務對象手機："+"0922222222");
+        tv_CP05_orderclient3_11.setText("服務對象信箱："+"aaa@gmail.com");
+        tv_CP05_orderclient4_11.setText("服務對象地址："+"台北市中山區吉林路");
+    }
+
 
 
     //    客製Toolbar
