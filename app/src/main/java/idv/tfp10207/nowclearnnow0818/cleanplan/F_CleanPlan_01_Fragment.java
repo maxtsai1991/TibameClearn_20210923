@@ -155,15 +155,13 @@ public class F_CleanPlan_01_Fragment extends Fragment
 //  2.指定性別
 
     private void handleRadioGroup(View view) {
+//       當 RadioGroup 中的某個選項被選中實觸發
         rg_CP01gender_11.setOnCheckedChangeListener((group, checkedId) -> {
             final RadioButton rb_CP01gender_11 = group.findViewById(checkedId);
 //            textView待修改為bundle
 //            textView.setText("(RadioButton) " + rb_CP01gender_11.getText());
 
-            // 7-1取得資料
-            final String gender = String.valueOf(rb_CP01gender_11.getText());
-            // 7-2資料放入Bundle物件
-            bundle01.putString(GENDER, gender);
+
         });
     }
 
@@ -252,14 +250,16 @@ public class F_CleanPlan_01_Fragment extends Fragment
 //  next button
     private void handlenext(View view) {
         bt_cp01_next.setOnClickListener(v -> {
+            //判斷不可為空值
+            if (tv_CP01onedate_11.getText().toString().trim().isEmpty()) {
+                tv_CP01onedate_11.setError("不可為空");
+                return;
+            }
 
-            // 4-1取得日期資料
-            final String onedate = String.valueOf(tv_CP01onedate_11.getText());
-            // 4-2資料放入Bundle物件
-            bundle01.putString(ONEDATE, onedate);
-            // 4-2測試
-            Log.d("onedate=", ONEDATE);
-            Log.d("gender=", GENDER);
+
+//            Log.d("onedate=", ONEDATE);
+//            Log.d("gender=", GENDER);
+
 
             Navigation.findNavController(view).navigate(R.id.f_CleanPlan_02_Fragment);
 
