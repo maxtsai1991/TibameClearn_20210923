@@ -1,11 +1,12 @@
 package idv.tfp10207.nowclearnnow0818.cleanplan;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.fragment.app.Fragment;
 
 import idv.tfp10207.nowclearnnow0818.R;
 
@@ -35,7 +36,7 @@ public class Reserve_02_Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment reserve_02_Fragment.
+     * @return A new instance of fragment Reserve_02_Fragment.
      */
     // TODO: Rename and change types and number of parameters
     public static Reserve_02_Fragment newInstance(String param1, String param2) {
