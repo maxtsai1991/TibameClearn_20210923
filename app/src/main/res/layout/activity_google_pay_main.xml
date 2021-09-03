@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_GooglePayMain_05"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark"
+    tools:context=".market.GooglePayMainActivity">
+
+    <include
+        android:id="@+id/include11"
+        layout="@layout/googlepay_toolbar_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/bt_cl_GooglePayMainBuy_05"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/textViewConfirmPay"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/searchbackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cl_GooglePayMainCardNo_05"
+        tools:text="確認付款" />
+
+    <TextView
+        android:id="@+id/tv_cl_GooglePayMainPrice_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:textColor="@color/textcolor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include11"
+        tools:text="訂單總金額 : $ 10" />
+
+    <TextView
+        android:id="@+id/tv_cl_GooglePayMainCardNo_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/textcolor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_cl_GooglePayMainBuyWithPay_05"
+        tools:text="卡號" />
+
+    <TextView
+        android:id="@+id/cl_GooglePayMainResult_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/textcolor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_cl_GooglePayMainBuy_05"
+        tools:text="結果" />
+
+    <include
+        android:id="@+id/bt_cl_GooglePayMainBuyWithPay_05"
+        layout="@layout/googlepay_button_05"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cl_GooglePayMainPrice_05" />
+</androidx.constraintlayout.widget.ConstraintLayout>

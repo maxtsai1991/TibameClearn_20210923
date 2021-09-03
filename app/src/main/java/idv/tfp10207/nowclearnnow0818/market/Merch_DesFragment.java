@@ -51,7 +51,7 @@ public class Merch_DesFragment extends Fragment {
     private static final String SHOPPINGCARLIST = "shoppingCarList";
     private Activity activity;
     private ImageView iv_MerchDes1_05, iv_MerchDesInfoToolbarBack_05, iv_MerchDesToolbarShopcar_05;
-    private TextView tv_MerchName_05, tv_MerchPrice_05, tv_MerchContent_05,tv_MerchBrand_05, tv_MerchNum_05; /*tv_MerchDes_05, tv_MerchSoldNum_05*/
+    private TextView tv_MerchName_05, tv_MerchPrice_05, tv_MerchContent_05, tv_MerchBrand_05, tv_MerchNum_05; /*tv_MerchDes_05, tv_MerchSoldNum_05*/
     private ImageButton ib_Shopping_05, ib_Buy_05;
     //private Bundle bundle = getArguments();
     private ViewGroup mRootView;
@@ -69,7 +69,6 @@ public class Merch_DesFragment extends Fragment {
     private String shoppingListMemberID;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +78,7 @@ public class Merch_DesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        activity =  getActivity(); //取得Activity參考
+        activity = getActivity(); //取得Activity參考
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_merch_des, container, false);
@@ -127,10 +126,8 @@ public class Merch_DesFragment extends Fragment {
         shoppintListPoto = bundle.getInt("merchPoto");
         shoppintListSeller = bundle.getString("sellerName");
         shoppintListMerchName = bundle.getString("merchName");
-        shoppintListMerchPrice =bundle.getInt("merchPrice");
+        shoppintListMerchPrice = bundle.getInt("merchPrice");
         shoppingListMemberID = bundle.getString("memberID");
-
-
 
 
     }
@@ -140,9 +137,9 @@ public class Merch_DesFragment extends Fragment {
         ib_Shopping_05.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popupWindow  popupWindow = new popupWindow(activity, 1);
+                popupWindow popupWindow = new popupWindow(activity, 1);
                 View view = LayoutInflater.from(activity).inflate(R.layout.popwindows_shoppint_car, null);
-                popupWindow .showAtLocation(view, Gravity.CENTER, 0, 0);
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
             }
         });
     }
@@ -153,18 +150,15 @@ public class Merch_DesFragment extends Fragment {
         ib_Buy_05.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popupWindow  popupWindow = new popupWindow(activity, 2);
+                popupWindow popupWindow = new popupWindow(activity, 2);
                 View view = LayoutInflater.from(activity).inflate(R.layout.popwindows_buy, null);
-                popupWindow .showAtLocation(view, Gravity.CENTER, 0, 0);
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
             }
         });
     }
 
 
-
-
-
-    public class popupWindow extends PopupWindow implements View.OnClickListener{
+    public class popupWindow extends PopupWindow implements View.OnClickListener {
         View view;
         Button bt_popWindowsAddShop_05, bt_popWindowsBuy_05;
         TextView tv_popWindowsShopPrice_05, tv_popWindowsShopNum_05, tv_popWindowsShopMerNum_05, tv_popWindowsBuyPrice_05, tv_popWindowsBuyMerNum_05, tv_popWindowsBuyNum_05;
@@ -172,11 +166,11 @@ public class Merch_DesFragment extends Fragment {
         EditText etn_popWindowsShop_05, etn_popWindowsBuy_05;
 
 
-        public popupWindow (Context mContext, int popWindowsState){
+        public popupWindow(Context mContext, int popWindowsState) {
 
             Bundle bundle = getArguments();
 
-            if(popWindowsState == POPWINDOWS_SHOPCAR){
+            if (popWindowsState == POPWINDOWS_SHOPCAR) {
                 this.view = LayoutInflater.from(mContext).inflate(R.layout.popwindows_shoppint_car, null);
                 bt_popWindowsAddShop_05 = view.findViewById(R.id.bt_popWindowsAddShop_05);
                 tv_popWindowsShopPrice_05 = view.findViewById(R.id.tv_popWindowsShopPrice_05);
@@ -191,8 +185,7 @@ public class Merch_DesFragment extends Fragment {
                 tv_popWindowsShopMerNum_05.setText("商品數量 : " + bundle.getInt("merchNumber"));
                 tv_popWindowsShopNum_05.setText("購買數量 : ");
 
-            }
-            else if (popWindowsState == POPWINDOWS_BUY){
+            } else if (popWindowsState == POPWINDOWS_BUY) {
                 this.view = LayoutInflater.from(mContext).inflate(R.layout.popwindows_buy, null);
                 bt_popWindowsBuy_05 = view.findViewById(R.id.bt_popWindowsBuy_05);
                 tv_popWindowsBuyPrice_05 = view.findViewById(R.id.tv_popWindowsBuyPrice_05);
@@ -214,10 +207,9 @@ public class Merch_DesFragment extends Fragment {
                 public boolean onTouch(View v, MotionEvent event) {
                     int height = 0;
 
-                    if(popWindowsState == POPWINDOWS_SHOPCAR) {
+                    if (popWindowsState == POPWINDOWS_SHOPCAR) {
                         height = view.findViewById(R.id.cl_popWindowAddShop_05).getTop();
-                    }
-                    else if (popWindowsState == POPWINDOWS_BUY){
+                    } else if (popWindowsState == POPWINDOWS_BUY) {
                         height = view.findViewById(R.id.cl_popWindowBuy_05).getTop();
                     }
 
@@ -240,16 +232,12 @@ public class Merch_DesFragment extends Fragment {
 
             //彈出視窗設定監聽器
 
-            if(popWindowsState == POPWINDOWS_SHOPCAR) {
+            if (popWindowsState == POPWINDOWS_SHOPCAR) {
                 bt_popWindowsAddShop_05.setOnClickListener(this);
                 iv_popWindowsShopCancel_05.setOnClickListener(this);
-            }
-            else if (popWindowsState == POPWINDOWS_BUY){
+            } else if (popWindowsState == POPWINDOWS_BUY) {
                 bt_popWindowsBuy_05.setOnClickListener(this);
                 iv_popWindowsBuyCancel_05.setOnClickListener(this);
-
-
-
 
 
             }
@@ -264,10 +252,14 @@ public class Merch_DesFragment extends Fragment {
             List<ShoppingCarMerch> shoppingCarMerchLoad = loadShoppingCarMerchAllFile();
 
 
-
-            switch (id){
+            switch (id) {
                 case R.id.bt_popWindowsAddShop_05:
-                    playAnim(v);
+
+                    if("".equals(etn_popWindowsShop_05.getText().toString().trim())) {
+                        break;
+                    }
+
+                        playAnim(v);
 
                     /*bundleShoppingList.putInt("shoppingListPoto", shoppintListPoto);
                     bundleShoppingList.putString("shoppingListSeller", shoppintListSeller);
@@ -276,81 +268,75 @@ public class Merch_DesFragment extends Fragment {
                     bundleShoppingList.putInt("shoppingListMerchNumber", Integer.parseInt(String.valueOf(etn_popWindowsShop_05.getText())));*/
 
 
+                        if (shoppingCarMerchLoad == null || shoppingCarMerchLoad.size() == 0) {
+                            shoppingCarMerchLoad = new ArrayList<>();
+                            shoppingCarMerch.setDrawableID(shoppintListPoto);
+                            shoppingCarMerch.setSeller(shoppintListSeller);
+                            shoppingCarMerch.setMerchName(shoppintListMerchName);
+                            shoppingCarMerch.setMerchPrice(shoppintListMerchPrice);
+                            shoppingCarMerch.setMerchNumber(Integer.parseInt(String.valueOf(etn_popWindowsShop_05.getText())));
+                            shoppingCarMerch.setMemberId(shoppingListMemberID);
 
-                    if(shoppingCarMerchLoad == null || shoppingCarMerchLoad.size() == 0){
-                        shoppingCarMerchLoad = new ArrayList<>();
-                        shoppingCarMerch.setDrawableID(shoppintListPoto);
-                        shoppingCarMerch.setSeller(shoppintListSeller);
-                        shoppingCarMerch.setMerchName(shoppintListMerchName);
-                        shoppingCarMerch.setMerchPrice(shoppintListMerchPrice);
-                        shoppingCarMerch.setMerchNumber(Integer.parseInt(String.valueOf(etn_popWindowsShop_05.getText())));
-                        shoppingCarMerch.setMemberId(shoppingListMemberID);
-
-                        shoppingCarMerch.setFirstMerchItem(true);
-                        //addShoppingCarMerchNum = shoppingCarMerch.getMerchNumber();
-
-                        shoppingCarMerchLoad.add(shoppingCarMerch);
-
-                        //存檔
-                        saveShoppingCarMerchAllFile(shoppingCarMerchLoad);
-
-                    }
-                    else{
-                        shoppingCarMerch.setDrawableID(shoppintListPoto);
-                        shoppingCarMerch.setSeller(shoppintListSeller);
-                        shoppingCarMerch.setMerchName(shoppintListMerchName);
-                        shoppingCarMerch.setMerchPrice(shoppintListMerchPrice);
-                        shoppingCarMerch.setMerchNumber(Integer.parseInt(String.valueOf(etn_popWindowsShop_05.getText())));
-                        shoppingCarMerch.setMemberId(shoppingListMemberID);
-
-                        if ( shoppingCarMerchLoad.get(shoppingCarMerchLoad.size() - 1).getMemberId() != shoppingListMemberID ){
                             shoppingCarMerch.setFirstMerchItem(true);
-                        }
+                            //addShoppingCarMerchNum = shoppingCarMerch.getMerchNumber();
+
+                            shoppingCarMerchLoad.add(shoppingCarMerch);
+
+                            //存檔
+                            saveShoppingCarMerchAllFile(shoppingCarMerchLoad);
+
+                        } else {
+                            shoppingCarMerch.setDrawableID(shoppintListPoto);
+                            shoppingCarMerch.setSeller(shoppintListSeller);
+                            shoppingCarMerch.setMerchName(shoppintListMerchName);
+                            shoppingCarMerch.setMerchPrice(shoppintListMerchPrice);
+                            shoppingCarMerch.setMerchNumber(Integer.parseInt(String.valueOf(etn_popWindowsShop_05.getText())));
+                            shoppingCarMerch.setMemberId(shoppingListMemberID);
+
+                            if (shoppingCarMerchLoad.get(shoppingCarMerchLoad.size() - 1).getMemberId() != shoppingListMemberID) {
+                                shoppingCarMerch.setFirstMerchItem(true);
+                            }
 
 
-                        shoppingCarMerchLoad.add( shoppingCarMerchLoad.size() ,  shoppingCarMerch );
+                            shoppingCarMerchLoad.add(shoppingCarMerchLoad.size(), shoppingCarMerch);
 
-                        //TODO 要判斷一下同個賣家，同個商品 要合併一項，數量增加，以及 同個賣家，不同商品，只顯示一次賣家名字
-                        for(int j = 0 ; j < shoppingCarMerchLoad.size() ; j++){
-                            //ShoppingCarMerch scm = shoppingCarMerchLoad.get(i);
-                            for(int k = j + 1 ; k < shoppingCarMerchLoad.size() ; k++){
-                                //判斷是同賣家，同個商品   要合併一項，數量增加
-                                if(shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId()) && shoppingCarMerchLoad.get(j).getMerchName().equals(shoppingCarMerchLoad.get(k).getMerchName())){
-                                    int merchNumber = 0;
-                                    merchNumber =  shoppingCarMerchLoad.get(j).getMerchNumber() + shoppingCarMerchLoad.get(k).getMerchNumber();
-                                    shoppingCarMerchLoad.get(j).setMerchNumber(merchNumber);
-                                    shoppingCarMerchLoad.remove(k);
-                                }
-                                else if (shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId())){
-                                    shoppingCarMerchLoad.get(k).setFirstMerchItem(false);
-                                }
+                            //TODO 要判斷一下同個賣家，同個商品 要合併一項，數量增加，以及 同個賣家，不同商品，只顯示一次賣家名字
+                            for (int j = 0; j < shoppingCarMerchLoad.size(); j++) {
+                                //ShoppingCarMerch scm = shoppingCarMerchLoad.get(i);
+                                for (int k = j + 1; k < shoppingCarMerchLoad.size(); k++) {
+                                    //判斷是同賣家，同個商品   要合併一項，數量增加
+                                    if (shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId()) && shoppingCarMerchLoad.get(j).getMerchName().equals(shoppingCarMerchLoad.get(k).getMerchName())) {
+                                        int merchNumber = 0;
+                                        merchNumber = shoppingCarMerchLoad.get(j).getMerchNumber() + shoppingCarMerchLoad.get(k).getMerchNumber();
+                                        shoppingCarMerchLoad.get(j).setMerchNumber(merchNumber);
+                                        shoppingCarMerchLoad.remove(k);
+                                    } else if (shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId())) {
+                                        shoppingCarMerchLoad.get(k).setFirstMerchItem(false);
+                                    }
 //                                else if ( shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId())){
 //                                    String sameSellMerch = shoppingCarMerchLoad.get(k).getSeller();
 //                                    shoppingCarMerchLoad.get(k).setSeller("$" + sameSellMerch);
 //
 //                                }
+                                }
                             }
+                            //調整位置
+                            Collections.sort(shoppingCarMerchLoad, new Comparator<ShoppingCarMerch>() {
+                                @Override
+                                public int compare(ShoppingCarMerch o1, ShoppingCarMerch o2) {
+                                    return o1.getMemberId().compareTo(o2.getMemberId());
+                                }
+                            });
+
+
+                            //存檔
+                            saveShoppingCarMerchAllFile(shoppingCarMerchLoad);
                         }
-                        //調整位置
-                        Collections.sort(shoppingCarMerchLoad, new Comparator<ShoppingCarMerch>() {
-                            @Override
-                            public int compare(ShoppingCarMerch o1, ShoppingCarMerch o2) {
-                                return o1.getMemberId().compareTo(o2.getMemberId());
-                            }
-                        });
 
 
-                        //存檔
-                        saveShoppingCarMerchAllFile(shoppingCarMerchLoad);
-                    }
+                        bundleShoppingList.putSerializable("shoppingCarMerch", (Serializable) shoppingCarMerchLoad);//(Serializable) shoppingCarMerchAll);//Nick// //shoppingCarMerch
 
-
-
-
-                    bundleShoppingList.putSerializable("shoppingCarMerch", (Serializable)shoppingCarMerchLoad);//(Serializable) shoppingCarMerchAll);//Nick// //shoppingCarMerch
-
-                    dismiss();
-
+                        dismiss();
                     break;
                 case R.id.iv_popWindowsShopCancel_05: //加入購物車 取消按鈕
                     dismiss();
@@ -366,8 +352,11 @@ public class Merch_DesFragment extends Fragment {
                     bundleShoppingList.putInt("shoppintListMerchPrice", shoppintListMerchPrice);
                     bundleShoppingList.putInt("shoppingListMerchNumber", Integer.parseInt(String.valueOf(etn_popWindowsBuy_05.getText())));*/
 
+                    if("".equals(etn_popWindowsBuy_05.getText().toString().trim())) {
+                        break;
+                    }
 
-                    if(shoppingCarMerchLoad == null || shoppingCarMerchLoad.size() == 0){
+                    if (shoppingCarMerchLoad == null || shoppingCarMerchLoad.size() == 0) {
                         shoppingCarMerchLoad = new ArrayList<>();
 
                         shoppingCarMerch.setDrawableID(shoppintListPoto);
@@ -385,8 +374,7 @@ public class Merch_DesFragment extends Fragment {
 
                         //存檔
                         saveShoppingCarMerchAllFile(shoppingCarMerchLoad);
-                    }
-                    else{
+                    } else {
 
                         shoppingCarMerch.setDrawableID(shoppintListPoto);
                         shoppingCarMerch.setSeller(shoppintListSeller);
@@ -397,24 +385,23 @@ public class Merch_DesFragment extends Fragment {
                         //shoppingCarMerch.setMerchNumber(addShoppingCarMerchNum);
                         shoppingCarMerch.setMemberId(shoppingListMemberID);
 
-                        if ( shoppingCarMerchLoad.get(shoppingCarMerchLoad.size() - 1).getMemberId() != shoppingListMemberID ){
+                        if (shoppingCarMerchLoad.get(shoppingCarMerchLoad.size() - 1).getMemberId() != shoppingListMemberID) {
                             shoppingCarMerch.setFirstMerchItem(true);
                         }
 
-                        shoppingCarMerchLoad.add( shoppingCarMerchLoad.size() ,  shoppingCarMerch );
+                        shoppingCarMerchLoad.add(shoppingCarMerchLoad.size(), shoppingCarMerch);
 
                         //TODO 要判斷一下同個賣家，同個商品   要合併一項，數量增加
-                        for(int j = 0 ; j < shoppingCarMerchLoad.size() ; j++){
+                        for (int j = 0; j < shoppingCarMerchLoad.size(); j++) {
                             //ShoppingCarMerch scm = shoppingCarMerchLoad.get(i);
-                            for(int k = j + 1 ; k < shoppingCarMerchLoad.size() ; k++){
+                            for (int k = j + 1; k < shoppingCarMerchLoad.size(); k++) {
                                 //判斷是同賣家，同個商品   要合併一項，數量增加
-                                if(shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId()) && shoppingCarMerchLoad.get(j).getMerchName().equals(shoppingCarMerchLoad.get(k).getMerchName())){
+                                if (shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId()) && shoppingCarMerchLoad.get(j).getMerchName().equals(shoppingCarMerchLoad.get(k).getMerchName())) {
                                     int merchNumber = 0;
-                                    merchNumber =  shoppingCarMerchLoad.get(j).getMerchNumber() + shoppingCarMerchLoad.get(k).getMerchNumber();
+                                    merchNumber = shoppingCarMerchLoad.get(j).getMerchNumber() + shoppingCarMerchLoad.get(k).getMerchNumber();
                                     shoppingCarMerchLoad.get(j).setMerchNumber(merchNumber);
                                     shoppingCarMerchLoad.remove(k);
-                                }
-                                else if (shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId())){
+                                } else if (shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId())) {
                                     shoppingCarMerchLoad.get(k).setFirstMerchItem(false);
                                 }
 //                                else if ( shoppingCarMerchLoad.get(j).getMemberId().equals(shoppingCarMerchLoad.get(k).getMemberId())){
@@ -435,7 +422,7 @@ public class Merch_DesFragment extends Fragment {
                         saveShoppingCarMerchAllFile(shoppingCarMerchLoad);
                     }
 
-                    bundleShoppingList.putSerializable("shoppingCarMerch", (Serializable)shoppingCarMerchLoad);
+                    bundleShoppingList.putSerializable("shoppingCarMerch", (Serializable) shoppingCarMerchLoad);
 
                     dismiss();
 
@@ -458,12 +445,12 @@ public class Merch_DesFragment extends Fragment {
         });
 
 
-        iv_MerchDesToolbarShopcar_05.setOnClickListener(view ->{ //跳至購物車頁面
+        iv_MerchDesToolbarShopcar_05.setOnClickListener(view -> { //跳至購物車頁面
 
             //讀入
             List<ShoppingCarMerch> shoppingCarMerchLoad = loadShoppingCarMerchAllFile();
 
-            bundleShoppingList.putSerializable("shoppingCarMerch", (Serializable)shoppingCarMerchLoad);
+            bundleShoppingList.putSerializable("shoppingCarMerch", (Serializable) shoppingCarMerchLoad);
 
             NavController navController = Navigation.findNavController(view);
             navController.navigate(R.id.action_merch_DesFragment_to_shoppingListFragment, bundleShoppingList);
@@ -471,11 +458,10 @@ public class Merch_DesFragment extends Fragment {
         });
 
 
-
     }
 
     // 執行加入購物車動畫
-    private void playAnim(final View view){
+    private void playAnim(final View view) {
 
         //建立int陣列，用来接收起點坐標和終點坐標
         int[] startPosition = new int[2];
@@ -489,9 +475,9 @@ public class Merch_DesFragment extends Fragment {
         PointF controlF = new PointF();      //控制點 controlF
 
         startF.x = startPosition[0];
-        startF.y = startPosition[1] ;
-        endF.x = endPosition[0]+iv_MerchDesToolbarShopcar_05.getWidth()/2 - view.getWidth()/2;             //微調處理，確保動畫執行完畢 添加 圖標中心點與購物車中心點重合
-        endF.y = endPosition[1]+iv_MerchDesToolbarShopcar_05.getHeight()/2 - view.getHeight()/2;
+        startF.y = startPosition[1];
+        endF.x = endPosition[0] + iv_MerchDesToolbarShopcar_05.getWidth() / 2 - view.getWidth() / 2;             //微調處理，確保動畫執行完畢 添加 圖標中心點與購物車中心點重合
+        endF.y = endPosition[1] + iv_MerchDesToolbarShopcar_05.getHeight() / 2 - view.getHeight() / 2;
         controlF.x = endF.x;
         controlF.y = startF.y;
 
@@ -592,7 +578,6 @@ public class Merch_DesFragment extends Fragment {
         }
         return null;
     }
-
 
 
 }
