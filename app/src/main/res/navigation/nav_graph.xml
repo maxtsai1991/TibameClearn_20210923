@@ -240,6 +240,11 @@
         android:id="@+id/orderCompFragment"
         android:name="idv.tfp10207.nowclearnnow0818.market.OrderCompFragment"
         android:label="OrderCompFragment" />
+    <fragment
+        android:id="@+id/roomTourFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.home.RoomTourFragment"
+        android:label="fragment_room_tour"
+        tools:layout="@layout/fragment_room_tour" />
 
     android:id="@+id/f_Premiumselection_List_Fragment"
         android:name="idv.tfp10207.nowclearnnow0818.home.F_Premiumselection_List_Fragment"

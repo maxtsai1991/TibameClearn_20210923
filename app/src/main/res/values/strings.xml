@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">nowclearnnow0818</string>
     <string name="textViewShoppingMall">商場</string>
     <string name="textViewDetergent">清潔用品</string>
     <!--<string name="textViewCleantool">清潔用具</string> -->
