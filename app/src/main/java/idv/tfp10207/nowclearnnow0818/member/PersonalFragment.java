@@ -17,53 +17,39 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+
+import java.util.Objects;
+
 import idv.tfp10207.nowclearnnow0818.R;
+import idv.tfp10207.nowclearnnow0818.bean.Material;
 
 
 public class PersonalFragment extends Fragment {
+    private static final String TAG = "PersonalFragment";
     private Activity activity;
-    //    private Uri contentUri;
-//    private Member member;
     //元件
     private ImageView imageView, iv_clear14_01, iv_back_01, iv_clear15_01;
     private TextView tv_store_01, tv_clear49_01;
     private EditText edt_name_01, edt_email_01, edt_phone_01, edt_address_01;
     private Spinner sp_gender_01;
-//    //判斷點擊哪個按鈕
-//    private int tv_store_01Click = 1; // 1->完成(編輯資料)
-////    private int btPIApplyClick = 0;  // 0->申請成房東 1->取消
-//    //判斷上傳點擊哪個按鈕
-//    private boolean HSisClick=false;
-//    private boolean GPisClick=false;
-//    //判斷是否有成功上傳
-//    private boolean upNewHS=false;
-//    private boolean upNewGP=false;
-//    private SimpleDateFormat sdf;
-//    private FirebaseStorage storage;
-//    private String picUri; //回傳路徑用
-//    private ByteArrayOutputStream baos; //上傳用
-//    private String serverresp;
-//    private SharedPreferences sharedPreferences;
-//    private final String url = Common.URL + "memberCenterPersonalInformation";
-//
-//    ActivityResultLauncher<Intent> takePictureLauncher = registerForActivityResult(
-//            new ActivityResultContracts.StartActivityForResult(),
-//            this::takePictureResult);
-//
-//    ActivityResultLauncher<Intent> pickPictureLauncher = registerForActivityResult(
-//            new ActivityResultContracts.StartActivityForResult(),
-//            this::pickPictureResult);
-//
-//    ActivityResultLauncher<Intent> cropPictureLauncher = registerForActivityResult(
-//            new ActivityResultContracts.StartActivityForResult(),
-//            this::cropPictureResult);
+    private FirebaseAuth auth;
+    private FirebaseStorage storage;
+    private FirebaseFirestore db;
+    private Material material;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activity = getActivity();
-//        storage = FirebaseStorage.getInstance();
+        activity = getActivity();//取得Activity參考
+        auth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        storage = FirebaseStorage.getInstance();
+
     }
 
     @Override
@@ -75,43 +61,51 @@ public class PersonalFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        // 指定拍照存檔路徑
-//        File file = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//        file = new File(file, "picture.jpg");
-//        contentUri = FileProvider.getUriForFile(
-//                activity, activity.getPackageName() + ".fileProvider", file);
-//        sharedPreferences = activity.getSharedPreferences( "SharedPreferences", Context.MODE_PRIVATE);
-//        //跟後端提出請求
-//        JsonObject clientreq = new JsonObject();
-//        clientreq.addProperty("action", "getMember");
-//        int memberId=sharedPreferences.getInt("memberId",-1);
-//        clientreq.addProperty("member_id",memberId);
-//        serverresp = RemoteAccess.getJsonData(url, clientreq.toString());
         findViews(view);
         handleToolbar(view);
         handleImageView();
         handleSpinner();
+        handleEditText();
     }
 
-    private void handleSpinner () {
-        // 註冊/實作 選項被選取監聽器
-        sp_gender_01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            // 當選取的選項改變時，自動被呼叫
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    private void handleEditText() {
+        if (getArguments() != null) {
+            material = (Material) getArguments().getSerializable("users");
+            if (material != null) {
+                edt_name_01.setText(material.getName());
+                edt_email_01.setText(material.getMail());
+                edt_phone_01.setText(material.getPhone());
+                edt_address_01.setText(material.getAddress());
             }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-
-    }
-    private void handleToolbar (View view){
-        iv_back_01.setOnClickListener(v -> {
-            Navigation.findNavController(view).popBackStack(R.id.personalFragment, true);
-        });
-
+        }
+///**
+// 查詢指定文件內的欄位 (EX : uid)
+// .whereEqualTo("uid", auth.getCurrentUser().getUid())
+// 查詢指定文件 (有給值指定，文件 ID 為當下使用者的 UID)
+// .document(auth.getCurrentUser().getUid())
+// 查詢指定文件 (沒給值，系統產生一組隨機字串作為文件 ID)
+// .document()
+// */
+//        // 查詢指定集合
+//        db.collection("users")
+//                .document(Objects.requireNonNull(auth.getCurrentUser()).getUid())
+//                 //獲取資料
+//                .get()
+//                //設置網路傳輸監聽器
+//                .addOnCompleteListener(task -> {
+//                    if (task.isSuccessful() && task.getResult() != null) {
+//                        // 將獲取的資料存成自定義類別
+//                        // for (DocumentSnapshot documentSnapshot : task.getResult())
+//                        DocumentSnapshot documentSnapshot = task.getResult();
+//                        material = documentSnapshot.toObject(Material.class);
+//                        showInfo();
+//                    } else {
+//                        String message = task.getException() == null ?
+//                                "查無資料" :
+//                                task.getException().getMessage();
+//                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+//                    }
+//                });
     }
 
     private void findViews(View view) {
@@ -128,6 +122,12 @@ public class PersonalFragment extends Fragment {
         tv_clear49_01 = view.findViewById(R.id.tv_clear49_01);//名稱
     }
 
+//    private void showInfo() {
+//        edt_name_01.append(" " + material.getName());
+//        edt_email_01.append(" " + material.getMail());
+//        edt_phone_01.append(" " + material.getPhone());
+//        edt_address_01.append(" " + material.getAddress());
+//    }
 
     private void handleImageView() {
         tv_clear49_01.setOnClickListener(v -> {
@@ -144,12 +144,48 @@ public class PersonalFragment extends Fragment {
             Navigation.findNavController(view).navigate(R.id.introductionFragment);
         });
         tv_store_01.setOnClickListener(view -> {
+            String name = edt_name_01.getText().toString().trim();
+            if (name.length() <= 0) {
+                Toast.makeText(activity, "name is invalid",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            String phone = edt_phone_01.getText().toString().trim();
+            String address = edt_address_01.getText().toString().trim();
+            String email = edt_email_01.getText().toString().trim();
+
+            material.setName(name);
+            material.setPhone(phone);
+            material.setAddress(address);
+            material.setMail(email);
             Navigation.findNavController(view).navigate(R.id.memberCentreFragment);
             Toast.makeText(activity, "變更成功", Toast.LENGTH_SHORT).show();
         });
 
     }
 
+
+    private void handleSpinner () {
+        // 註冊/實作 選項被選取監聽器
+        sp_gender_01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            // 當選取的選項改變時，自動被呼叫
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+    }
+
+    private void handleToolbar (View view){
+        iv_back_01.setOnClickListener(v -> {
+            Navigation.findNavController(view).popBackStack(R.id.personalFragment, true);
+        });
+
+    }
 }
 //    public void getImage(final ImageView imageView, final String path) {
 //        final int ONE_MEGABYTE = 1024 * 1024 * 6; //設定上限

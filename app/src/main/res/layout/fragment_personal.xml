@@ -35,7 +35,6 @@
             android:ems="50"
             android:inputType="textPersonName"
             android:paddingLeft="20dp"
-            android:text="王大明"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -211,7 +210,6 @@
             android:ems="10"
             android:inputType="phone"
             android:paddingLeft="20dp"
-            android:text="0922222222"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -320,7 +318,6 @@
             android:ems="50"
             android:inputType="textPostalAddress"
             android:paddingLeft="20dp"
-            android:text="台北市中山區吉林路"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -334,7 +331,6 @@
             android:ems="50"
             android:inputType="textEmailAddress"
             android:paddingLeft="20dp"
-            android:text="abi@gmail.com"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
