@@ -15,6 +15,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -61,4 +62,6 @@ dependencies {
 //  for FCM
     implementation 'com.google.firebase:firebase-messaging:22.0.0'
 
+    // 編譯時方法數超過64K需要加上multidex
+    implementation "androidx.multidex:multidex:2.0.1"
 }
