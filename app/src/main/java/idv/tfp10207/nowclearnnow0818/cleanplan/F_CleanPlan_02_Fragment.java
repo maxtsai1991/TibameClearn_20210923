@@ -3,11 +3,7 @@ package idv.tfp10207.nowclearnnow0818.cleanplan;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -32,15 +27,13 @@ import androidx.navigation.Navigation;
 
 import idv.tfp10207.nowclearnnow0818.R;
 
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.GENDER;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.ONEDATE;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.PEOPLENUMBER;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.PING;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.SERVICEADDRESS;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.SERVICEEMAIL;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.SERVICENAME;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.SERVICEPHONE;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.TIME;
+import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.Cleanplan_orderconstants.PEOPLENUMBER;
+import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.Cleanplan_orderconstants.PING;
+import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.Cleanplan_orderconstants.SERVICEADDRESS;
+import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.Cleanplan_orderconstants.SERVICEEMAIL;
+import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.Cleanplan_orderconstants.SERVICENAME;
+import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.Cleanplan_orderconstants.SERVICEPHONE;
+import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.Cleanplan_orderconstants.TIME;
 
 //  0.上一頁資訊  Bundle
 //  1.預估清潔規模
@@ -119,7 +112,7 @@ public class F_CleanPlan_02_Fragment extends Fragment {
         handleleRadioButton(view);
 //相機
         handleTakepictureButton(view);
-//
+//其他
         handleRemark(view);
 //同會員
         handleMemberCheckBoxes(view);
@@ -198,7 +191,7 @@ public class F_CleanPlan_02_Fragment extends Fragment {
         bt_CP02_tackpicture_11.setOnClickListener(v -> activityResultLauncher.launch(null));
 
         // 7-1取得資料
-        // 7-2資料放入Bundle物件
+        // 7-2資料放入物件
     }
 
     //4.

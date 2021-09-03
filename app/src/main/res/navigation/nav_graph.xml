@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/reserve_01_Fragment"
-        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.reserve_01_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.Reserve_01_Fragment"
         android:label="fragment_reserve_01_"
         tools:layout="@layout/fragment_reserve_01_" />
     <fragment
@@ -152,7 +152,7 @@
         tools:layout="@layout/fragment_f__cleanplan" />
     <fragment
         android:id="@+id/reserve_02_Fragment"
-        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.reserve_02_Fragment"
+        android:name="idv.tfp10207.nowclearnnow0818.cleanplan.Reserve_02_Fragment"
         android:label="fragment_reserve_02_"
         tools:layout="@layout/fragment_reserve_02_" />
     <fragment

@@ -61,8 +61,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-//  for FCM
-    implementation 'com.google.firebase:firebase-messaging:22.0.0'
 
     // 編譯時方法數超過64K需要加上multidex
     implementation "androidx.multidex:multidex:2.0.1"
