@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">nowclearnnow0818</string>
     <string name="textViewShoppingMall">商場</string>
     <string name="textViewDetergent">清潔用品</string>
     <!--<string name="textViewCleantool">清潔用具</string> -->
@@ -33,6 +34,7 @@
     <string name="textViewShoppintMall">商城</string>
     <string name="TextViewAddShopcar">加入購物車</string>
     <string name="TextViewBuy">直接購買</string>
+    <string name="textViewConfirmPay">確認付款</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nextNext">下一步</string>
@@ -100,6 +102,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
+
     <!-- Spinner-spVersion的選項 -->
     <string-array name="array_gender">
         <item>男</item>
@@ -117,7 +120,7 @@
         <item>$800</item>
     </string-array>
 
-<!--commit 刪  信用卡改成GooglePay-->
+    <!--commit 刪  信用卡改成GooglePay-->
     <string-array name="array_servicearea1">
         <item>台北市</item>
         <item>新北市</item>
@@ -137,4 +140,18 @@
         <item>南港區</item>
         <item>文山區</item>
     </string-array>
+
+    <!-- 填上TapPay Portal上註冊的資料 -->
+    <!-- 開發者 / 應用程式 -->
+    <string name="TapPay_AppID">121741</string>
+    <string name="TapPay_AppKey">app_LNvQvQieR0w6JwB6PCKmw9BLjikYNbKViYnG5k0vgwW7gy3Je6GKuMHdT68K</string>
+
+    <!-- 帳戶資訊 -->
+    <string name="TapPay_PartnerKey">partner_Y2GCwViMhojr8Cj7YPqvQ8aW4Kq7lVFiJEGkLweu4LxQwJw8smdkvgly</string>
+
+    <!-- 商家管理 / 商家設置-->
+    <string name="TapPay_MerchantName">TW_CTBC</string>
+    <string name="TapPay_MerchantID">tibametfp102project_CTBC</string>
+
+
 </resources>

@@ -19,10 +19,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout7"
         android:layout_width="401dp"
-        android:layout_height="597dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
 
         <View
             android:id="@+id/view23"
@@ -98,13 +99,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_Buy_01"
+            android:id="@+id/tv_Plan_01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="80dp"
-            android:text="購物流程"
+            android:text="清潔計劃"
             android:textColor="#151414"
             android:textSize="25dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +118,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="144dp"
-            android:text="取消/修改訂單"
+            android:text="取消/更改服務"
             android:textColor="#151414"
             android:textSize="25dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -143,7 +144,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="280dp"
-            android:text="加入會員"
+            android:text="如何加入會員"
             android:textColor="#151414"
             android:textSize="25dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -156,11 +157,10 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
         android:text="常見QA"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

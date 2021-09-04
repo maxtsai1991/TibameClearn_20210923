@@ -29,7 +29,7 @@ import idv.tfp10207.nowclearnnow0818.R;
  * 2. 帳號密碼不能為空值
  * 3. 測試帳號密碼: "abc@gmail.com" & "12345678" & "abi@gmail.com" & "123456" & "abl@gmail.com" & "654321"
  * 4. 王大明(需求者): "aaa@gmail.com" & "98745612" & 李心潔(家事者):  "le55@gmail.com" & "85209888"
- *
+ * 5. 黃永珠(家事者): "wong96@gmail.com" & "456852wa"
  */
 public class LoginFragment extends Fragment {
     private final static String TAG = "TAG_MainFragment";
@@ -37,7 +37,7 @@ public class LoginFragment extends Fragment {
     private FirebaseAuth auth;
     private EditText etAccount, etPassword;
     private Button btlogin, btRegisterHouseworker, btRegisterMember;
-    private TextView tvLoginMessage;
+    private TextView tvLoginMessage,tv_debug_houseworker;
     private ImageView ivDebugLogin;
 
     @Override
@@ -73,6 +73,7 @@ public class LoginFragment extends Fragment {
         tvLoginMessage = view.findViewById(R.id.tv_Message); //檢查帳號密碼資訊
         ivDebugLogin = view.findViewById(R.id.iv_login_pic); // debug
         btRegisterMember = view.findViewById(R.id.bt_register);// 註冊
+        tv_debug_houseworker = view.findViewById(R.id.tv_debug_houseworker);
     }
 
     private void handleLogin() {//取得帳號密碼轉成字串
@@ -84,6 +85,10 @@ public class LoginFragment extends Fragment {
         ivDebugLogin.setOnClickListener(v -> { // 快速貼上假資料帳號密碼
             etAccount.setText("aaa@gmail.com");
             etPassword.setText("98745612");
+        });
+        tv_debug_houseworker.setOnClickListener(v -> { // 快速貼上假資料帳號密碼
+            etAccount.setText("wong96@gmail.com");
+            etPassword.setText("456852wa");
         });
 
     }

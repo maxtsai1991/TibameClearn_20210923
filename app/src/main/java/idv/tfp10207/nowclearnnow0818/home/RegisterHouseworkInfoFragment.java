@@ -66,15 +66,15 @@ public class RegisterHouseworkInfoFragment extends Fragment {
 
     private void handleRegisterHouseWorker() {
         tvhousedebug.setOnClickListener(v -> {
-            etaccount.setText("le55@gmail.com");
-            etpassword.setText("85209888");
-            etaddress.setText("台北市大同區重慶北路一段");
-            etphone.setText("0985472666");
-            etemail.setText("le55@gmail.com");
-            etexpertise.setText("廁所清潔");
-            etcharge.setText("$300");
-            etother.setText("不喜寵物");
-            etselfintroduction.setText("樂於學習新事物，\n我相信知識與經驗,是在不同環境中學到");
+            etaccount.setText("wong96@gmail.com");
+            etpassword.setText("456852wa");
+            etaddress.setText("台北市中正區寧波西街");
+            etphone.setText("0946317825");
+            etemail.setText("wong96@gmail.com");
+            etexpertise.setText("客廳清潔");
+            etcharge.setText("$1200");
+            etother.setText("天花板層清潔");
+            etselfintroduction.setText("把時間留給自己,不再把假期拿來清潔,\n選擇我,我會給你一個乾凈舒適的家");
         });
 
         btregisterhouseworker.setOnClickListener(v -> {

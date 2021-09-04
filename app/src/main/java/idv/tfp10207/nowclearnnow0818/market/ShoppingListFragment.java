@@ -124,6 +124,19 @@ public class ShoppingListFragment extends Fragment {
         iv_ShoppingCarToolbarShopMall_05.setOnClickListener(view ->{
             //TODO 回到商城首頁  要寫上面的四行
 
+            List<ShoppingCarMerch> shoppingList = shoppingListIsCheckloadShoppingCarMerchAllFile();
+
+            if(shoppingList != null){
+                for( int i = 0 ; i < shoppingList.size(); i++){
+                    shoppingList.get(i).setMerchCheckBox(false);
+                    shoppingList.get(i).setSellerCheckBox(false);
+                }
+            }
+
+            shoppingListIsCheckSaveShoppingCarMerchAllFile(shoppingList);
+
+            NavController navController = Navigation.findNavController(view);
+            navController.navigate(R.id.action_shoppingListFragment_to_market_homeFragment2);
 
 
 

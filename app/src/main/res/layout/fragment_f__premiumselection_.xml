@@ -6,45 +6,55 @@
     android:layout_height="match_parent"
     tools:context="idv.tfp10207.nowclearnnow0818.home.F_Premiumselection_Fragment07">
 
+    <include
+        android:id="@+id/include11"
+        layout="@layout/toolbar_premiumselection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/ib_return_premiumselection07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@color/clearn"
+        android:src="@drawable/ic_arrow_back_30"
+        app:layout_constraintBottom_toBottomOf="@+id/include11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/include11">
 
         <ImageView
-            android:id="@+id/iv_person"
-            android:layout_width="141dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/girl2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <RatingBar
-            android:id="@+id/rb_person"
-            android:layout_width="139dp"
-            android:layout_height="44dp"
-            android:layout_gravity="center"
-            android:numStars="5"
-            android:scrollbarSize="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_person" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:layout_width="226dp"
-            android:layout_height="167dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingTop="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -52,9 +62,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:text="李心潔 "
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                tools:text="家事者: 快手清潔" />
+                android:textSize="24sp"
+                tools:text="李心潔 " />
 
             <TextView
                 android:id="@+id/tv_person3"
@@ -62,9 +73,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingTop="8dp"
+                android:text="擅長項目: \n廁所清潔"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                tools:text="擅長項目: \n收納整理、家具打掃" />
+                tools:text="擅長項目: \n廁所清潔" />
 
             <TextView
                 android:id="@+id/tv_person4"
@@ -72,9 +84,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingTop="18dp"
+                android:text="收費標準: 900"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                tools:text="收費標準:  600/件" />
+                tools:text="收費標準: 900" />
 
             <TextView
                 android:id="@+id/tv_person5"
@@ -82,9 +95,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingTop="8dp"
+                android:text="已完成件數:23件"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 tools:text="已完成件數:23件          " />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
@@ -104,8 +123,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="case"
-            android:textColor="@color/teal_700"
-            android:textSize="18sp"
+            android:textColor="@color/clearn"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,8 +136,30 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/image_case1" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/image_case2" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/image_case3" />
+            </LinearLayout>
         </HorizontalScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -131,13 +172,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="3則評論"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/clearn"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
     <ScrollView
         android:layout_width="379dp"
-        android:layout_height="213dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,7 +188,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView"

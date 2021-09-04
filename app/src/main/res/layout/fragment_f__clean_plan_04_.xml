@@ -70,11 +70,81 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order3_11" />
 
             <TextView
+                android:id="@+id/tv_CP04_orderscale_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="媒合詳情"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order_number_11" />
+
+            <TextView
+                android:id="@+id/tv_CP04_orderscale1_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:text="清潔規模_人"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderscale_11" />
+
+            <TextView
+                android:id="@+id/tv_CP04_orderscale2_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:text="清潔規模_坪"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderscale1_11" />
+
+            <TextView
+                android:id="@+id/tv_CP04_orderscale3_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:text="清潔時間_皆可"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderscale2_11" />
+
+            <TextView
+                android:id="@+id/tv_CP04_orderscale4_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:text="備註"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderscale3_11" />
+
+            <TextView
+                android:id="@+id/tv_CP04_orderscale5_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:text="選擇家事者"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderscale4_11" />
+
+            <TextView
                 android:id="@+id/tv_CP04_order_number2_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="CP000001"
+                android:text="CP000013"
                 android:textSize="25sp"
                 app:layout_constraintStart_toEndOf="@+id/tv_CP04_order_number_11"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order3_11" />
@@ -83,11 +153,11 @@
                 android:id="@+id/tv_CP04_orderpay_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="15dp"
                 android:text="付款人"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order_number_11" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP04_orderscale5_11" />
 
             <TextView
                 android:id="@+id/tv_CP04_orderpay1_11"

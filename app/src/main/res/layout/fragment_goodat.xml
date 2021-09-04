@@ -39,7 +39,7 @@
         android:layout_marginRight="8dp"
         android:text="儲存"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include6" />
@@ -67,7 +67,6 @@
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="我叫xxx,今年xxx歲， 我的專業xxx。  我有着濃厚的興趣， 希望能給我個機會， 我一定會好好地表現的， 一定不會讓你們失望。 謝謝！                                                                                                                                                                          "
             android:textSize="25dp" />
     </ScrollView>
 

@@ -1,20 +1,21 @@
 package idv.tfp10207.nowclearnnow0818.cleanplan;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.fragment.app.Fragment;
 
 import idv.tfp10207.nowclearnnow0818.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link reserve_02_Fragment#newInstance} factory method to
+ * Use the {@link Reserve_02_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class reserve_02_Fragment extends Fragment {
+public class Reserve_02_Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +26,7 @@ public class reserve_02_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public reserve_02_Fragment() {
+    public Reserve_02_Fragment() {
         // Required empty public constructor
     }
 
@@ -35,11 +36,11 @@ public class reserve_02_Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment reserve_02_Fragment.
+     * @return A new instance of fragment Reserve_02_Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static reserve_02_Fragment newInstance(String param1, String param2) {
-        reserve_02_Fragment fragment = new reserve_02_Fragment();
+    public static Reserve_02_Fragment newInstance(String param1, String param2) {
+        Reserve_02_Fragment fragment = new Reserve_02_Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

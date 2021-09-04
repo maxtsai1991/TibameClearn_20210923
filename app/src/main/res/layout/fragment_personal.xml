@@ -27,15 +27,14 @@
 
         <EditText
             android:id="@+id/edt_name_01"
-            android:layout_width="166dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="160dp"
+            android:layout_width="95dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="155dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="50"
             android:inputType="textPersonName"
             android:paddingLeft="20dp"
-            android:text="Ambrose"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -203,15 +202,14 @@
 
         <EditText
             android:id="@+id/edt_phone_01"
-            android:layout_width="172dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="343dp"
+            android:layout_width="134dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="344dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
             android:inputType="phone"
             android:paddingLeft="20dp"
-            android:text="0958215607"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -320,13 +318,12 @@
             android:ems="50"
             android:inputType="textPostalAddress"
             android:paddingLeft="20dp"
-            android:text="台北市信義區****巷**號"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edt_email_01"
-            android:layout_width="225dp"
+            android:layout_width="168dp"
             android:layout_height="72dp"
             android:layout_marginTop="277dp"
             android:layout_marginEnd="8dp"
@@ -334,7 +331,6 @@
             android:ems="50"
             android:inputType="textEmailAddress"
             android:paddingLeft="20dp"
-            android:text="tex********@gmail.com"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
