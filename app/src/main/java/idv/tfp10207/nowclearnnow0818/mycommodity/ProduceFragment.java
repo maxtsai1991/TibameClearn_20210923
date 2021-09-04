@@ -24,6 +24,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -138,6 +139,16 @@ public class ProduceFragment extends Fragment {
           } else {
               Toast.makeText(activity, "hhh", Toast.LENGTH_SHORT).show();
           }
+          button4.setOnClickListener(v -> {
+              Toast.makeText(activity, "", Toast.LENGTH_SHORT).show();
+              Navigation.findNavController(v)
+                    .navigate(R.id.addDelCommodityFragment);
+          });
+          button5.setOnClickListener(v -> {
+
+              Navigation.findNavController(v)
+                      .navigate(R.id.addDelCommodityFragment);
+          });
 
 
       });
