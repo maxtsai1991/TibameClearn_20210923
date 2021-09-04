@@ -35,9 +35,9 @@ import idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.CleanplanReserve;
 //1.table連動
 //2.RecyclerView 資料更新
 //3.預約buttom 連動 訂單狀態
-//4.推播
+//4.推播 button
 
-public class reserve_01_Fragment extends Fragment {
+public class Reserve_01_Fragment extends Fragment {
     private static final String TAG = "TAG_reserve_01_Fragment";
     private Activity activity;
 
@@ -85,7 +85,7 @@ public class reserve_01_Fragment extends Fragment {
         handleOrderInfo(view);
     }
 
-//訂單詳情
+    //訂單詳情
     private void handleOrderInfo(View view) {
 //        tv_reserve_orderdetails_11.setOnClickListener(v -> {
 //            Navigation.findNavController(v).popBackStack(R.id.f_CleanPlan_05_Fragment, false);
@@ -100,12 +100,12 @@ public class reserve_01_Fragment extends Fragment {
         rb_reserve_03_11 = view.findViewById(R.id.rb_reserve_03_11);
 
         rcv_reserve1_11 = view.findViewById(R.id.rcv_reserve1_11);
-        
+
 //        tv_reserve_orderdetails_11 = view.findViewById(R.id.tv_reserve_orderdetails_11);
     }
 
 
-//1.table狀態改變
+    //1.table狀態改變
     private void handlerChangeRadiocolor(View view) {
         rb_reserve_01_11.setOnClickListener(new View.OnClickListener() {
 
@@ -260,7 +260,7 @@ public class reserve_01_Fragment extends Fragment {
         }
     }
 
-//    客製Toolbar
+    //    客製Toolbar
     private void handletoolbar(View view) {
         //    抓按鍵
         leftarrowicon = view.findViewById(R.id.iv_arrow_back_11);

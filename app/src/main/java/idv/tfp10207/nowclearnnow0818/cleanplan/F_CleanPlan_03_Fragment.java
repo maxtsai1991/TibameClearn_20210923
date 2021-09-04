@@ -44,6 +44,8 @@ public class F_CleanPlan_03_Fragment extends Fragment {
 
 //  3.彈跳視窗: 確認媒合>>>訂單送出
     private  Button bt_CP03next_11;
+    private String orderinfo;
+
 
     //next button
     private Button bt_cp03_next;
@@ -75,8 +77,9 @@ public class F_CleanPlan_03_Fragment extends Fragment {
         handleCheckBoxes(view);
 //        handlebutton(view);
         handleNextBtAlert(view);
-    }
 
+        handleOrderInfo(orderinfo);
+    }
 
 
     private void findview(View view) {
@@ -94,6 +97,7 @@ public class F_CleanPlan_03_Fragment extends Fragment {
 
 
 //  2.付款人資訊  與 同會員資料
+
     private void handleCheckBoxes(View view) {
         final CompoundButton.OnCheckedChangeListener listener = (checkBox, isChecked) -> {
     //  帶入會員資料
@@ -105,10 +109,25 @@ public class F_CleanPlan_03_Fragment extends Fragment {
         cb_CP03_paypereson_member_11.setOnCheckedChangeListener(listener);
 
     }
-
 //  3.nextbutton彈跳視窗 :(本次媒合詳情)
+
     private void handleNextBtAlert(View view) {
         bt_cp03_next.setOnClickListener(v -> {
+
+            //判斷不可為空值
+            if (et_CP03_payperson_name_11.getText().toString().trim().isEmpty() ||
+                et_CP03_payperson_Phone_11.getText().toString().trim().isEmpty() ||
+                et_CP03_payperson_Email_11.getText().toString().trim().isEmpty() ||
+                et_CP03_payperson_Address_11.getText().toString().trim().isEmpty()
+            ) {
+                et_CP03_payperson_name_11.setError("不可為空");
+                et_CP03_payperson_Phone_11.setError("不可為空");
+                et_CP03_payperson_Email_11.setError("不可為空");
+                et_CP03_payperson_Address_11.setError("不可為空");
+
+                return;
+            }
+
             activity = getActivity();
             new AlertDialog.Builder(getActivity())                    // 實例化AlertDialog.Builder物件
                     .setTitle("確認媒合")                                 // 設定標題文字
@@ -143,6 +162,11 @@ public class F_CleanPlan_03_Fragment extends Fragment {
     //(本次媒合詳情)
     }
 
+//  抓取cleanplan_orderconstants裡的訂單資料
+    private void handleOrderInfo(String orderinfo) {
+//
+
+    }
 
 //    客製Toolbar
     private void handletoolbar(View view) {

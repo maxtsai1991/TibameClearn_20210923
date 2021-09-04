@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cleanplan.reserve_01_Fragment" >
+    tools:context=".cleanplan.Reserve_01_Fragment" >
 
     <include
         android:id="@+id/include9"

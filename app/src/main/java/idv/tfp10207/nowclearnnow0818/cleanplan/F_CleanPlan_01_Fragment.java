@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +15,11 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,11 +31,6 @@ import java.util.List;
 
 import idv.tfp10207.nowclearnnow0818.R;
 import idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.CleanplanAreaService;
-import idv.tfp10207.nowclearnnow0818.market.MerchInfo;
-
-import static android.provider.Telephony.Carriers.PASSWORD;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.GENDER;
-import static idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.cleanplan_orderconstants.ONEDATE;
 
 //  1.選擇日期
 //  2.指定性別
@@ -96,7 +88,7 @@ public class F_CleanPlan_01_Fragment extends Fragment
 //        handleBundle(view);
         handletoolbar(view);
 //     3.家事者
-        handleRecyclerView(view);
+//        handleRecyclerView(view);
 
     }
 
@@ -167,6 +159,9 @@ public class F_CleanPlan_01_Fragment extends Fragment
 
 
 //     3.家事者
+
+//    handleRecyclerView(view);
+
     private void handleRecyclerView(View view) {
         List<CleanplanAreaService> servicearealist = Arrays.asList(
                 new CleanplanAreaService(R.drawable.photo5, "5", "黃永珠", "客廳清潔", "1200", "已完成件數:4件 "),
@@ -250,7 +245,7 @@ public class F_CleanPlan_01_Fragment extends Fragment
 //  next button
     private void handlenext(View view) {
         bt_cp01_next.setOnClickListener(v -> {
-            //判斷不可為空值
+                        //判斷不可為空值
             if (tv_CP01onedate_11.getText().toString().trim().isEmpty()) {
                 tv_CP01onedate_11.setError("不可為空");
                 return;
