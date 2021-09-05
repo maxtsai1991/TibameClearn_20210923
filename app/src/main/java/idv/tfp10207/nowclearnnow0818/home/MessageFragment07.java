@@ -22,7 +22,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 public class MessageFragment07 extends Fragment {
     private Activity activity;
-    private ImageView iv_pic07,iv_viewpic07,iv_send07;
+    private ImageView iv_pic07,iv_viewpic07,iv_send07,iv_messagereturn07;
     private TextView tv_needer_talk07,tv_homewroktalk07;
 
     @Override
@@ -45,6 +45,7 @@ public class MessageFragment07 extends Fragment {
         findViews(view);
         handleTakepictureButton(view); // 相機
         handleSendButton();
+        handleReturn();
     }
 
     private void findViews(View view) {
@@ -53,6 +54,15 @@ public class MessageFragment07 extends Fragment {
         tv_needer_talk07 = view.findViewById(R.id.tv_needer_talk07);
         tv_homewroktalk07 = view.findViewById(R.id.tv_homewroktalk07);
         iv_send07 =  view.findViewById(R.id.iv_pic07);
+        iv_messagereturn07 =  view.findViewById(R.id.iv_messagereturn07);
+    }
+
+    private void handleReturn() {
+        iv_messagereturn07.setOnClickListener(v -> {
+                Navigation.findNavController(v)
+                        .navigate(R.id.messageListFragment07);
+
+        });
     }
 
     // 相機
@@ -71,5 +81,6 @@ public class MessageFragment07 extends Fragment {
         tv_homewroktalk07.setOnClickListener(v -> {
             tv_homewroktalk07.setText("已完成這次清潔,附圖參考");
         });
+
     }
 }

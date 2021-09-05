@@ -16,10 +16,25 @@
         android:id="@+id/iv_message07"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:src="@drawable/ic_chat"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_bellnotify07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_bell"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,6 +96,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -89,19 +105,21 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
 
         <ImageView
-            android:id="@+id/iv_roomtour0701"
+            android:id="@+id/iv_roomtour0702"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/image_roomtour_07" />
+            android:src="@drawable/image_roomtour_0702" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/clearn"
+        android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -111,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="預約"
+            android:text=" 預約"
             android:textColor="#FFFFFF" />
 
         <TextView
@@ -120,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="商城"
+            android:text=" 商城"
             android:textColor="#FFFFFF" />
 
         <TextView
@@ -129,18 +147,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="會員"
+            android:text=" 會員"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout11"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:background="@color/clearn"
-        android:gravity="center_vertical"
+        android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 

@@ -245,6 +245,11 @@
         android:name="idv.tfp10207.nowclearnnow0818.home.RoomTourFragment"
         android:label="fragment_room_tour"
         tools:layout="@layout/fragment_room_tour" />
+    <fragment
+        android:id="@+id/disinfectStepFragment07"
+        android:name="idv.tfp10207.nowclearnnow0818.home.DisinfectStepFragment07"
+        android:label="fragment_disinfect_step07"
+        tools:layout="@layout/fragment_disinfect_step07" />
 
     android:id="@+id/f_Premiumselection_List_Fragment"
         android:name="idv.tfp10207.nowclearnnow0818.home.F_Premiumselection_List_Fragment"
