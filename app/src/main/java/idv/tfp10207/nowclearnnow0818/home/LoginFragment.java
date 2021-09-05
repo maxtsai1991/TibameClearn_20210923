@@ -15,7 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,7 +36,7 @@ public class LoginFragment extends Fragment {
     private FirebaseAuth auth;
     private EditText etAccount, etPassword;
     private Button btlogin, btRegisterHouseworker, btRegisterMember;
-    private TextView tvLoginMessage,tv_debug_houseworker;
+    private TextView tvLoginMessage,tv_skip;
     private ImageView ivDebugLogin;
 
     @Override
@@ -73,7 +72,7 @@ public class LoginFragment extends Fragment {
         tvLoginMessage = view.findViewById(R.id.tv_Message); //檢查帳號密碼資訊
         ivDebugLogin = view.findViewById(R.id.iv_login_pic); // debug
         btRegisterMember = view.findViewById(R.id.bt_register);// 註冊
-        tv_debug_houseworker = view.findViewById(R.id.tv_debug_houseworker);
+        tv_skip = view.findViewById(R.id.tv_skip);
     }
 
     private void handleLogin() {//取得帳號密碼轉成字串
@@ -86,9 +85,9 @@ public class LoginFragment extends Fragment {
             etAccount.setText("aaa@gmail.com");
             etPassword.setText("98745612");
         });
-        tv_debug_houseworker.setOnClickListener(v -> { // 快速貼上假資料帳號密碼
-            etAccount.setText("wong96@gmail.com");
-            etPassword.setText("456852wa");
+        tv_skip.setOnClickListener(v -> { // 快速貼上假資料帳號密碼
+            Navigation.findNavController(v)
+                    .navigate(R.id.homePageFragment072);
         });
 
     }
