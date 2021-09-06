@@ -78,13 +78,13 @@ public class OrderFragment extends Fragment {
 
         //將勾選的商品，帶到Adapter
 
-//        for (int i = 0; i < shoppingCarMerch.size(); i++) {
-//            int j = 0;
-//            if (shoppingCarMerch.get(i).getMerchCheckBox()) {
-//                orderDet.add(j, shoppingCarMerch.get(i));
-//                j++;
-//            }
-//        }
+        for (int i = 0; i < shoppingCarMerch.size(); i++) {
+            int j = 0;
+            if (shoppingCarMerch.get(i).getMerchCheckBox()) {
+                orderDet.add(j, shoppingCarMerch.get(i));
+                j++;
+            }
+        }
         //調整位置
         Collections.sort(orderDet, new Comparator<ShoppingCarMerch>() {
             @Override

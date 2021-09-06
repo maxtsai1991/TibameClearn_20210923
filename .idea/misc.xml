@@ -3,28 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_add_del_commodity.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_cancel.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_chang_to_homeuser.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_condition.xml" value="0.1527777777777778" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_evaluation.xml" value="0.1527777777777778" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_f__clean_plan_01_.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_f__clean_plan_02_.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_goodat.xml" value="0.1527777777777778" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_home_user.xml" value="0.22" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_introduction.xml" value="0.1527777777777778" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_join_member.xml" value="0.1527777777777778" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_login07.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_market_home.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_member_centre.xml" value="0.22" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_order.xml" value="0.16203703703703703" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_order_det.xml" value="0.15925925925925927" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_password.xml" value="0.1" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_personal.xml" value="0.22" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_search.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_shopping_list.xml" value="0.15925925925925927" />
-        <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/fragment_success_get.xml" value="0.1527777777777778" />
         <entry key="..\:/Users/Tibame_T14/AndroidStudioProjects/clearnproject0923/app/src/main/res/layout/shoppingcarlist_toolbar.xml" value="0.16666666666666666" />
       </map>
     </option>
