@@ -124,7 +124,7 @@ public class OrderCompFragment extends Fragment {
                         }
                     }
 
-        for(int i = 0 ; i < shoppingCarFile.size() ; i++){
+        for(int i = shoppingCarFile.size() - 1 ; i >= 0 ; i--){
             if(shoppingCarFile.get(i).getMerchCheckBox()){
                 shoppingCarFile.remove(i);
             }
