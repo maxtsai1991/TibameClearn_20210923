@@ -251,19 +251,15 @@
         android:label="fragment_disinfect_step07"
         tools:layout="@layout/fragment_disinfect_step07" />
     <fragment
-        android:id="@+id/myProduceFragment3"
+        android:id="@+id/myProduceFragment"
         android:name="idv.tfp10207.nowclearnnow0818.mycommodity.MyProduceFragment"
         android:label="MyProduceFragment" />
     <fragment
-        android:id="@+id/produceFragment3"
+        android:id="@+id/produceFragment"
         android:name="idv.tfp10207.nowclearnnow0818.mycommodity.ProduceFragment"
         android:label="ProduceFragment" />
 
 
-    android:id="@+id/produceFragment"
-        android:name="idv.tfp10207.nowclearnnow0818.mycommodity.ProduceFragment"
-        android:label="ProduceFragment"
-        tools:layout="@layout/fragment_produce"/>
 
 
 
