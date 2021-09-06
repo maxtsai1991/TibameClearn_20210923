@@ -183,9 +183,11 @@ public class OrderDetFragment extends Fragment {
             //bt_OrderDetBuyFm_05.setEnabled(false);
 
             String orderNumber = result.getData().getStringExtra("orderNumber");
+            Bundle bundle = new Bundle();
+            bundle.putString("orderNumber", orderNumber);
 
             NavController navController = Navigation.findNavController(rv_OrderDetFm_05);
-            navController.navigate(R.id.action_orderDetFragment_to_orderCompFragment);//todo 帶至訂單完成頁面
+            navController.navigate(R.id.action_orderDetFragment_to_orderCompFragment, bundle);//todo 帶至訂單完成頁面
 
         }//todo 失敗，跳轉至失敗頁面
         else if(result.getResultCode() == RESULT_FAIL){

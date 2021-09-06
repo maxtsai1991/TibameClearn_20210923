@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_market_homeFragment_to_shoppingListFragment"
             app:destination="@id/shoppingListFragment" />
+        <action
+            android:id="@+id/action_market_homeFragment2_to_homePageFragment072"
+            app:destination="@id/homePageFragment072" />
     </fragment>
     <fragment
         android:id="@+id/memberCentreFragment"

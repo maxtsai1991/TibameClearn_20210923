@@ -87,11 +87,28 @@ public class OrderCompFragment extends Fragment {
 
         //todo 讀出訂單編號
         List<OrderNumber> orderNumberCompLoad = orderNumberCompLoadFile();
+        OrderNumber orderNumber = new OrderNumber();
+        Bundle bundle = getArguments();
 
-        if(orderNumberCompLoad != null){
-            tv_OrderCompOrderNum1_05.setText( orderNumberCompLoad.get(orderNumberCompLoad.size() -1 ).getOrderNumber());
+        if (orderNumberCompLoad == null || orderNumberCompLoad.size() == 0) {
+            orderNumberCompLoad = new ArrayList<>();
+
+            orderNumber.setAddress(googlePayMainActivity.getMember().getAddress());
+            orderNumber.setOrderNumber(bundle.getString("orderNumber"));
+
+            orderNumberCompLoad.add(orderNumber);
+        }
+        else{
+            orderNumber.setAddress(googlePayMainActivity.getMember().getAddress());
+            orderNumber.setOrderNumber(bundle.getString("orderNumber"));
+
+            orderNumberCompLoad.add( orderNumberCompLoad.size(), orderNumber);
         }
 
+        //存檔訂單內容
+        orderNumberCompSaveFile(orderNumberCompLoad);
+
+        tv_OrderCompOrderNum1_05.setText( orderNumberCompLoad.get(orderNumberCompLoad.size() -1 ).getOrderNumber());
     }
 
 

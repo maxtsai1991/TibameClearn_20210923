@@ -214,7 +214,8 @@ public class Market_homeFragment extends Fragment {
 
         iv_ShoppingMallHomeToolbarBack_05.setOnClickListener( view -> {
             NavController navController = Navigation.findNavController(view);//返回
-            navController.popBackStack();
+            navController.navigate(R.id.action_market_homeFragment2_to_homePageFragment072);
+            //navController.popBackStack();
         });
 
     }
