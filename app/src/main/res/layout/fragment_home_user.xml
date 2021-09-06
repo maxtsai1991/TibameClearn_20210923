@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="member.MemberCentreFragment">
+    tools:context=".HomeUserFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
@@ -13,7 +13,7 @@
         android:orientation="horizontal">
 
         <include
-            android:id="@+id/member_toolbar01"
+            android:id="@+id/homeiser_toolbar01"
             layout="@layout/toolbar3_01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/linearLayout3"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="#FFFFFF"
@@ -30,20 +30,19 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/member_toolbar01">
+            app:layout_constraintTop_toBottomOf="@+id/homeiser_toolbar01">
 
             <TextView
-                android:id="@+id/tv_clear1_01"
+                android:id="@+id/tv_homeuser_01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="100dp"
-                android:layout_marginRight="100dp"
-                android:text="一般會員"
+                android:text="家事者"
                 android:textColor="#151515"
                 android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintHorizontal_bias="0.44"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,11 +60,25 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/tv_clear3_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="104dp"
+                android:layout_marginLeft="104dp"
+                android:layout_marginTop="152dp"
+                android:text="上架商品"
+                android:textColor="#0C0C0C"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/tv_clear4_01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="104dp"
-                android:layout_marginTop="152dp"
+                android:layout_marginLeft="104dp"
+                android:layout_marginTop="218dp"
                 android:text="連結客服"
                 android:textColor="#0C0C0C"
                 android:textSize="25dp"
@@ -77,8 +90,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="104dp"
-                android:layout_marginTop="216dp"
+                android:layout_marginLeft="104dp"
+                android:layout_marginTop="275dp"
                 android:text="我的訂單"
+                android:textColor="#0C0C0C"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_clear6_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="335dp"
+                android:text="取款"
+                android:textColor="#0C0C0C"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_clear7_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="104dp"
+                android:layout_marginLeft="104dp"
+                android:layout_marginTop="395dp"
+                android:text="評價"
                 android:textColor="#0C0C0C"
                 android:textSize="25dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="104dp"
-                android:layout_marginTop="280dp"
+                android:layout_marginTop="470dp"
                 android:text="登出"
                 android:textColor="#0C0C0C"
                 android:textSize="25dp"
@@ -111,6 +150,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -120,7 +160,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/iv_picture_01"
+                    android:id="@+id/iv_picture1_01"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:scaleType="centerCrop" />
@@ -131,7 +171,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="76dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -139,69 +179,127 @@
                 app:srcCompat="@drawable/clean" />
 
             <ImageView
-                android:id="@+id/iv_clear1_01"
+                android:id="@+id/iv_direction_01"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="92dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/clean17" />
 
             <ImageView
-                android:id="@+id/iv_clear3_01"
+                android:id="@+id/iv_direction1_01"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="156dp"
+                android:layout_marginTop="152dp"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/clean17" />
 
             <ImageView
-                android:id="@+id/iv_clear4_01"
+                android:id="@+id/iv_direction2_01"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="216dp"
+                android:layout_marginTop="217dp"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/clean17" />
 
             <ImageView
-                android:id="@+id/iv_off_01"
+                android:id="@+id/iv_direction3_01"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="284dp"
+                android:layout_marginTop="278dp"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/clean17" />
 
             <ImageView
-                android:id="@+id/iv_customerservice_01"
+                android:id="@+id/iv_direction4_01"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="335dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/clean17" />
+
+            <ImageView
+                android:id="@+id/iv_direction5_01"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="398dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/clean17" />
+
+            <ImageView
+                android:id="@+id/iv_off1_01"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="470dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/clean17" />
+
+            <ImageView
+                android:id="@+id/iv_customerservice1_01"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="136dp"
+                android:layout_marginTop="200dp"
                 android:paddingTop="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/clean6" />
 
             <ImageView
-                android:id="@+id/iv_order_01"
+                android:id="@+id/iv_order1_01"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginRight="22dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="260dp"
                 android:paddingTop="15dp"
-                app:layout_constraintEnd_toStartOf="@+id/tv_clear5_01"
-                app:layout_constraintHorizontal_bias="0.727"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_customerservice_01"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/clean2" />
+
+            <ImageView
+                android:id="@+id/iv_puton1_01"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="135dp"
+                android:paddingTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/clean5" />
+
+            <ImageView
+                android:id="@+id/iv_withdrawal1_01"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="324dp"
+                android:src="@drawable/ic_awesome_money"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_evaluation1_01"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="380dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/clean3" />
 
             <View
                 android:id="@+id/view"
@@ -268,20 +366,65 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="336dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="325dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:background="#0B0A0A"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="380dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#0B0909"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view14"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="450dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#0B0909"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view20"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="524dp"
+                android:layout_marginEnd="8dp"
+                android:background="#0B0909"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView20"
+                android:id="@+id/imageView21"
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="275dp"
+                android:layout_marginTop="460dp"
                 android:src="@drawable/power_off"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -289,5 +432,4 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>

@@ -11,14 +11,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +26,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 
@@ -45,25 +41,21 @@ import java.io.File;
 import java.util.Objects;
 
 import idv.tfp10207.nowclearnnow0818.R;
-import idv.tfp10207.nowclearnnow0818.member.bean.Material;
+import idv.tfp10207.nowclearnnow0818.member.bean.User;
 
 
 public class PersonalFragment extends Fragment {
     private static final String TAG = "PersonalFragment";
     private Activity activity;
     //元件
-    private ImageView imageView, iv_clear14_01, iv_back_01, iv_clear15_01;
+    private ImageView iv_01, iv_clear14_01, iv_back_01, iv_clear15_01;
     private TextView tv_store_01, tv_clear49_01;
-    private EditText edt_name_01, edt_email_01, edt_phone_01, edt_address_01;
-    private Spinner sp_gender_01;
+    private EditText edt_name_01, edt_email_01, edt_phone_01, edt_address_01, edt_gender_01;
     private FirebaseAuth auth;
     private FirebaseStorage storage;
     private FirebaseFirestore db;
-    private Material material;
-    private File file;
+    private User user;
     private Uri contentUri; // 拍照需要的Uri
-    private Uri cropImageUri; // 截圖的Uri
-    private boolean pictureTaken;
 
     ActivityResultLauncher<Intent> takePictureLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -81,7 +73,7 @@ public class PersonalFragment extends Fragment {
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         storage = FirebaseStorage.getInstance();
-        material = new Material();
+        user = new User();
 
     }
 
@@ -105,23 +97,24 @@ public class PersonalFragment extends Fragment {
 
 
     private void findViews(View view) {
-        imageView = view.findViewById(R.id.imageView);
+        iv_01 = view.findViewById(R.id.iv_01);
         iv_clear14_01 = view.findViewById(R.id.iv_clear14_01);
         iv_clear15_01 = view.findViewById(R.id.iv_clear15_01);
         edt_name_01 = view.findViewById(R.id.edt_name_01);//名字
         edt_email_01 = view.findViewById(R.id.edt_email_01);//信箱
         edt_phone_01 = view.findViewById(R.id.edt_phone_01);//手機
         edt_address_01 = view.findViewById(R.id.edt_address_01);//地址
-        sp_gender_01 = view.findViewById(R.id.sp_gender_01);//男女
+        edt_gender_01 = view.findViewById(R.id.edt_gender_01);//男女
         iv_back_01 = view.findViewById(R.id.iv_back_01);
         tv_store_01 = view.findViewById(R.id.tv_store_01);
         tv_clear49_01 = view.findViewById(R.id.tv_clear49_01);//名稱
     }
 
+
     private void handleEditText() {
         // 查詢指定集合
         db.collection("users")
-                .document("ksyXtNWrRUbt3R19vjsCpWfkQCk1")
+                .document(Objects.requireNonNull(auth.getCurrentUser()).getUid())
                 // 獲取資料
                 .get()
                 // 設置網路傳輸監聽器
@@ -130,15 +123,16 @@ public class PersonalFragment extends Fragment {
                         // 將獲取的資料存成自定義類別
                         // for (DocumentSnapshot documentSnapshot : task.getResult())
                         DocumentSnapshot documentSnapshot = task.getResult();
-                        material = documentSnapshot.toObject(Material.class);
-                        assert material != null;
-                        if ((material.getImagePath() != null)){
-                            showImage(imageView, material.getImagePath());
+                        user = documentSnapshot.toObject(User.class);
+                        assert user != null;
+                        if ((user.getImagePath() != null)){
+                            showImage(iv_01, user.getImagePath());
                         }
-                        edt_name_01.setText(material.getName());
-                        edt_email_01.setText(material.getMail());
-                        edt_phone_01.setText(material.getPhone());
-                        edt_address_01.setText(material.getAddress());
+                        edt_name_01.setText(user.getName());
+                        edt_gender_01.setText(user.getGender());
+                        edt_email_01.setText(user.getMail());
+                        edt_phone_01.setText(user.getPhone());
+                        edt_address_01.setText(user.getAddress());
                     } else {
                         String message = task.getException() == null ?
                                 "查無資料" :
@@ -167,7 +161,7 @@ public class PersonalFragment extends Fragment {
     }
 
     private void handleCamera() {
-        imageView.setOnClickListener(v -> {
+        iv_01.setOnClickListener(v -> {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             File dir = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
             if (dir != null && !dir.exists()) {
@@ -243,7 +237,7 @@ public class PersonalFragment extends Fragment {
                     if (task.isSuccessful() && task.getResult() != null) {
                         byte[] bytes = task.getResult();
                         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                        imageView.setImageBitmap(bitmap);
+                        iv_01.setImageBitmap(bitmap);
                     } else {
                         String message = task.getException() == null ?
                                 "Download fail" : task.getException().getMessage();
@@ -253,12 +247,6 @@ public class PersonalFragment extends Fragment {
     }
 
     private void handleImageView() {
-//        tv_clear49_01.setOnClickListener(v -> {
-//            edt_name_01.setText("陳小明");
-//            edt_email_01.setText("b123@gmail.com");
-//            edt_phone_01.setText("0965555888");
-//            edt_address_01.setText("台北市大安區和平東路二段");
-//        });
 
         iv_clear14_01.setOnClickListener(view -> {
             Navigation.findNavController(view).navigate(R.id.passwordFragment);
@@ -272,6 +260,7 @@ public class PersonalFragment extends Fragment {
     private void handleStory() {
         tv_store_01.setOnClickListener(v -> {
             final String name = String.valueOf(edt_name_01.getText());
+            final String gender = String.valueOf(edt_gender_01.getText());
             final String mail = String.valueOf(edt_email_01.getText());
             final String phone = String.valueOf(edt_phone_01.getText());
             final String address = String.valueOf(edt_address_01.getText());
@@ -282,7 +271,7 @@ public class PersonalFragment extends Fragment {
             }
             //判斷信箱不可為空
             if (mail.isEmpty()) {
-                edt_email_01.setError("請輸入暱稱");
+                edt_email_01.setError("請輸入信箱");
             }
             //判斷電話不可為空
             if (phone.isEmpty()) {
@@ -290,31 +279,32 @@ public class PersonalFragment extends Fragment {
             }
             //判斷地址不可為空
             if (address.isEmpty()) {
-                edt_address_01.setError("請輸入電話");
+                edt_address_01.setError("請輸入地址");
             } else {
                 // 將文件 ID (UID) 設為 ID
-                material.setID(auth.getCurrentUser().getUid());
+                user.setID(auth.getCurrentUser().getUid());
                 // 個人資訊
                 final String imagePath = getString(R.string.app_name)
                         + "/images/"
                         + Objects.requireNonNull(auth.getCurrentUser()).getUid();
-                material.setImagePath(imagePath);
-                material.setName(name);
-                material.setMail(mail);
-                material.setPhone(phone);
-                material.setAddress(address);
-                modify(material);
+                user.setImagePath(imagePath);
+                user.setName(name);
+                user.setGender(gender);
+                user.setMail(mail);
+                user.setPhone(phone);
+                user.setAddress(address);
+                modify(user);
 
             }
         });
     }
 
-    private void modify(Material material) {
+    private void modify(User user) {
         // 修改指定 ID 的文件
-        db.collection("users").document(material.getID()).set(material)
+        db.collection("users").document(user.getID()).set(user)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        String message = "修改成功 with ID: " + material.getID();
+                        String message = "修改成功 with ID: " + user.getID();
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                     } else {
                         String message = task.getException() == null ?
@@ -328,23 +318,23 @@ public class PersonalFragment extends Fragment {
 
 
     private void handleSpinner() {
-        // 註冊/實作 選項被選取監聽器
-        sp_gender_01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            // 當選取的選項改變時，自動被呼叫
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
+//        // 註冊/實作 選項被選取監聽器
+//        sp_gender_01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            // 當選取的選項改變時，自動被呼叫
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//            }
+//        });
 
     }
 
     private void handleToolbar(View view) {
         iv_back_01.setOnClickListener(v -> {
-            Navigation.findNavController(view).popBackStack(R.id.personalFragment, true);
+            Navigation.findNavController(view).navigate(R.id.memberCentreFragment);
         });
 
 
