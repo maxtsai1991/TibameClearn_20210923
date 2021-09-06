@@ -280,6 +280,16 @@
             android:id="@+id/action_payFailFragment_to_orderDetFragment"
             app:destination="@id/orderDetFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/chang_to_homeuserFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.Chang_to_homeuserFragment"
+        android:label="fragment_chang_to_homeuser"
+        tools:layout="@layout/fragment_chang_to_homeuser" />
+    <fragment
+        android:id="@+id/homeUserFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.member.HomeUserFragment"
+        android:label="fragment_home_user"
+        tools:layout="@layout/fragment_home_user" />
 
 
     android:id="@+id/f_Premiumselection_List_Fragment"
