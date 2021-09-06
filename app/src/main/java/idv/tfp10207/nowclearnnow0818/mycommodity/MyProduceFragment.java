@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,7 @@ public class MyProduceFragment extends Fragment {
     private RecyclerView recycler_view;
     private MyAdapter adapter;
     private ArrayList<String> mData = new ArrayList<>();
+    private ImageView imageView20;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,8 @@ public class MyProduceFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        findViews(view);
+        handleimage();
 
         // 準備資料，塞50個項目到ArrayList裡
         for(int i = 0; i < 10; i++) {
@@ -61,6 +66,20 @@ public class MyProduceFragment extends Fragment {
         // 設置adapter給recycler_view
         recycler_view.setAdapter(adapter);
     }
+
+    private void handleimage() {
+        imageView20.setOnClickListener(v -> {
+
+            Navigation.findNavController(v)
+                    .navigate(R.id.addDelCommodityFragment);
+        });
+    }
+
+    private void findViews(View view) {
+        imageView20 = view.findViewById(R.id.imageView20);
+    }
+
+
 
     private List<Produce> getProduceList() {
         ArrayList<Produce> list = new ArrayList<>();

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 
 public class AddDelCommodityFragment extends Fragment {
-    private Button bt_add_commodity07;
+    private Button bt_add_commodity07, bt_my_commobity07, button;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,9 +40,22 @@ public class AddDelCommodityFragment extends Fragment {
     }
 
     private void findViews(View view) {
+        bt_add_commodity07 = view.findViewById(R.id.bt_add_commodity07);
+        bt_my_commobity07 = view.findViewById(R.id.bt_my_commobity07);
+        button = view.findViewById(R.id.button);
     }
 
     private void handlebutton() {
+        bt_add_commodity07.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.produceFragment);
+        });
+        bt_my_commobity07.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.myProduceFragment);
+        });
+
+
     }
 }
 
