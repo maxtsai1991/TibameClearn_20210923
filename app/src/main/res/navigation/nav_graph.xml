@@ -209,6 +209,12 @@
         <action
             android:id="@+id/action_orderDetFragment_to_orderCompFragment"
             app:destination="@id/orderCompFragment" />
+        <action
+            android:id="@+id/action_orderDetFragment_to_shoppingListFragment"
+            app:destination="@id/shoppingListFragment" />
+        <action
+            android:id="@+id/action_orderDetFragment_to_payFailFragment"
+            app:destination="@id/payFailFragment" />
     </fragment>
     <fragment
 
@@ -258,12 +264,16 @@
         android:id="@+id/produceFragment"
         android:name="idv.tfp10207.nowclearnnow0818.mycommodity.ProduceFragment"
         android:label="ProduceFragment" />
+    <fragment
+        android:id="@+id/payFailFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.market.PayFailFragment"
+        android:label="fragment_pay_fail"
+        tools:layout="@layout/fragment_pay_fail" >
+        <action
+            android:id="@+id/action_payFailFragment_to_orderDetFragment"
+            app:destination="@id/orderDetFragment" />
+    </fragment>
 
-
-
-
-
->>>>>>> Stashed changes
 
     android:id="@+id/f_Premiumselection_List_Fragment"
         android:name="idv.tfp10207.nowclearnnow0818.home.F_Premiumselection_List_Fragment"
