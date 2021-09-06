@@ -6,11 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".home.F_Premiumselection_List_Fragment">
-    <include
-        android:id="@+id/include11"
-        layout="@layout/toolbar_premiumselection"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/include11"
+            layout="@layout/toolbar_premiumselection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv_premiumselection_return07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_arrow_back_30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,6 +54,8 @@
                     android:id="@+id/imageView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
                     android:src="@drawable/girl2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -56,44 +75,45 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="李心潔 "
+                        android:text="黃永珠"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
-                        tools:text="李心潔 " />
+                        android:textSize="34sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="8dp"
-                        android:text="擅長項目: \n廁所清潔"
+                        android:text="擅長項目: \n客廳清潔"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        tools:text="擅長項目: \n廁所清潔" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="18dp"
-                        android:text="收費標準: 900"
+                        android:text="收費標準 : 1200"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        tools:text="收費標準: 900" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="8dp"
-                        android:text="已完成件數:23件"
+                        android:text="已完成件數 : 10件"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        tools:text="已完成件數:23件          " />
+                        android:textSize="18sp" />
 
-                    <RatingBar
+                    <ImageView
+                        android:id="@+id/imageView6"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/star5" />
 
                 </LinearLayout>
 
@@ -115,6 +135,8 @@
                     android:id="@+id/imageView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
                     android:src="@drawable/girl4"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -137,12 +159,13 @@
                         android:layout_gravity="center_horizontal"
                         android:text="周小美"
                         android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:textSize="34sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="8dp"
                         android:text="擅長項目: \n臥室清潔"
                         android:textColor="@color/black"
@@ -151,25 +174,28 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="18dp"
-                        android:text="收費標準: 200"
+                        android:text="收費標準 : 200"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="8dp"
-                        android:text="已完成件數:20件"
+                        android:text="已完成件數 : 06件"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        tools:text="已完成件數:23件          " />
+                        android:textSize="18sp" />
 
-                    <RatingBar
+                    <ImageView
+                        android:id="@+id/imageView12"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/star3" />
 
                 </LinearLayout>
 
@@ -191,6 +217,8 @@
                     android:id="@+id/imageView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
                     android:src="@drawable/girl3"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -211,41 +239,46 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="黃永珠"
+                        android:text="李心潔"
                         android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:textSize="34sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="8dp"
-                        android:text="擅長項目: \n客廳清潔"
+                        android:text="擅長項目: \n廁所清潔"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="18dp"
-                        android:text="收費標準: 1200"
+                        android:text="收費標準 : 900"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:gravity="center_horizontal|center_vertical"
                         android:paddingTop="8dp"
-                        android:text="已完成件數:20件"
+                        android:text="已完成件數 : 08件"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        tools:text="已完成件數:23件          " />
+                        tools:text="已完成件數 : 08件" />
 
-                    <RatingBar
+                    <ImageView
+                        android:id="@+id/imageView20"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/star3" />
 
                 </LinearLayout>
 

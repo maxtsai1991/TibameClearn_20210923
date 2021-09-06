@@ -50,6 +50,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
             android:paddingTop="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -61,49 +62,53 @@
                 android:id="@+id/tv_person1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="李心潔 "
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="黃永珠"
                 android:textColor="@color/black"
-                android:textSize="24sp"
-                tools:text="李心潔 " />
+                android:textSize="34sp"
+                tools:text="黃永珠" />
 
             <TextView
                 android:id="@+id/tv_person3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal|center_vertical"
                 android:paddingTop="8dp"
-                android:text="擅長項目: \n廁所清潔"
+                android:text="擅長項目: \n客廳清潔"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                tools:text="擅長項目: \n廁所清潔" />
+                tools:text="擅長項目: \n客廳清潔" />
 
             <TextView
                 android:id="@+id/tv_person4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal|center_vertical"
                 android:paddingTop="18dp"
-                android:text="收費標準: 900"
+                android:text="收費標準 : 1200"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                tools:text="收費標準: 900" />
+                tools:text="收費標準 : 1200" />
 
             <TextView
                 android:id="@+id/tv_person5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal|center_vertical"
                 android:paddingTop="8dp"
                 android:text="已完成件數:23件"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                tools:text="已完成件數:23件          " />
+                tools:text="已完成件數:23件" />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
+            <ImageView
+                android:id="@+id/imageView5"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:src="@drawable/star5" />
 
         </LinearLayout>
 

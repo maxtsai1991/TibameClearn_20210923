@@ -23,7 +23,7 @@ public class HomePageFragment07 extends Fragment {
     private ImageView iv_reservepage;
     private ImageView iv_marketpage;
     private ImageView iv_memberpage;
-    private ImageView iv_homepage_announcement0701,iv_message07,iv_homepage_clear_service0701,iv_premiumselectionlist0701,iv_roomtour0701;
+    private ImageView iv_homepage_announcement0701,iv_message07,iv_homepage_clear_service0701,iv_premiumselectionlist0701,iv_roomtour0702,iv_bellnotify07;
 
 
     @Override
@@ -56,7 +56,8 @@ public class HomePageFragment07 extends Fragment {
         iv_message07 = view.findViewById(R.id.iv_message07);
         iv_homepage_clear_service0701 = view.findViewById(R.id.iv_homepage_clear_service0701);
         iv_premiumselectionlist0701 = view.findViewById(R.id.iv_premiumselectionlist0701);
-        iv_roomtour0701 = view.findViewById(R.id.iv_roomtour0701);
+        iv_roomtour0702 = view.findViewById(R.id.iv_roomtour0702);
+        iv_bellnotify07 = view.findViewById(R.id.iv_bellnotify07);
     }
 
 
@@ -98,9 +99,14 @@ public class HomePageFragment07 extends Fragment {
                     .navigate(R.id.f_Premiumselection_List_Fragment);
         });
 
-        iv_roomtour0701.setOnClickListener(v -> {
+        iv_roomtour0702.setOnClickListener(v -> {
             Navigation.findNavController(v)
                     .navigate(R.id.roomTourFragment);
+        });
+
+        iv_bellnotify07.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.homePageFragment072); // todo for 書涵FCM
         });
 
     }

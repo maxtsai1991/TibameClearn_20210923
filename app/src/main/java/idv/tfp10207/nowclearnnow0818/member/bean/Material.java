@@ -1,13 +1,14 @@
-package idv.tfp10207.nowclearnnow0818.bean;
+package idv.tfp10207.nowclearnnow0818.member.bean;
 
-import java.io.Serializable;
 
-public class Material implements Serializable{
+
+public class Material {
     private String id;
     private String name;
     private String mail;
     private String phone;
     private String address;
+    private String imagePath;
 
 
     public Material() {
@@ -20,6 +21,7 @@ public class Material implements Serializable{
         this.mail = mail;
         this.phone = phone;
         this.address = address;
+        this.imagePath = imagePath;
     }
 
     public String getID() {
@@ -60,5 +62,12 @@ public class Material implements Serializable{
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

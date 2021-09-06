@@ -33,7 +33,7 @@ public class MessageListFragment07 extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull  View view, @Nullable  Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull  View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         findViews(view);

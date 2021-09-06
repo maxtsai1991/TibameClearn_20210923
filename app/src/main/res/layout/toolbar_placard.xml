@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="潔識公告"
+            android:text="【 潔識 】 公 告"
             android:textColor="@color/white"
             android:textSize="20sp" />
 

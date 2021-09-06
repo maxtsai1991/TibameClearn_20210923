@@ -270,7 +270,7 @@
         android:id="@+id/bt_registerHouserwork"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="10dp"
         android:text="成為家事者"
         app:backgroundTint="@color/clearn"
         app:layout_constraintEnd_toEndOf="parent"
