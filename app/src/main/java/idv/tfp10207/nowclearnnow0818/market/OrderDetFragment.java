@@ -41,15 +41,17 @@ public class OrderDetFragment extends Fragment {
 
     private static final String TAG = "TAG_OrderDet_Fragment";
     private static final String SHOPPINGCARLIST = "shoppingCarList";
-    public static final int RESULT_OK = -1;
+    private static final int RESULT_OK = -1;
+    private static final int RESULT_FAIL = 0;
+    private static final int RESULT_EXIT = 1;
 
     private Activity activity;
-    private TextView tv_OrderDetPayWay1Fm_05, tv_OrderDetMoney1Fm_05, tv_OrderDetPayFailFm_05;
+    private TextView tv_OrderDetPayWay1Fm_05, tv_OrderDetMoney1Fm_05;//, tv_OrderDetPayFailFm_05;
     private RecyclerView rv_OrderDetFm_05;
     private ImageView iv_OrderDetToolbarBack_05, iv_OrderDetToolbarShopMall_05;
-    private Button bt_OrderDetBuyFm_05, bt_OrderDetOrderFm_05;
+    private Button bt_OrderDetBuyFm_05;//, bt_OrderDetOrderFm_05;
 
-    ActivityResultLauncher<Intent> loginLauncher = registerForActivityResult(
+    ActivityResultLauncher<Intent> googlepayLauncher = registerForActivityResult( //0904//
             new ActivityResultContracts.StartActivityForResult(),
             this::googlePayResult); // callback，登入頁面完成之後，回原先頁面
 
@@ -86,10 +88,9 @@ public class OrderDetFragment extends Fragment {
         iv_OrderDetToolbarBack_05 = view.findViewById(R.id.iv_OrderDetToolbarBack_05);
         iv_OrderDetToolbarShopMall_05 = view.findViewById(R.id.iv_OrderDetToolbarShopMall_05);
         bt_OrderDetBuyFm_05 = view.findViewById(R.id.bt_OrderDetBuyFm_05);
-        bt_OrderDetOrderFm_05 = view.findViewById(R.id.bt_OrderDetOrderFm_05);
-        tv_OrderDetPayFailFm_05 = view.findViewById(R.id.tv_OrderDetPayFailFm_05);
-
-        bt_OrderDetOrderFm_05.setEnabled(false);
+        //bt_OrderDetOrderFm_05 = view.findViewById(R.id.bt_OrderDetOrderFm_05);
+        //tv_OrderDetPayFailFm_05 = view.findViewById(R.id.tv_OrderDetPayFailFm_05);
+        //bt_OrderDetOrderFm_05.setEnabled(false);
     }
 
     private void handleOrderDetRecyclerView() {
@@ -167,8 +168,10 @@ public class OrderDetFragment extends Fragment {
 
 
             Intent intent = new Intent(activity, GooglePayMainActivity.class); //intent指定要開啟目的地的頁面 : LoginDialogActivity，把登入的頁面獨立出來成一個頁面，可以在往後的頁面中，直接呼叫出來做登入
-            loginLauncher.launch(intent);
-            startActivity(intent);
+            googlepayLauncher.launch(intent);
+            //0904//startActivity(intent);
+
+
             });
 
     }
@@ -176,15 +179,23 @@ public class OrderDetFragment extends Fragment {
     private void googlePayResult(ActivityResult result) {
         //todo  成功，跳轉至訂單詳情頁面
         if(result.getResultCode() == RESULT_OK){
-            bt_OrderDetOrderFm_05.setEnabled(true);
-            bt_OrderDetBuyFm_05.setEnabled(false);
+            //bt_OrderDetOrderFm_05.setEnabled(true);
+            //bt_OrderDetBuyFm_05.setEnabled(false);
 
-            NavController navController = Navigation.findNavController(bt_OrderDetOrderFm_05);
+            NavController navController = Navigation.findNavController(rv_OrderDetFm_05);
             navController.navigate(R.id.action_orderDetFragment_to_orderCompFragment);
 
+        }//todo 失敗，跳轉至失敗頁面
+        else if(result.getResultCode() == RESULT_FAIL){
+            //tv_OrderDetPayFailFm_05.setText("付款失敗");
+
+            NavController navController = Navigation.findNavController(rv_OrderDetFm_05);
+            navController.navigate(R.id.action_orderDetFragment_to_payFailFragment);
+
         }
-        else{ //todo 失敗，跳轉至失敗頁面
-            tv_OrderDetPayFailFm_05.setText("付款失敗");
+        else{ //todo exit
+            NavController navController = Navigation.findNavController(rv_OrderDetFm_05);
+            navController.navigate(R.id.action_orderDetFragment_to_shoppingListFragment);
         }
     }
 

@@ -181,18 +181,18 @@ public class Market_homeFragment extends Fragment {
 
     public List<MerchInfo> getListMarketHome(){
         return Arrays.asList(   //list 商品照片與資訊
-                new MerchInfo(R.drawable.test_images1,"拖把1",1, 10,"好用牌", "超強力拖把，真好用", "王小明", "m111"),
-                new MerchInfo(R.drawable.test_images2, "家具清潔劑1", 2, 20,"XXX-1牌", "真的很好用哦1", "張三豐", "m222"),
-                new MerchInfo(R.drawable.test_images3, "拖把2", 3, 30,"XXX-2牌", "真的很好用哦2", "王小明", "m111"),
-                new MerchInfo(R.drawable.test_images4, "多功能清潔劑", 4, 40,"XXX-3牌", "真的很好用哦3", "張無忌","m333"),
-                new MerchInfo(R.drawable.test_images1,"拖把3",1, 50, "XXX-4牌", "真的很好用哦4", "五月天","m444"),
-                new MerchInfo(R.drawable.test_images2, "拖把4", 2, 60,"XXX-5牌", "真的很好用哦5", "周傑倫","m666"),
-                new MerchInfo(R.drawable.test_images3, "拖把5", 3, 70,"XXX-6牌", "真的很好用哦6", "張三豐","m222"),
-                new MerchInfo(R.drawable.test_images4, "掃把", 4, 80,"XXX-7牌", "真的很好用哦7", "蕭敬騰","m555"),
-                new MerchInfo(R.drawable.test_images1,"家具清潔劑2",6, 90,"XXX-8牌", "真的很好用哦8", "五月天","m444"),
-                new MerchInfo(R.drawable.test_images2, "家具清潔劑3", 3, 100,"XXX-9牌", "真的很好用哦9", "陳阿姨","m777"),
-                new MerchInfo(R.drawable.test_images3, "吸水抹布", 3, 110,"XXX-10牌", "真的很好用哦10", "鄭先生","m888"),
-                new MerchInfo(R.drawable.test_images4, "家具清潔劑4", 5, 120,"XXX-11牌", "真的很好用哦11", "王小明", "m111")
+                new MerchInfo(R.drawable.test_images2, "高樂氏廚房清潔劑", 1, 10,"高樂氏", "輕鬆瓦解頑強汙垢，多表面適用", "陳小明", "a002"),
+                new MerchInfo(R.drawable.test_images2, "妙管家地板清潔劑", 3, 10,"妙管家", "分解油垢清爽不黏腳", "陳明漢","a006"),
+                new MerchInfo(R.drawable.test_images2, "高樂氏去汙清潔劑", 1, 10,"高樂氏", "美國製造，原裝進口", "陳小明", "a002"),
+                new MerchInfo(R.drawable.test_images2, "妙管家地板清潔劑", 3, 10,"妙管家", "含特殊木質潤澤成份", "陳明漢","a006"),
+                new MerchInfo(R.drawable.test_images4, "魔術靈玻璃清潔劑", 4, 10,"魔術靈", "極淨晶亮 不留擦痕", "黃永珠","a005")
+                /*new MerchInfo(R.drawable.test_images4, "多功能清潔劑", 4, 40,"XXX-3牌", "真的很好用哦3", "陳小明","a002"),
+                new MerchInfo(R.drawable.test_images1,"拖把3",1, 50, "XXX-4牌", "真的很好用哦4", "張小慧","a003"),
+                new MerchInfo(R.drawable.test_images2, "拖把4", 2, 60,"XXX-5牌", "真的很好用哦5", "李心潔","a004"),
+                new MerchInfo(R.drawable.test_images3, "拖把5", 3, 70,"XXX-6牌", "真的很好用哦6", "張小慧","a003"),
+                new MerchInfo(R.drawable.test_images1,"家具清潔劑2",6, 90,"XXX-8牌", "真的很好用哦8", "王大明","a001"),
+                new MerchInfo(R.drawable.test_images3, "吸水抹布", 3, 110,"XXX-10牌", "真的很好用哦10", "周小美","a007"),
+                new MerchInfo(R.drawable.test_images4, "家具清潔劑4", 5, 120,"XXX-11牌", "真的很好用哦11", "周小美", "a007")*/
         );
     }
 

@@ -241,7 +241,7 @@ public class GooglePay_05Fragment extends Fragment {
                參看圖示 https://docs.tappaysdk.com/google-pay/zh/home.html#home 向下捲動即可看到 */
         tpdGooglePay.getPrime( //tpdGooglePay  tpd for google pay 的api
                 paymentData,
-                (prime, tpdCardInfo) -> {   //收到第一次送過去回來的prime，成功
+                (prime, tpdCardInfo, t) -> {   //收到第一次送過去回來的prime，成功
                     hideProgressDialog();
 
 //                    String orderNumber = orderNumberLoadFile();  //TODO 訂單處理
@@ -352,7 +352,7 @@ public class GooglePay_05Fragment extends Fragment {
     /**
      * 讀檔訂單編號
      */
-    private String orderNumberLoadFile() {
+    /*private String orderNumberLoadFile() {
         try (
                 // 取得FileInputStream物件
                 FileInputStream fis = activity.openFileInput(ORDERNUMBER);
@@ -364,12 +364,12 @@ public class GooglePay_05Fragment extends Fragment {
             Log.e(TAG, e.toString());
         }
         return null;
-    }
+    }*/
 
     /**
      * 存檔商品項目
      */
-    private void orderNumberSaveFile(final String orderNumber) {
+    /*private void orderNumberSaveFile(final String orderNumber) {
         try (
                 // 取得FileOutputStream物件
                 FileOutputStream fos = activity.openFileOutput(ORDERNUMBER, Context.MODE_PRIVATE);
@@ -381,6 +381,6 @@ public class GooglePay_05Fragment extends Fragment {
         } catch (Exception e) {
             Log.e(TAG, e.toString());
         }
-    }
+    }*/
 
 }
