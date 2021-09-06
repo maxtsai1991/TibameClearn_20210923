@@ -2,25 +2,27 @@ package idv.tfp10207.nowclearnnow0818.member.bean;
 
 
 
-public class Material {
+public class User {
     private String id;
     private String name;
     private String mail;
     private String phone;
     private String address;
     private String imagePath;
+    private String gender;
 
 
-    public Material() {
+    public User() {
 
     }
 
-    public Material(String id, String name, String mail, String phone, String address) {
+    public User(String id, String name, String mail, String phone, String address, String gender) {
         this.id = id;
         this.name = name;
         this.mail = mail;
         this.phone = phone;
         this.address = address;
+        this.gender = gender;
         this.imagePath = imagePath;
     }
 
@@ -64,9 +66,18 @@ public class Material {
         this.address = address;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getImagePath() {
         return imagePath;
     }
+
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
