@@ -15,7 +15,7 @@ import androidx.navigation.Navigation;
 
 import idv.tfp10207.nowclearnnow0818.R;
 
-
+// TEST 
 public class HomePageFragment07 extends Fragment {
     private Activity activity;
 
