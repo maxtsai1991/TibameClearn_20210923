@@ -83,11 +83,11 @@ public class MyProduceFragment extends Fragment {
 
     private List<Produce> getProduceList() {
         ArrayList<Produce> list = new ArrayList<>();
-        list.add(new Produce(R.drawable.m1, "1"));
-        list.add(new Produce(R.drawable.m2, "2"));
-        list.add(new Produce(R.drawable.m3, "3"));
-        list.add(new Produce(R.drawable.m4, "4"));
-        list.add(new Produce(R.drawable.m5, "5"));
+        list.add(new Produce(R.drawable.m1, "高樂氏廚房清潔劑"));
+        list.add(new Produce(R.drawable.m3, "妙管家地板清潔劑"));
+        list.add(new Produce(R.drawable.m2, "高樂氏去汙清潔劑"));
+        list.add(new Produce(R.drawable.m4, "妙管家窗戶清潔劑"));
+        list.add(new Produce(R.drawable.m5, "魔術靈玻璃清潔劑"));
 
         return list;
     }

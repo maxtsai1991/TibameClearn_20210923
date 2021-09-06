@@ -16,8 +16,8 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="251dp"
-        android:layout_height="131dp"
+        android:layout_width="45dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         app:srcCompat="@drawable/m1" />
 
@@ -25,6 +25,7 @@
         android:id="@+id/btnRemove"
         android:layout_width="wrap_content"
         android:layout_height="65dp"
-        android:text="刪除" />
+        android:text="下架"
+        app:backgroundTint="@color/clearn" />
 
 </LinearLayout>

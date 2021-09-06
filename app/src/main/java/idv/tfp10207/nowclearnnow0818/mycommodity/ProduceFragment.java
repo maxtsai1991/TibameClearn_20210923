@@ -47,7 +47,7 @@ public class ProduceFragment extends Fragment {
     private Button button, button4, button5;
    // private TextView tvproduce,tvprice,tvquantity,tvdetail,tvpdname;
     private EditText etpdname, etdetail, etquantity,etprice,etproduce;
-    private ImageView imageView,imageView2,imageView3;
+    private ImageView imageView,imageView21;
     private List<Uri> imageUris;
 
     ActivityResultLauncher<Intent> pickPicturesLauncher = registerForActivityResult(
@@ -90,8 +90,12 @@ public class ProduceFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         handlebutton();
+        handleimage();
 
     }
+
+
+
     private void findViews(View view) {
         button = view.findViewById(R.id.button);
         button4 = view.findViewById(R.id.button4);
@@ -102,7 +106,7 @@ public class ProduceFragment extends Fragment {
         etproduce = view.findViewById(R.id.etproduce);
         etquantity = view.findViewById(R.id.etquantity);
         imageView = view.findViewById(R.id.imageView);
-//        imageView2 = view.findViewById(R.id.imageView2);
+        imageView21 = view.findViewById(R.id.imageView21);
 //        imageView3 = view.findViewById(R.id.imageView3);
 
 
@@ -150,9 +154,15 @@ public class ProduceFragment extends Fragment {
                       .navigate(R.id.addDelCommodityFragment);
           });
 
-
       });
 
+    }
+    private void handleimage() {
+        imageView21.setOnClickListener(v -> {
+
+            Navigation.findNavController(v)
+                    .navigate(R.id.addDelCommodityFragment);
+        });
     }
     /**
      * 5. 檢查是否有內建的相機App

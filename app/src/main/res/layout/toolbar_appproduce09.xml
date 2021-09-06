@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#91C75C">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="56dp">
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_produce_toolbarname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginRight="165dp"
+        android:text="新增商品"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>
