@@ -250,14 +250,14 @@ public class GooglePayMainActivity extends AppCompatActivity {
                         }
                     }
 
-                    for(int i = 0 ; i < googlePayShoppingCar.size() ; i++){
-                        if(googlePayShoppingCar.get(i).getMerchCheckBox()){
-                            googlePayShoppingCar.remove(i);
-                        }
-                    }
+//                    for(int i = 0 ; i < googlePayShoppingCar.size() ; i++){
+//                        if(googlePayShoppingCar.get(i).getMerchCheckBox()){
+//                            googlePayShoppingCar.remove(i);
+//                        }
+//                    }
 
-                    //存檔
-                    googlePaySaveShopCarMerchAllFile(googlePayShoppingCar);
+//                    //存檔
+//                    googlePaySaveShopCarMerchAllFile(googlePayShoppingCar);
 
 
 //                    String text = "Your prime is " + prime + "\n\n"
@@ -276,33 +276,33 @@ public class GooglePayMainActivity extends AppCompatActivity {
                     //todo 執行訂單的存檔
 
                     //讀入訂單資訊
-                    List<OrderNumber> orderNumberLoad = orderNumberLoadFile();
-                    OrderNumber orderNumber = new OrderNumber();
-                    Member_05 member = getMember();
+                    //List<OrderNumber> orderNumberLoad = orderNumberLoadFile();
+                    //OrderNumber orderNumber = new OrderNumber();
+                    //Member_05 member = getMember();
 
-                    if (orderNumberLoad == null || orderNumberLoad.size() == 0) {
-                        orderNumberLoad = new ArrayList<>();
-
-                        orderNumber.setAddress(member.getAddress());
-                        orderNumber.setOrderNumber(orderNo);
-
-                        orderNumberLoad.add(orderNumber);
-                    }
-                    else{
-                        orderNumber.setAddress(member.getAddress());
-                        orderNumber.setOrderNumber(orderNo);
-
-                        orderNumberLoad.add( orderNumberLoad.size(), orderNumber);
-                    }
+//                    if (orderNumberLoad == null || orderNumberLoad.size() == 0) {
+//                        orderNumberLoad = new ArrayList<>();
+//
+//                        orderNumber.setAddress(member.getAddress());
+//                        orderNumber.setOrderNumber(orderNo);
+//
+//                        orderNumberLoad.add(orderNumber);
+//                    }
+//                    else{
+//                        orderNumber.setAddress(member.getAddress());
+//                        orderNumber.setOrderNumber(orderNo);
+//
+//                        orderNumberLoad.add( orderNumberLoad.size(), orderNumber);
+//                    }
 
                     //存檔訂單內容
-                    orderNumberSaveFile(orderNumberLoad);
+                    //orderNumberSaveFile(orderNumberLoad);
 
 
                     //todo 回傳前頁fragment內容
                     //要將Intent物件放在setResult()內方能回傳
                     Intent intent = getIntent();
-                    intent.putExtra("googlepay", "success");
+                    intent.putExtra("orderNumber", orderNo);
                     setResult(-1, intent); //確認付款成功，回傳前一頁fragment
                     finish();
 
@@ -407,36 +407,36 @@ public class GooglePayMainActivity extends AppCompatActivity {
     /**
      * 讀檔訂單編號
      */
-    private List<OrderNumber> orderNumberLoadFile() {
-        try (
-                // 取得FileInputStream物件
-                FileInputStream fis = this.openFileInput(ORDERNUMBER);
-                // Java I/O相關程式
-                ObjectInputStream ois = new ObjectInputStream(fis)
-        ) {
-            return (List<OrderNumber>) ois.readObject();
-        } catch (Exception e) {
-            Log.e(TAG, e.toString());
-        }
-        return null;
-    }
+//    private List<OrderNumber> orderNumberLoadFile() {
+//        try (
+//                // 取得FileInputStream物件
+//                FileInputStream fis = this.openFileInput(ORDERNUMBER);
+//                // Java I/O相關程式
+//                ObjectInputStream ois = new ObjectInputStream(fis)
+//        ) {
+//            return (List<OrderNumber>) ois.readObject();
+//        } catch (Exception e) {
+//            Log.e(TAG, e.toString());
+//        }
+//        return null;
+//    }
 
     /**
      * 存檔訂單編號
      */
-    private void orderNumberSaveFile(final List<OrderNumber> orderNumber) {
-        try (
-                // 取得FileOutputStream物件
-                FileOutputStream fos = this.openFileOutput(ORDERNUMBER, Context.MODE_PRIVATE);
-                // Java I/O相關程式
-                ObjectOutputStream oos = new ObjectOutputStream(fos)
-        ) {
-            oos.writeObject(orderNumber);
-            oos.flush();
-        } catch (Exception e) {
-            Log.e(TAG, e.toString());
-        }
-    }
+//    private void orderNumberSaveFile(final List<OrderNumber> orderNumber) {
+//        try (
+//                // 取得FileOutputStream物件
+//                FileOutputStream fos = this.openFileOutput(ORDERNUMBER, Context.MODE_PRIVATE);
+//                // Java I/O相關程式
+//                ObjectOutputStream oos = new ObjectOutputStream(fos)
+//        ) {
+//            oos.writeObject(orderNumber);
+//            oos.flush();
+//        } catch (Exception e) {
+//            Log.e(TAG, e.toString());
+//        }
+//    }
 
 
     private String getOrdernumber(){

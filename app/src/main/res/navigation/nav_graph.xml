@@ -245,7 +245,11 @@
     <fragment
         android:id="@+id/orderCompFragment"
         android:name="idv.tfp10207.nowclearnnow0818.market.OrderCompFragment"
-        android:label="OrderCompFragment" />
+        android:label="OrderCompFragment" >
+        <action
+            android:id="@+id/action_orderCompFragment_to_market_homeFragment2"
+            app:destination="@id/market_homeFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/roomTourFragment"
         android:name="idv.tfp10207.nowclearnnow0818.home.RoomTourFragment"
