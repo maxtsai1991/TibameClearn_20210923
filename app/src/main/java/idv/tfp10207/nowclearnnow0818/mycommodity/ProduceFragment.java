@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -49,6 +50,7 @@ public class ProduceFragment extends Fragment {
     private EditText etpdname, etdetail, etquantity,etprice,etproduce;
     private ImageView imageView,imageView21;
     private List<Uri> imageUris;
+    private TextView textView3,textView5;
 
     ActivityResultLauncher<Intent> pickPicturesLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -91,6 +93,7 @@ public class ProduceFragment extends Fragment {
         findViews(view);
         handlebutton();
         handleimage();
+        handlesend();
 
     }
 
@@ -108,9 +111,10 @@ public class ProduceFragment extends Fragment {
         imageView = view.findViewById(R.id.imageView);
         imageView21 = view.findViewById(R.id.imageView21);
 //        imageView3 = view.findViewById(R.id.imageView3);
-
-
+        textView3 = view.findViewById(R.id.textView3);
+        textView5 = view.findViewById(R.id.textView5);
     }
+
 
     private void handlebutton() {
       button.setOnClickListener(view -> {
@@ -155,14 +159,43 @@ public class ProduceFragment extends Fragment {
           });
 
       });
+        textView3.setOnClickListener(v -> {
+            etproduce.setText("妙管家地板清潔劑");
+            etprice.setText("15");
+            etquantity.setText("15");
+            etdetail.setText("輕鬆瓦解頑強汙垢，多表面適用");
+            etpdname.setText("高樂氏");
+        });
+        textView5.setOnClickListener(v -> {
+            etproduce.setText("高樂氏廚房清潔劑");
+            etprice.setText("10");
+            etquantity.setText("11");
+            etdetail.setText("輕鬆瓦解頑強汙垢，多表面適用");
+            etpdname.setText("高樂氏");
+        });
 
     }
+    private void handlesend() {
+        button4.setOnClickListener(v -> {
+            Toast.makeText(activity, "商品已上架", Toast.LENGTH_SHORT).show();
+            Navigation.findNavController(v)
+                    .navigate(R.id.addDelCommodityFragment);
+        });
+        button5.setOnClickListener(v -> {
+
+            Navigation.findNavController(v)
+                    .navigate(R.id.addDelCommodityFragment);
+        });
+
+    }
+
     private void handleimage() {
         imageView21.setOnClickListener(v -> {
 
             Navigation.findNavController(v)
                     .navigate(R.id.addDelCommodityFragment);
         });
+
     }
     /**
      * 5. 檢查是否有內建的相機App
