@@ -28,6 +28,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import idv.tfp10207.nowclearnnow0818.R;
+import idv.tfp10207.nowclearnnow0818.market.MarketHomeAdapter.OrderCompListAdapter;
 import idv.tfp10207.nowclearnnow0818.market.MarketHomeAdapter.OrderDetAdapter;
 import idv.tfp10207.nowclearnnow0818.market.ShoppingCarMerch;
 
@@ -72,40 +73,36 @@ public class OrderFragment extends Fragment {
     }
 
     private void handleOrderDetRecyclerView() {
-        List<ShoppingCarMerch> shoppingCarMerch = orderDetLoadShoppingCarFile();
+        //商品讀入
+        List<ShoppingCarMerch> shoppingCarFile = orderComploadMerchFile();
+        List<ShoppingCarMerch> orderCompMerchFile = new ArrayList<>();
 
-        List<ShoppingCarMerch> orderDet = new ArrayList<>();
-
-        //將勾選的商品，帶到Adapter
-
-//        for (int i = 0; i < shoppingCarMerch.size(); i++) {
-//            int j = 0;
-//            if (shoppingCarMerch.get(i).getMerchCheckBox()) {
-//                orderDet.add(j, shoppingCarMerch.get(i));
-//                j++;
-//            }
-//        }
-        //調整位置
-        Collections.sort(orderDet, new Comparator<ShoppingCarMerch>() {
-            @Override
-            public int compare(ShoppingCarMerch o1, ShoppingCarMerch o2) {
-                return o1.getMemberId().compareTo(o2.getMemberId());
+        for(int i = 0 ; i < shoppingCarFile.size() ; i++){
+            if(shoppingCarFile.get(i).getMerchCheckBox()){
+                orderCompMerchFile.add(shoppingCarFile.get(i));
             }
-        });
-        //存檔 TODO
-//        orderDetSaveShoppingCarMerchAllFile(orderDet);
+        }
 
-        rv_OrderDetFm_01.setAdapter(new OrderDetAdapter(activity, orderDet));
+        for(int i = shoppingCarFile.size() - 1 ; i >= 0 ; i--){
+            if(shoppingCarFile.get(i).getMerchCheckBox()){
+                shoppingCarFile.remove(i);
+            }
+        }
+
+
+        //商品存檔
+        orderCompSaveMerchFile(shoppingCarFile);
+
+        rv_OrderDetFm_01.setAdapter(new OrderCompListAdapter(activity, orderCompMerchFile));
         rv_OrderDetFm_01.setLayoutManager(new LinearLayoutManager(activity));
-
     }
 
     /**
-     * 讀檔
+     * 商品讀檔
      */
 
 
-    private List<ShoppingCarMerch> orderDetLoadShoppingCarFile() {
+    private List<ShoppingCarMerch> orderComploadMerchFile() {
         try (
                 // 取得FileInputStream物件
                 FileInputStream fis = activity.openFileInput(SHOPPINGCARLIST);
@@ -120,9 +117,9 @@ public class OrderFragment extends Fragment {
     }
 
     /**
-     * 存檔
+     * 商品存檔
      */
-    private void orderDetSaveShoppingCarMerchAllFile(final List<ShoppingCarMerch> shoppingCarMerch) {
+    private void orderCompSaveMerchFile(final List<ShoppingCarMerch> shoppingCarMerch) {
         try (
                 // 取得FileOutputStream物件
                 FileOutputStream fos = activity.openFileOutput(SHOPPINGCARLIST, Context.MODE_PRIVATE);
