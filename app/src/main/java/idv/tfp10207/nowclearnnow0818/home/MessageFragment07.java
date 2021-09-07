@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,7 +24,8 @@ import idv.tfp10207.nowclearnnow0818.R;
 public class MessageFragment07 extends Fragment {
     private Activity activity;
     private ImageView iv_pic07,iv_viewpic07,iv_send07,iv_messagereturn07;
-    private TextView tv_needer_talk07,tv_homewroktalk07,tv_talk0701;
+    private TextView tv_needer_talk07,tv_homewroktalk07,tv_talk0701,tv_membertalk0101;
+    private EditText editTextTextPersonName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,9 +55,11 @@ public class MessageFragment07 extends Fragment {
         iv_viewpic07 = view.findViewById(R.id.iv_viewpic07);
         tv_needer_talk07 = view.findViewById(R.id.tv_needer_talk07);
         tv_homewroktalk07 = view.findViewById(R.id.tv_homewroktalk07);
-        iv_send07 =  view.findViewById(R.id.iv_pic07);
+        iv_send07 =  view.findViewById(R.id.iv_send07);
         iv_messagereturn07 =  view.findViewById(R.id.iv_messagereturn07);
         tv_talk0701 =  view.findViewById(R.id.tv_talk0701);
+        tv_membertalk0101 =  view.findViewById(R.id.tv_membertalk0101);
+        editTextTextPersonName = view.findViewById(R.id.editTextTextPersonName);
     }
 
     private void handleReturn() {
@@ -84,7 +88,11 @@ public class MessageFragment07 extends Fragment {
         });
 
         tv_talk0701.setOnClickListener(v -> {
-            tv_talk0701.setText("OK~明天見 !");
+            tv_talk0701.setText("OK~那明天見!");
+        });
+
+        iv_send07.setOnClickListener(v -> {
+            tv_membertalk0101.setText(editTextTextPersonName.getText());
         });
 
     }

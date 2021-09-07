@@ -109,14 +109,15 @@ public class HomePageFragment07 extends Fragment {
                     .navigate(R.id.roomTourFragment);
         });
 
-        iv_bellnotify07.setOnClickListener(v -> {
-            Navigation.findNavController(v)
-                    .navigate(R.id.homePageFragment072); // todo for 書涵FCM
+        iv_bellnotify07.setOnClickListener(v -> {// todo for 書涵FCM
+            iv_bell_add_one07.setVisibility(View.GONE);
+            NavController navController = Navigation.findNavController(v);
+            navController.navigate(R.id.action_homePageFragment072_to_reserve_01_Fragment);
         });
 
         tv_to_homeworkerMember07.setOnClickListener(v -> {
             Navigation.findNavController(v)
-                    .navigate(R.id.homePageFragment072); // todo for 定翰家事者會員頁面
+                    .navigate(R.id.homeUserFragment);
         });
         iv_bell_add_one07.setVisibility(View.GONE);
         iv_homepage_logo_bell_07.setOnClickListener(v -> {
