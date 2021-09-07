@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -18,7 +19,8 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 
 public class AddDelCommodityFragment extends Fragment {
-    private Button bt_add_commodity07, bt_my_commobity07, button;
+    private Button bt_add_commodity07, bt_my_commobity07;
+    private ImageView iv_commodity_return;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,12 +39,19 @@ public class AddDelCommodityFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         handlebutton();
+        handleimage();
     }
 
     private void findViews(View view) {
         bt_add_commodity07 = view.findViewById(R.id.bt_add_commodity07);
         bt_my_commobity07 = view.findViewById(R.id.bt_my_commobity07);
-        button = view.findViewById(R.id.button);
+        iv_commodity_return = view.findViewById(R.id.iv_commodity_return);
+    }
+    private void handleimage() {
+        iv_commodity_return.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.memberCentreFragment);
+        });
     }
 
     private void handlebutton() {
