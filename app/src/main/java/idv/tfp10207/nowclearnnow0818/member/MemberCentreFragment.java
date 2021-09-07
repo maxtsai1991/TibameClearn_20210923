@@ -38,14 +38,13 @@ public class MemberCentreFragment extends Fragment {
     private Activity activity;
     private ImageView iv_clear1_01, iv_clear3_01, iv_clear4_01;
     private ImageView iv_home_01, iv_question_01, iv_picture_01, iv_off_01;
-    private TextView tv_clear8_01, tv_clear1_01;
+    private TextView tv_clear8_01;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
     private FirebaseStorage storage;
-    private Uri contentUri;
     private User user;
-    String str1 = "一般會員";
-    String str2 = "家事者";
+//    String str1 = "一般會員";
+//    String str2 = "家事者";
 
 
 
@@ -53,6 +52,7 @@ public class MemberCentreFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = (AppCompatActivity) getActivity();
+        setHasOptionsMenu(true);
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         storage = FirebaseStorage.getInstance();
@@ -62,10 +62,6 @@ public class MemberCentreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        activity = getActivity();
-
-        setHasOptionsMenu(true);
-
         return inflater.inflate(R.layout.fragment_member_centre, container, false);
     }
 
@@ -87,24 +83,24 @@ public class MemberCentreFragment extends Fragment {
         tv_clear8_01 = view.findViewById(R.id.tv_clear8_01);
         iv_question_01 = view.findViewById(R.id.iv_question_01);
         tv_clear8_01 = view.findViewById(R.id.tv_clear8_01);
-        tv_clear1_01 = view.findViewById(R.id.tv_clear1_01);
         iv_picture_01 = view.findViewById(R.id.iv_picture_01);
         iv_clear3_01 = view.findViewById(R.id.iv_clear3_01);
         iv_off_01 = view.findViewById(R.id.iv_off_01);
     }
 
     private void handleTextview() {
-        tv_clear1_01.setText(str1);//設置原来的文本
-        tv_clear1_01.setTag(false);//标记textview为false（表示没有被点击过）
         tv_clear8_01.setOnClickListener(v -> {
-            boolean flag = (boolean) tv_clear1_01.getTag();//当点击时，首先判断是否已经点击过
-            if (!flag) {
-                tv_clear1_01.setText(str2);
-                tv_clear1_01.setTag(true);
-            } else {//已经点击过了
-                tv_clear1_01.setText(str1);
-                tv_clear1_01.setTag(false);
-            }
+            Navigation.findNavController(v).navigate(R.id.chang_to_homeuserFragment);
+//        tv_clear1_01.setTag(false);//标记textview为false（表示没有被点击过）
+//        tv_clear1_01.setText(str1);//設置原来的文本
+//            boolean flag = (boolean) tv_clear1_01.getTag();//当点击时，首先判断是否已经点击过
+//            if (!flag) {
+//                tv_clear1_01.setText(str2);
+//                tv_clear1_01.setTag(true);
+//            } else {//已经点击过了
+//                tv_clear1_01.setText(str1);
+//                tv_clear1_01.setTag(false);
+//            }
 
         });
     }
