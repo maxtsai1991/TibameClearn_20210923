@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,9 +37,10 @@ public class LoginFragment extends Fragment {
     private FirebaseAuth auth;
     private EditText etAccount, etPassword;
     private Button btlogin, btRegisterHouseworker, btRegisterMember;
-    private TextView tvLoginMessage,tv_skip;
-    private ImageView ivDebugLogin;
-
+    private TextView tvLoginMessage;
+    private ImageView iv_skip07,iv_member_login07,iv_homework_login07;
+    private ViewFlipper vf_speak07;
+    int images[] = {R.drawable.image_login_speak1, R.drawable.image_login_speak2, R.drawable.image_login_speak3};
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +63,7 @@ public class LoginFragment extends Fragment {
         handleLogin(); //登入處理
         handleRegisterHouseworker(); // 跳轉家事者畫面
         handleRegisterMember();// 跳轉註冊畫面
+        handleViewFlipper(images);
 
     }
 
@@ -70,9 +73,11 @@ public class LoginFragment extends Fragment {
         btlogin = view.findViewById(R.id.bt_login);// (登入)
         btRegisterHouseworker = view.findViewById(R.id.bt_houseworker);// (註冊家事者)
         tvLoginMessage = view.findViewById(R.id.tv_Message); //檢查帳號密碼資訊
-        ivDebugLogin = view.findViewById(R.id.iv_login_pic); // debug
+        iv_member_login07 = view.findViewById(R.id.iv_member_login07); // debug
         btRegisterMember = view.findViewById(R.id.bt_register);// 註冊
-        tv_skip = view.findViewById(R.id.tv_skip);
+        iv_skip07 = view.findViewById(R.id.iv_skip07);
+        iv_homework_login07 = view.findViewById(R.id.iv_homework_login07);
+        vf_speak07 = view.findViewById(R.id.vf_speak07);
     }
 
     private void handleLogin() {//取得帳號密碼轉成字串
@@ -81,11 +86,17 @@ public class LoginFragment extends Fragment {
             String password = etPassword.getText().toString();
             signIn(email, password);
         });
-        ivDebugLogin.setOnClickListener(v -> { // 快速貼上假資料帳號密碼
+        iv_member_login07.setOnClickListener(v -> { // 快速貼上需求者假資料帳號密碼
             etAccount.setText("aaa@gmail.com");
             etPassword.setText("98745612");
         });
-        tv_skip.setOnClickListener(v -> { // 快速貼上假資料帳號密碼
+
+        iv_homework_login07.setOnClickListener(v -> { // 快速貼上家事者假資料帳號密碼
+            etAccount.setText("wong96@gmail.com");
+            etPassword.setText("456852wa");
+        });
+
+        iv_skip07.setOnClickListener(v -> { // 跳過登入
             Navigation.findNavController(v)
                     .navigate(R.id.homePageFragment072);
         });
@@ -154,7 +165,19 @@ public class LoginFragment extends Fragment {
             Toast.makeText(activity, "請填寫家事者資料欄位", Toast.LENGTH_SHORT).show();
         });
     }
+    private void handleViewFlipper(int[] images) {
+        for(int img :images) {
+            ImageView imageView = new ImageView(getContext());
+            imageView.setImageResource(img);
+            vf_speak07.addView(imageView);
+        }
+        vf_speak07.setFlipInterval(2000);
+        vf_speak07.setAutoStart(true);
+        //animation
+        vf_speak07.setInAnimation(getContext(), android.R.anim.slide_in_left );
+        vf_speak07.setOutAnimation(getContext(),android.R.anim.slide_out_right);
 
+    }
 
 }
 

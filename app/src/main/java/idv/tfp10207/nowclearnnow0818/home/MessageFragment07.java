@@ -23,7 +23,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 public class MessageFragment07 extends Fragment {
     private Activity activity;
     private ImageView iv_pic07,iv_viewpic07,iv_send07,iv_messagereturn07;
-    private TextView tv_needer_talk07,tv_homewroktalk07;
+    private TextView tv_needer_talk07,tv_homewroktalk07,tv_talk0701;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class MessageFragment07 extends Fragment {
         tv_homewroktalk07 = view.findViewById(R.id.tv_homewroktalk07);
         iv_send07 =  view.findViewById(R.id.iv_pic07);
         iv_messagereturn07 =  view.findViewById(R.id.iv_messagereturn07);
+        tv_talk0701 =  view.findViewById(R.id.tv_talk0701);
     }
 
     private void handleReturn() {
@@ -75,11 +76,15 @@ public class MessageFragment07 extends Fragment {
     }
     private void handleSendButton() {
         tv_needer_talk07.setOnClickListener(v -> {
-            tv_needer_talk07.setText("有事先出門,鑰匙放在警衛室,再麻煩你上樓整理!");
+            tv_needer_talk07.setText("幫妳開門 ~ 但我有事先出門等等回來!");
         });
 
         tv_homewroktalk07.setOnClickListener(v -> {
             tv_homewroktalk07.setText("已完成這次清潔,附圖參考");
+        });
+
+        tv_talk0701.setOnClickListener(v -> {
+            tv_talk0701.setText("OK~明天見 !");
         });
 
     }

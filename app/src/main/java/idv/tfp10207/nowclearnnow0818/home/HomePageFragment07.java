@@ -1,11 +1,13 @@
 package idv.tfp10207.nowclearnnow0818.home;
 
 import android.app.Activity;
+import android.media.tv.TvContentRating;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,8 +25,8 @@ public class HomePageFragment07 extends Fragment {
     private ImageView iv_reservepage;
     private ImageView iv_marketpage;
     private ImageView iv_memberpage;
-    private ImageView iv_homepage_announcement0701,iv_message07,iv_homepage_clear_service0701,iv_premiumselectionlist0701,iv_roomtour0702,iv_bellnotify07;
-
+    private ImageView iv_homepage_announcement0701,iv_message07,iv_homepage_clear_service0701,iv_premiumselectionlist0701,iv_roomtour0702,iv_bellnotify07,iv_homepage_logo_bell_07,iv_bell_add_one07;
+    private TextView tv_to_homeworkerMember07;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,9 @@ public class HomePageFragment07 extends Fragment {
         iv_premiumselectionlist0701 = view.findViewById(R.id.iv_premiumselectionlist0701);
         iv_roomtour0702 = view.findViewById(R.id.iv_roomtour0702);
         iv_bellnotify07 = view.findViewById(R.id.iv_bellnotify07);
+        tv_to_homeworkerMember07 = view.findViewById(R.id.tv_to_homeworkerMember07);
+        iv_homepage_logo_bell_07 = view.findViewById(R.id.iv_homepage_logo_bell_07);
+        iv_bell_add_one07 = view.findViewById(R.id.iv_bell_add_one07);
     }
 
 
@@ -107,6 +112,15 @@ public class HomePageFragment07 extends Fragment {
         iv_bellnotify07.setOnClickListener(v -> {
             Navigation.findNavController(v)
                     .navigate(R.id.homePageFragment072); // todo for 書涵FCM
+        });
+
+        tv_to_homeworkerMember07.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.homePageFragment072); // todo for 定翰家事者會員頁面
+        });
+        iv_bell_add_one07.setVisibility(View.GONE);
+        iv_homepage_logo_bell_07.setOnClickListener(v -> {
+            iv_bell_add_one07.setVisibility(View.VISIBLE);
         });
 
     }
