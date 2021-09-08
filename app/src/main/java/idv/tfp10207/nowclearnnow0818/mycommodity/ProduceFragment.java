@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -46,11 +47,46 @@ public class ProduceFragment extends Fragment {
     private static final String TAG = "TAG_ProduceFragment";
     private Activity activity;
     private Button button, button4, button5;
-   // private TextView tvproduce,tvprice,tvquantity,tvdetail,tvpdname;
-    private EditText etpdname, etdetail, etquantity,etprice,etproduce;
-    private ImageView imageView,imageView21;
+    // private TextView tvproduce,tvprice,tvquantity,tvdetail,tvpdname;
+    private EditText etpdname, etdetail, etquantity, etprice, etproduce;
+    private ImageView imageView, imageView21;
     private List<Uri> imageUris;
-    private TextView textView3,textView5;
+    private TextView textView3, textView5;
+    /**
+     * 取得圖片
+     */
+    private ActivityResultLauncher<String> launcher = registerForActivityResult(
+            new ActivityResultContracts.GetContent(),
+            result -> {
+                Uri uri = result;
+                try {
+                    Bitmap bitmap = null;
+                    if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.P) {
+                        // 6.2.a Android 9-
+                        // 6.2.a.1 取得InputStream物件
+                        InputStream is = activity.getContentResolver().openInputStream(uri);
+                        // 6.2.a.2 取得Bitmap物件
+                        bitmap = BitmapFactory.decodeStream(is);
+
+                    } else {
+                        // 6.2.b Android 9(+
+                        // 6.2.b.1 從Uri物件建立ImageDecoder.Source物件
+                        ImageDecoder.Source source = ImageDecoder.createSource(
+                                activity.getContentResolver(),
+                                uri);
+                        // 6.2.b.2 取得Bitmap物件
+                        bitmap = ImageDecoder.decodeBitmap(source);
+                    }
+                    // TODO
+                    imageView.setImageBitmap(bitmap);
+//                imageView2.setImageBitmap(bitmap);
+//                imageView3.setImageBitmap(bitmap);
+
+                } catch (IOException e) {
+                    Log.e(TAG, e.toString());
+                }
+            }
+    );
 
     ActivityResultLauncher<Intent> pickPicturesLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -98,7 +134,6 @@ public class ProduceFragment extends Fragment {
     }
 
 
-
     private void findViews(View view) {
         button = view.findViewById(R.id.button);
         button4 = view.findViewById(R.id.button4);
@@ -110,55 +145,16 @@ public class ProduceFragment extends Fragment {
         etquantity = view.findViewById(R.id.etquantity);
         imageView = view.findViewById(R.id.imageView);
         imageView21 = view.findViewById(R.id.imageView21);
-//        imageView3 = view.findViewById(R.id.imageView3);
         textView3 = view.findViewById(R.id.textView3);
         textView5 = view.findViewById(R.id.textView5);
     }
 
 
     private void handlebutton() {
-      button.setOnClickListener(view -> {
-          final String produce = String.valueOf(etpdname.getText());
-          final String price = String.valueOf(etprice.getText());
-          final String quantity = String.valueOf(etquantity.getText());
-          final String detail = String.valueOf(etdetail.getText());
-          final String producename = String.valueOf(etpdname.getText());
-          // 實例化Bundle物件
-          Bundle bundle = new Bundle();
-          // 放入資料
-          bundle.putString(PRODUCE, produce);
-          bundle.putString(PRICE, price);
-          bundle.putString(QUANTITY, quantity);
-          bundle.putString(DETAIL, detail);
-          bundle.putString(PRODUECNAME, producename);
-          // 3. 實例化Intent物件
-          Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-          // 必須指定挑選格式，否則無法執行挑選動作
-          intent.setType("image/*");
-          // 允許挑選多個項目
-          intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-          // 允許用戶選取指定項目(例如：照片)，選完後會回傳
-          intent.setAction(Intent.ACTION_GET_CONTENT);
+        button.setOnClickListener(view -> {
 
-          // 4. 檢查是否有內建的相機App
-          if (isIntentAvailable(intent)) {
-              // 5. 跳轉至內建相簿App
-              startActivityForResult(intent, 1);
-          } else {
-              Toast.makeText(activity, "hhh", Toast.LENGTH_SHORT).show();
-          }
-          button4.setOnClickListener(v -> {
-              Toast.makeText(activity, "", Toast.LENGTH_SHORT).show();
-              Navigation.findNavController(v)
-                    .navigate(R.id.addDelCommodityFragment);
-          });
-          button5.setOnClickListener(v -> {
-
-              Navigation.findNavController(v)
-                      .navigate(R.id.addDelCommodityFragment);
-          });
-
-      });
+            launcher.launch("image/*");
+        });
         textView3.setOnClickListener(v -> {
             etproduce.setText("妙管家地板清潔劑");
             etprice.setText("15");
@@ -175,6 +171,7 @@ public class ProduceFragment extends Fragment {
         });
 
     }
+
     private void handlesend() {
         button4.setOnClickListener(v -> {
             Toast.makeText(activity, "商品已上架", Toast.LENGTH_SHORT).show();
@@ -203,42 +200,5 @@ public class ProduceFragment extends Fragment {
     private boolean isIntentAvailable(Intent intent) {
         PackageManager packageManager = activity.getPackageManager();
         return intent.resolveActivity(packageManager) != null;
-    }
-    /**
-     * 6. 取得圖片
-     */
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_OK && requestCode == 1) {
-            // 6.1 取得Uri物件
-            Uri uri = data.getData();
-            try {
-                Bitmap bitmap = null;
-                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.P) {
-                    // 6.2.a Android 9-
-                    // 6.2.a.1 取得InputStream物件
-                    InputStream is = activity.getContentResolver().openInputStream(uri);
-                    // 6.2.a.2 取得Bitmap物件
-                    bitmap = BitmapFactory.decodeStream(is);
-
-                } else {
-                    // 6.2.b Android 9(+
-                    // 6.2.b.1 從Uri物件建立ImageDecoder.Source物件
-                    ImageDecoder.Source source = ImageDecoder.createSource(
-                            activity.getContentResolver(),
-                            uri);
-                    // 6.2.b.2 取得Bitmap物件
-                    bitmap = ImageDecoder.decodeBitmap(source);
-                }
-                // TODO
-                imageView.setImageBitmap(bitmap);
-//                imageView2.setImageBitmap(bitmap);
-//                imageView3.setImageBitmap(bitmap);
-
-            } catch (IOException e) {
-                Log.e(TAG, e.toString());
-            }
-        }
     }
 }
