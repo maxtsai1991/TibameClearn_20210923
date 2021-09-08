@@ -295,6 +295,11 @@
         android:name="idv.tfp10207.nowclearnnow0818.member.Home_user_personalFragment"
         android:label="fragment_home_user_personal"
         tools:layout="@layout/fragment_home_user_personal" />
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="idv.tfp10207.nowclearnnow0818.home.PreviewFragment"
+        android:label="fragment_preview"
+        tools:layout="@layout/fragment_preview" />
 
 
     android:id="@+id/f_Premiumselection_List_Fragment"
