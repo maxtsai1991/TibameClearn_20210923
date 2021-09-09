@@ -25,7 +25,7 @@ public class HomePageFragment07 extends Fragment {
     private ImageView iv_reservepage;
     private ImageView iv_marketpage;
     private ImageView iv_memberpage;
-    private ImageView iv_homepage_announcement0701,iv_message07,iv_homepage_clear_service0701,iv_premiumselectionlist0701,iv_roomtour0702,iv_bellnotify07,iv_homepage_logo_bell_07,iv_bell_add_one07;
+    private ImageView iv_homepage_announcement0701,iv_message07,iv_homepage_clear_service0701,iv_premiumselectionlist0701,iv_roomtour0702,iv_bellnotify07,iv_homepage_logo_bell_07,iv_bell_add_one07,iv_preview07;
     private TextView tv_to_homeworkerMember07;
 
     @Override
@@ -63,6 +63,7 @@ public class HomePageFragment07 extends Fragment {
         tv_to_homeworkerMember07 = view.findViewById(R.id.tv_to_homeworkerMember07);
         iv_homepage_logo_bell_07 = view.findViewById(R.id.iv_homepage_logo_bell_07);
         iv_bell_add_one07 = view.findViewById(R.id.iv_bell_add_one07);
+        iv_preview07 = view.findViewById(R.id.iv_preview07);
     }
 
 
@@ -119,11 +120,16 @@ public class HomePageFragment07 extends Fragment {
             Navigation.findNavController(v)
                     .navigate(R.id.homeUserFragment);
         });
+
         iv_bell_add_one07.setVisibility(View.GONE);
         iv_homepage_logo_bell_07.setOnClickListener(v -> {
             iv_bell_add_one07.setVisibility(View.VISIBLE);
         });
 
+        iv_preview07.setOnClickListener(v -> {
+            Navigation.findNavController(v)
+                    .navigate(R.id.previewFragment);
+        });
     }
 
 }
