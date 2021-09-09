@@ -47,13 +47,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             });
 
             // 點擊項目中的Button時
-            btnRemove.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // 按下Button要做的事
-                    test1.setVisibility(View.GONE);
-                }
-            });
+//            btnRemove.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    // 按下Button要做的事
+//                    test1.setVisibility(View.GONE);
+//                }
+//            });
         }
     }
 
@@ -72,6 +72,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         Produce produce = mData.get(position);
         holder.txtItem.setText(produce.getTitle());
         holder.imageView1.setImageResource(produce.getImageId());
+       holder.btnRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 按下Button要做的事
+                mData.remove(position);
+                notifyItemRemoved(position);
+            }
+        });
     }
 
     @Override

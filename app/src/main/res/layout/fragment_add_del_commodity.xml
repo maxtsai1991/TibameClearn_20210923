@@ -30,16 +30,17 @@
             app:layout_constraintHorizontal_bias="0.073"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/iv_commodity07"
-        android:layout_width="278dp"
-        android:layout_height="200dp"
-        android:src="@drawable/png_mystore_person07"
-        app:layout_constraintBottom_toTopOf="@+id/tv_mystore_service07"
+        android:id="@+id/imageView28"
+        android:layout_width="418dp"
+        android:layout_height="329dp"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/store"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
 
@@ -47,18 +48,18 @@
         android:id="@+id/tv_mystore_service07"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="56dp"
         android:text="@string/selectneedservice07"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_commodity07" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView28" />
 
     <Button
         android:id="@+id/bt_add_commodity07"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_width="125dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="44dp"
         android:text="@string/addcommodity07"
         app:backgroundTint="@color/clearn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,9 +69,9 @@
 
     <Button
         android:id="@+id/bt_my_commobity07"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="125dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="32dp"
         android:text="@string/mycommodity07"
         app:backgroundTint="@color/clearn"
         app:layout_constraintEnd_toEndOf="parent"

@@ -174,9 +174,9 @@ public class ProduceFragment extends Fragment {
 
     private void handlesend() {
         button4.setOnClickListener(v -> {
+            //
             Toast.makeText(activity, "商品已上架", Toast.LENGTH_SHORT).show();
-            Navigation.findNavController(v)
-                    .navigate(R.id.addDelCommodityFragment);
+            Navigation.findNavController(v).popBackStack();
         });
         button5.setOnClickListener(v -> {
 
