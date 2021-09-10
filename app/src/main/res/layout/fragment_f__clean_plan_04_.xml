@@ -145,7 +145,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="CP000013"
-                android:textSize="25sp"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_CP04_order_number_11"
                 app:layout_constraintStart_toEndOf="@+id/tv_CP04_order_number_11"
                 app:layout_constraintTop_toBottomOf="@+id/tv_CP04_order3_11" />
 
@@ -312,6 +313,7 @@
         android:text="前往媒合中確認訂單狀態"
         android:textSize="30sp"
         app:backgroundTint="#91C75C"
+        android:foreground="?selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

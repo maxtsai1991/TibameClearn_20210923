@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cleanplan.CpGooglePayMainActivity">
+
+    <include
+        android:id="@+id/include17"
+        layout="@layout/toolbar_cp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bt_cl_GooglePayMainBuy_11"
+        android:layout_width="162dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/textViewConfirmPay"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/paycolor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bt_cl_GooglePayMainExit_11"
+        tools:text="確認付款" />
+
+    <Button
+        android:id="@+id/bt_cl_GooglePayMainExit_11"
+        android:layout_width="162dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="333dp"
+        android:text="@string/textViewExit"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/searchcolor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include17"
+        tools:text="離開" />
+
+    <TextView
+        android:id="@+id/tv_cl_GooglePayMainCardNo1_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_GooglePayMainLogin_11"
+        tools:text="選擇卡號 : " />
+
+    <TextView
+        android:id="@+id/cl_GooglePayMainResult_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_cl_GooglePayMainExit_11"
+        tools:text="結果" />
+
+    <TextView
+        android:id="@+id/tv_cl_GooglePayMainCardNo_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_cl_GooglePayMainCardNo1_11"
+        app:layout_constraintTop_toTopOf="@+id/tv_cl_GooglePayMainCardNo1_11"
+        tools:text="卡號" />
+
+    <TextView
+        android:id="@+id/tv_cl_GooglePayMainPrice_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cl_GooglePayMainPayOrder_11"
+        tools:text="訂單總金額 : $ 7450" />
+
+    <TextView
+        android:id="@+id/tv_cl_GooglePayMainPay_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cl_GooglePayMainPrice_11"
+        tools:text="付款方式 : " />
+
+    <TextView
+        android:id="@+id/tv_cl_GooglePayMainPayOrder_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include17"
+        tools:text="付款確認清單" />
+
+    <include
+        android:id="@+id/bt_cl_GooglePayMainBuyWithPay_11"
+        layout="@layout/googlepay_button_05"
+        android:layout_width="190dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cl_GooglePayMainPay_11" />
+
+    <TextView
+        android:id="@+id/tv_GooglePayMainLogin_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/paycolor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_cl_GooglePayMainBuyWithPay_11"
+        tools:text="需登入Google帳號" />
+</androidx.constraintlayout.widget.ConstraintLayout>

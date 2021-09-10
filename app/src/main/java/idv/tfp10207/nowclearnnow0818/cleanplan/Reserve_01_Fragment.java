@@ -2,35 +2,39 @@ package idv.tfp10207.nowclearnnow0818.cleanplan;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
+import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.Arrays;
 import java.util.List;
 
 import idv.tfp10207.nowclearnnow0818.R;
-import idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.CleanplanAreaService;
 import idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.CleanplanReserve;
+import idv.tfp10207.nowclearnnow0818.cleanplan.CPreserve.ReserveOrderStateAcceptFragment;
+import idv.tfp10207.nowclearnnow0818.cleanplan.CPreserve.ReserveOrderStateApplyFragment;
+import idv.tfp10207.nowclearnnow0818.cleanplan.CPreserve.ReserveOrderStateFinshFragment;
 
 //1.table連動
 //2.RecyclerView 資料更新
@@ -42,16 +46,10 @@ public class Reserve_01_Fragment extends Fragment {
     private Activity activity;
 
     //1.table連動
-    private RadioGroup rg_reserve_00_11;
-    private RadioButton rb_reserve_01_11;
-    private RadioButton rb_reserve_02_11;
-    private RadioButton rb_reserve_03_11;
-    private Resources resources;
+    private TabLayout tabLayout_11;
+    private ViewPager2 viewPager2_11;
+    private int tabIndex;
 
-    //2.RecyclerView 資料更新
-    private RecyclerView rcv_reserve1_11;
-
-    private TextView tv_reserve_orderdetails_11;
 
     //Toolbar
     private ImageView righthomeicon;
@@ -61,13 +59,14 @@ public class Reserve_01_Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        activity = (AppCompatActivity) getActivity();
+//        ?
+        setHasOptionsMenu(true);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        activity = getActivity();
         return inflater.inflate(R.layout.fragment_reserve_01_, container, false);
     }
 
@@ -77,188 +76,114 @@ public class Reserve_01_Fragment extends Fragment {
 
         findview(view);
         handletoolbar(view);
-//1.table連動
-        handlerChangeRadiocolor(view);
-        resources = getResources();
-//2.RecyclerView 資料更新
-        handleRecyclerView(view);
-        handleOrderInfo(view);
-    }
 
-    //訂單詳情
-    private void handleOrderInfo(View view) {
-//        tv_reserve_orderdetails_11.setOnClickListener(v -> {
-//            Navigation.findNavController(v).popBackStack(R.id.f_CleanPlan_05_Fragment, false);
-//
-//        });
+        handleTabLayout();
+        handleViewPager2();
+
     }
 
     private void findview(View view) {
-        rg_reserve_00_11 = view.findViewById(R.id.rg_reserve_00_11);
-        rb_reserve_01_11 = view.findViewById(R.id.rb_reserve_01_11);
-        rb_reserve_02_11 = view.findViewById(R.id.rb_reserve_02_11);
-        rb_reserve_03_11 = view.findViewById(R.id.rb_reserve_03_11);
-
-        rcv_reserve1_11 = view.findViewById(R.id.rcv_reserve1_11);
-
-//        tv_reserve_orderdetails_11 = view.findViewById(R.id.tv_reserve_orderdetails_11);
+        tabLayout_11 = view.findViewById(R.id.tabLayout_11);
+        viewPager2_11 = view.findViewById(R.id.viewPager2_11);
     }
 
-
-    //1.table狀態改變
-    private void handlerChangeRadiocolor(View view) {
-        rb_reserve_01_11.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                rb_reserve_01_11.setBackgroundColor(resources.getColor(R.color.clearn));
-                rb_reserve_01_11.setTextColor(Color.WHITE);
-                rb_reserve_02_11.setBackgroundColor(resources.getColor(R.color.lightclearn));
-                rb_reserve_02_11.setTextColor(Color.BLACK);
-                rb_reserve_03_11.setBackgroundColor(resources.getColor(R.color.lightclearn));
-                rb_reserve_03_11.setTextColor(Color.BLACK);
+    private void handleTabLayout() {
+        // 監聽當下選擇的頁籤，存值給 tabIndex，讓 ViewPager2 根據得到的值顯示對應的 fragment
+        tabLayout_11.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getText().equals("媒合中")) {
+                    tabIndex = 0;
+//                    Toast.makeText(getActivity(), "媒合中", Toast.LENGTH_SHORT).show();
+                } else if (tab.getText().equals("已預約")) {
+                    tabIndex = 1;
+//                    Toast.makeText(getActivity(), "已預約", Toast.LENGTH_SHORT).show();
+                } else if (tab.getText().equals("已完成")) {
+                    tabIndex = 2;
+//                    Toast.makeText(getActivity(), "已完成", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    tabIndex = 3;
+//                    Toast.makeText(getActivity(), "已取消", Toast.LENGTH_SHORT).show();
+                }
             }
-        });
 
-        rb_reserve_02_11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
 
-            public void onClick(View v) {
-                rb_reserve_01_11.setBackgroundColor(resources.getColor(R.color.lightclearn));
-                rb_reserve_01_11.setTextColor(Color.BLACK);
-                rb_reserve_02_11.setBackgroundColor(resources.getColor(R.color.clearn));
-                rb_reserve_02_11.setTextColor(Color.WHITE);
-                rb_reserve_03_11.setBackgroundColor(resources.getColor(R.color.lightclearn));
-                rb_reserve_03_11.setTextColor(Color.BLACK);
             }
-        });
 
-        rb_reserve_03_11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
 
-            public void onClick(View v) {
-                rb_reserve_01_11.setBackgroundColor(resources.getColor(R.color.lightclearn));
-                rb_reserve_01_11.setTextColor(Color.BLACK);
-                rb_reserve_02_11.setBackgroundColor(resources.getColor(R.color.lightclearn));
-                rb_reserve_02_11.setTextColor(Color.BLACK);
-                rb_reserve_03_11.setBackgroundColor(resources.getColor(R.color.clearn));
-                rb_reserve_03_11.setTextColor(Color.WHITE);
             }
         });
     }
 
+    private void handleViewPager2() {
+        // 將自訂義的 PageAdapter 藉由 viewPager2 載入
+        viewPager2_11.setAdapter(new PageAdapter(activity));
+        // 使用 TabLayoutMediator 將 tabLayout & viewPager2 結合
+        TabLayoutMediator tab = new TabLayoutMediator(tabLayout_11, viewPager2_11, (tab1, position) -> {
+            // 根據頁籤位置設定頁籤名稱
+            switch (position) {
+                case 0:
+                    tab1.setText("媒合中");
+                    break;
+                case 1:
+                    tab1.setText("已預約");
+                    break;
+                case 2:
+                    tab1.setText("已完成");
+                    break;
 
-    //2.RecyclerView 資料更新
-    private void handleRecyclerView(View view) {
-        List<CleanplanReserve> reservelist = Arrays.asList(
-                new CleanplanReserve(R.drawable.photo5, "2021.9.23", "9:00~12:00", "黃永珠")
+            }
+        });
+        // 將剛剛設定好的 TabLayoutMediator 依附在 viewPager2 上
+        tab.attach();
 
-
-        );
-        rcv_reserve1_11.setAdapter(new MyAdapter(activity, reservelist));
-
-        rcv_reserve1_11.setLayoutManager(new LinearLayoutManager(activity));
     }
 
 
-    private class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-        private Context context;
-        private List<CleanplanReserve> reservelist;
-
-
-        public MyAdapter(Context context, List<CleanplanReserve> list) {
-            this.context = context;
-            this.reservelist = list;
+    public class PageAdapter extends FragmentStateAdapter {
+        public PageAdapter(@NonNull Activity fragmentActivity) {
+            super((FragmentActivity) fragmentActivity);
         }
 
-        @NonNull
-        @Override
-        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View itemView = LayoutInflater.from(context)
-                    .inflate(R.layout.rc_itemcard_reserve, parent, false);
-            return new MyViewHolder(itemView);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
-            CleanplanReserve itemNo = reservelist.get(position);
-            holder.iv_reserve_image_11.setImageResource(itemNo.getIv_reserve_image_11());
-            holder.tv_reserve_date_11.setText(itemNo.getTv_reserve_date_11());
-            holder.tv_reserve_time_11.setText(itemNo.getTv_reserve_time_11());
-            holder.tv_reserve_name_11.setText(itemNo.getTv_reserve_name_11());
-
-
-            holder.itemView.setOnClickListener(view -> {
-
-
-//        使用Bundle的原因是當時會將資料帶入到下一頁面呈現
-//            Bundle bundle = new Bundle();
-//            bundle.putString("name",name);
-//            bundle.putString("password",password);
-//
-
-
-//                NavController navController = Navigation.findNavController(view);
-//                navController.navigate(R.id.action_a_Ch3_22Fragment2_to_ch3_22Fragment);
-            });
-        }
-
+        // 回傳有幾個頁籤
         @Override
         public int getItemCount() {
-            return reservelist == null ? 0 : reservelist.size();
+            return 3;
         }
 
-        private class MyViewHolder extends RecyclerView.ViewHolder {
-            private ImageView iv_reserve_image_11;
-            private TextView tv_reserve_date_11, tv_reserve_time_11, tv_reserve_name_11, tv_reserve_orderdetails_11;
-            private Button bt_reserve_buttom1, bt_reserve_buttom2;
-
-
-            public MyViewHolder(@NonNull View itemView) {
-                super(itemView);
-
-                iv_reserve_image_11 = itemView.findViewById(R.id.iv_reserve_image_11);
-                tv_reserve_date_11 = itemView.findViewById(R.id.tv_reserve_date_11);
-                tv_reserve_time_11 = itemView.findViewById(R.id.tv_reserve_time_11);
-                tv_reserve_name_11 = itemView.findViewById(R.id.tv_reserve_name_11);
-
-                tv_reserve_orderdetails_11 = itemView.findViewById(R.id.tv_reserve_orderdetails_11);
-                bt_reserve_buttom1 = itemView.findViewById(R.id.bt_reserve_buttom1);
-                bt_reserve_buttom1.setText("取消預約");
-                bt_reserve_buttom2 = itemView.findViewById(R.id.bt_reserve_buttom2);
-
-                // 點擊項目中的訂單詳情時
-                tv_reserve_orderdetails_11.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        //                        用連線的方式到指定頁面
-//                        NavController navController = Navigation.findNavController(view);
-//                        navController.navigate(R.id.action_reserve_01_Fragment_to_homePageFragment072);
-
-//                        直接指定 方法1
-//                        Navigation.findNavController(view).popBackStack(R.id.f_CleanPlan_05_Fragment, false);
-
-//                        直接指定 方法2
-                        Navigation.findNavController(view).
-                                navigate(R.id.f_CleanPlan_05_Fragment);                    }
-                });
-
-//              點擊項目中的"取消/接受"時
-                bt_reserve_buttom1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                    }
-                });
-//              點擊項目中的"聯絡"時
-                bt_reserve_buttom2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Navigation.findNavController(view).
-                                navigate(R.id.messageFragment07);
-                    }
-                });
+        // 根據當前所在的頁籤呈現 fragment
+        @Override
+        public Fragment createFragment(int position) {
+            // 獲取當前所在的頁籤位置藉由 setCurrentItem() 設定 position
+            if (tabIndex == 0) {
+                viewPager2_11.setCurrentItem(0);
+            } else if (tabIndex == 1) {
+                viewPager2_11.setCurrentItem(1);
+            } else  {
+                viewPager2_11.setCurrentItem(2);
+            }
+            // 藉由 position 的值判斷要載入哪個 fragment
+            switch (position) {
+                case 0:
+                    return new ReserveOrderStateApplyFragment();
+                case 1:
+                    return new ReserveOrderStateAcceptFragment();
+                default:
+                    return new ReserveOrderStateFinshFragment();
+//                case 2:
+//                    return new OrderStateReceivedFragment();
+//                default:
+//                    return new OrderStateCanceledFragment();
             }
         }
+
     }
+
+
 
     //    客製Toolbar
     private void handletoolbar(View view) {
@@ -281,7 +206,7 @@ public class Reserve_01_Fragment extends Fragment {
         });
 
         //    標題
-        tvprojectname.setText("訂單狀態");
+        tvprojectname.setText("預約狀態");
 
     }
 }

@@ -62,13 +62,19 @@
 
                 <TextView
                     android:id="@+id/tv_CPscale_11"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_weight="1"
                     android:text="@string/textCPscale"
                     android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/imageView25"
+                    android:layout_width="28dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/cp02_notice_11" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -546,6 +552,7 @@
         android:text="@string/nextNext"
         android:textSize="30sp"
         app:backgroundTint="#91C75C"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
