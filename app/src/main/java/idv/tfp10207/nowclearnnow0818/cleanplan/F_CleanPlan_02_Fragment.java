@@ -47,6 +47,7 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     private EditText et_people_11;
     private EditText et_ping_11;
     private TextView tv_clearscale1_1_11;
+    private ImageView iv_cp02_noteice_11;
 
     //  2.選擇清潔時間
     private TextView tv_CPtime_11;
@@ -105,6 +106,7 @@ public class F_CleanPlan_02_Fragment extends Fragment {
 
 //        handlebutton(view);
         handleCpPersonScale(view);
+        handleNotuce(view);
         handleleRadioButton(view);
 //相機
         handleTakepictureButton(view);
@@ -118,11 +120,14 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     }
 
 
+
+
     private void findview(View view) {
         bt_cp02_next = view.findViewById(R.id.bt_CP02next_11);
         et_people_11 = view.findViewById(R.id.et_people_11);
         et_ping_11 = view.findViewById(R.id.et_ping_11);
         tv_clearscale1_1_11 = view.findViewById(R.id.tv_clearscale1_1_11);
+        iv_cp02_noteice_11 = view.findViewById(R.id.iv_cp02_noteice_11);
 //      時間
         tv_CPtime_11 = view.findViewById(R.id.tv_CPtime_11);
         rg_CP02time1_11 = view.findViewById(R.id.rg_CP02time1_11);
@@ -153,7 +158,17 @@ public class F_CleanPlan_02_Fragment extends Fragment {
             et_ping_11.setText("25");
         });
 
+    }
 
+    private void handleNotuce(View view) {
+        iv_cp02_noteice_11.setOnClickListener(v -> {
+            new AlertDialog.Builder(getActivity())                    // 實例化AlertDialog.Builder物件
+                    .setTitle("計費標準")                                 // 設定標題文字
+                    //               用基本費用與規模去做計算
+                    .setMessage("主要依據服務人員基本費用(服務者自訂，費用/次)與整理坪數區間費用\n \n坪數區間費用:\n1~30坪(含)：250元/坪\n30~60坪(含)：350元/坪\n60坪以上：500元/坪")             // 設定訊息文字
+                    .setCancelable(true)                               // 設定是否可點擊對話框以外之處離開對話框
+                    .show();
+        });
     }
 
 

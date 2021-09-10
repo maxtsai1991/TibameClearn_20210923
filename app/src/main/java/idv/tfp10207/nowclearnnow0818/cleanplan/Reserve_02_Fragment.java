@@ -65,6 +65,7 @@ public class Reserve_02_Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findview(view);
         handleSend(view);
+        handletoolbar(view);
     }
 
     private void findview(View view) {

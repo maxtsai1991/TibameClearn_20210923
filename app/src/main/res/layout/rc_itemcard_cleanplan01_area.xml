@@ -123,7 +123,7 @@
                     android:layout_weight="1"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    tools:text="   4件" />
+                    tools:text=" 10件" />
 
             </LinearLayout>
 

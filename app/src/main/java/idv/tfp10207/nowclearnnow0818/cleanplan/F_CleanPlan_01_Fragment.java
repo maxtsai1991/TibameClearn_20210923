@@ -242,8 +242,8 @@ private void handlebutton(View view) {
 
     private void handleRecyclerView(View view) {
         List<CleanplanAreaService> servicearealist = Arrays.asList(
-                new CleanplanAreaService(R.drawable.girl3, "5", "黃永珠", "擅長項目 : 客廳清潔", "1200 元/ 次", "4 件 "),
-                new CleanplanAreaService(R.drawable.boy3, "4", "陳明漢", "擅長項目 : 掃廚房", "1200 元/ 次", "3 件")
+                new CleanplanAreaService(R.drawable.girl3, "5", "黃永珠", "擅長項目 : 客廳清潔", "1200 元/ 次", "10 件 "),
+                new CleanplanAreaService(R.drawable.boy3, "4", "陳明漢", "擅長項目 : 掃廚房", "1200 元/ 次", "5 件")
 
         );
         rc_CP01_servicearea_11.setAdapter(new MyAdapter(activity, servicearealist));

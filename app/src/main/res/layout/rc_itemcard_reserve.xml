@@ -64,11 +64,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="12dp"
                     android:text="日期：2021.08.22"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/iv_reserve_image_11"
-                    app:layout_constraintTop_toTopOf="@+id/iv_reserve_image_11" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_reserve_time_11"
@@ -93,6 +93,17 @@
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/iv_reserve_image_11"
                     app:layout_constraintTop_toBottomOf="@+id/tv_reserve_time_11" />
+
+                <TextView
+                    android:id="@+id/tv_reserve_name_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="姓名：黃永珠"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/iv_reserve_image_11"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_reserve_name_11" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

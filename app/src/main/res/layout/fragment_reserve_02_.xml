@@ -23,7 +23,7 @@
             android:layout_width="390dp"
             android:layout_height="613dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:text="準時抵達"
+                android:text="給她服務,是優質選擇!"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rb_reserve_assess_start_11" />
@@ -85,8 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
-                android:text="物超所值"
+                android:text="服務品質優質 ~"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cb_reserve_assess1_11" />
@@ -96,8 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
-                android:text="認真仔細，清潔得很乾淨"
+                android:text="熱誠親切！"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cb_reserve_assess2_11" />
@@ -107,8 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
-                android:text="清潔人員有禮貌、態度佳"
+                android:text="有待加強"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cb_reserve_assess3_11" />
@@ -118,23 +115,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
-                android:text="動作迅速、準時完成"
+                android:text="不會在找他服務！"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cb_reserve_assess4_11" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="337dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="可輸入評價"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cb_reserve_assess5_11" />
 
             <Button
                 android:id="@+id/bt_reserve_assess_send_11"
                 android:layout_width="130dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="18dp"
                 android:text="送出"
                 android:textSize="30sp"
                 app:backgroundTint="#91C75C"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cb_reserve_assess5_11" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
