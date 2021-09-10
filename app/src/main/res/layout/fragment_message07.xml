@@ -118,35 +118,25 @@
             android:id="@+id/tv_homewroktalk07"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="48dp"
             android:text="-"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintHorizontal_bias="0.069"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_needer_talk07"
+            app:layout_constraintTop_toBottomOf="@+id/textView21"
             tools:text="已完成這次清潔,附圖參考" />
 
         <ImageView
             android:id="@+id/iv_viewpic07"
             android:layout_width="124dp"
             android:layout_height="150dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintHorizontal_bias="0.944"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_homewroktalk07"
+            app:layout_constraintTop_toTopOf="@+id/tv_talk0701"
             tools:src="@tools:sample/avatars" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_viewpic07" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
