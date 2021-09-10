@@ -98,15 +98,15 @@ public class success_get_Fragment extends Fragment {
 
     private void handleOrderDetTextView() {
 
-        List<ShoppingCarMerch> shoppingCarMerch = orderDetLoadShoppingCarFile();
-
-        int orderPrice = 0;
-
-        for (int i = 0; i < shoppingCarMerch.size(); i++) {
-            if (shoppingCarMerch.get(i).getMerchCheckBox()) {
-                orderPrice = orderPrice + ((shoppingCarMerch.get(i).getMerchPrice()) * (shoppingCarMerch.get(i).getMerchNumber())) + 7450;
-            }
-        }
+//        List<ShoppingCarMerch> shoppingCarMerch = orderDetLoadShoppingCarFile();
+//
+//        int orderPrice = 0;
+//
+//        for (int i = 0; i < shoppingCarMerch.size(); i++) {
+//            if (shoppingCarMerch.get(i).getMerchCheckBox()) {
+//                orderPrice = orderPrice + ((shoppingCarMerch.get(i).getMerchPrice()) * (shoppingCarMerch.get(i).getMerchNumber())) + 7450;
+//            }
+//        }
 
         tv_balance_01.setText("$ " + 25 );
         tv_homecash_01.setText("$ " + 7450);
