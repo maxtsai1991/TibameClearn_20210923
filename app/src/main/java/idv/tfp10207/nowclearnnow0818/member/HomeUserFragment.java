@@ -17,7 +17,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 public class HomeUserFragment extends Fragment {
     private Activity activity;
-    private ImageView iv_direction_01, iv_home_01;
+    private ImageView iv_direction_01, iv_home_01, iv_direction5_01, iv_direction4_01, iv_direction3_01, iv_direction1_01;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,8 +41,10 @@ public class HomeUserFragment extends Fragment {
     private void findView(View view) {
         iv_home_01 = view.findViewById(R.id.iv_home_01);
         iv_direction_01 = view.findViewById(R.id.iv_direction_01);
-
-
+        iv_direction4_01 = view.findViewById(R.id.iv_direction4_01);
+        iv_direction5_01 = view.findViewById(R.id.iv_direction5_01);
+        iv_direction3_01 = view.findViewById(R.id.iv_direction3_01);
+        iv_direction1_01 = view.findViewById(R.id.iv_direction1_01);
     }
 
     private void handleImageview() {
@@ -51,6 +53,18 @@ public class HomeUserFragment extends Fragment {
         });
         iv_home_01.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.homePageFragment072);
+        });
+        iv_direction4_01.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.success_get_Fragment);
+        });
+        iv_direction5_01.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.evaluationFragment);
+        });
+        iv_direction3_01.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.orderFragment);
+        });
+        iv_direction1_01.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.addDelCommodityFragment);
         });
     }
 }

@@ -39,7 +39,7 @@ public class AddDelCommodityFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         handlebutton();
-        handleimage();
+        handleimage(view);
     }
 
     private void findViews(View view) {
@@ -47,10 +47,11 @@ public class AddDelCommodityFragment extends Fragment {
         bt_my_commobity07 = view.findViewById(R.id.bt_my_commobity07);
         iv_commodity_return = view.findViewById(R.id.iv_commodity_return);
     }
-    private void handleimage() {
+    private void handleimage(View view) {
         iv_commodity_return.setOnClickListener(v -> {
-            Navigation.findNavController(v)
-                    .navigate(R.id.memberCentreFragment);
+//            Navigation.findNavController(v)
+//                    .navigate(R.id.chang_to_homeuserFragment);
+            Navigation.findNavController(view).popBackStack(R.id.addDelCommodityFragment,true);
         });
     }
 

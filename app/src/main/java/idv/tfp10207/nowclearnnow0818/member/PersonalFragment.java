@@ -139,7 +139,7 @@ public class PersonalFragment extends Fragment {
                     }
                 });
     }
-
+    // 下載Firebase storage的照片並顯示在imageView上
     private void showImage(ImageView imageView, String imagePath) {
         final int ONE_MEGABYTE = 1024 * 1024;
         StorageReference imageRef = storage.getReference().child(imagePath);

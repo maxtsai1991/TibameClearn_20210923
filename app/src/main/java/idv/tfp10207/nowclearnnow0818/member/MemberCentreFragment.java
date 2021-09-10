@@ -91,17 +91,6 @@ public class MemberCentreFragment extends Fragment {
     private void handleTextview() {
         tv_clear8_01.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.chang_to_homeuserFragment);
-//        tv_clear1_01.setTag(false);//标记textview为false（表示没有被点击过）
-//        tv_clear1_01.setText(str1);//設置原来的文本
-//            boolean flag = (boolean) tv_clear1_01.getTag();//当点击时，首先判断是否已经点击过
-//            if (!flag) {
-//                tv_clear1_01.setText(str2);
-//                tv_clear1_01.setTag(true);
-//            } else {//已经点击过了
-//                tv_clear1_01.setText(str1);
-//                tv_clear1_01.setTag(false);
-//            }
-
         });
     }
 

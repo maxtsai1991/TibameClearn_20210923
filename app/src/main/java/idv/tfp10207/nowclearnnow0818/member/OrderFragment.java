@@ -37,7 +37,7 @@ public class OrderFragment extends Fragment {
     private static final String SHOPPINGCARLIST = "shoppingCarList";
     private Activity activity;
     private ImageView iv_back_01;
-    private RecyclerView rv_OrderDetFm_01;
+//    private RecyclerView rv_OrderDetFm_01;
 
 
     @Override
@@ -57,13 +57,13 @@ public class OrderFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         handleButton(view);
-        handleOrderDetRecyclerView();
+//        handleOrderDetRecyclerView();
     }
 
 
     private void findViews(View view) {
         iv_back_01 = view.findViewById(R.id.iv_back_01);
-        rv_OrderDetFm_01 = view.findViewById(R.id.rv_OrderDetFm_01);
+//        rv_OrderDetFm_01 = view.findViewById(R.id.rv_OrderDetFm_01);
     }
 
     private void handleButton(View view) {
@@ -72,30 +72,30 @@ public class OrderFragment extends Fragment {
         });
     }
 
-    private void handleOrderDetRecyclerView() {
-        //商品讀入
-        List<ShoppingCarMerch> shoppingCarFile = orderComploadMerchFile();
-        List<ShoppingCarMerch> orderCompMerchFile = new ArrayList<>();
-
-        for(int i = 0 ; i < shoppingCarFile.size() ; i++){
-            if(shoppingCarFile.get(i).getMerchCheckBox()){
-                orderCompMerchFile.add(shoppingCarFile.get(i));
-            }
-        }
-
-        for(int i = shoppingCarFile.size() - 1 ; i >= 0 ; i--){
-            if(shoppingCarFile.get(i).getMerchCheckBox()){
-                shoppingCarFile.remove(i);
-            }
-        }
-
-
-        //商品存檔
-        orderCompSaveMerchFile(shoppingCarFile);
-
-        rv_OrderDetFm_01.setAdapter(new OrderCompListAdapter(activity, orderCompMerchFile));
-        rv_OrderDetFm_01.setLayoutManager(new LinearLayoutManager(activity));
-    }
+//    private void handleOrderDetRecyclerView() {
+//        //商品讀入
+//        List<ShoppingCarMerch> shoppingCarFile = orderComploadMerchFile();
+//        List<ShoppingCarMerch> orderCompMerchFile = new ArrayList<>();
+//
+//        for (int i = 0; i < shoppingCarFile.size(); i++) {
+//            if (shoppingCarFile.get(i).getMerchCheckBox()) {
+//                orderCompMerchFile.add(shoppingCarFile.get(i));
+//            }
+//        }
+//
+//        for (int i = shoppingCarFile.size() - 1; i >= 0; i--) {
+//            if (shoppingCarFile.get(i).getMerchCheckBox()) {
+//                shoppingCarFile.remove(i);
+//            }
+//        }
+//
+//
+//        //商品存檔
+//        orderCompSaveMerchFile(shoppingCarFile);
+//
+//        rv_OrderDetFm_01.setAdapter(new OrderCompListAdapter(activity, orderCompMerchFile));
+//        rv_OrderDetFm_01.setLayoutManager(new LinearLayoutManager(activity));
+//    }
 
     /**
      * 商品讀檔

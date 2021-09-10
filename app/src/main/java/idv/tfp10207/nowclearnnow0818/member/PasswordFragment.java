@@ -71,6 +71,7 @@ public class PasswordFragment extends Fragment {
         et_clear1_01 = view.findViewById(R.id.et_clear1_01);
         et_clear2_01 = view.findViewById(R.id.et_clear2_01);
         tv_clear15_01 = view.findViewById(R.id.tv_clear15_01);
+        tv_clear16_01 = view.findViewById(R.id.tv_clear16_01);
     }
 
     private void handleImageView() {
