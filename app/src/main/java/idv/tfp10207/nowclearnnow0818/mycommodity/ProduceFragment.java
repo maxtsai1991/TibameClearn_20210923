@@ -165,7 +165,7 @@ public class ProduceFragment extends Fragment {
         textView5.setOnClickListener(v -> {
             etproduce.setText("高樂氏廚房清潔劑");
             etprice.setText("10");
-            etquantity.setText("11");
+            etquantity.setText("10");
             etdetail.setText("輕鬆瓦解頑強汙垢，多表面適用");
             etpdname.setText("高樂氏");
         });
