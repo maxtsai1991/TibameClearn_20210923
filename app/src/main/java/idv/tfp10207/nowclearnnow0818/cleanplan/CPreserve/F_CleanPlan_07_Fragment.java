@@ -186,11 +186,15 @@ public class F_CleanPlan_07_Fragment extends Fragment {
 //            int amount = Integer.parseInt(amountStr);
 //            order.setOrderAmount(amount);
             cpreserveorder.setCporderstate(cpreserveorder.getCporderstate()+1);
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("cpreserveorders", cpreserveorder);
+
             Log.d(TAG,"訂單狀態"+cpreserveorder.getCporderstate());
 
             modify(cpreserveorder);
 
-            Navigation.findNavController(v).navigate(R.id.reserve_02_Fragment);
+            Navigation.findNavController(v).navigate(R.id.reserve_02_Fragment,bundle);
 
 
 

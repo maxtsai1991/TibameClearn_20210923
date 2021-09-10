@@ -78,7 +78,7 @@ public class Reserve_02_Fragment extends Fragment {
 //
 //            modify(cpreserveorder);
 
-            Navigation.findNavController(v).navigate(R.id.reserve_02_Fragment);
+            Navigation.findNavController(v).navigate(R.id.reserve_01_Fragment);
 
         });
     }
