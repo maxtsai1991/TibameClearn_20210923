@@ -110,10 +110,10 @@ public class HomePageFragment07 extends Fragment {
                     .navigate(R.id.roomTourFragment);
         });
 
-        iv_bellnotify07.setOnClickListener(v -> {// todo for 書涵FCM
+        iv_bellnotify07.setOnClickListener(v -> { // todo for 書涵FCM
             iv_bell_add_one07.setVisibility(View.GONE);
             NavController navController = Navigation.findNavController(v);
-            navController.navigate(R.id.action_homePageFragment072_to_reserve_01_Fragment);
+            navController.navigate(R.id.homenotice_11_Fragment);
         });
 
         tv_to_homeworkerMember07.setOnClickListener(v -> {
