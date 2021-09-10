@@ -77,14 +77,12 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/searchcolor"
             android:gravity="center_horizontal|center_vertical"
             android:text="在門口處放置置物籃,用酒精消毒擦拭過後再把東西收起來\n或是放置陽台外通風處,脫下來的口罩也別亂丟,\n我們可以由內向外及利用耳掛將其捆起,\n丟置在有蓋子的垃圾桶"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tbNo1_07"
-            tools:text="在門口處放置置物籃,用酒精消毒擦拭過後再把東西收起來\n或是放置陽台外通風處,脫下來的口罩也別亂丟,\n我們可以由內向外及利用耳掛將其捆起,\n丟置在有蓋子的垃圾桶" />
+            app:layout_constraintTop_toBottomOf="@+id/tbNo1_07" />
 
         <ToggleButton
             android:id="@+id/tbNo2_07"
@@ -107,7 +105,6 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/searchcolor"
             android:gravity="center_horizontal|center_vertical"
             android:text="洗手不能只是過的水,這樣無法消滅細菌,\n需正確的洗手方式及搭配肥皂或洗水液"
             android:textColor="@color/black"
@@ -134,7 +131,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:background="@color/searchcolor"
             android:gravity="center_horizontal|center_vertical"
             android:text="清潔完手後,可接著用不織布沾稀釋過的酒精確實擦拭手機,\n錢包的正面及背面\n(勿將酒精直接噴灑在手機上)"
             android:textColor="@color/black"
@@ -161,7 +157,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:background="@color/searchcolor"
             android:gravity="center_horizontal|center_vertical"
             android:text="回家後換上乾淨居家服,並且可將當日外出衣服清洗,\n才是最重要的!"
             android:textColor="@color/black"
