@@ -74,9 +74,9 @@ public class Reserve_02_Fragment extends Fragment {
     private void handleSend(View view) {
         bt_reserve_assess_send_11.setOnClickListener(v -> {
 
-            cpreserveorder.setCporderstate(cpreserveorder.getCporderstate()+0);
-
-            modify(cpreserveorder);
+//            cpreserveorder.setCporderstate(cpreserveorder.getCporderstate()+0);
+//
+//            modify(cpreserveorder);
 
             Navigation.findNavController(v).navigate(R.id.reserve_02_Fragment);
 
