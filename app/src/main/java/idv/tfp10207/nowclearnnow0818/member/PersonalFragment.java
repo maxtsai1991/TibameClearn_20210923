@@ -47,7 +47,7 @@ public class PersonalFragment extends Fragment {
     private Activity activity;
     //元件
     private ImageView iv_01, iv_clear14_01, iv_back_01, iv_clear15_01;
-    private TextView tv_store_01, tv_clear49_01;
+    private TextView tv_store_01;
     private EditText edt_name_01, edt_email_01, edt_phone_01, edt_address_01, edt_gender_01;
     private FirebaseAuth auth;
     private FirebaseStorage storage;
@@ -90,8 +90,9 @@ public class PersonalFragment extends Fragment {
         handleSpinner();
         handleEditText();
         handleCamera();
-        handleStory();
+        handleStory(view);
     }
+
 
 
     private void findViews(View view) {
@@ -105,7 +106,6 @@ public class PersonalFragment extends Fragment {
         edt_gender_01 = view.findViewById(R.id.edt_gender_01);//男女
         iv_back_01 = view.findViewById(R.id.iv_back_01);
         tv_store_01 = view.findViewById(R.id.tv_store_01);
-        tv_clear49_01 = view.findViewById(R.id.tv_clear49_01);//名稱
     }
 
 
@@ -255,7 +255,7 @@ public class PersonalFragment extends Fragment {
 
     }
 
-    private void handleStory() {
+    private void handleStory(View view) {
         tv_store_01.setOnClickListener(v -> {
             final String name = String.valueOf(edt_name_01.getText());
             final String gender = String.valueOf(edt_gender_01.getText());
@@ -292,7 +292,7 @@ public class PersonalFragment extends Fragment {
                 user.setPhone(phone);
                 user.setAddress(address);
                 modify(user);
-
+                Navigation.findNavController(view).navigate(R.id.memberCentreFragment);
             }
         });
     }
@@ -332,7 +332,7 @@ public class PersonalFragment extends Fragment {
 
     private void handleToolbar(View view) {
         iv_back_01.setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.memberCentreFragment);
+            Navigation.findNavController(view).navigate(R.id.chang_to_homeuserFragment);
         });
 
 

@@ -30,7 +30,7 @@ import idv.tfp10207.nowclearnnow0818.member.bean.Condition;
 public class MemberFragment extends Fragment {
     private Activity activity;
     private ImageView iv_back_01;
-    private TextView tv_store5_01;
+    private TextView tv_store5_01, tv_clear39_01;
     private EditText et_condition_01;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
@@ -57,12 +57,14 @@ public class MemberFragment extends Fragment {
         findView(view);
         handleToolbar(view);
         handleCondition(view);
+        handleTextview();
     }
 
     private void findView(View view) {
         iv_back_01 = view.findViewById(R.id.iv_back_01);
         tv_store5_01 = view.findViewById(R.id.tv_store5_01);
         et_condition_01 = view.findViewById(R.id.et_condition_01);
+        tv_clear39_01 = view.findViewById(R.id.tv_clear39_01);
     }
 
     private void handleCondition(View view) {
@@ -96,7 +98,7 @@ public class MemberFragment extends Fragment {
                         if (task.isSuccessful()) {
                             String message = "修改成功";
                             Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-                            Navigation.findNavController(view).navigate(R.id.introductionFragment);
+//                            Navigation.findNavController(view).navigate(R.id.introductionFragment);
                         } else {
                             String message = task.getException() == null ?
                                     "修改失敗" : task.getException().getMessage();
@@ -111,5 +113,11 @@ public class MemberFragment extends Fragment {
             Navigation.findNavController(view).popBackStack(R.id.memberFragment, true);
         });
 
+    }
+
+    private void handleTextview() {
+        tv_clear39_01.setOnClickListener(v -> {
+            et_condition_01.setText("廁所清潔");
+        });
     }
 }

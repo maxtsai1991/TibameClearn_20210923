@@ -90,7 +90,24 @@ public class MemberCentreFragment extends Fragment {
 
     private void handleTextview() {
         tv_clear8_01.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.chang_to_homeuserFragment);
+            new androidx.appcompat.app.AlertDialog.Builder(getActivity())                    // 實例化AlertDialog.Builder物件
+                    .setTitle("開通家事者權限")                                 // 設定標題文字
+                    //               用基本費用與規模去做計算
+                    .setMessage("須填寫個人簡介")             // 設定訊息文字
+                    // 設定確定按鈕-顯示文字及監聽器
+                    .setPositiveButton("確認", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Navigation.findNavController(v).navigate(R.id.chang_to_homeuserFragment);
+                            dialog.dismiss();
+                        }
+                    })
+                    .setNeutralButton("取消", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .setCancelable(true)                               // 設定是否可點擊對話框以外之處離開對話框
+                    .show();
         });
     }
 
@@ -155,7 +172,7 @@ public class MemberCentreFragment extends Fragment {
         iv_clear3_01.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("plain/text");
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "tibametfp102@email.com" });
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "Help995@email.com" });
             intent.putExtra(Intent.EXTRA_SUBJECT, "客服人員你好");
             intent.putExtra(Intent.EXTRA_TEXT, "我想請問有關商品及預約家事者的問題");
             startActivity(Intent.createChooser(intent, ""));

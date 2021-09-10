@@ -2,6 +2,7 @@ package idv.tfp10207.nowclearnnow0818.member;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ import idv.tfp10207.nowclearnnow0818.member.bean.Myself;
 public class GoodatFragment extends Fragment {
     private static final String TAG = "GoodatFragment";
     private Activity activity;
-    private TextView tv_store1_01;
+    private TextView tv_store1_01,tv_clear37_01;
     private EditText et_good_01;
     private ImageView iv_back_01;
     private FirebaseAuth auth;
@@ -65,6 +66,7 @@ public class GoodatFragment extends Fragment {
         et_good_01 = view.findViewById(R.id.et_good_01);
         iv_back_01 = view.findViewById(R.id.iv_back_01);
         tv_store1_01 = view.findViewById(R.id.tv_store1_01);
+        tv_clear37_01 = view.findViewById(R.id.tv_clear37_01);
     }
 
     private void handleTextView(View view) {
@@ -98,7 +100,7 @@ public class GoodatFragment extends Fragment {
                         if (task.isSuccessful()) {
                             String message = "修改成功";
                             Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-                            Navigation.findNavController(view).navigate(R.id.introductionFragment);
+//                            Navigation.findNavController(view).navigate(R.id.introductionFragment);
                         } else {
                             String message = task.getException() == null ?
                                     "修改失敗" : task.getException().getMessage();
@@ -113,6 +115,8 @@ public class GoodatFragment extends Fragment {
         iv_back_01.setOnClickListener(v -> {
             Navigation.findNavController(view).popBackStack(R.id.goodatFragment, true);
         });
-
+        tv_clear37_01.setOnClickListener(v -> {
+            et_good_01.setText("樂於學習新事物，我相信知識與經驗,是在不同環境中學到。");
+        });
     }
 }
