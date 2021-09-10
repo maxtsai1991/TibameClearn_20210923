@@ -120,6 +120,8 @@ public class ReserveOrderStateAcceptFragment extends Fragment {
             TextView tv_reserve_date_11;
             TextView tv_reserve_time_11;
             TextView tv_reserve_name_11;
+            TextView tv_reserve_title_number;
+
 
             public MyOrderViewHolder(View itemView) {
                 super(itemView);
@@ -127,6 +129,8 @@ public class ReserveOrderStateAcceptFragment extends Fragment {
                 tv_reserve_date_11 = itemView.findViewById(R.id.tv_reserve_date_11);
                 tv_reserve_time_11 = itemView.findViewById(R.id.tv_reserve_time_11);
                 tv_reserve_name_11 = itemView.findViewById(R.id.tv_reserve_name_11);
+                tv_reserve_title_number = itemView.findViewById(R.id.tv_reserve_title_number);
+
             }
         }
 
@@ -142,6 +146,8 @@ public class ReserveOrderStateAcceptFragment extends Fragment {
             holder.tv_reserve_date_11.setText("預約日期： "+cpreserveorder.getOnedate() );
             holder.tv_reserve_time_11.setText("預約時間： " + cpreserveorder.getTime()+" 9:00~12:00");
             holder.tv_reserve_name_11.setText("家事者姓名： " + cpreserveorder.getCpservice());
+            holder.tv_reserve_title_number.setText(cpreserveorder.getCpordernumber());
+
 
 
             // 點選會開啟修改頁面
