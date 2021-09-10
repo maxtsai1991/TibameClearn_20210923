@@ -49,6 +49,7 @@ public class Merch_DesFragment extends Fragment {
     private static final int POPWINDOWS_SHOPCAR = 1;
     private static final int POPWINDOWS_BUY = 2;
     private static final String SHOPPINGCARLIST = "shoppingCarList";
+    private static final String ORDERUPDATEMERCH = "orderUpdateMerch";
     private Activity activity;
     private ImageView iv_MerchDes1_05, iv_MerchDesInfoToolbarBack_05, iv_MerchDesToolbarShopcar_05;
     private TextView tv_MerchName_05, tv_MerchPrice_05, tv_MerchContent_05, tv_MerchBrand_05, tv_MerchNum_05; /*tv_MerchDes_05, tv_MerchSoldNum_05*/
@@ -116,10 +117,33 @@ public class Merch_DesFragment extends Fragment {
     private void handleMerchIntroductionViews() {
 
         Bundle bundle = getArguments();
+
+        int merchNumber = bundle.getInt("merchNumber");
+        //讀商品更新檔
+        List<OrderUpdateMerchNumber> orderUpdateMerchNumbers = orderUpdateMerchDesloadFile();
+
         iv_MerchDes1_05.setImageResource(bundle.getInt("merchPoto"));
         tv_MerchName_05.setText("商品名稱 : " + bundle.getString("merchName"));
         tv_MerchPrice_05.setText("商品金額 : $ " + bundle.getInt("merchPrice"));
-        tv_MerchNum_05.setText("商品數量 : " + bundle.getInt("merchNumber"));
+
+
+        if(orderUpdateMerchNumbers == null){
+            tv_MerchNum_05.setText("商品數量 : " + merchNumber);
+        }
+        else{
+            for(int i = 0 ; i < orderUpdateMerchNumbers.size() ; i++){
+                if(orderUpdateMerchNumbers.get(i).getDrawableID() == bundle.getInt("merchPoto")){
+                    merchNumber -=  orderUpdateMerchNumbers.get(i).getBuyMerchNumber();
+                }
+            }
+            tv_MerchNum_05.setText("商品數量 : " + merchNumber);
+        }
+
+
+        //tv_MerchNum_05.setText("商品數量 : " + bundle.getInt("merchNumber")); 原先
+
+
+
         tv_MerchBrand_05.setText("商品品牌 : " + bundle.getString("merchBrand"));
         tv_MerchContent_05.setText("商品內容 : " + bundle.getString("merchContent"));
 
@@ -170,6 +194,11 @@ public class Merch_DesFragment extends Fragment {
 
             Bundle bundle = getArguments();
 
+            int merchNumber = bundle.getInt("merchNumber");
+
+            //讀商品更新檔
+            List<OrderUpdateMerchNumber> orderUpdateMerchNumbers = orderUpdateMerchDesloadFile();
+
             if (popWindowsState == POPWINDOWS_SHOPCAR) {
                 this.view = LayoutInflater.from(mContext).inflate(R.layout.popwindows_shoppint_car, null);
                 bt_popWindowsAddShop_05 = view.findViewById(R.id.bt_popWindowsAddShop_05);
@@ -182,7 +211,21 @@ public class Merch_DesFragment extends Fragment {
 
                 iv_popWindowsShop_05.setImageResource(bundle.getInt("merchPoto"));
                 tv_popWindowsShopPrice_05.setText("商品金額 : $ " + bundle.getInt("merchPrice"));
-                tv_popWindowsShopMerNum_05.setText("商品數量 : " + bundle.getInt("merchNumber"));
+
+                if(orderUpdateMerchNumbers == null){
+                    tv_popWindowsShopMerNum_05.setText("商品數量 : " + merchNumber);
+                }
+                else{
+                    for(int i = 0 ; i < orderUpdateMerchNumbers.size() ; i++){
+                        if(orderUpdateMerchNumbers.get(i).getDrawableID() == bundle.getInt("merchPoto")){
+                            merchNumber -=  orderUpdateMerchNumbers.get(i).getBuyMerchNumber();
+                        }
+                    }
+                    tv_popWindowsShopMerNum_05.setText("商品數量 : " + merchNumber);
+                }
+
+                //tv_popWindowsShopMerNum_05.setText("商品數量 : " + bundle.getInt("merchNumber")); 原先
+
                 tv_popWindowsShopNum_05.setText("購買數量 : ");
 
             } else if (popWindowsState == POPWINDOWS_BUY) {
@@ -197,7 +240,21 @@ public class Merch_DesFragment extends Fragment {
 
                 iv_popWindowsBuy_05.setImageResource(bundle.getInt("merchPoto"));
                 tv_popWindowsBuyPrice_05.setText("商品金額 : $ " + bundle.getInt("merchPrice"));
-                tv_popWindowsBuyMerNum_05.setText("商品數量 : " + bundle.getInt("merchNumber"));
+
+                if(orderUpdateMerchNumbers == null){
+                    tv_popWindowsBuyMerNum_05.setText("商品數量 : " + merchNumber);
+                }
+                else{
+                    for(int i = 0 ; i < orderUpdateMerchNumbers.size() ; i++){
+                        if(orderUpdateMerchNumbers.get(i).getDrawableID() == bundle.getInt("merchPoto")){
+                            merchNumber -=  orderUpdateMerchNumbers.get(i).getBuyMerchNumber();
+                        }
+                    }
+                    tv_popWindowsBuyMerNum_05.setText("商品數量 : " + merchNumber);
+                }
+
+                //tv_popWindowsBuyMerNum_05.setText("商品數量 : " + bundle.getInt("merchNumber")); 原先
+
                 tv_popWindowsBuyNum_05.setText("購買數量 : ");
             }
 
@@ -577,6 +634,42 @@ public class Merch_DesFragment extends Fragment {
             Log.e(TAG, e.toString());
         }
         return null;
+    }
+
+
+    /**
+     * 商品更新數量讀檔
+     */
+
+    public List<OrderUpdateMerchNumber> orderUpdateMerchDesloadFile() {
+        try (
+                // 取得FileInputStream物件
+                FileInputStream fis = activity.openFileInput(ORDERUPDATEMERCH);
+                // Java I/O相關程式
+                ObjectInputStream ois = new ObjectInputStream(fis)
+        ) {
+            return (List<OrderUpdateMerchNumber>) ois.readObject();
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+        return null;
+    }
+
+    /**
+     * 商品更新數量存檔
+     */
+    private void orderUpdateMerchDesSaveFile(final List<OrderUpdateMerchNumber> orderUpdateMerchNumbers) {
+        try (
+                // 取得FileOutputStream物件
+                FileOutputStream fos = activity.openFileOutput(ORDERUPDATEMERCH, Context.MODE_PRIVATE);
+                // Java I/O相關程式
+                ObjectOutputStream oos = new ObjectOutputStream(fos)
+        ) {
+            oos.writeObject(orderUpdateMerchNumbers);
+            oos.flush();
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
     }
 
 

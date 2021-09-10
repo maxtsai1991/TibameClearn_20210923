@@ -11,13 +11,13 @@
         android:id="@+id/tv_price_05"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:text="@string/textViewPrice"
         android:textColor="@color/textcolor"
         android:textSize="25sp"
-        app:layout_constraintStart_toEndOf="@+id/tv_Sellwell_05"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_SearchView_05"
         tools:text="價格" />
 
@@ -42,20 +42,6 @@
         android:src="@drawable/icon_down_05"
         app:layout_constraintBottom_toTopOf="@+id/rv_searchMerchFm_05"
         app:layout_constraintStart_toEndOf="@+id/tv_price_05" />
-
-    <TextView
-        android:id="@+id/tv_Sellwell_05"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/textViewSellwell"
-        android:textColor="@color/textcolor"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_SearchView_05"
-        tools:text="最熱銷" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_searchMerchFm_05"

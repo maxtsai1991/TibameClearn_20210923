@@ -35,8 +35,9 @@ public class OrderCompFragment extends Fragment {
     private static final String TAG = "TAG_OrderComp";
     private static final String SHOPPINGCARLIST = "shoppingCarList";
     private static final String ORDERNUMBER = "orderNumber";
+    private static final String ORDERUPDATEMERCH = "orderUpdateMerch";
     private Activity activity;
-    private TextView tv_OrderComp_05, tv_OrderCompAddress_05, tv_OrderCompAddress1_05, tv_OrderCompPay_05, tv_OrderCompOrderNum1_05;
+    private TextView tv_OrderComp_05, tv_OrderCompAddress_05, tv_OrderCompAddress1_05, tv_OrderCompPay_05, tv_OrderCompOrderNum1_05, tv_OrderCompOrderMoney_05, tv_OrderCompOrderNum_05;
     private RecyclerView rv_ordercompFm_05;
     private Button bt_ordercompFm_05;
     private ImageView iv_OrderCompToolbarShopMall_05;
@@ -65,6 +66,7 @@ public class OrderCompFragment extends Fragment {
         handleOrderCompRecyclerView();
         handleButton();
         handleToolBar();
+        handleTextView();
     }
 
 
@@ -77,18 +79,23 @@ public class OrderCompFragment extends Fragment {
         tv_OrderCompOrderNum1_05 = view.findViewById(R.id.tv_OrderCompOrderNum1_05);
         bt_ordercompFm_05 = view.findViewById(R.id.bt_ordercompFm_05);
         iv_OrderCompToolbarShopMall_05 = view.findViewById(R.id.iv_OrderCompToolbarShopMall_05);
+        tv_OrderCompOrderMoney_05 = view.findViewById(R.id.tv_OrderCompOrderMoney_05);
+        tv_OrderCompOrderNum_05 = view.findViewById(R.id.tv_OrderCompOrderNum_05);
 
         tv_OrderComp_05.setText("訂單完成");
         tv_OrderCompAddress_05.setText("運送地址");
         GooglePayMainActivity googlePayMainActivity = new GooglePayMainActivity();
         tv_OrderCompAddress1_05.setText(googlePayMainActivity.getMember().getAddress());
-        tv_OrderCompPay_05.setText("付款方式      Google Pay");
+        tv_OrderCompPay_05.setText("付款方式         Google Pay");
+
+        tv_OrderCompOrderNum_05.setText("訂單號碼");
 
 
         //todo 讀出訂單編號
         List<OrderNumber> orderNumberCompLoad = orderNumberCompLoadFile();
         OrderNumber orderNumber = new OrderNumber();
         Bundle bundle = getArguments();
+        int orderPrice = 0;
 
         if (orderNumberCompLoad == null || orderNumberCompLoad.size() == 0) {
             orderNumberCompLoad = new ArrayList<>();
@@ -96,11 +103,34 @@ public class OrderCompFragment extends Fragment {
             orderNumber.setAddress(googlePayMainActivity.getMember().getAddress());
             orderNumber.setOrderNumber(bundle.getString("orderNumber"));
 
+            List<ShoppingCarMerch> shoppingCarMerch = orderComploadMerchFile();
+
+            for(int i = 0 ; i < shoppingCarMerch.size() ; i++){
+                if(shoppingCarMerch.get(i).getMerchCheckBox()) {
+                    //計算商品金額
+                    orderPrice = orderPrice + ((shoppingCarMerch.get(i).getMerchPrice()) * (shoppingCarMerch.get(i).getMerchNumber()));
+                }
+            }
+
+            orderNumber.setMerchTotalMoney("" + orderPrice);
+
             orderNumberCompLoad.add(orderNumber);
         }
         else{
             orderNumber.setAddress(googlePayMainActivity.getMember().getAddress());
             orderNumber.setOrderNumber(bundle.getString("orderNumber"));
+
+
+            List<ShoppingCarMerch> shoppingCarMerch = orderComploadMerchFile();
+
+            for(int i = 0 ; i < shoppingCarMerch.size() ; i++){
+                if(shoppingCarMerch.get(i).getMerchCheckBox()) {
+                    //計算商品金額
+                    orderPrice = orderPrice + ((shoppingCarMerch.get(i).getMerchPrice()) * (shoppingCarMerch.get(i).getMerchNumber()));
+                }
+            }
+
+            orderNumber.setMerchTotalMoney("" + orderPrice);
 
             orderNumberCompLoad.add( orderNumberCompLoad.size(), orderNumber);
         }
@@ -118,6 +148,14 @@ public class OrderCompFragment extends Fragment {
         List<ShoppingCarMerch> shoppingCarFile = orderComploadMerchFile();
         List<ShoppingCarMerch> orderCompMerchFile = new ArrayList<>();
 
+        //更新商品讀入
+        List<OrderUpdateMerchNumber> orderUpdateMerchNumbers = orderUpdateMerchloadFile();
+        OrderUpdateMerchNumber orderUpdateMerchNumber = new OrderUpdateMerchNumber();
+        //OrderUpdateMerchNumber orderUpdatedMerchNumber = new OrderUpdateMerchNumber();
+
+        //int orderTotalMoney = 0;
+
+
         for(int i = 0 ; i < shoppingCarFile.size() ; i++){
                         if(shoppingCarFile.get(i).getMerchCheckBox()){
                             orderCompMerchFile.add(shoppingCarFile.get(i));
@@ -126,6 +164,39 @@ public class OrderCompFragment extends Fragment {
 
         for(int i = shoppingCarFile.size() - 1 ; i >= 0 ; i--){
             if(shoppingCarFile.get(i).getMerchCheckBox()){
+
+                //TODO 商品更新數量
+                if (orderUpdateMerchNumbers == null || orderUpdateMerchNumbers.size() == 0) {
+                    orderUpdateMerchNumbers = new ArrayList<>();
+
+                    orderUpdateMerchNumber.setDrawableID(shoppingCarFile.get(i).getDrawableID());
+                    orderUpdateMerchNumber.setBuyMerchNumber(shoppingCarFile.get(i).getMerchNumber());
+//                    orderUpdateMerchNumber.setMerchNumber(shoppingCarFile.get(i).getMerchNumber());
+//                    orderUpdateMerchNumber.setMerchPrice(shoppingCarFile.get(i).getMerchPrice());
+
+                    //orderTotalMoney = shoppingCarFile.get(i).getMerchNumber() *  shoppingCarFile.get(i).getMerchPrice();
+
+                    //orderUpdateMerchNumber.setMerchMoney(orderTotalMoney);
+
+                    orderUpdateMerchNumbers.add(orderUpdateMerchNumber);
+                }
+                else{
+                    OrderUpdateMerchNumber orderUpdatedMerchNumber = new OrderUpdateMerchNumber();
+                    orderUpdatedMerchNumber.setDrawableID(shoppingCarFile.get(i).getDrawableID());
+                    orderUpdatedMerchNumber.setBuyMerchNumber(shoppingCarFile.get(i).getMerchNumber());
+//                    orderUpdateMerchNumber.setMerchNumber(shoppingCarFile.get(i).getMerchNumber());
+//                    orderUpdateMerchNumber.setMerchPrice(shoppingCarFile.get(i).getMerchPrice());
+
+                    //orderTotalMoney += shoppingCarFile.get(i).getMerchNumber() *  shoppingCarFile.get(i).getMerchPrice();
+
+                    //orderUpdateMerchNumber.setMerchMoney(orderTotalMoney);
+
+                    orderUpdateMerchNumbers.add(orderUpdateMerchNumbers.size(), orderUpdatedMerchNumber);
+                }
+
+                //存檔商品數量更新
+                orderUpdateMerchSaveFile(orderUpdateMerchNumbers);
+
                 shoppingCarFile.remove(i);
             }
         }
@@ -158,7 +229,12 @@ public class OrderCompFragment extends Fragment {
 
     }
 
+    //訂單總金額
+    private void handleTextView() {
 
+        List<OrderNumber> orderNumberCompLoad = orderNumberCompLoadFile();
+        tv_OrderCompOrderMoney_05.setText("訂單總金額 :   " +  orderNumberCompLoad.get(orderNumberCompLoad.size() - 1).getMerchTotalMoney());
+    }
 
 
     /**
@@ -230,5 +306,42 @@ public class OrderCompFragment extends Fragment {
             Log.e(TAG, e.toString());
         }
     }
+
+
+    /**
+     * 商品更新數量讀檔
+     */
+
+    public List<OrderUpdateMerchNumber> orderUpdateMerchloadFile() {
+        try (
+                // 取得FileInputStream物件
+                FileInputStream fis = activity.openFileInput(ORDERUPDATEMERCH);
+                // Java I/O相關程式
+                ObjectInputStream ois = new ObjectInputStream(fis)
+        ) {
+            return (List<OrderUpdateMerchNumber>) ois.readObject();
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+        return null;
+    }
+
+    /**
+     * 商品更新數量存檔
+     */
+    private void orderUpdateMerchSaveFile(final List<OrderUpdateMerchNumber> orderUpdateMerchNumbers) {
+        try (
+                // 取得FileOutputStream物件
+                FileOutputStream fos = activity.openFileOutput(ORDERUPDATEMERCH, Context.MODE_PRIVATE);
+                // Java I/O相關程式
+                ObjectOutputStream oos = new ObjectOutputStream(fos)
+        ) {
+            oos.writeObject(orderUpdateMerchNumbers);
+            oos.flush();
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+    }
+
 
 }

@@ -23,7 +23,7 @@ android:background="@color/maincolor">
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_return_05" />
+            app:srcCompat="@drawable/ic_arrow_back_white07" />
 
         <TextView
             android:id="@+id/tv_ShoppingCarToolBar_05"

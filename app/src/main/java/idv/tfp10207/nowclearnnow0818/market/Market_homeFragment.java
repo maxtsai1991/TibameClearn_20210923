@@ -181,11 +181,12 @@ public class Market_homeFragment extends Fragment {
 
     public List<MerchInfo> getListMarketHome(){
         return Arrays.asList(   //list 商品照片與資訊
-                new MerchInfo(R.drawable.m2, "高樂氏廚房清潔劑", 10, 11,"高樂氏", "輕鬆瓦解頑強汙垢，多表面適用", "陳小明", "a002"),
+                new MerchInfo(R.drawable.m2, "高樂氏廚房清潔劑", 10, 10,"高樂氏", "輕鬆瓦解頑強汙垢，多表面適用", "陳小明", "a002"),
                 new MerchInfo(R.drawable.m3, "妙管家地板清潔劑", 15, 15,"妙管家", "分解油垢清爽不黏腳", "陳明漢","a006"),
                 new MerchInfo(R.drawable.m1, "高樂氏去汙清潔劑", 5, 20,"高樂氏", "美國製造，原裝進口", "陳小明", "a002"),
+                new MerchInfo(R.drawable.m5, "魔術靈玻璃清潔劑", 25, 22,"魔術靈", "極淨晶亮 不留擦痕", "黃永珠","a005"),
                 new MerchInfo(R.drawable.m4, "妙管家窗戶清潔劑", 20, 12,"妙管家", "含特殊木質潤澤成份", "陳明漢","a006"),
-                new MerchInfo(R.drawable.m5, "魔術靈玻璃清潔劑", 25, 22,"魔術靈", "極淨晶亮 不留擦痕", "黃永珠","a005")
+                new MerchInfo(R.drawable.test_images4, "超力牌萬用清潔劑", 1, 6,"好用牌", "萬用去汙劑", "陳小明", "a002")
                 /*new MerchInfo(R.drawable.test_images4, "多功能清潔劑", 4, 40,"XXX-3牌", "真的很好用哦3", "陳小明","a002"),
                 new MerchInfo(R.drawable.test_images1,"拖把3",1, 50, "XXX-4牌", "真的很好用哦4", "張小慧","a003"),
                 new MerchInfo(R.drawable.test_images2, "拖把4", 2, 60,"XXX-5牌", "真的很好用哦5", "李心潔","a004"),

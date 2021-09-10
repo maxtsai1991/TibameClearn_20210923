@@ -41,7 +41,7 @@ public class SearchFragment extends Fragment {
     private Activity activity;
     private RecyclerView rv_searchMerchFm_05;
     private SearchView  sv_Search_05;
-    private TextView tv_Sellwell_05,tv_price_05;
+    private TextView tv_price_05; //tv_Sellwell_05
     private ImageView iv_up_05, iv_down_05, iv_SearchMerchToolbarToolbarBack_05, iv_SearchToolbarShop_05, iv_SearchMerchToolbarToolbarShop_05;
     private List<MerchInfo> searchMerchInfoList = new ArrayList<>();
     private List<MerchInfo> searchedMerchInfoList = new ArrayList<>();
@@ -78,7 +78,7 @@ public class SearchFragment extends Fragment {
     private void findViews(View view) {
         rv_searchMerchFm_05 = view.findViewById(R.id.rv_searchMerchFm_05);
         sv_Search_05 = view.findViewById(R.id.sv_Search_05);
-        tv_Sellwell_05 = view.findViewById(R.id.tv_Sellwell_05);
+        //tv_Sellwell_05 = view.findViewById(R.id.tv_Sellwell_05);
         tv_price_05 = view.findViewById(R.id.tv_price_05);
         iv_up_05 = view.findViewById(R.id.iv_up_05);
         iv_down_05 = view.findViewById(R.id.iv_down_05);
