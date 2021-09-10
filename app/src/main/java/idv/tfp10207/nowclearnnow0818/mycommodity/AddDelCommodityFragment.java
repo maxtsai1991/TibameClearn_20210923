@@ -20,7 +20,7 @@ import idv.tfp10207.nowclearnnow0818.R;
 
 public class AddDelCommodityFragment extends Fragment {
     private Button bt_add_commodity07, bt_my_commobity07;
-    private ImageView iv_commodity_return;
+    private ImageView iv_commodity_return,ms_home09;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,12 +46,19 @@ public class AddDelCommodityFragment extends Fragment {
         bt_add_commodity07 = view.findViewById(R.id.bt_add_commodity07);
         bt_my_commobity07 = view.findViewById(R.id.bt_my_commobity07);
         iv_commodity_return = view.findViewById(R.id.iv_commodity_return);
+        ms_home09 = view.findViewById(R.id.ms_home09);
     }
     private void handleimage(View view) {
         iv_commodity_return.setOnClickListener(v -> {
 //            Navigation.findNavController(v)
 //                    .navigate(R.id.chang_to_homeuserFragment);
             Navigation.findNavController(view).popBackStack(R.id.addDelCommodityFragment,true);
+        });
+
+        ms_home09.setOnClickListener(v -> {
+
+            Navigation.findNavController(v)
+                   .navigate(R.id.homePageFragment072);
         });
     }
 
