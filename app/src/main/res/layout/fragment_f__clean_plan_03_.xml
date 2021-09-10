@@ -244,6 +244,7 @@
         android:text="@string/textCPendout"
         android:textSize="30sp"
         app:backgroundTint="#91C75C"
+        android:foreground="?selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

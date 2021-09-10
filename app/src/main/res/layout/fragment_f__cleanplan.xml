@@ -46,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:numStars="5"
+                android:rating="4.5"
                 android:scrollbarSize="2dp" />
 
             <TextView
@@ -62,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:paddingTop="15dp"
-                android:text="一次預約為3小時\n主要依據服務人員基本費用(服務者自訂，費用/小時)\n與整理坪數區間費用\n \n坪數區間費用:\n1~30坪(含)：250元/坪、30~60坪(含)：350元/坪、60坪以上：500元/坪\n \n舉例:預約一次(3小時)基本費用400元的服務人員\n打掃15坪的租屋處\n則本次服務費用為(400*3)+(15*250)=4950元   "
+                android:text="一次預約為3小時\n主要依據服務人員基本費用(服務者自訂，費用/小時)\n與整理坪數區間費用\n \n坪數區間費用:\n1~30坪(含)：250元/坪、30~60坪(含)：350元/坪、60坪以上：500元/坪\n \n舉例:預約一次基本費用1200元的服務人員\n打掃15坪的租屋處\n則本次服務費用為1200+(15*250)=4950元   "
                 android:textSize="18sp" />
 
             <TextView
@@ -122,7 +123,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_question_notice"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="90dp">
 
                 <ToggleButton
                     android:id="@+id/tb_question_try"
@@ -203,6 +205,7 @@
         android:text="@string/nextNext"
         android:textSize="30sp"
         app:backgroundTint="#91C75C"
+        android:foreground="?selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

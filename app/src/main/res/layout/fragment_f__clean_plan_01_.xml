@@ -256,14 +256,36 @@
                 app:layout_constraintStart_toEndOf="@+id/sp_cp01_areaservice_11"
                 app:layout_constraintTop_toTopOf="@+id/sp_cp01_areaservice_11" />
 
+            <Button
+                android:id="@+id/bt_areaservice_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="搜尋"
+                app:backgroundTint="@color/clearn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/auttv_CP01_choiseservice_11" />
+
+            <TextView
+                android:id="@+id/tv_CP01_servername_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="家事者"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_areaservice_11" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rc_CP01_servicearea_11"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/auttv_CP01_choiseservice_11" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_CP01_servername_11" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -276,6 +298,7 @@
         android:text="@string/nextNext"
         android:textSize="30sp"
         app:backgroundTint="#91C75C"
+        android:foreground="?selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

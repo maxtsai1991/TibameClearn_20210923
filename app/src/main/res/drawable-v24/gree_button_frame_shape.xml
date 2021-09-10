@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 顏色 -->
     <solid android:color="#91C75C" />
@@ -8,5 +10,6 @@
     <stroke
         android:width="0dp"
         android:color="@color/white" />
+
 
 </shape>

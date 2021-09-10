@@ -19,66 +19,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include6">
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:orientation="horizontal"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="390dp"
+            android:layout_height="613dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/bt_reserve_04_11"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                android:text="媒合中"
-                android:textSize="25sp"
-                app:backgroundTint="#C1D6AB" />
-
-            <Button
-                android:id="@+id/bt_reserve_05_11"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                android:text="已媒合"
-                android:textSize="25sp"
-                app:backgroundTint="#FFC1D6AB" />
-
-            <Button
-                android:id="@+id/bt_reserve_06_11"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="已完成"
-                android:textSize="25sp"
-                app:backgroundTint="#91C75C" />
-
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="378dp"
-            android:layout_height="460dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <TextView
                 android:id="@+id/tv_reserve_assess_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="328dp"
-                android:layout_marginRight="328dp"
                 android:text="評價"
                 android:textColor="#91C75C"
-                android:textSize="25sp"
+                android:textSize="40sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -88,7 +45,8 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_reserve_assess_11"
                 tools:src="@tools:sample/avatars" />
 
@@ -97,20 +55,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
-                android:text="王小明"
+                android:text="黃永珠"
                 android:textSize="25sp"
-                app:layout_constraintStart_toEndOf="@+id/iv_reserve_assess_11"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/iv_reserve_assess_11" />
 
             <RatingBar
                 android:id="@+id/rb_reserve_assess_start_11"
-                android:layout_width="262dp"
-                android:layout_height="42dp"
+                android:layout_width="234dp"
+                android:layout_height="46dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginTop="4dp"
-                app:layout_constraintStart_toEndOf="@+id/iv_reserve_assess_11"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_reserve_assess_name_11" />
 
             <CheckBox
@@ -118,12 +74,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
                 android:text="準時抵達"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_reserve_assess_11" />
+                app:layout_constraintTop_toBottomOf="@+id/rb_reserve_assess_start_11" />
 
             <CheckBox
                 android:id="@+id/cb_reserve_assess2_11"
@@ -171,10 +126,11 @@
 
             <Button
                 android:id="@+id/bt_reserve_assess_send_11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="130dp"
+                android:layout_height="62dp"
                 android:layout_marginTop="16dp"
                 android:text="送出"
+                android:textSize="30sp"
                 app:backgroundTint="#91C75C"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

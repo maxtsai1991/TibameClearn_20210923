@@ -1,4 +1,4 @@
-package idv.tfp10207.nowclearnnow0818.cleanplan;
+package idv.tfp10207.nowclearnnow0818.cleanplan.CPreserve;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -20,41 +20,40 @@ import androidx.navigation.Navigation;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import idv.tfp10207.nowclearnnow0818.R;
-import idv.tfp10207.nowclearnnow0818.cleanplan.CPreserve.Cpreserveorder;
 
-public class F_CleanPlan_05_Fragment extends Fragment {
-    private static final String TAG = "TAG_F_CP05_Fragment";
+public class F_CleanPlan_06_Fragment extends Fragment {
+    private static final String TAG = "TAG_F_CP06_Fragment";
     private Activity activity;
 
     private FirebaseFirestore db;
     private Cpreserveorder cpreserveorder;
     //  1.訂單詳情
-    private TextView tv_CP05_reserveorder_11;
-    private TextView tv_CP05_reserveorder1_11;
-    private TextView tv_CP05_reserveorder2_11;
+    private TextView tv_CP06_reserveorder_11;
+    private TextView tv_CP06_reserveorder1_11;
+    private TextView tv_CP06_reserveorder2_11;
 
-    private Button bt_cp05_orderchart_11;
-    private Button bt_cp05_setorderstate_canel_11;
-    private Button bt_cp05_setorderstate_accept_11;
+    private Button bt_cp06_orderchart_11;
+    private Button bt_cp06_setorderstate_canel_11;
+    private Button bt_cp06_setorderstate_accept_11;
 
-    private  TextView tv_CP05_orderscale1_11;
-    private  TextView tv_CP05_orderscale2_11;
-    private  TextView tv_CP05_orderscale3_11;
-    private  TextView tv_CP05_orderscale4_11;
-    private  TextView tv_CP05_orderscale5_11;
+    private  TextView tv_CP06_orderscale1_11;
+    private  TextView tv_CP06_orderscale2_11;
+    private  TextView tv_CP06_orderscale3_11;
+    private  TextView tv_CP06_orderscale4_11;
+    private  TextView tv_CP06_orderscale5_11;
 
-    private TextView tv_CP05_orderpay1_11;
-    private TextView tv_CP05_orderpay2_11;
-    private TextView tv_CP05_orderpay3_11;
-    private TextView tv_CP05_orderpay4_11;
+    private TextView tv_CP06_orderpay1_11;
+    private TextView tv_CP06_orderpay2_11;
+    private TextView tv_CP06_orderpay3_11;
+    private TextView tv_CP06_orderpay4_11;
 
-    private TextView tv_CP05_orderpayway1_11;
-    private TextView tv_CP05_orderpayway2_11;
+    private TextView tv_CP06_orderpayway1_11;
+    private TextView tv_CP06_orderpayway2_11;
 
-    private TextView tv_CP05_orderclient1_11;
-    private TextView tv_CP05_orderclient2_11;
-    private TextView tv_CP05_orderclient3_11;
-    private TextView tv_CP05_orderclient4_11;
+    private TextView tv_CP06_orderclient1_11;
+    private TextView tv_CP06_orderclient2_11;
+    private TextView tv_CP06_orderclient3_11;
+    private TextView tv_CP06_orderclient4_11;
 
 
     //Toolbar
@@ -72,7 +71,7 @@ public class F_CleanPlan_05_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_f__clean_plan_05_, container, false);
+        return inflater.inflate(R.layout.fragment_f__clean_plan_06_, container, false);
     }
 
     @Override
@@ -88,30 +87,30 @@ public class F_CleanPlan_05_Fragment extends Fragment {
     }
 
     private void findview(View view) {
-        bt_cp05_orderchart_11 = view.findViewById(R.id.bt_cp05_orderchart_11);
-        bt_cp05_setorderstate_canel_11 = view.findViewById(R.id.bt_cp05_setorderstate_canel_11);
-        bt_cp05_setorderstate_accept_11 = view.findViewById(R.id.bt_cp05_setorderstate_accept_11);
+        bt_cp06_orderchart_11 = view.findViewById(R.id.bt_cp06_orderchart_11);
+        bt_cp06_setorderstate_canel_11 = view.findViewById(R.id.bt_cp06_setorderstate_canel_11);
+        bt_cp06_setorderstate_accept_11 = view.findViewById(R.id.bt_cp06_setorderstate_accept_11);
 
-        tv_CP05_reserveorder_11 = view.findViewById(R.id.tv_CP05_reserveorder_11);
-        tv_CP05_reserveorder1_11 = view.findViewById(R.id.tv_CP05_reserveorder1_11);
-        tv_CP05_reserveorder2_11 = view.findViewById(R.id.tv_CP05_reserveorder2_11);
+        tv_CP06_reserveorder_11 = view.findViewById(R.id.tv_CP06_reserveorder_11);
+        tv_CP06_reserveorder1_11 = view.findViewById(R.id.tv_CP06_reserveorder1_11);
+        tv_CP06_reserveorder2_11 = view.findViewById(R.id.tv_CP06_reserveorder2_11);
 
-        tv_CP05_orderscale1_11 = view.findViewById(R.id.tv_CP05_orderscale1_11);
-        tv_CP05_orderscale2_11 = view.findViewById(R.id.tv_CP05_orderscale2_11);
-        tv_CP05_orderscale3_11 = view.findViewById(R.id.tv_CP05_orderscale3_11);
-        tv_CP05_orderscale4_11 = view.findViewById(R.id.tv_CP05_orderscale4_11);
-        tv_CP05_orderscale5_11 = view.findViewById(R.id.tv_CP05_orderscale5_11);
+        tv_CP06_orderscale1_11 = view.findViewById(R.id.tv_CP06_orderscale1_11);
+        tv_CP06_orderscale2_11 = view.findViewById(R.id.tv_CP06_orderscale2_11);
+        tv_CP06_orderscale3_11 = view.findViewById(R.id.tv_CP06_orderscale3_11);
+        tv_CP06_orderscale4_11 = view.findViewById(R.id.tv_CP06_orderscale4_11);
+        tv_CP06_orderscale5_11 = view.findViewById(R.id.tv_CP06_orderscale5_11);
 
-        tv_CP05_orderpay1_11 = view.findViewById(R.id.tv_CP05_orderpay1_11);
-        tv_CP05_orderpay2_11 = view.findViewById(R.id.tv_CP05_orderpay2_11);
+        tv_CP06_orderpay1_11 = view.findViewById(R.id.tv_CP06_orderpay1_11);
+        tv_CP06_orderpay2_11 = view.findViewById(R.id.tv_CP06_orderpay2_11);
 
 
-        tv_CP05_orderpayway1_11 = view.findViewById(R.id.tv_CP05_orderpayway1_11);
-        tv_CP05_orderpayway2_11 = view.findViewById(R.id.tv_CP05_orderpayway2_11);
+        tv_CP06_orderpayway1_11 = view.findViewById(R.id.tv_CP06_orderpayway1_11);
+        tv_CP06_orderpayway2_11 = view.findViewById(R.id.tv_CP06_orderpayway2_11);
 
-        tv_CP05_orderclient1_11 = view.findViewById(R.id.tv_CP05_orderclient1_11);
-        tv_CP05_orderclient2_11 = view.findViewById(R.id.tv_CP05_orderclient2_11);
-        tv_CP05_orderclient4_11 = view.findViewById(R.id.tv_CP05_orderclient4_11);
+        tv_CP06_orderclient1_11 = view.findViewById(R.id.tv_CP06_orderclient1_11);
+        tv_CP06_orderclient2_11 = view.findViewById(R.id.tv_CP06_orderclient2_11);
+        tv_CP06_orderclient4_11 = view.findViewById(R.id.tv_CP06_orderclient4_11);
     }
 
 
@@ -122,45 +121,45 @@ public class F_CleanPlan_05_Fragment extends Fragment {
             if (cpreserveorder != null) {
 
                 String Cpordernumber = cpreserveorder.getCpordernumber();
-                tv_CP05_reserveorder2_11.setText(Cpordernumber);
+                tv_CP06_reserveorder2_11.setText(Cpordernumber);
 
                 String orderPeople ="清潔規模："+ cpreserveorder.getPeoplenumber()+"人";
-                tv_CP05_orderscale1_11.setText(orderPeople);
+                tv_CP06_orderscale1_11.setText(orderPeople);
 
                 String orderPing ="清潔規模："+ cpreserveorder.getPing()+"坪";
-                tv_CP05_orderscale2_11.setText(orderPing);
+                tv_CP06_orderscale2_11.setText(orderPing);
 
                 String orderTime ="時間："+ cpreserveorder.getTime();
-                tv_CP05_orderscale3_11.setText(orderTime);
+                tv_CP06_orderscale3_11.setText(orderTime);
 
                 String orderRemark ="備註："+  cpreserveorder.getRemark();
-                tv_CP05_orderscale4_11.setText(orderRemark);
+                tv_CP06_orderscale4_11.setText(orderRemark);
 
                 String orderCpservice = "家事者："+  cpreserveorder.getCpservice();
-                tv_CP05_orderscale5_11.setText(orderCpservice);
+                tv_CP06_orderscale5_11.setText(orderCpservice);
 
                 String orderPayname = "付款者姓名："+  cpreserveorder.getPayname();
-                tv_CP05_orderpay1_11.setText(orderPayname);
+                tv_CP06_orderpay1_11.setText(orderPayname);
 
                 String orderPayphone = "付款者手機："+  cpreserveorder.getPayphone();
-                tv_CP05_orderpay2_11.setText(orderPayphone);
+                tv_CP06_orderpay2_11.setText(orderPayphone);
 
                 String orderPayway = "付款方式："+  cpreserveorder.getCppay();
-                tv_CP05_orderpayway1_11.setText(orderPayway);
+                tv_CP06_orderpayway1_11.setText(orderPayway);
 
 //               資料庫沒抓到金額，先寫死
                 String orderPaymoney = "付款金額："+"7450"+"元";
 //                String orderPaymoney = "付款金額："+  cpreserveorder.getCppaymoney()+"元";
-                tv_CP05_orderpayway2_11.setText(orderPaymoney);
+                tv_CP06_orderpayway2_11.setText(orderPaymoney);
 
                 String orderServicename = "服務對象姓名："+  cpreserveorder.getServicename();
-                tv_CP05_orderclient1_11.setText(orderServicename);
+                tv_CP06_orderclient1_11.setText(orderServicename);
 
                 String orderServicephone = "服務對象手機："+  cpreserveorder.getServicephone();
-                tv_CP05_orderclient2_11.setText(orderServicephone);
+                tv_CP06_orderclient2_11.setText(orderServicephone);
 
                 String orderServiceaddress = "服務對象地址："+  cpreserveorder.getServiceaddress();
-                tv_CP05_orderclient4_11.setText(orderServiceaddress);
+                tv_CP06_orderclient4_11.setText(orderServiceaddress);
 
             }
         }
@@ -177,12 +176,12 @@ public class F_CleanPlan_05_Fragment extends Fragment {
 //        });
 
 //聯絡
-        bt_cp05_orderchart_11.setOnClickListener(v -> {
+        bt_cp06_orderchart_11.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.messageFragment11);
         });
 
 //確認
-        bt_cp05_setorderstate_accept_11.setOnClickListener(v -> {
+        bt_cp06_setorderstate_accept_11.setOnClickListener(v -> {
 //            String amountStr = etAmount.getText().toString().trim();
 //            int amount = Integer.parseInt(amountStr);
 //            order.setOrderAmount(amount);
@@ -198,7 +197,7 @@ public class F_CleanPlan_05_Fragment extends Fragment {
         });
 
 //取消
-        bt_cp05_setorderstate_canel_11.setOnClickListener(v -> {
+        bt_cp06_setorderstate_canel_11.setOnClickListener(v -> {
             Log.d(TAG,"訂單編號:"+cpreserveorder.getCpordernumber());
 
             new AlertDialog.Builder(getActivity())                    // 實例化AlertDialog.Builder物件
@@ -254,24 +253,24 @@ public class F_CleanPlan_05_Fragment extends Fragment {
 //顯示訂單
     private void handleOrder(View view) {
         //寫死 媒合詳情
-        tv_CP05_orderscale1_11.setText("預估清潔規模："+"1"+"人");
-        tv_CP05_orderscale2_11.setText("預估清潔規模："+"25"+"坪");
-        tv_CP05_orderscale3_11.setText("清潔時間："+"早上");
-        tv_CP05_orderscale4_11.setText("備註："+"家中有養狗，清理時請注意，謝謝!");
-        tv_CP05_orderscale5_11.setText("家事者："+"黃永珠");
+        tv_CP06_orderscale1_11.setText("預估清潔規模："+"1"+"人");
+        tv_CP06_orderscale2_11.setText("預估清潔規模："+"25"+"坪");
+        tv_CP06_orderscale3_11.setText("清潔時間："+"早上");
+        tv_CP06_orderscale4_11.setText("備註："+"家中有養狗，清理時請注意，謝謝!");
+        tv_CP06_orderscale5_11.setText("家事者："+"黃永珠");
         //寫死 付款人 帶入會員資料
-        tv_CP05_orderpay1_11.setText("付款人姓名："+"王大明");
-        tv_CP05_orderpay2_11.setText("付款人手機："+"0922222222");
-        tv_CP05_orderpay3_11.setText("付款人信箱："+"aaa@gmail.com");
-        tv_CP05_orderpay4_11.setText("付款人地址："+"台北市中山區吉林路");
+        tv_CP06_orderpay1_11.setText("付款人姓名："+"王大明");
+        tv_CP06_orderpay2_11.setText("付款人手機："+"0922222222");
+        tv_CP06_orderpay3_11.setText("付款人信箱："+"aaa@gmail.com");
+        tv_CP06_orderpay4_11.setText("付款人地址："+"台北市中山區吉林路");
         //寫死 付款資訊 帶入會員資料
-        tv_CP05_orderpayway1_11.setText("繳費方式："+"Googlepay");
-        tv_CP05_orderpayway2_11.setText("繳費金額："+"7450元");
+        tv_CP06_orderpayway1_11.setText("繳費方式："+"Googlepay");
+        tv_CP06_orderpayway2_11.setText("繳費金額："+"7450元");
         //寫死 服務對象 帶入會員資料
-        tv_CP05_orderclient1_11.setText("服務對象姓名："+"王大明");
-        tv_CP05_orderclient2_11.setText("服務對象手機："+"0922222222");
-        tv_CP05_orderclient3_11.setText("服務對象信箱："+"aaa@gmail.com");
-        tv_CP05_orderclient4_11.setText("服務對象地址："+"台北市中山區吉林路");
+        tv_CP06_orderclient1_11.setText("服務對象姓名："+"王大明");
+        tv_CP06_orderclient2_11.setText("服務對象手機："+"0922222222");
+        tv_CP06_orderclient3_11.setText("服務對象信箱："+"aaa@gmail.com");
+        tv_CP06_orderclient4_11.setText("服務對象地址："+"台北市中山區吉林路");
     }
 
 
@@ -288,7 +287,7 @@ public class F_CleanPlan_05_Fragment extends Fragment {
 //    按鍵(需更改導覽路線的ID)
 
         leftarrowicon.setOnClickListener(v -> {
-            Navigation.findNavController(view).popBackStack(R.id.f_CleanPlan_05_Fragment, true);
+            Navigation.findNavController(view).popBackStack(R.id.f_CleanPlan_06_Fragment, true);
         });
 
 

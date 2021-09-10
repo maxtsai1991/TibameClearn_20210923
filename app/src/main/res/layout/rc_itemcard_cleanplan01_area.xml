@@ -30,20 +30,23 @@
                 android:layout_gravity="center"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <RatingBar
-                android:id="@+id/rat_CP01_ratingservice_11"
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/cb_areaservice_11"
+                android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:numStars="5"
-                android:scrollbarSize="2dp" />
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="219dp"
+            android:layout_height="149dp"
             android:orientation="vertical"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout6">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout6"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_CP01_servicename_11"
@@ -68,29 +71,61 @@
                 android:textSize="18sp"
                 tools:text="擅長項目: 收納整理、打掃" />
 
-            <TextView
-                android:id="@+id/tv_CP01_toll_standard_11"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="28dp"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                tools:text="收費標準:  600/件" />
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp">
 
-            <TextView
-                android:id="@+id/tv_CP01_finsh_11"
+                <TextView
+                    android:id="@+id/tv_CP01_toll_standard_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="收費標準："
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP01_toll_standard2_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="1200 元/次"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                tools:text="已完成件數:23件          " />
+                android:orientation="horizontal"
+                android:paddingLeft="16dp">
+
+                <TextView
+                    android:id="@+id/tv_CP01_finsh_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="已完成件數:          "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_CP01_finsh2_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="   4件" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

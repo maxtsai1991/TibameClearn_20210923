@@ -154,5 +154,12 @@
     <string name="TapPay_MerchantName">TW_CTBC</string>
     <string name="TapPay_MerchantID">tibametfp102project_CTBC</string>
 
+    <!--CP03 上傳-->
+    <string name="textNameIsInvalid">訂單沒有名字</string>
+    <string name="textImageUploadSuccess">Image is uploaded</string>
+    <string name="textImageUploadFail">Image upload failed</string>
+
+    <string name="textInserted">已新增訂單</string>
+    <string name="textInsertFail">新增失敗</string>
 
 </resources>
