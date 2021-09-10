@@ -79,7 +79,10 @@ public class success_get_Fragment extends Fragment {
                     // 設定確定按鈕-顯示文字及監聽器
                     .setPositiveButton("確認", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            Navigation.findNavController(view).popBackStack(R.id.success_get_Fragment, true);
+                            tv_balance_01.setText("$ " + 0 );
+                            tv_homecash_01.setText("$ " + 0);
+                            tv_allcash_01.setText("$ " + 0);
+//                            Navigation.findNavController(view).popBackStack(R.id.success_get_Fragment, true);
                             dialog.dismiss();
                         }
                     })
