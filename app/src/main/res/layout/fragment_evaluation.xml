@@ -84,7 +84,7 @@
                     android:id="@+id/textView23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
+                    android:layout_marginStart="12dp"
                     android:layout_marginTop="4dp"
                     android:text="服務態度好"
                     android:textColor="@color/black"
@@ -126,7 +126,7 @@
                     android:maxHeight="40dp"
                     android:minHeight="40dp"
                     android:numStars="5"
-                    android:rating="3"
+                    android:rating="4"
                     android:stepSize="1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -145,9 +145,9 @@
                     android:id="@+id/textView24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="12dp"
                     android:layout_marginTop="8dp"
-                    android:text="準時抵達"
+                    android:text="服務品質優質"
                     android:textColor="@color/black"
                     android:textSize="25dp"
                     app:layout_constraintStart_toEndOf="@+id/tv_clear45_01"
@@ -179,6 +179,63 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/include8" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="386dp">
+
+                <TextView
+                    android:id="@+id/tv_cr_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="164dp"
+                    android:text="張小慧"
+                    android:textColor="#151515"
+                    android:textSize="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RatingBar
+                    android:layout_width="240dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="52dp"
+                    android:maxHeight="40dp"
+                    android:minHeight="40dp"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:stepSize="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cv_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:text="熱誠親切!"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_cr_01"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView25"
+                    android:layout_width="95dp"
+                    android:layout_height="107dp"
+                    android:src="@drawable/girl1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
