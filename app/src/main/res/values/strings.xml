@@ -162,4 +162,14 @@
     <string name="textInserted">已新增訂單</string>
     <string name="textInsertFail">新增失敗</string>
 
+<!--    CP02 上傳照片-->
+    <string name="textDirNotCreated">DIRECTORY_PICTURES cannot be created!</string>
+    <string name="textNoCameraAppFound">No camera app found</string>
+    <string name="textUploadFail">Upload fail</string>
+    <string name="textUploadSuccess">Upload successfully</string>
+    <string name="textDownloadFail">Download fail</string>
+
+    <string name="textImageDownloadFail">Image download Failed</string>
+
+
 </resources>

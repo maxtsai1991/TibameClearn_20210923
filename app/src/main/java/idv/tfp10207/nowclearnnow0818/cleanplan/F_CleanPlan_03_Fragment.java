@@ -256,11 +256,9 @@ public class F_CleanPlan_03_Fragment extends Fragment {
     }
 
 
-
-
     private void googlePayResult(ActivityResult result) {
         //todo  成功，跳轉至訂單詳情頁面
-        if(result.getResultCode() == RESULT_OK){
+        if (result.getResultCode() == RESULT_OK) {
             //bt_OrderDetOrderFm_05.setEnabled(true);
             //bt_OrderDetBuyFm_05.setEnabled(false);
 
@@ -271,15 +269,14 @@ public class F_CleanPlan_03_Fragment extends Fragment {
 
 
         }//todo 失敗，跳轉至失敗頁面
-        else if(result.getResultCode() == RESULT_FAIL){
+        else if (result.getResultCode() == RESULT_FAIL) {
             //tv_OrderDetPayFailFm_05.setText("付款失敗");
 
 
             NavController navController = Navigation.findNavController(cb_CP03_paypereson_member_11);
             navController.navigate(R.id.cpOrderFailFragment);
 
-        }
-        else{ //todo exit
+        } else { //todo exit
             NavController navController = Navigation.findNavController(cb_CP03_paypereson_member_11);
             navController.navigate(R.id.f_CleanplanFragment);
         }

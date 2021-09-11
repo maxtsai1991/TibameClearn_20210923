@@ -18,13 +18,17 @@ public class OrderConstants implements Serializable {
     //    CP01_選擇家事者  抓ID
     public static String cparea;
     public static String cpservice;
+    public static int cpservicemoney;
 
     //    CP02_預估清潔人數
-    public static String peoplenumber;
-    public static String ping;
+    public static int peoplenumber;
+    public static int ping;
 
     //    CP02_選擇清潔時間
     public static String time;
+
+    //    CP02_上傳照片
+    public static String picture;
 
     //    CP02_備註
     public static String remark;
@@ -33,8 +37,9 @@ public class OrderConstants implements Serializable {
     public static String servicephone;
     public static String serviceemail;
     public static String serviceaddress;
+
     //    CP02_付款金額
-    public static String cppaymoney;
+    public static String cppaymoney;      //  最後應改成int型態，待修正(相關檔案須更正，包含會員中心取款部分)
     //    CP03_付款方式
     public static String cppay;
     //    CP03_付款人資訊
@@ -46,21 +51,23 @@ public class OrderConstants implements Serializable {
     // 訂單狀態
     public static String cporderstate;
 
-    //    CP02_上傳照片
-    public static String picture;
+
 
     public OrderConstants() {
     }
 
     public OrderConstants(String cpordernumber, String onedate, String manydate, String manydate2, String manydate3, String gender, String cparea,
-                          String cpservice, String peoplenumber, String ping, String time,String remark, String servicename, String servicephone, String serviceemail, String serviceaddress,
-                          String cppaymoney, String cppay, String payname, String payphone, String payemail, String payaddress, String cporderstate,String picture) {
+                          String cpservice, int cpservicemoney, int peoplenumber, int ping, String time, String remark, String servicename, String servicephone, String serviceemail, String serviceaddress,
+                          String cppaymoney, String cppay, String payname, String payphone, String payemail, String payaddress, String cporderstate, String picture) {
 
-        this(cpordernumber, onedate, manydate, manydate2, manydate3, gender, cparea, cpservice, peoplenumber, ping, time, remark, servicename, servicephone, serviceemail,
-                serviceaddress, cppaymoney, cppay, payname, payphone, payemail, payemail, payaddress, cporderstate,null);
+        this(cpordernumber, onedate, manydate, manydate2, manydate3, gender, cparea, cpservice, cpservicemoney, peoplenumber, ping,
+                time, remark, servicename, servicephone, serviceemail, serviceaddress, cppaymoney, cppay, payname, payphone, payemail, payemail, payaddress, cporderstate, picture);
     }
 
-    public OrderConstants(String cpordernumber, String onedate, String manydate, String manydate2, String manydate3, String gender, String cparea, String cpservice, String peoplenumber, String ping, String time, String remark, String servicename, String servicephone, String serviceemail, String serviceaddress, String cppaymoney, String cppay, String payname, String payphone, String payemail, String payemail1, String payaddress, String cporderstate, String picture) {
+    public OrderConstants(String cpordernumber, String onedate, String manydate, String manydate2, String manydate3, String gender,
+                          String cparea, String cpservice, int cpservicemoney, int peoplenumber, int ping, String time, String remark,
+                          String servicename, String servicephone, String serviceemail, String serviceaddress, String cppaymoney, String cppay,
+                          String payname, String payphone, String payemail, String payemail1, String payaddress, String cporderstate, String picture) {
         OrderConstants.cpordernumber = cpordernumber;
         OrderConstants.onedate = onedate;
         OrderConstants.manydate = manydate;
@@ -69,6 +76,7 @@ public class OrderConstants implements Serializable {
         OrderConstants.gender = gender;
         OrderConstants.cparea = cparea;
         OrderConstants.cpservice = cpservice;
+        OrderConstants.cpservicemoney = cpservicemoney;
         OrderConstants.peoplenumber = peoplenumber;
         OrderConstants.ping = ping;
         OrderConstants.time = time;
@@ -85,6 +93,7 @@ public class OrderConstants implements Serializable {
         OrderConstants.payaddress = payaddress;
         OrderConstants.cporderstate = cporderstate;
     }
+
 
 
     public String getCpordernumber() {
@@ -151,19 +160,24 @@ public class OrderConstants implements Serializable {
         this.cpservice = cpservice;
     }
 
-    public String getPeoplenumber() {
+    public int getCpservicemoney() {  return cpservicemoney;    }
+
+    public void setCpservicemoney(int cpservicemoney) { this.cpservicemoney = cpservicemoney;    }
+
+
+    public int getPeoplenumber() {
         return peoplenumber;
     }
 
-    public void setPeoplenumber(String peoplenumber) {
+    public void setPeoplenumber(int peoplenumber) {
         this.peoplenumber = peoplenumber;
     }
 
-    public String getPing() {
+    public int getPing() {
         return ping;
     }
 
-    public void setPing(String ping) {
+    public void setPing(int ping) {
         this.ping = ping;
     }
 

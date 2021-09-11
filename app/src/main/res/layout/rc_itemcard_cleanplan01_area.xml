@@ -79,22 +79,22 @@
                 android:paddingLeft="16dp">
 
                 <TextView
-                    android:id="@+id/tv_CP01_toll_standard_11"
+                    android:id="@+id/tv_CP01_toll_standard1_11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:text="收費標準："
+                    android:layout_weight="0.8"
+                    android:text="收費標準(元/次)："
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/tv_CP01_toll_standard2_11"
+                    android:id="@+id/tv_CP01_toll_standard_11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:text="1200 元/次"
+                    android:layout_weight="3"
+                    android:text="1200 "
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>

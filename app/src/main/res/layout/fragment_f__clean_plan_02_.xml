@@ -436,12 +436,22 @@
                 android:layout_width="82dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="44dp"
-                android:layout_marginLeft="44dp"
                 android:layout_marginTop="16dp"
-                android:text="拍照"
+                android:text="相機"
                 app:backgroundTint="@color/clearn"
                 app:layout_constraintStart_toStartOf="@+id/linearLayout"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <Button
+                android:id="@+id/bt_CP02_pickpicture_11"
+                android:layout_width="82dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="16dp"
+                android:text="圖庫"
+                app:backgroundTint="@color/clearn"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/bt_CP02_tackpicture_11" />
 
             <LinearLayout
                 android:id="@+id/linearLayout4"

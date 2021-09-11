@@ -1,5 +1,7 @@
 package idv.tfp10207.nowclearnnow0818.cleanplan.CPreserve;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,8 +20,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -34,6 +39,8 @@ public class ReserveOrderStateApplyFragment extends Fragment {
     private AppCompatActivity activity;
     private FirebaseFirestore db;
 
+    private FirebaseStorage storage;
+
     private RecyclerView rv_reserveorder_apply_11;
     private List<Cpreserveorder> cpreserveorders;
 
@@ -42,6 +49,7 @@ public class ReserveOrderStateApplyFragment extends Fragment {
         super.onCreate(savedInstanceState);
         activity = (AppCompatActivity) getActivity();
         db = FirebaseFirestore.getInstance();
+        storage = FirebaseStorage.getInstance();
         cpreserveorders = new ArrayList<>();
     }
 
@@ -56,6 +64,7 @@ public class ReserveOrderStateApplyFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         showAllOrders();
+
     }
 
     private void findViews(View view) {
@@ -99,7 +108,8 @@ public class ReserveOrderStateApplyFragment extends Fragment {
     }
 
 
-    private static class OrderAdapter extends RecyclerView.Adapter<ReserveOrderStateApplyFragment.OrderAdapter.MyOrderViewHolder> {
+
+    private class OrderAdapter extends RecyclerView.Adapter<ReserveOrderStateApplyFragment.OrderAdapter.MyOrderViewHolder> {
         private List<Cpreserveorder> cpreserveorders;
 
         public OrderAdapter() {
@@ -110,7 +120,7 @@ public class ReserveOrderStateApplyFragment extends Fragment {
             this.cpreserveorders = cpreserveorders;
         }
 
-        private static class MyOrderViewHolder extends RecyclerView.ViewHolder {
+          class MyOrderViewHolder extends RecyclerView.ViewHolder {
             ImageView iv_reserve_image_11;
             TextView tv_reserve_date_11;
             TextView tv_reserve_time_11;
@@ -129,6 +139,8 @@ public class ReserveOrderStateApplyFragment extends Fragment {
             }
         }
 
+        @NonNull
+
         @Override
         public ReserveOrderStateApplyFragment.OrderAdapter.MyOrderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.rc_itemcard_reserve, parent, false);
@@ -138,6 +150,14 @@ public class ReserveOrderStateApplyFragment extends Fragment {
         @Override
         public void onBindViewHolder(ReserveOrderStateApplyFragment.OrderAdapter.MyOrderViewHolder holder, int position) {
             final Cpreserveorder cpreserveorder = cpreserveorders.get(position);
+            //            圖片路徑是空值(需多加一個判斷為cpreserveorder.getPicture().equals("null")，主要是當firebaseg上沒有圖片時下載下來會是文字的null，如此是字串null而非空值)，，給一個沒有圖片的圖
+            if (cpreserveorder.getPicture() == null || cpreserveorder.getPicture().equals("null")) {
+                holder.iv_reserve_image_11.setImageResource(R.drawable.no_image);
+            } else {
+//                有圖片路徑就呼叫showImage
+                showImage(holder.iv_reserve_image_11, cpreserveorder.getPicture());
+            }
+
             holder.tv_reserve_date_11.setText("預約日期： "+cpreserveorder.getOnedate() );
             holder.tv_reserve_time_11.setText("預約時間： " + cpreserveorder.getTime()+" 9:00~12:00");
             holder.tv_reserve_name_11.setText("家事者姓名： " + cpreserveorder.getCpservice());
@@ -161,5 +181,31 @@ public class ReserveOrderStateApplyFragment extends Fragment {
         }
     }
 
+
+
+    // 下載Firebase storage的照片並顯示在ImageView上
+    private void showImage(final ImageView iv_reserve_image_11, final String path) {
+        final int ONE_MEGABYTE = 1024 * 1024;
+        StorageReference imageRef = storage.getReference().child(path);
+//        對應的路徑下載相應的圖檔，傳進來
+        imageRef.getBytes(ONE_MEGABYTE)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null) {
+                        byte[] bytes = task.getResult();
+//                        轉成bitmap
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+//                        顯示在imageView
+                        iv_reserve_image_11.setImageBitmap(bitmap);
+                    } else {
+                        String message = task.getException() == null ?
+                                getString(R.string.textImageDownloadFail) + ": " + path :
+                                task.getException().getMessage() + ": " + path;
+                        Log.e(TAG, message);
+                        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+                    }
+                })
+//                關閉掉當圖片下在失敗時的TOAST
+                .addOnFailureListener(Throwable::printStackTrace);
+    }
 
 }

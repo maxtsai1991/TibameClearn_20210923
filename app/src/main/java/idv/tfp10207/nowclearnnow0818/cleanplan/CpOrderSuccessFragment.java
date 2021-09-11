@@ -58,7 +58,6 @@ public class CpOrderSuccessFragment extends Fragment {
     private TextView tvprojectname;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,8 +95,8 @@ public class CpOrderSuccessFragment extends Fragment {
             Log.d("TAG_CpArea=", orderconstants.getCparea());
             Log.d("TAG_Cpservice=", orderconstants.getCpservice());
 
-            Log.d("TAG_People=", orderconstants.getPeoplenumber());
-            Log.d("TAG_Ping=", orderconstants.getPing());
+            Log.d("TAG_People=", String.valueOf(orderconstants.getPeoplenumber()));
+            Log.d("TAG_Ping=", String.valueOf(orderconstants.getPing()));
             Log.d("TAG_Time=", orderconstants.getTime());
             Log.d("TAG_Picture", orderconstants.getPicture());
             Log.d("TAG_Remark", orderconstants.getRemark());
@@ -141,8 +140,8 @@ public class CpOrderSuccessFragment extends Fragment {
 
             String success = tv_ordersuccess.getText().toString().trim();
             if (success.length() <= 0) {
-                Toast.makeText(activity, R.string.textNameIsInvalid,
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(activity, R.string.textNameIsInvalid,
+//                        Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -155,7 +154,7 @@ public class CpOrderSuccessFragment extends Fragment {
             // 如果有拍照，上傳至Firebase storage
             if (pictureTaken) {
                 // document ID成為image path一部分，避免與其他圖檔名稱重複
-                final String imagePath = getString(R.string.app_name) + "/images/" + orderconstants.getCpordernumber();
+                final String imagePath = getString(R.string.app_name) + "/CPimages/" + orderconstants.getCpordernumber();
 //                將檔案放到要的路徑
                 storage.getReference().child(imagePath).putFile(cropImageUri)
                         .addOnCompleteListener(task -> {
@@ -204,7 +203,6 @@ public class CpOrderSuccessFragment extends Fragment {
                     }
                 });
     }
-
 
 
     //    客製Toolbar

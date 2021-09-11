@@ -203,10 +203,9 @@ public class F_CleanPlan_05_Fragment extends Fragment {
 
             new AlertDialog.Builder(getActivity())                    // 實例化AlertDialog.Builder物件
                     .setTitle("取消預約")                                 // 設定標題文字
-//                    .setIcon(R.drawable.ptt01)                           // 設定標題圖示
                     .setMessage("確認要取消本次預約？")             // 設定訊息文字
 
-//                    有點不懂這段後面的參數在fragment該怎麼設置            // 設定確定按鈕-顯示文字及監聽器
+// 設定確定按鈕-顯示文字及監聽器
                     .setPositiveButton("確定取消", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             cpreserveorder.setCporderstate(cpreserveorder.getCporderstate()+0);
@@ -239,7 +238,7 @@ public class F_CleanPlan_05_Fragment extends Fragment {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         String message = "修改成功 with ID: " + cpreserveorder.getCpordernumber();
-                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                         // 修改完畢跳轉至訂單列表
 //                        NavController navController = Navigation.findNavController(tv_modify_tast1);
 //                        navController.navigate(R.id.indexFragment);

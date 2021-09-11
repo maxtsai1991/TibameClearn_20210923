@@ -236,14 +236,14 @@ public class F_CleanPlan_01_Fragment extends Fragment
 
 private void handlebutton(View view) {
     bt_areaservice_11.setOnClickListener(v -> {
-        handleRecyclerView(view);
+        handleRecyclerView(view);  //撈會員家事者資料
     });
 }
 
     private void handleRecyclerView(View view) {
         List<CleanplanAreaService> servicearealist = Arrays.asList(
-                new CleanplanAreaService(R.drawable.girl3, "5", "黃永珠", "擅長項目 : 客廳清潔", "1200 元/ 次", "10 件 "),
-                new CleanplanAreaService(R.drawable.boy3, "4", "陳明漢", "擅長項目 : 掃廚房", "1200 元/ 次", "5 件")
+                new CleanplanAreaService(R.drawable.girl3, "5", "黃永珠", "擅長項目 : 客廳清潔", "1200 ", "10 件 "),
+                new CleanplanAreaService(R.drawable.boy3, "4", "陳明漢", "擅長項目 : 掃廚房", "1200", "5 件")
 
         );
         rc_CP01_servicearea_11.setAdapter(new MyAdapter(activity, servicearealist));
@@ -276,7 +276,8 @@ private void handlebutton(View view) {
             holder.iv_CP0_1service_11.setImageResource(itemNo.getCp_iv_serviceID());
             holder.tv_CP01_servicename_11.setText(itemNo.getCp_serviceName());
             holder.tv_CP01_good_project_11.setText(itemNo.getCp_good_project());
-            holder.tv_CP01_toll_standard2_11.setText(itemNo.getToll_standard());
+            holder.tv_CP01_toll_standard_11.setText(itemNo.getToll_standard());
+
             holder.tv_CP01_finsh2_11.setText(itemNo.getFinsh());
 
 //            點擊item與Checkbox連動
@@ -290,14 +291,18 @@ private void handlebutton(View view) {
                 // 7-1取得資料
 //                String etArea = rb_CP01gender_11.getText().toString().trim();
                 String etServicename = holder.tv_CP01_servicename_11.getText().toString().trim();
+                int etServicmoney = Integer.valueOf(holder.tv_CP01_toll_standard_11.getText().toString().trim()).intValue();   //字串轉成整數
                 // 7-2資料放入orderconstants物件
                 orderconstants.setCparea("中山區");
                 orderconstants.setCpservice(etServicename);
+                orderconstants.setCpservicemoney(etServicmoney);
 
                 tv_CP01_servername_11.setText("已選擇家事者："+orderconstants.getCpservice());
                 // 7-3測試
                 Log.d("TAG_Cpservice=", orderconstants.getCpservice());
                 Log.d("TAG_CpArea=", orderconstants.getCparea());
+                Log.d("TAG_Cpservicemoney=", String.valueOf(orderconstants.getCpservicemoney()));    //整數轉成字串
+
                 Toast.makeText(activity, "已選擇"+etServicename, Toast.LENGTH_SHORT).show();
 //        使用Bundle的原因是當時會將資料帶入到下一頁面呈現
 //            Bundle bundle = new Bundle();
@@ -318,7 +323,7 @@ private void handlebutton(View view) {
         private class MyViewHolder extends RecyclerView.ViewHolder {
             private ImageView iv_CP0_1service_11;
             private RatingBar rat_CP01_ratingservice_11;
-            private TextView tv_CP01_servicename_11, tv_CP01_good_project_11, tv_CP01_toll_standard2_11, tv_CP01_finsh2_11;
+            private TextView tv_CP01_servicename_11, tv_CP01_good_project_11, tv_CP01_toll_standard_11, tv_CP01_finsh2_11;
             private CheckBox cb_areaservice_11;
 //
             public MyViewHolder(@NonNull View itemView) {
@@ -327,7 +332,7 @@ private void handlebutton(View view) {
                 iv_CP0_1service_11 = itemView.findViewById(R.id.iv_CP0_1service_11);
                 tv_CP01_servicename_11 = itemView.findViewById(R.id.tv_CP01_servicename_11);
                 tv_CP01_good_project_11 = itemView.findViewById(R.id.tv_CP01_good_project_11);
-                tv_CP01_toll_standard2_11 = itemView.findViewById(R.id.tv_CP01_toll_standard2_11);
+                tv_CP01_toll_standard_11 = itemView.findViewById(R.id.tv_CP01_toll_standard_11);
                 tv_CP01_finsh2_11 = itemView.findViewById(R.id.tv_CP01_finsh2_11);
                 cb_areaservice_11 = itemView.findViewById(R.id.cb_areaservice_11);
 

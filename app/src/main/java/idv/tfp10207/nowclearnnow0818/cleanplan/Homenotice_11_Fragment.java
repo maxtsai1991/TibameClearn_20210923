@@ -94,7 +94,7 @@ public class Homenotice_11_Fragment extends Fragment {
                                 "Not Found" :
                                 task.getException().getMessage();
                         Log.e(TAG, "exception message: " + message);
-                        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
                     }
                 });
     }

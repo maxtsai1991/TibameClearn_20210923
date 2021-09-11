@@ -2,8 +2,15 @@ package idv.tfp10207.nowclearnnow0818.cleanplan;
 
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,17 +23,28 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.yalantis.ucrop.UCrop;
+
+import java.io.File;
+
 import idv.tfp10207.nowclearnnow0818.R;
 import idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.OrderConstants;
+
+import static android.app.Activity.RESULT_OK;
 
 
 //  0.上一頁資訊  Bundle
@@ -38,7 +56,7 @@ import idv.tfp10207.nowclearnnow0818.cleanplan.CPorder.OrderConstants;
 //  6.彈跳視窗 :簡單的訂單明細與訂單付款金額
 //  7.資料放入Bundle
 public class F_CleanPlan_02_Fragment extends Fragment {
-    private static final String TAG = "TAG_F_CleanPlan_02_Fragment";
+    private static final String TAG = "TAG_F_CP02_Fragment";
     private static final int REQ_CAP_IMG = 1;
     private Activity activity;
 
@@ -55,7 +73,12 @@ public class F_CleanPlan_02_Fragment extends Fragment {
 
     //  3.上傳照片
     private Button bt_CP02_tackpicture_11;
+    private Button bt_CP02_pickpicture_11;
     private ImageView iv_CP02_takepicture_11;
+
+//    3.1上傳照片Storage
+    private FirebaseStorage storage;
+    private Uri contentUri;
 
     //  4.備註
     private EditText et_CP02_remark_11;
@@ -82,6 +105,20 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     private ImageView leftarrowicon;
     private TextView tvprojectname;
 
+    //    3.1上傳照片Storage
+    ActivityResultLauncher<Intent> takePictureLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            this::takePictureResult);
+
+    ActivityResultLauncher<Intent> pickPictureLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            this::pickPictureResult);
+
+    ActivityResultLauncher<Intent> cropPictureLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            this::cropPictureResult);
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,8 +129,11 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         activity = getActivity();
+        // 3.取得storage，storage代表雲端硬碟
+        storage = FirebaseStorage.getInstance();
         // 7.實例化Bundle物件
         orderconstants = new OrderConstants();
+
         return inflater.inflate(R.layout.fragment_f__clean_plan_02_, container, false);
     }
 
@@ -110,6 +150,7 @@ public class F_CleanPlan_02_Fragment extends Fragment {
         handleleRadioButton(view);
 //相機
         handleTakepictureButton(view);
+        handlePickpictureButton(view);
 //其他
         handleRemark(view);
 //同會員
@@ -118,7 +159,6 @@ public class F_CleanPlan_02_Fragment extends Fragment {
         handleNextBtAlert(view);
         handleCpPayMoney(etcpmoney);
     }
-
 
 
 
@@ -134,6 +174,7 @@ public class F_CleanPlan_02_Fragment extends Fragment {
         cb_memberinit_11 = view.findViewById(R.id.cb_memberinit_11);
 //      拍照
         bt_CP02_tackpicture_11 = view.findViewById(R.id.bt_CP02_tackpicture_11);
+        bt_CP02_pickpicture_11 = view.findViewById(R.id.bt_CP02_pickpicture_11);
         iv_CP02_takepicture_11 = view.findViewById(R.id.iv_CP02_takepicture_11);
 //
         tv_CPremark_11 = view.findViewById(R.id.tv_CPremark_11);
@@ -193,18 +234,146 @@ public class F_CleanPlan_02_Fragment extends Fragment {
 
     //3.上傳照片
 
-    private void handleTakepictureButton(View view) {
-        ActivityResultLauncher<Void> activityResultLauncher = registerForActivityResult(
-                new ActivityResultContracts.TakePicturePreview(), bitmap -> iv_CP02_takepicture_11.setImageBitmap(bitmap)
-        );
+    private void handlePickpictureButton(View view) {
+        bt_CP02_pickpicture_11.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_PICK,
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            pickPictureLauncher.launch(intent);
+        });
+    }
 
-        bt_CP02_tackpicture_11.setOnClickListener(v -> activityResultLauncher.launch(null));
+    private void handleTakepictureButton(View view) {
+        bt_CP02_tackpicture_11.setOnClickListener(v -> {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//            此方法返回用于保存与您的应用程序相关联的图片和视频的标准位置。如果您的应用程序已卸载，则会删除保存在此位置的所有文件。不对此位置中的文件强制执行安全性，其他应用程序可能会读取，更改和删除它们。
+//            本APP圖片目錄
+            File dir = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+            if (dir != null && !dir.exists()) {
+                if (!dir.mkdirs()) {
+                    Log.e(TAG, getString(R.string.textDirNotCreated));
+                    return;
+                }
+            }
+            File file = new File(dir, "picture.jpg");
+            contentUri = FileProvider.getUriForFile(
+                    activity, activity.getPackageName() + ".provider", file);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
+            try {
+                takePictureLauncher.launch(intent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(activity, R.string.textNoCameraAppFound,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+//        ActivityResultLauncher<Void> activityResultLauncher = registerForActivityResult(
+//                new ActivityResultContracts.TakePicturePreview(), bitmap -> iv_CP02_takepicture_11.setImageBitmap(bitmap)
+//        );
+//
+//        bt_CP02_tackpicture_11.setOnClickListener(v -> activityResultLauncher.launch(null));
 
         // 7-1取得資料
         // 7-2資料放入物件
-        orderconstants.setPicture("null");
+//        orderconstants.setPicture("null");
+        //7-3測試
+//        Log.d("TAG_Picture", orderconstants.getPicture());
+    }
+
+
+    private void pickPictureResult(ActivityResult result) {
+        if (result.getResultCode() == RESULT_OK) {
+            if (result.getData() != null) {
+                //            結果都是截圖
+                crop(result.getData().getData());
+            }
+        }
+    }
+
+    private void takePictureResult(ActivityResult result) {
+        if (result.getResultCode() == RESULT_OK) {
+//            結果都是截圖
+            crop(contentUri);
+        }
+    }
+
+    private void crop(Uri sourceImageUri) {
+        File file = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        file = new File(file, "picture_cropped.jpg");
+        Uri destinationUri = Uri.fromFile(file);
+        Intent cropIntent = UCrop.of(sourceImageUri, destinationUri)
+//                .withAspectRatio(16, 9) // 設定裁減比例
+//                .withMaxResultSize(500, 500) // 設定結果尺寸不可超過指定寬高
+                .getIntent(activity);
+        cropPictureLauncher.launch(cropIntent);
+    }
+
+
+
+    private void cropPictureResult(ActivityResult result) {
+//        使用者是否同意，取得拍照的URI
+        if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+            Uri imageUri = UCrop.getOutput(result.getData());
+            if (imageUri != null) {
+//               截圖有結果，就會上傳
+                uploadImage(imageUri);
+            }
+        }
+    }
+
+    //    imageUri截圖來源傳進來
+    private void uploadImage(Uri imageUri) {
+        // 取得storage根目錄位置
+        StorageReference rootRef = storage.getReference();
+        final String imagePath = getString(R.string.app_name) + "/CPimages/" + System.currentTimeMillis();
+        // 建立當下目錄的子路徑
+        final StorageReference imageRef = rootRef.child(imagePath);
+        // 將儲存在uri的照片上傳
+        imageRef.putFile(imageUri)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        String message = getString(R.string.textUploadSuccess);
+                        Log.d(TAG, message);
+//                        activity是實體變數所以雖然也是區域外的變數就沒有底線
+                        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+                        // 下載剛上傳好的照片
+//                        imagePath有加底線是因為我們在內部區域使用了區塊外的區域(類別等級)變數
+//                        內部類別存取到外部類別的區域變數就有底線，也因此會自動加final
+                        downloadImage(imagePath);
+                    } else {
+                        String message = task.getException() == null ?
+                                getString(R.string.textUploadFail) :
+                                task.getException().getMessage();
+                        Log.e(TAG, "message: " + message);
+//                        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        // 7-2資料放入物件
+        orderconstants.setPicture(imagePath);
         //7-3測試
         Log.d("TAG_Picture", orderconstants.getPicture());
+    }
+
+    // 下載Firebase storage的照片
+    private void downloadImage(String path) {
+        final int ONE_MEGABYTE = 10 * 1024 * 1024;
+        StorageReference imageRef = storage.getReference().child(path);
+        imageRef.getBytes(ONE_MEGABYTE)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null) {
+//                        當初getBytes呼叫甚麼，getResult就會得到甚麼
+                        byte[] bytes = task.getResult();
+//                        將暫存記憶體的bit陣列拿出轉成bitmap給使用者看
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                        iv_CP02_takepicture_11.setImageBitmap(bitmap);
+                    } else {
+                        String message = task.getException() == null ?
+                                getString(R.string.textDownloadFail) :
+                                task.getException().getMessage();
+                        Log.e(TAG, "message: " + message);
+//                        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     //4.其他備註
@@ -261,16 +430,16 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     private void handleNextBtAlert(View view) {
         bt_CP02next_11.setOnClickListener(v -> {
             // 7-1取得資料
-            String etPeople = et_people_11.getText().toString().trim();
-            String etPing = et_ping_11.getText().toString().trim();
+            int etPeople = Integer.valueOf(et_people_11.getText().toString().trim()).intValue();
+            int etPing = Integer.valueOf(et_ping_11.getText().toString().trim()).intValue();
 
             // 7-2資料放入Bundle物件
             orderconstants.setPeoplenumber(etPeople);
             orderconstants.setPing(etPing);
 
             //7-3測試
-            Log.d("TAG_People=", orderconstants.getPeoplenumber());
-            Log.d("TAG_Ping=", orderconstants.getPing());
+            Log.d("TAG_People=",  String.valueOf(orderconstants.getPeoplenumber()));
+            Log.d("TAG_Ping=",  String.valueOf(orderconstants.getPing()));
 
             handleMemberCheckBoxes(view);
             handleRemark(view);
@@ -308,10 +477,10 @@ public class F_CleanPlan_02_Fragment extends Fragment {
                     .setPositiveButton("確認", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             // 4-2測試
-                            Log.d("TAG_people=", orderconstants.getPeoplenumber());
-                            Log.d("TAG_ping=", orderconstants.getPing());
+                            Log.d("TAG_people=",  String.valueOf(orderconstants.getPeoplenumber()));
+                            Log.d("TAG_ping=",  String.valueOf(orderconstants.getPing()));
                             Log.d("TAG_time=", orderconstants.getTime());
-                            Log.d("TAG_picture=", orderconstants.getPicture());
+//                            Log.d("TAG_picture=", orderconstants.getPicture());
                             Log.d("TAG_remark=", orderconstants.getRemark());
                             Log.d("TAG_servicename=", orderconstants.getServicename());
                             Log.d("TAG_servicephone=", orderconstants.getServicephone());
@@ -337,8 +506,9 @@ public class F_CleanPlan_02_Fragment extends Fragment {
         });
     }
 
-    //    服務費用計算
+//    服務費用計算，最後應改成int型態，待修正(orderconstants.java檔案也要一起改)
     private String handleCpPayMoney(String etcpmoney) {
+//        跟老師討論後的寫法，待研究
 //        //用bundle把使用者填的資料帶入
 //        // 取得Bundle物件
 //        Bundle bundle = getArguments();
@@ -352,11 +522,13 @@ public class F_CleanPlan_02_Fragment extends Fragment {
 //        待調整用物件去計算，並轉型
         int personpay;  //bundle
         int areapay;
-        personpay = 1200;
-        areapay = 25 * 250;
+        personpay = orderconstants.getCpservicemoney();  //串會員家事者服務費用
+        areapay = orderconstants.getPing() * 250;   //250為當前坪數所設定的費用，待修正(寫成一個方法，判斷當前坪數是在哪個區間，該乘以哪個數字)
+
+//        坪數區間費用:1~30坪(含)：250元/坪   30~60坪(含)：350元/坪  60坪以上：500元/坪"
 
         // 7-1取得資料
-        String etCpmoney = Integer.toString(personpay + areapay);
+        String etCpmoney = Integer.toString(personpay + areapay);   //數字轉成文字
         // 7-2資料放入Bundle物件
         orderconstants.setCppaymoney(etCpmoney);
 

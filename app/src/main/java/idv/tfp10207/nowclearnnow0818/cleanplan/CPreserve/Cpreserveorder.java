@@ -16,10 +16,11 @@ public class Cpreserveorder implements Serializable {
     //    CP01_選擇家事者  抓ID
     private   String cparea;
     private   String cpservice;
+    public  int cpservicemoney;
 
     //    CP02_預估清潔人數
-    private   String peoplenumber;
-    private   String ping;
+    private   int peoplenumber;
+    private   int ping;
 
     //    CP02_選擇清潔時間
     private   String time;
@@ -45,20 +46,27 @@ public class Cpreserveorder implements Serializable {
     public  String cporderstate;
 
     //    CP02_上傳照片
-    public  String picture;
+    private  String picture;
 
     public  Cpreserveorder(){
-
     }
 
+    public Cpreserveorder(String cpordernumber, String onedate, String manydate, String manydate2, String manydate3, String gender, String cparea,
+                          String cpservice, int cpservicemoney, int peoplenumber, int ping, String time, String remark, String servicename, String servicephone, String serviceemail, String serviceaddress,
+                          String cppaymoney, String cppay, String payname, String payphone, String payemail, String payaddress, String cporderstate) {
 
-    public Cpreserveorder(String cpordernumber, String onedate, String manydate, String gender, String cparea, String cpservice, String peoplenumber, String ping, String time, String remark, String servicename, String servicephone, String serviceemail, String serviceaddress, String cppaymoney, String cppay, String payname, String payphone, String payemail, String payaddress, String cporderstate, String picture) {
+        this(cpordernumber, onedate, manydate, manydate2, manydate3, gender, cparea, cpservice, cpservicemoney, peoplenumber, ping,
+                time, remark, servicename, servicephone, serviceemail, serviceaddress, cppaymoney, cppay, payname, payphone, payemail, payemail, payaddress, cporderstate,  null);
+    }
+
+    public Cpreserveorder(String cpordernumber1, String onedate1, String cpordernumber, String onedate, String manydate, String gender, String cparea, String cpservice, int cpservicemoney, int peoplenumber, int ping, String s, String time, String remark, String servicename, String servicephone, String serviceemail, String serviceaddress, String cppaymoney, String cppay, String payname, String payphone, String payemail, String payaddress, String cporderstate, String picture) {
         this.cpordernumber = cpordernumber;
         this.onedate = onedate;
         this.manydate = manydate;
         this.gender = gender;
         this.cparea = cparea;
         this.cpservice = cpservice;
+        this.cpservicemoney = cpservicemoney;
         this.peoplenumber = peoplenumber;
         this.ping = ping;
         this.time = time;
@@ -76,6 +84,7 @@ public class Cpreserveorder implements Serializable {
         this.cporderstate = cporderstate;
         this.picture = picture;
     }
+
 
     public String getCpordernumber() {
         return cpordernumber;
@@ -125,19 +134,27 @@ public class Cpreserveorder implements Serializable {
         this.cpservice = cpservice;
     }
 
-    public String getPeoplenumber() {
+    public int getCpservicemoney() {
+        return cpservicemoney;
+    }
+
+    public void setCpservicemoney(int cpservicemoney) {
+        this.cpservicemoney = cpservicemoney;
+    }
+
+    public int getPeoplenumber() {
         return peoplenumber;
     }
 
-    public void setPeoplenumber(String peoplenumber) {
+    public void setPeoplenumber(int peoplenumber) {
         this.peoplenumber = peoplenumber;
     }
 
-    public String getPing() {
+    public int getPing() {
         return ping;
     }
 
-    public void setPing(String ping) {
+    public void setPing(int ping) {
         this.ping = ping;
     }
 
@@ -252,4 +269,12 @@ public class Cpreserveorder implements Serializable {
     public void setPicture(String picture) {
         this.picture = picture;
     }
+
+
+
+
+
+
+
+
 }
