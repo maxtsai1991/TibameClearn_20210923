@@ -202,10 +202,10 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@drawable/gree_button_frame_shape"
-        android:text="@string/nextNext"
+        android:foreground="?selectableItemBackground"
+        android:text="發出清潔服務請求"
         android:textSize="30sp"
         app:backgroundTint="#91C75C"
-        android:foreground="?selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
