@@ -12,6 +12,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_homenotice"
+        android:layout_width="57dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/iv_message07"
         android:layout_width="wrap_content"
@@ -51,14 +60,16 @@
 
     <ImageView
         android:id="@+id/iv_bell_add_one07"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="19dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/ic_baseline_exposure_plus_1_24"
+        android:src="@drawable/ordernotice_11"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
 
     <ImageView
         android:id="@+id/iv_preview07"
