@@ -185,7 +185,7 @@ public class F_CleanPlan_07_Fragment extends Fragment {
 //            String amountStr = etAmount.getText().toString().trim();
 //            int amount = Integer.parseInt(amountStr);
 //            order.setOrderAmount(amount);
-            cpreserveorder.setCporderstate(cpreserveorder.getCporderstate()+1);
+//            cpreserveorder.setCporderstate(cpreserveorder.getCporderstate()+1);
 
             Bundle bundle = new Bundle();
             bundle.putSerializable("cpreserveorders", cpreserveorder);

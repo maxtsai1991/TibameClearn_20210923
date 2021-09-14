@@ -74,10 +74,22 @@ public class Reserve_02_Fragment extends Fragment {
 
     private void handleSend(View view) {
         bt_reserve_assess_send_11.setOnClickListener(v -> {
-
+            if (getArguments() != null) {
+                cpreserveorder = (Cpreserveorder) getArguments().getSerializable("cpreserveorders");
+            }
 //            cpreserveorder.setCporderstate(cpreserveorder.getCporderstate()+0);
 //
 //            modify(cpreserveorder);
+
+            cpreserveorder.setCporderstate(cpreserveorder.getCporderstate()+1);
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("cpreserveorders", cpreserveorder);
+
+            Log.d(TAG,"訂單狀態"+cpreserveorder.getCporderstate());
+
+            modify(cpreserveorder);
+
 
             Navigation.findNavController(v).navigate(R.id.reserve_01_Fragment);
 

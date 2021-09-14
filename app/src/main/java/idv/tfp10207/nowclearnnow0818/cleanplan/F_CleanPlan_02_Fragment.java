@@ -429,23 +429,6 @@ public class F_CleanPlan_02_Fragment extends Fragment {
     //6.彈跳視窗 :簡單的訂單明細與訂單付款金額
     private void handleNextBtAlert(View view) {
         bt_CP02next_11.setOnClickListener(v -> {
-            // 7-1取得資料
-            int etPeople = Integer.valueOf(et_people_11.getText().toString().trim()).intValue();
-            int etPing = Integer.valueOf(et_ping_11.getText().toString().trim()).intValue();
-
-            // 7-2資料放入Bundle物件
-            orderconstants.setPeoplenumber(etPeople);
-            orderconstants.setPing(etPing);
-
-            //7-3測試
-            Log.d("TAG_People=",  String.valueOf(orderconstants.getPeoplenumber()));
-            Log.d("TAG_Ping=",  String.valueOf(orderconstants.getPing()));
-
-            handleMemberCheckBoxes(view);
-            handleRemark(view);
-
-            activity = getActivity();
-
             //判斷不可為空值
             if (et_people_11.getText().toString().trim().isEmpty() ||
                     et_ping_11.getText().toString().trim().isEmpty() ||
@@ -464,6 +447,29 @@ public class F_CleanPlan_02_Fragment extends Fragment {
                 et_CP02_serviceperson_address_11.setError("服務對象地址不可為空");
                 return;
             }
+
+            // 7-1取得資料
+            if(et_people_11 == null || et_ping_11 == null ){
+                et_people_11.setError("不可為空值");
+                et_ping_11.setError("不可為空值");
+            }
+            int etPeople = Integer.valueOf(et_people_11.getText().toString().trim()).intValue();
+            int etPing = Integer.valueOf(et_ping_11.getText().toString().trim()).intValue();
+
+            // 7-2資料放入Bundle物件
+            orderconstants.setPeoplenumber(etPeople);
+            orderconstants.setPing(etPing);
+
+            //7-3測試
+//            Log.d("TAG_People=",  String.valueOf(orderconstants.getPeoplenumber()));
+//            Log.d("TAG_Ping=",  String.valueOf(orderconstants.getPing()));
+
+            handleMemberCheckBoxes(view);
+            handleRemark(view);
+
+            activity = getActivity();
+
+
 
             handleCpPayMoney(etcpmoney);
 

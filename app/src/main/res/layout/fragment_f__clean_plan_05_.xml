@@ -255,6 +255,16 @@
                     app:layout_constraintStart_toStartOf="@+id/tv_CP05_orderpayway2_11"
                     app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderclient2_11" />
 
+                <ImageView
+                    android:id="@+id/iv_cp05_order_11"
+                    android:layout_width="300dp"
+                    android:layout_height="244dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_CP05_orderclient4_11"
+                    tools:src="@tools:sample/avatars" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 

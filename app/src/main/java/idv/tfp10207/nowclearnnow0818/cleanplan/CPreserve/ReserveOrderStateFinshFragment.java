@@ -20,7 +20,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -41,6 +44,8 @@ public class ReserveOrderStateFinshFragment extends Fragment {
 
     private RecyclerView rv_reserveorder_finsh_11;
     private List<Cpreserveorder> cpreserveorders;
+//    資料隨時更動監聽器
+    private ListenerRegistration registration;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +68,9 @@ public class ReserveOrderStateFinshFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         showAllOrders();
+
+        //        可以非常即時但卻會造成資料的傳輸量會變大   >>>>資料庫收費變高
+        listenToSpots();
     }
 
     private void findViews(View view) {
@@ -205,5 +213,54 @@ public class ReserveOrderStateFinshFragment extends Fragment {
                 .addOnFailureListener(Throwable::printStackTrace);
     }
 
+
+    /**
+     * 監聽資料是否發生異動，有則同步更新。
+     * 開啟2台模擬器，一台新增/修改/刪除；另一台畫面會同步更新
+     * 但自己做資料異動也會觸發監聽器
+     */
+    private void listenToSpots() {
+        if (registration == null) {
+//            一旦監聽到有異動
+            //                一旦有刪除立刻開始動作
+            registration = db.collection("cleanplanorder").addSnapshotListener((snapshots, e) -> {
+                Log.d(TAG, "event happened");
+                if (e == null) {
+                    List<Cpreserveorder> spots = new ArrayList<>();
+                    if (snapshots != null) {
+//                        snapshots所有資料
+//                        snapshots.getDocumentChanges()有異動的資料
+                        for (DocumentChange dc : snapshots.getDocumentChanges()) {
+                            Cpreserveorder spot = dc.getDocument().toObject(Cpreserveorder.class);
+                            switch (dc.getType()) {
+                                case ADDED:
+                                    Log.d(TAG, "Added spot: " + spot.getCpordernumber());
+                                    break;
+                                case MODIFIED:
+                                    Log.d(TAG, "Modified spot: " + spot.getCpordernumber());
+                                    break;
+                                case REMOVED:
+                                    Log.d(TAG, "Removed spot: " + spot.getCpordernumber());
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+//                      有監聽異則重新取得
+                        for (DocumentSnapshot document : snapshots.getDocuments()) {
+
+//                            並放入實體變數spots
+                            this.cpreserveorders = spots;
+//                        因為加了監聽器全程監踢(ListenToSpoys())，所以List會自動依據更動去更新
+//                            就不需要在像以前依要先刪除以前的資料
+                            showAllOrders();
+                        }
+                    } else {
+                        Log.e(TAG, e.getMessage(), e);
+                    }
+                }
+            });
+        }
+    }
 
 }
